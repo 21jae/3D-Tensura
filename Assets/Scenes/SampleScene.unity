@@ -755,7 +755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35456822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 80.1}
+  m_LocalPosition: {x: 0, y: 0, z: 76.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47362,7 +47362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526926056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 80.1}
+  m_LocalPosition: {x: 0, y: 0, z: 76.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47480,7 +47480,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d2b2370dd32b947874d7ea73aa186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blessingPrefab: {fileID: 3912715908714641084, guid: 0d0b3d59940ad924aaff549952084fc9,
+  blessingHuman: {fileID: 4543339264667279237, guid: 6575872c368b03d4c8595d08aac1d832,
+    type: 3}
+  blessingEffect: {fileID: 358707268122730347, guid: f6ffa189c1106a0499f678cd2212a2b8,
+    type: 3}
+  buffEffect: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5,
     type: 3}
 --- !u!114 &1526926065
 MonoBehaviour:

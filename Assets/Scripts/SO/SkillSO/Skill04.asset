@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Skill04
   m_EditorClassIdentifier: 
   skillDamageMultiplier: 4.5
-  coolTime: 30
+  coolTime: 3
   animationName: Player_Skill04
   skillIcon: {fileID: 21300000, guid: d37e4147855254147ade61d5d0b3e7cf, type: 2}

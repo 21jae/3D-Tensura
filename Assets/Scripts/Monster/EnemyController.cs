@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,9 +11,6 @@ public class EnemyController : MonoBehaviour, IDamageable
     protected Animator animator;
     protected NavMeshAgent navMeshAgent;
     protected Transform target;
-
-    [SerializeField] private float originalSpeed;
-
     //Attack
     protected float attackDelay = 2f;
     protected float reattackTime = 1f;
@@ -24,10 +22,6 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     protected float stopTime = 1.5f;
     protected bool canMove = true;
-
-    private float originalAttackDelay;
-    private float originalReattackTime;
-    private float originalStopTime;
 
     #region Animator
     private static readonly int Speed = Animator.StringToHash("Speed");
@@ -42,29 +36,25 @@ public class EnemyController : MonoBehaviour, IDamageable
         animator = GetComponentInChildren<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
-        originalSpeed = navMeshAgent.speed;
-
-        //슬로우
-        originalAttackDelay = attackDelay;
-        originalReattackTime = reattackTime;
-        originalStopTime = stopTime;
     }
 
     protected virtual void Start()
     {
         StartCoroutine(CheckPlayerDistance());
-
-        float enemyHealth = enemyStats.maxHealth;
-        float enemyAttackPower = enemyStats.attackPower;
-        float defense = enemyStats.defense;
+        StartStat();
     }
 
     private void Update()
     {
         distanceToPlayer = Vector3.Distance(transform.position, target.position);
-
         MonsterMovement();
+    }
+
+    private void StartStat()
+    {
+        float enemyHealth = enemyStats.maxHealth;
+        float enemyAttackPower = enemyStats.attackPower;
+        float defense = enemyStats.defense;
     }
 
     #region 공격
@@ -113,26 +103,6 @@ public class EnemyController : MonoBehaviour, IDamageable
             animator.SetFloat(Speed, speed);
         }
     }
-
-    public void ApplySlowEffect(float slowFactor)
-    {
-        navMeshAgent.speed = originalSpeed * slowFactor;
-        animator.speed = slowFactor;
-
-        attackDelay = originalAttackDelay / slowFactor;
-        reattackTime = originalReattackTime / slowFactor;
-        stopTime = originalStopTime / slowFactor;
-    }
-
-    public void RemoveSlowEffect()
-    {
-        navMeshAgent.speed = originalSpeed;
-        animator.speed = 1;
-
-        attackDelay = originalAttackDelay;
-        reattackTime = originalReattackTime;
-        stopTime = originalStopTime;
-    }
     #endregion
 
     #region 데미지 받기
@@ -164,6 +134,4 @@ public class EnemyController : MonoBehaviour, IDamageable
     }
 
     #endregion
-
-
 }

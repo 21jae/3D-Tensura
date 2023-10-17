@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
 
     public float currentAttackPower;
 
-
     #region Animator
     private static readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
     private static readonly int Attack01 = Animator.StringToHash("Attack01");
@@ -64,22 +63,18 @@ public class PlayerController : MonoBehaviour
         CheckHitWall();
     }
 
-
     #region Attack
     private void AttackUpdate()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
-        {
             animator.SetBool(Attack01, false);
-        }
+
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02"))
-        {
             animator.SetBool(Attack02, false);
-        }
+
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03"))
-        {
             animator.SetBool(Attack03, false);
-        }
+
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack04"))
         {
             animator.SetBool(Attack04, false);
@@ -87,9 +82,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Time.time - lastClickTimed > maxComboDelay)
-        {
             comboStack = 0;
-        }
     }
 
     public void OnClick()
@@ -124,27 +117,16 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    //ScriptableObject 값 변경 유지
-
-
     #endregion
 
-
-
     #region 스킬발동
-    public void ActivateSkill(SOSkill skill)
-    {
-        animator.Play(skill.animationName);
-    }
-        
+    public void ActivateSkill(SOSkill skill) => animator.Play(skill.animationName);
     public void ActivatePredationSkill() => predationskill.ActivatePredation();
     public void ActivatebuffSkill() => buffSkill.ActivateTime();
     public void ActivateDashSkill() => dashSwordskill.ActivateDash();
     public void ActivateBlessSkill() => blessingskill.ActivateBless();
 
     #endregion
-
 
     #region 벽체크
     private void CheckHitWall()
@@ -171,6 +153,4 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(rayStartPos, rayDirection * rayDistance, rayColor);
     }
     #endregion
-
-
 }
