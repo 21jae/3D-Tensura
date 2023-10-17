@@ -1,0 +1,6397 @@
+fileFormatVersion: 2
+guid: 51777b3d5b50e7b4bbc3d62b8c8898dd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1933
+        width: 53
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d572786dec6a294d9d9e61fd0838087
+      internalID: -1842632368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1930
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0fcf0ba2b5b0842ac2de6cad2dd463
+      internalID: 1399018823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_2
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1932
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c59d24016336f4a9af680d1e2bbbac
+      internalID: 1297144911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_3
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1930
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1894eb6747823740a35af4866b3d839
+      internalID: -231613346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_4
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1930
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca91bfee2a03ec44b7f2f34cd1a4e18
+      internalID: 982886347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_5
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1868
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc89ca666195ba4db784543067bbf17
+      internalID: 704485683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1832
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccbd0b0474860d43b0193e9bae8f2d0
+      internalID: 1082005745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1829
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba5f14b0f55ca944b7b7dd329955e8f
+      internalID: -1085278371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_8
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1831
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35da519eb12b5f044b97f11e31d87674
+      internalID: 1949266299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_9
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1832
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3884d60b2cfe8f04d9b03f088cf99f60
+      internalID: -373815228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_10
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1832
+        width: 106
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e757115dc273d4fa58974a7aa96622
+      internalID: -1974861157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_11
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1830
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0f8b05ed3efef479c2aa24647ba7ae
+      internalID: 1693891538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_12
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1829
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31c9d28e48550241aed9c3f12e0aba9
+      internalID: 289727843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_13
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1829
+        width: 111
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fb04495915188439df59c1349dd78c
+      internalID: -1886263038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_14
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1767
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3e8c298984b7645a79672a11e8eea5
+      internalID: 1278928237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_15
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1767
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e95411e381c46b40aeca9d72edd66a3
+      internalID: 1959138369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1731
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eccdcdff3c12ec74ea3dbe6c8fb68283
+      internalID: 1481264875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_17
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1728
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097d0781950e36948a5464757a4d91df
+      internalID: -916412770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_18
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1728
+        width: 109
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be94561f65e3ce428c64249cd838143
+      internalID: -1909757694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_19
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1731
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ba00aae3e73734f96088444e871464
+      internalID: -372578695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_20
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1728
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e986c76ea1c456441aba581bde0d3a8d
+      internalID: -1433570300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_21
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1728
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e5324a39fa7834493da4138c7d6c0f
+      internalID: -2053074379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_22
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1728
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ac6fa5bf47bfb4985fc4b23c12ad17
+      internalID: 1846106015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_23
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1728
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feabc4848aec7ed4db46f9c699a01285
+      internalID: -234687085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_24
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1666
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2da4080737afb4783ee15ad1cb2d42
+      internalID: -1066059283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_25
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1666
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b98aabb8b65a6e4582b76f41ea249a4
+      internalID: -74111669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_26
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1724
+        width: 106
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb8b79fe57707541883aa956ec1a2ff
+      internalID: -1152589230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_27
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 1703
+        width: 50
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab1a515ac274f1468454cec20aad686
+      internalID: 1860413998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_28
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1630
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f399c684ff895c04b976ba2569c49935
+      internalID: -1043630451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_29
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1627
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e74085eabb20a548aaa07b90a186be4
+      internalID: -1771619494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_30
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1629
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66323c18f22ab9c4c87d66b77f8d27ef
+      internalID: 138283130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_31
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1630
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31170ba287a39b24883737595ee703d2
+      internalID: -759525334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_32
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1629
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccd65f2d92bd2a4ba560f639a31b97f
+      internalID: -1657100892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_33
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1628
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30cb42ebc08cb6245a9c29081677195f
+      internalID: -650507933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_34
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1627
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87238e4da0e908d4ab4cbd5dc23b8526
+      internalID: 155214396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_35
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1627
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f727275f07df55249ad663c5f8c5e2a7
+      internalID: -1140849735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_36
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1566
+        width: 109
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c57cd3f829f8a409a27afc6a756c6e
+      internalID: -1003038831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_37
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1623
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d955bc6a6027c4db14f5520c3115ba
+      internalID: 344747128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_38
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 1619
+        width: 107
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09cb6b38302914946ac3a4644055d204
+      internalID: -1942418855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_39
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 1616
+        width: 54
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816e45f496457894a9d402204cecedf1
+      internalID: 1135990047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1528
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df9c33c6f4c2d54dab426c167d5b5a1
+      internalID: 1398382505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_41
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1526
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e8f2e37063ee94495959f2ebad7e33
+      internalID: 1293323484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_42
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1527
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67333cdc5a0cb374596016c6ab13c279
+      internalID: -1290668104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_43
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1528
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f16767ff8288445b64e417e2284243
+      internalID: 1257473440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_44
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1528
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efe9759140b4734fbd8a690db0c858c
+      internalID: 915590978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_45
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1527
+        width: 109
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3fdc9b9c7dfd348a0cd345ff2c497c
+      internalID: -1062559558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_46
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1526
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67ecd53f47c5dc469daae55d795a23d
+      internalID: -2083554770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_47
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1526
+        width: 112
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784b6e870b8c58f48a6a68c6846d6147
+      internalID: 1023225299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_48
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1466
+        width: 109
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855e52d9d04f9eb4cbdffda457b6359c
+      internalID: -1698701412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_49
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1522
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7fa3154284ab31498412b29f0c442b1
+      internalID: 1735048491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_50
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1519
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd4b021ff7e84d40891208a0e6755ee
+      internalID: 2089927540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_51
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 1515
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c00c30e384a904191d410117c5516a
+      internalID: -660660265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_52
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1428
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2fd0ace48941e4084fa356e2ce94ef
+      internalID: 505275070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_53
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1425
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2504683d56bbae4a8acd4bf8d302cfd
+      internalID: -980638567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_54
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1424
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ecb47a41defea746a5ec35cbec012ce
+      internalID: -1389410573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_55
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1424
+        width: 107
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd214d4f163be6443b056a54b3a1e165
+      internalID: 959985886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_56
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1427
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2df6c40e424f1542984c3ea6a92aaa3
+      internalID: -505783495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_57
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1426
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8840a1e828af1264aba49fc6aab11f21
+      internalID: 595090258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_58
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1425
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0da20c48b0d7704bb924873a0ad7989
+      internalID: 90625059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_59
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1425
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c086a85eab061de4a81db7141590f245
+      internalID: -1410007739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_60
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 1365
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64456173312d3d945856d629db07890a
+      internalID: 1861623409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_61
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1421
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5866519e95b593d4ba40bb804a0496a4
+      internalID: -614205613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_62
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1416
+        width: 107
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36891385adc57f3469b3642d252ed2ca
+      internalID: -656717007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_63
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1414
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d5bdbfc9a0aab41a40db75d19baa67
+      internalID: -1654094909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_64
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1414
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4f5f6eca7bb974cb71e4801d0dec2d
+      internalID: -1883626831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_65
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1327
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6487595bd53e350408eef0a17e675351
+      internalID: 2046320940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_66
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1324
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7039b8e6151602c44a114beca59a4562
+      internalID: 1422873908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_67
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1324
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ddf0f76df6b1e64790c0dcdcd4347a4
+      internalID: 1296974221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_68
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1325
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1e52ed779ebaf4c820f379c47888c5
+      internalID: 1757415105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_69
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1325
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4e60d28b658814db02fbe5e8343f92
+      internalID: -611242963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_70
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1324
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deea86275b6fe964ba5bbce98b30aafa
+      internalID: 1515768899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_71
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1324
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ccf176f13abdd44be0e0b635174c69
+      internalID: 840655304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_72
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1264
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742131d90974e184ba313f3865d03907
+      internalID: 2033668482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_73
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1320
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac48d2eba62ae954fb3c3a676555f6f6
+      internalID: 549347485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_74
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1317
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e288a99398f8a804680a9e4fc520d7b7
+      internalID: 1140787853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_75
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1314
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7c877810b47f543889acf5748f1163
+      internalID: 1567703911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_76
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1313
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfa70b6b082a4b46a509cada5076529
+      internalID: 645970915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_77
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1314
+        width: 107
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b530dd2c8de127241a42281130ca7f79
+      internalID: 1089114097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_78
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1226
+        width: 110
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cdb7ad709c76a7458e634bc65b60981
+      internalID: -783996857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_79
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1223
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9573ea72846a59419e3c5c7480587f4
+      internalID: 258736088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_80
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1223
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d5c1183b4ed17478c4db15f63295fa
+      internalID: 1817303324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_81
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1223
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1cf729837b5c7449e4d0b347098740
+      internalID: -915557833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_82
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1220
+        width: 108
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d0d9f8779ebc34f933a1a5283ed009
+      internalID: 480054314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_83
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1223
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3801908bb868cb4582aa1af249fd672
+      internalID: -564391695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_84
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1223
+        width: 109
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33232e93aefe4d04a9e92b5e555241f9
+      internalID: -291372238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_85
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1163
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e5180ad4e0f70498f28f9686644093
+      internalID: -1976472393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_86
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1161
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b960b5f42499f4d44943acd73604f791
+      internalID: 2132959338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_87
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 1220
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a4fc60fdb6ec64e85c337001926767
+      internalID: -1788977081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_88
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1216
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cdd18711d0dce44a03b3ec88f690f7
+      internalID: 491398462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_89
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1214
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7475a7669dc4e45858b0b5414ae868
+      internalID: 2047291875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_90
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1213
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1e1674b6cd5114d91b141982a7bfb5
+      internalID: -888358641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_91
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 1212
+        width: 105
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6eb31404f111f647ad23c5a500ebf92
+      internalID: 1810930272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_92
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1213
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87e77171709b9e429a64c8057ebae92
+      internalID: 1550746922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_93
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1125
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebe3973b0bb57743a314101dceac0ee
+      internalID: -1291996934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_94
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1122
+        width: 111
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b59e98c8c65724285954eb23c4db23
+      internalID: 1879505905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_95
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1122
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960a548024bda0946bfc8387417db9ae
+      internalID: 1463288941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_96
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1120
+        width: 109
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74aea4b56e6ff8640b2a4dc940b9af27
+      internalID: -139381167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_97
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1120
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66e8fc17d674f44fb427d3de38c9f7b
+      internalID: 395670945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_98
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1122
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254c1f1fe668ddd409b04899e9c2d1b8
+      internalID: 584831498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_99
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1062
+        width: 108
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65f350f6dead644a9d5b0fcea2414a6
+      internalID: 1803283009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_100
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1060
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d6b0613a885c34a8289eed233bbf6a
+      internalID: -1983663512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_101
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 1119
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664d2ad26bdbea94dae10a95c4441aeb
+      internalID: 12453085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_102
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 1115
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e3d751b09d5ea4ab2d654d717e568e
+      internalID: 1620812846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_103
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1112
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2294ab24bf993974690d8cb28de3b8f7
+      internalID: -1964163129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_104
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1112
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebfe5da27702f84bb3c6b642d1b592e
+      internalID: 594984592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_105
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1112
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522cc9b8c84ce724484920eb6263599d
+      internalID: 1025326095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_106
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1024
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117bcd8eb9ae6e246b8f4d7c7745f5e4
+      internalID: 1533347631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_107
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1020
+        width: 110
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0faa572703200341a805f7ae76c6445
+      internalID: -1136995944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_108
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1020
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b83ac5b4208254892d8575ffd11547
+      internalID: 1259288120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_109
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1021
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f229267e7286eb4468e72b391a03dac9
+      internalID: -361213077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_110
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1021
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c649fb0bd72a2409f25a0bb325c268
+      internalID: 595612936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_111
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 960
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817414c376b9534448da67936b4b468f
+      internalID: 103240925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_112
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 960
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b507e5667f99e25459a5e3ca4012ea6d
+      internalID: -1418830787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_113
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 959
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668c8a94856d5dd4ab1b7e6940ea309a
+      internalID: -990176656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_114
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 1018
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55644c8d27cda284bb6b96a1ec2e1e9c
+      internalID: 754226562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_115
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1014
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be45c1614d1f09a4a945207d8b79e777
+      internalID: -53634791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_116
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 1012
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3dedd2d9c935ee4698c85c39f281b6d
+      internalID: 1897528658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_117
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 1012
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adaac397f72a2624ab8a89f1ce51a384
+      internalID: -1018794629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_118
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1011
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc36eb73b11a2a4c935d5d498f088e6
+      internalID: -2100655833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_119
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1011
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1e1b01ab2a16b4aa97b01c5c52f931
+      internalID: 1775032812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_120
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1008
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759c42cd40fb15a45b5b4284a6930c47
+      internalID: 938156148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_121
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 920
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c9b5181f8e5b74991f396fb84fc3dd
+      internalID: -767077061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_122
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 920
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fa4766c58861841a2663bd21522e3a
+      internalID: -360020625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_123
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 918
+        width: 110
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0b7322d51981d458e4390cf763c8ad
+      internalID: 1713550546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_124
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 918
+        width: 109
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9380e6501ea79284e9832a63336f27c0
+      internalID: -1132365551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_125
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 891
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 179d3b6ebb790b24cab8bc0a260fb51b
+      internalID: -2138546024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_126
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 859
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7357fcac7d0ffd34e83aaeacb1f67009
+      internalID: -1791795999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_127
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 856
+        width: 111
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4a160dd5ca7884086d83f98aec67e4
+      internalID: -369969949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_128
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 917
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ac5bb03116c654181272670e39db50
+      internalID: 1987857686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_129
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 913
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf9c9184f34dc143ba77e7b14923b6b
+      internalID: -2051830068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_130
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 911
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4487f04e92ddc7645b616c11504b80f9
+      internalID: 1423658777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_131
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 911
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3301486bc49a7cb48aa30d9937c143e8
+      internalID: 1701233848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_132
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 910
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4cccdbfb1006fe41b2aa1e65a3002a5
+      internalID: -1805162751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_133
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 910
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985c9688a20f02743968777d5802c047
+      internalID: -954707131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_134
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 909
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeabc0c7334c66e44b7c480f646cd354
+      internalID: -523386029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_135
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 910
+        width: 69
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fcdfcf1778cce4ea3dfba98753b32d
+      internalID: 1517521933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_136
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 815
+        width: 108
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98784016e2b4bdd4bb0175c53f16a416
+      internalID: 82844327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_137
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 816
+        width: 109
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181fef124b9eea54e9a14bd5d390cf2a
+      internalID: -1263978622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_138
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 815
+        width: 110
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a693513c63a318c49b71d0031b1d4dc3
+      internalID: 1814065128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_139
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 815
+        width: 109
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c676510dc91d094b8a5e23e080b0f25
+      internalID: -857187972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_140
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 789
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d783f1b5a0d3324d8e4f75d17c76a72
+      internalID: -1420563461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_141
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 786
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc3c049a0a316843accb7d80d593c5f
+      internalID: 1929484055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_142
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 757
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99d6c7efde25a0418fc8971d70323a0
+      internalID: -1265027772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_143
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 756
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73ed8d47485d4d4eb7d4abd6edc73cf
+      internalID: -845914872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_144
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 816
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68feb56338415574ab4911eb407821f9
+      internalID: 1866974003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_145
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 812
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ec867e86b34d34ba6fb360a3466fb9
+      internalID: -772115931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_146
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 810
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bfb85b9e4bd694eb3184aafc056f55
+      internalID: -835919884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_147
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 810
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa33eda568616f4bad4fdd02f3c06ee
+      internalID: -1973139884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_148
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 808
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59497853a79fec14fbbe0dfcdad4f56b
+      internalID: 1967087037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_149
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 808
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e5b314422870c49a9982a59fc52f27
+      internalID: -1889376598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_150
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 809
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ee5738c5469f645b899e568b923f95
+      internalID: 617499971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_151
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 809
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0e798c89bed7f4b8a7db4e94888b13
+      internalID: 1960042207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_152
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 708
+        width: 108
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7805ab6e5cf373409a1fad33934ac05
+      internalID: -83722847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_153
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 711
+        width: 109
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c024d3da16f74b643baaf0f58dedbb70
+      internalID: -1178278598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_154
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 711
+        width: 109
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091fc1a9da8f805448a1d525817ef077
+      internalID: 2014823329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_155
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 711
+        width: 109
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ccd6d1dd666534483008a8dba16276
+      internalID: 1871212927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_156
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 687
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32f25330ff91064f863c7b8aba130f5
+      internalID: 1119167783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_157
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 684
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc2f7dcab3012d45945e2a11765067d
+      internalID: -925317513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_158
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 652
+        width: 108
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4175534602e2fa4e8904f867b5a4dd1
+      internalID: 2075388744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_159
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 655
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa5110a9b4b53d4badf4d6e05790704
+      internalID: 1710760941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_160
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 715
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff1f3732da72cb41aeed4499521f2ac
+      internalID: -2068273991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_161
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 711
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e5693fb4d7bda428af1fabb8f1520e
+      internalID: 1670516161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_162
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 708
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb24b6dde8aacb4e948548e3f37f18a
+      internalID: -864128425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_163
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 708
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14de2380d35ba9347bbe2216392a6c38
+      internalID: -1403842872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_164
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 708
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca5372a9ced91041bf0961d1b8f91bc
+      internalID: 625695929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_165
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 708
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e4752290832a84483d0a9b93e6499f
+      internalID: -1503202008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_166
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 708
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ec5ecf2d036374696c8c7fe2cd9508
+      internalID: 2086970577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_167
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 708
+        width: 106
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddbcab057dfd64949a2962f87c2c5bb0
+      internalID: 1343493492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_168
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 110
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec998b346fe169842a14ffe4a56d7601
+      internalID: 1370976224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_169
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 606
+        width: 109
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145654c6197efbe49ae8ecdd95dea91e
+      internalID: 179517592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_170
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 606
+        width: 109
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367125572bf75a849b58a17daa619cc4
+      internalID: -153485246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_171
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 585
+        width: 110
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c8996bcc09aa44ca5c8d74028ff2d7
+      internalID: 2028652075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_172
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 582
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40840ed7efcecd44d8f7d9fa331c1895
+      internalID: 987233328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_173
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 552
+        width: 109
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f3519cba59c8246b7ed5a8288b8467
+      internalID: 1647455351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_174
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 552
+        width: 107
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5a1ded96ed0f94d90f935c4426023f
+      internalID: 648016394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_175
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 606
+        width: 12
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b974e4defa889e4688be906dbef93e1
+      internalID: -1857013131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_176
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 614
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c82097fa8d93d346908a5b37af407f2
+      internalID: 831658600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_177
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 610
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70752937256a40e4d954c2ce1b879177
+      internalID: -85154439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_178
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 608
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f09c27482e9754aa9d69514c76b735
+      internalID: -234655490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_179
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 608
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1fdc6ef35417841ad7393984b29a9e
+      internalID: -1732597458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_180
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 607
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4198e3b690cb6cd47808249f6b0f458e
+      internalID: -1425143456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_181
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 607
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccdf4975402ebb343b1e512cd7336003
+      internalID: -1594574926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_182
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 607
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f91a84f1fea854381cf0b0dfefb9a6
+      internalID: 1581556236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_183
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 607
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112f214f94a22ab46a7337e296982d17
+      internalID: -604095405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_184
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 605
+        width: 55
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd4c3ce21f6e59449b5be13dade6255b
+      internalID: 2010483837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_185
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 499
+        width: 120
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebac79e1346e02f4390c64fd83282499
+      internalID: 2063702834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_186
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 499
+        width: 108
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cc993442d7e204c9e4e9cc8e5b1d3f
+      internalID: 49028447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_187
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 493
+        width: 109
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf5edcb0f4486c40927a1512d0612c2
+      internalID: 1157874330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_188
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 484
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68cbfa561fd0b5c4eb75abbabd624439
+      internalID: 1077082866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_189
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 480
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2e940499b7cc34098ce7c22a72a6a5
+      internalID: 1023430609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_190
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 552
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995171397e3af5347a1c942cb23d4d21
+      internalID: 21346130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_191
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 512
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c6cb0d3bbaa4343adad1897a3e7b97
+      internalID: 2022440033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_192
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 509
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69dbd3b7043630e43aa68cb6a570c884
+      internalID: -1972552581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_193
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 507
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0371b5d9fe43c14438552cf174c45839
+      internalID: -1307084137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_194
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 507
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b40f494b917b04f9f0b0f736b125a7
+      internalID: 426873059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_195
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 507
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ce77ebc806d2d47acb2bce8bfa947f
+      internalID: -1366311698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_196
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 506
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925ba872b8aab7a4290037322a147029
+      internalID: -205545818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_197
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 506
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2c2c6bb48a1fa4ea40f8ea6c61225c
+      internalID: 2108409350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_198
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 506
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19a000f71bde7241904550bf9fcaa30
+      internalID: -896118839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_199
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 506
+        width: 105
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a9305eb5d55f04587fc23d7dfea257
+      internalID: 896045281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_200
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 504
+        width: 106
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9079fe4329d741744a42dd1ccb6255db
+      internalID: 142656175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_201
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 482
+        width: 107
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33797c4fc1dd5124699f9c3a58c07a52
+      internalID: 971625152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_202
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 451
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3778a3ee1d2d374e876a6e386e87152
+      internalID: -745259102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_203
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 451
+        width: 110
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e374d2581a7d1f4ab3adbc62caec41d
+      internalID: -680742383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_204
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 410
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97e30833c9d4be43b7ff342b2c32b12
+      internalID: 52016701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_205
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 504
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a5afb9743009d4c81bc9e8d9629508
+      internalID: -1028105062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_206
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 381
+        width: 129
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c02b74231464942b60029e091186eb
+      internalID: 988037659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_207
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 377
+        width: 117
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2edb6294e7192a4bac7b14392eea940
+      internalID: -694343015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_208
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 380
+        width: 110
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3367456f0e79324cb238c56f176ef2e
+      internalID: 1492469359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_209
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 367
+        width: 108
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d298f9de0e5727a46893f0846be4114c
+      internalID: -1033465151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_210
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 464
+        width: 4
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e286a44e40fdb24d98575070ea1987b
+      internalID: -1761322973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_211
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 408
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464b31f2c49b1394d82404a72d9097f8
+      internalID: -330566109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_212
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 406
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da7af60b3d129c47860580a46cc59e6
+      internalID: 236193211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_213
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 406
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bb9f74d5b2e114f84aea82502e2b1d
+      internalID: 1942833986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_214
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 406
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d2420851b1cc140bf486f91ff4238a
+      internalID: -1365744619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_215
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 404
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9560021335ae25544a16c4e152f2535e
+      internalID: 1758213783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_216
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 405
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1713385576a8aa49b80778e3d173cc1
+      internalID: -1577323470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_217
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 405
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6f113085e87b0499b79ab8b7aeaa87
+      internalID: -1494329649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_218
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 405
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb47690f4439c84fbd4024caff4a70e
+      internalID: 1761297410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_219
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 404
+        width: 109
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c7be9319c2e9748b1dd7388d3178a5
+      internalID: 13250907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_220
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 348
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef68925009dbf5e498a3aa36e100f6d2
+      internalID: -599592299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_221
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 348
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3864af4c64e553142868e11bd6d3a1b2
+      internalID: -796049202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_222
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 408
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001112af080859a4faf38f1d4f8d776e
+      internalID: -1476440041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_223
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 408
+        width: 20
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75064729069ed749a5af959212f1cad
+      internalID: -933893172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_224
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 129
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb517e338a959b64b98111395f8a5ed3
+      internalID: 1153030774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_225
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 259
+        width: 130
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41d90db479ba814783d2059e6cf55e2
+      internalID: 1657271959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_226
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 364
+        width: 15
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee78fe92348803458233ba2b5f6a066
+      internalID: -697386747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_227
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 308
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c904c2c3ee4879b4381145be126c3488
+      internalID: 336070756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_228
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 307
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0394f15d922e58342bec8cd063c0756f
+      internalID: 2032339197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_229
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 305
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68cf1fd914d9f8e4e8566413fb23e384
+      internalID: 1546805206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_230
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 304
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7212884b4e5656b41bc870a9723dfb62
+      internalID: 841705885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_231
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 305
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c15f72668b4cc45a6d3ee875032d97
+      internalID: 378941784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_232
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 304
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2b5b5fb78565144a085776f0f60931
+      internalID: 525939509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_233
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 304
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821f7e2c83192f64ebca86eabfe86c96
+      internalID: -497438323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_234
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 304
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecd0b8791d8ff24a814b23cfc0438a2
+      internalID: 510789094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_235
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 304
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e740a3997222f4bbb1f6c073292abd
+      internalID: 847769038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_236
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 131
+        width: 129
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3828f64c55747e43bb2a02bc96dfc3b
+      internalID: 1223408632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_237
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 132
+        width: 120
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5f57f3c137c044884bd14305f7f8fd
+      internalID: 1385238203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_238
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 250
+        width: 130
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a94e72e2b02f0a4a84993d62dc115ab
+      internalID: 1952653500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_239
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 241
+        width: 109
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3f0616748f84944b17edf1bb3c0b35
+      internalID: -1628442651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_240
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 244
+        width: 112
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b155fe3f342a2468d921219de6c867
+      internalID: -1045193701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_241
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 204
+        width: 109
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00973eef91d848941b8914b05bbb0a67
+      internalID: 1499679313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_242
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 206
+        width: 108
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5868e3ba5b1999c47bcefc202ab69b84
+      internalID: -1807769195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_243
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 205
+        width: 108
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9d1049a8383e8458bc01db0a023fcc
+      internalID: -1386823257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_244
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 204
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d5971e870e12e46b43c49510dce2fd
+      internalID: -454804858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_245
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 204
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73c06ea85e7a3e42847dfe9ac61f9e0
+      internalID: -1019698262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_246
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 204
+        width: 112
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c5d02fbb21c914aa7a83756c3bb0b5
+      internalID: 1467765599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_247
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 204
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9eae9da567c7640826a755ffa7cebe
+      internalID: 167465866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_248
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 204
+        width: 110
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa30f7afd3612c349b46a21486e3025b
+      internalID: -668259429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_249
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 204
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5e17ce127070c4a901f5ea0d606a9a
+      internalID: 1394753282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_250
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 203
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff08cb6f41baad4f98dee26d5bbb34f
+      internalID: 793757241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_251
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 203
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a2b8ed6ea3e2b4d9c8aa9449b7b429
+      internalID: -939532597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_252
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 132
+        width: 130
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5900377e158e8d46930584a6614ff63
+      internalID: -862885392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_253
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 227
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff193bf9f927eb942b5c2101031f7fc7
+      internalID: 2087476166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_254
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 132
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff2089be721a474da9ba60489bed070
+      internalID: 1873293677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_255
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 132
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b055299a11a304e82542191f132f4e
+      internalID: 278805216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_256
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 105
+        width: 109
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651e02602ccd5e44284e3b1c0a2fd982
+      internalID: 867828534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_257
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 104
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d0bc5c48eb18e44bd963cfe63791a2
+      internalID: -1226311160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_258
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 103
+        width: 108
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a785f3d99f6ab4aa60ac15c94a300c
+      internalID: -300214509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_259
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 103
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2085834a01ca0514999cb88237d07027
+      internalID: 1741999532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_260
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 103
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd78fecbce59ec47969211f15ae3444
+      internalID: -398492427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_261
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 103
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9676134c74f20f4585cdb507d3ccb81
+      internalID: -1670067578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_262
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 103
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d9a468681f8e54099bf6008c67cef8
+      internalID: -2102137077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_263
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 103
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24733219ffae0c4d9f81753985ec675
+      internalID: -1987317613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_264
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 103
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ce0f0afd3e170439ff8b214eb66865
+      internalID: -575031830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_265
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 103
+        width: 109
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9c6bdac03364c448c4c014a0ea7d97
+      internalID: -780967081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_266
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 102
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0704f174c408645498746ea60ba8e8e9
+      internalID: -376694351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_267
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 102
+        width: 107
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ff095df70f03b4d87f76b2adc42f61
+      internalID: -1973722107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_268
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 389
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838cf7071464d2842a005bdfaeeb15fd
+      internalID: -1593222703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_269
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 2
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc56a1191ac8f37468b6aaadcdae8c70
+      internalID: 1181357068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_270
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997bb6bb0ed7977438ab91e5119b4898
+      internalID: -1426116373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_271
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 2
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932a84baf840b164bbc0c2b97df90e74
+      internalID: -981720622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_272
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2
+        width: 109
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ded327218c97064f83466a45b040c6b
+      internalID: 1058881055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_273
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 4
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11f1d822be0c5e4887e95e91761a5fc
+      internalID: 182658745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_274
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 0
+        width: 110
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc367e98f14d7d741a871d3ef87a192a
+      internalID: 1575300444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_275
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 2
+        width: 109
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c789fc32f759f54585430b141b8124d
+      internalID: -1523310885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_276
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 2
+        width: 110
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c88b573f3e1214da682d2047c3f07c
+      internalID: -547266831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_277
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 2
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0215d7c10fbc4f94c88b58d89d97e90b
+      internalID: 83118901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_278
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 2
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc64d9c460c1e1a4f85c73df9eb61c6e
+      internalID: -91431905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_279
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 2
+        width: 111
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ad67533387ca44391c9a28008557a7
+      internalID: -257188537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_280
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 2
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec69b74eb044fe54aa1218d3a321611f
+      internalID: 842219373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_281
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 2
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b082828794048a445af4276deaaef1d3
+      internalID: -770342399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_282
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 2
+        width: 108
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af92c917766a334aac528caf06a5e98
+      internalID: -1755333182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_283
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 2
+        width: 109
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373dda1595ea7cb4a97cd98d951dfc7d
+      internalID: 985439845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_284
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 2
+        width: 109
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42843176b0325d640887d23d8be42a41
+      internalID: 1094252303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 10a16f1b8d8e7e048a8cc4e8ba3ddf16
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_0: -1842632368
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_1: 1399018823
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_10: -1974861157
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_100: -1983663512
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_101: 12453085
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_102: 1620812846
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_103: -1964163129
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_104: 594984592
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_105: 1025326095
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_106: 1533347631
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_107: -1136995944
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_108: 1259288120
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_109: -361213077
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_11: 1693891538
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_110: 595612936
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_111: 103240925
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_112: -1418830787
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_113: -990176656
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_114: 754226562
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_115: -53634791
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_116: 1897528658
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_117: -1018794629
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_118: -2100655833
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_119: 1775032812
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_12: 289727843
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_120: 938156148
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_121: -767077061
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_122: -360020625
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_123: 1713550546
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_124: -1132365551
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_125: -2138546024
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_126: -1791795999
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_127: -369969949
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_128: 1987857686
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_129: -2051830068
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_13: -1886263038
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_130: 1423658777
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_131: 1701233848
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_132: -1805162751
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_133: -954707131
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_134: -523386029
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_135: 1517521933
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_136: 82844327
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_137: -1263978622
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_138: 1814065128
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_139: -857187972
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_14: 1278928237
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_140: -1420563461
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_141: 1929484055
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_142: -1265027772
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_143: -845914872
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_144: 1866974003
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_145: -772115931
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_146: -835919884
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_147: -1973139884
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_148: 1967087037
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_149: -1889376598
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_15: 1959138369
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_150: 617499971
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_151: 1960042207
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_152: -83722847
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_153: -1178278598
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_154: 2014823329
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_155: 1871212927
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_156: 1119167783
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_157: -925317513
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_158: 2075388744
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_159: 1710760941
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_16: 1481264875
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_160: -2068273991
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_161: 1670516161
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_162: -864128425
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_163: -1403842872
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_164: 625695929
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_165: -1503202008
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_166: 2086970577
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_167: 1343493492
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_168: 1370976224
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_169: 179517592
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_17: -916412770
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_170: -153485246
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_171: 2028652075
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_172: 987233328
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_173: 1647455351
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_174: 648016394
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_175: -1857013131
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_176: 831658600
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_177: -85154439
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_178: -234655490
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_179: -1732597458
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_18: -1909757694
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_180: -1425143456
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_181: -1594574926
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_182: 1581556236
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_183: -604095405
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_184: 2010483837
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_185: 2063702834
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_186: 49028447
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_187: 1157874330
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_188: 1077082866
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_189: 1023430609
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_19: -372578695
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_190: 21346130
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_191: 2022440033
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_192: -1972552581
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_193: -1307084137
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_194: 426873059
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_195: -1366311698
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_196: -205545818
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_197: 2108409350
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_198: -896118839
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_199: 896045281
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_2: 1297144911
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_20: -1433570300
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_200: 142656175
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_201: 971625152
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_202: -745259102
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_203: -680742383
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_204: 52016701
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_205: -1028105062
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_206: 988037659
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_207: -694343015
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_208: 1492469359
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_209: -1033465151
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_21: -2053074379
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_210: -1761322973
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_211: -330566109
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_212: 236193211
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_213: 1942833986
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_214: -1365744619
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_215: 1758213783
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_216: -1577323470
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_217: -1494329649
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_218: 1761297410
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_219: 13250907
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_22: 1846106015
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_220: -599592299
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_221: -796049202
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_222: -1476440041
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_223: -933893172
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_224: 1153030774
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_225: 1657271959
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_226: -697386747
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_227: 336070756
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_228: 2032339197
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_229: 1546805206
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_23: -234687085
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_230: 841705885
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_231: 378941784
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_232: 525939509
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_233: -497438323
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_234: 510789094
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_235: 847769038
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_236: 1223408632
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_237: 1385238203
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_238: 1952653500
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_239: -1628442651
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_24: -1066059283
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_240: -1045193701
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_241: 1499679313
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_242: -1807769195
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_243: -1386823257
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_244: -454804858
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_245: -1019698262
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_246: 1467765599
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_247: 167465866
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_248: -668259429
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_249: 1394753282
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_25: -74111669
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_250: 793757241
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_251: -939532597
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_252: -862885392
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_253: 2087476166
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_254: 1873293677
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_255: 278805216
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_256: 867828534
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_257: -1226311160
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_258: -300214509
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_259: 1741999532
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_26: -1152589230
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_260: -398492427
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_261: -1670067578
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_262: -2102137077
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_263: -1987317613
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_264: -575031830
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_265: -780967081
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_266: -376694351
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_267: -1973722107
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_268: -1593222703
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_269: 1181357068
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_27: 1860413998
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_270: -1426116373
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_271: -981720622
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_272: 1058881055
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_273: 182658745
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_274: 1575300444
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_275: -1523310885
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_276: -547266831
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_277: 83118901
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_278: -91431905
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_279: -257188537
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_28: -1043630451
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_280: 842219373
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_281: -770342399
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_282: -1755333182
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_283: 985439845
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_284: 1094252303
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_29: -1771619494
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_3: -231613346
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_30: 138283130
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_31: -759525334
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_32: -1657100892
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_33: -650507933
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_34: 155214396
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_35: -1140849735
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_36: -1003038831
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_37: 344747128
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_38: -1942418855
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_39: 1135990047
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_4: 982886347
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_40: 1398382505
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_41: 1293323484
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_42: -1290668104
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_43: 1257473440
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_44: 915590978
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_45: -1062559558
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_46: -2083554770
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_47: 1023225299
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_48: -1698701412
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_49: 1735048491
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_5: 704485683
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_50: 2089927540
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_51: -660660265
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_52: 505275070
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_53: -980638567
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_54: -1389410573
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_55: 959985886
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_56: -505783495
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_57: 595090258
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_58: 90625059
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_59: -1410007739
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_6: 1082005745
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_60: 1861623409
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_61: -614205613
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_62: -656717007
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_63: -1654094909
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_64: -1883626831
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_65: 2046320940
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_66: 1422873908
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_67: 1296974221
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_68: 1757415105
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_69: -611242963
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_7: -1085278371
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_70: 1515768899
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_71: 840655304
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_72: 2033668482
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_73: 549347485
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_74: 1140787853
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_75: 1567703911
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_76: 645970915
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_77: 1089114097
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_78: -783996857
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_79: 258736088
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_8: 1949266299
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_80: 1817303324
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_81: -915557833
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_82: 480054314
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_83: -564391695
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_84: -291372238
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_85: -1976472393
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_86: 2132959338
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_87: -1788977081
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_88: 491398462
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_89: 2047291875
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_9: -373815228
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_90: -888358641
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_91: 1810930272
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_92: 1550746922
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_93: -1291996934
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_94: 1879505905
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_95: 1463288941
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_96: -139381167
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_97: 395670945
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_98: 584831498
+      SpriteAtlasTexture-skillicon (Group 0)-2048x2048-fmt48_99: 1803283009
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
