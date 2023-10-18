@@ -9687,7 +9687,7 @@ GameObject:
   - component: {fileID: 7910603292438892066}
   - component: {fileID: 269498757417564087}
   m_Layer: 0
-  m_Name: Love aura
+  m_Name: Spell_PinkAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

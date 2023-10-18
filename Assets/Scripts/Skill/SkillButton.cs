@@ -5,16 +5,15 @@ using UnityEngine.UI;
 public class SkillButton : MonoBehaviour
 {
     public SOSkill skill;
-    //public PlayerController player;
-    private SkillManager skillManager;
+    [SerializeField] private SkillManager skillManager;
+    private Button skillButton;
+
     public Image imageIcon;
     public Image imageCooltime;
     public Text coolTimeText;
-    private Button skillButton;
 
     private void Start()
     {
-        skillManager = GetComponent<SkillManager>();
         skillButton = GetComponent<Button>();
         imageIcon.sprite = skill.skillIcon;
         imageCooltime.fillAmount = 0;
@@ -28,7 +27,6 @@ public class SkillButton : MonoBehaviour
             return;
         }
 
-        //player.ActivateSkill(skill);
         skillManager.ReadSkill(skill);
         StartCoroutine(SkillCooltime());
     }

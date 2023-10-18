@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4eb012022aacd740adafa332d696c46, type: 3}
   m_Name: Skill01
   m_EditorClassIdentifier: 
-  skillDamageMultiplier: 0
-  coolTime: 60
   animationName: Player_Skill01
   skillIcon: {fileID: -759525334, guid: 51777b3d5b50e7b4bbc3d62b8c8898dd, type: 3}
+  skillDamageMultiplier: 0
+  skillCoolTime: 10
   skillDescription: "30\uCD08\uAC04 \uD50C\uB808\uC774\uC5B4\uC758 \uACF5\uACA9\uB825\uC744
     30% \uC99D\uAC00\uC2DC\uD0B5\uB2C8\uB2E4."

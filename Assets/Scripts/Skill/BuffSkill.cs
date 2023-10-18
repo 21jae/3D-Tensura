@@ -29,8 +29,8 @@ public class BuffSkill : MonoBehaviour, ISkill
 
     private void ActivateTime()
     {
-        GameObject buffInstance = Instantiate(attackBuffPrefab, transform.position, Quaternion.identity);
-        buffInstance.transform.SetParent(transform);
+        GameObject buffInstance = Instantiate(attackBuffPrefab, playerController.transform.position, Quaternion.identity);
+        buffInstance.transform.SetParent(playerController.transform);
 
         StartCoroutine(ApplyAttackBuff());
     }

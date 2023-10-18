@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4eb012022aacd740adafa332d696c46, type: 3}
   m_Name: Skill04
   m_EditorClassIdentifier: 
-  skillDamageMultiplier: 4.5
-  coolTime: 3
   animationName: Player_Skill04
   skillIcon: {fileID: 21300000, guid: d37e4147855254147ade61d5d0b3e7cf, type: 2}
+  skillDamageMultiplier: 4.5
+  skillCoolTime: 30
   skillDescription: "\uAC00\uD638 : \uCD95\uBCF5\uC744\uB0B4\uB824 \uD50C\uB808\uC774\uC5B4
     \uCCB4\uB825\uC744 30%\uB9CC\uD07C \uC989\uC2DC \uD68C\uBCF5\uC2DC\uCF1C\uC90D\uB2C8\uB2E4. 
     \uC774\uD6C4 30\uCD08\uAC04 \uACF5\uACA9\uB825\uC744 20%, \uBC29\uC5B4\uB825\uC744

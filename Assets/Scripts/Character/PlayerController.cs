@@ -4,11 +4,11 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController characterController;
     public PlayerStatManager playerStatManager;
+    public SkillManager skillManager;
+
     private Animator animator;
     private Joystick controller;
     private MoveObject moveObject;
-
-    [SerializeField] private SkillManager skillManager;
 
     //Attack
     [SerializeField] private float cooldownTime = 2f;
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
         CheckHitWall();
     }
+
 
     #region Attack
     private void AttackUpdate()

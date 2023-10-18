@@ -5,7 +5,6 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     private Animator animator;
-    //private PlayerController playerController;
 
     private BuffSkill buffSkill;
     private DashSwordSkill dashSwordSkill;
@@ -14,8 +13,7 @@ public class SkillManager : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
-        //playerController = GetComponent<PlayerController>();
+        animator = FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>();
 
         buffSkill = GetComponent<BuffSkill>();
         dashSwordSkill = GetComponent<DashSwordSkill>();
@@ -23,7 +21,10 @@ public class SkillManager : MonoBehaviour
         blessingSkill = GetComponent<BlessingSkill>(); 
     }
 
-    public void ReadSkill(SOSkill skill) => animator.Play(skill.animationName); //스킬 읽기
+    public void ReadSkill(SOSkill skill)
+    {
+        animator.Play(skill.animationName); //스킬 읽기
+    }
 
     public void ActivatebuffSkill() => buffSkill.ActivateSkill();    //버프 스킬 발동
     public void ActivateDashSkill() => dashSwordSkill.ActivateSkill();   //대쉬 스킬 발동

@@ -1725,7 +1725,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.5
-  m_Speed: 4
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1802,7 +1802,6 @@ MonoBehaviour:
   enemyStats: {fileID: 11400000, guid: ea3201ac046125a40b58171013831506, type: 2}
   hitPrefab: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
     type: 3}
-  originalSpeed: 4
   isReadyToAttack: 1
   attackRange: 3.5
   attackRadius: 5

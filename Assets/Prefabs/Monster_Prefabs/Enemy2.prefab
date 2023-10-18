@@ -94,10 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bfa5a5dcd591d448a7d177bae3806a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: 19a6e66b6101f824da078e6c764ae7f4, type: 2}
+  enemyStats: {fileID: 11400000, guid: aef4997cc29b3a84eae5217716167928, type: 2}
   hitPrefab: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
     type: 3}
-  originalSpeed: 3.5
   isReadyToAttack: 1
   attackRange: 2
 --- !u!114 &-8667530525376704978

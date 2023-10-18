@@ -14,7 +14,6 @@ public class BlessingSkill : MonoBehaviour, ISkill
     /// 스테이터스 상승
     /// </summary>
     private PlayerController playerController;
-    //private PlayerStatManager playerStatManager;
 
     private float healthBuff = 0.3f;        //30%증가
     private float attackPowerBuff = 0.2f;   //15%증가
@@ -47,8 +46,8 @@ public class BlessingSkill : MonoBehaviour, ISkill
     private void ActivateBless()
     {
         //
-        Vector3 spawnPosition = transform.position - transform.forward * offsetDistance;
-        Quaternion rotationTowardsPlayer = Quaternion.LookRotation(transform.position - spawnPosition);
+        Vector3 spawnPosition = playerController.transform.position - playerController.transform.forward * offsetDistance;
+        Quaternion rotationTowardsPlayer = Quaternion.LookRotation(playerController.transform.position - spawnPosition);
 
         GameObject bless = Instantiate(blessingHuman, spawnPosition, rotationTowardsPlayer);
         StartCoroutine(WaitAndBless(bless, destoryPrefab));
@@ -64,7 +63,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private void BuffToPlayer()
     {
-        Instantiate(blessingEffect, transform.position, Quaternion.identity);
+        Instantiate(blessingEffect, playerController.transform.position, Quaternion.identity);
         Debug.Log("체력 및 스테이터스 상승!");
 
         //현재 체력 증가량 계산 및 증가 적용
@@ -87,8 +86,8 @@ public class BlessingSkill : MonoBehaviour, ISkill
         Debug.Log($" MaxHP : {playerController.playerStatManager.currentMaxHP}, " + $"HP : {playerController.playerStatManager.currentHP}," +
             $"ATK : {playerController.playerStatManager.currentAttackPower}, DEF : {playerController.playerStatManager.currentDefense}");
 
-        GameObject buff = Instantiate(buffEffect, transform.position, Quaternion.identity);
-        buff.transform.SetParent(transform);
+        GameObject buff = Instantiate(buffEffect, playerController.transform.position, Quaternion.identity);
+        buff.transform.SetParent(playerController.transform);
 
         StartCoroutine(ApplyStatusBuff());
     }

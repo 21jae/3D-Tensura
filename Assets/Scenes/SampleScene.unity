@@ -755,7 +755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35456822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 76.77}
+  m_LocalPosition: {x: 0, y: 0, z: -5.499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 158804089}
   - component: {fileID: 158804092}
   - component: {fileID: 158804091}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2647,7 +2647,7 @@ GameObject:
   - component: {fileID: 219588474}
   - component: {fileID: 219588473}
   - component: {fileID: 219588475}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13261,10 +13261,10 @@ GameObject:
   m_Component:
   - component: {fileID: 315976017}
   - component: {fileID: 315976022}
-  - component: {fileID: 315976021}
-  - component: {fileID: 315976020}
-  - component: {fileID: 315976019}
-  - component: {fileID: 315976018}
+  - component: {fileID: 315976026}
+  - component: {fileID: 315976025}
+  - component: {fileID: 315976024}
+  - component: {fileID: 315976023}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -13287,7 +13287,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &315976018
+--- !u!114 &315976022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315976016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df245490840e8b14c841fef050e4242a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &315976023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13305,7 +13317,7 @@ MonoBehaviour:
     type: 3}
   buffEffect: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5,
     type: 3}
---- !u!114 &315976019
+--- !u!114 &315976024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13317,10 +13329,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07273ddc544fbbf4c8a0d09728ce1224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  predationSkillData: {fileID: 11400000, guid: d6877c4f70c171443a4b01eb8fb297a9, type: 2}
   predationSkillPos: {fileID: 1381321546498227889}
   predationPrefab: {fileID: 7491826636943448716, guid: 4c8d7e0fed771d84fac62870e4b5471e,
     type: 3}
---- !u!114 &315976020
+  predationRaidus: 20
+  predationForce: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &315976025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13339,7 +13357,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &315976021
+--- !u!114 &315976026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13353,18 +13371,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackBuffPrefab: {fileID: 7155335147208632822, guid: 97c43495f80a3244fad1301dfafbe252,
     type: 3}
---- !u!114 &315976022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315976016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df245490840e8b14c841fef050e4242a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &321271332
 GameObject:
   m_ObjectHideFlags: 0
@@ -13419,6 +13425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: d6877c4f70c171443a4b01eb8fb297a9, type: 2}
+  skillManager: {fileID: 315976022}
   imageIcon: {fileID: 321271336}
   imageCooltime: {fileID: 778360815}
   coolTimeText: {fileID: 1469736321}
@@ -14306,7 +14313,7 @@ GameObject:
   - component: {fileID: 356943207}
   - component: {fileID: 356943206}
   - component: {fileID: 356943208}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall_base1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14730,7 +14737,7 @@ GameObject:
   - component: {fileID: 401176946}
   - component: {fileID: 401176945}
   - component: {fileID: 401176947}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall_base1 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20831,7 +20838,7 @@ GameObject:
   - component: {fileID: 463532463}
   - component: {fileID: 463532462}
   - component: {fileID: 463532464}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall_base1 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21146,6 +21153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 12af2c8bdb423434083384f56dd2e57e, type: 2}
+  skillManager: {fileID: 315976022}
   imageIcon: {fileID: 488490626}
   imageCooltime: {fileID: 2019661239}
   coolTimeText: {fileID: 714647702}
@@ -22201,6 +22209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: ed2aef8a611fd1c47badfbebbd273ca4, type: 2}
+  skillManager: {fileID: 315976022}
   imageIcon: {fileID: 610898404}
   imageCooltime: {fileID: 254665481}
   coolTimeText: {fileID: 447564785}
@@ -27854,7 +27863,7 @@ MonoBehaviour:
   monsterFactory: {fileID: 1455253835}
   stages:
   - stageNumber: 1
-    lizardCount: 2
+    lizardCount: 5
     orcCount: 3
   currentStage: 0
 --- !u!4 &691905478
@@ -29011,7 +29020,7 @@ GameObject:
   - component: {fileID: 768845223}
   - component: {fileID: 768845222}
   - component: {fileID: 768845224}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46402,7 +46411,7 @@ GameObject:
   - component: {fileID: 1403308504}
   - component: {fileID: 1403308506}
   - component: {fileID: 1403308505}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: arch_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47438,7 +47447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526926056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 76.77}
+  m_LocalPosition: {x: 0, y: 0, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47494,7 +47503,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526926056}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5f1ab608202a5fc419d16a6b807ac7db, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -48292,7 +48301,7 @@ GameObject:
   - component: {fileID: 1604844664}
   - component: {fileID: 1604844663}
   - component: {fileID: 1604844665}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: arch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48442,6 +48451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 4f65ae78e69531b41b5f081f0f2063df, type: 2}
+  skillManager: {fileID: 315976022}
   imageIcon: {fileID: 1606126077}
   imageCooltime: {fileID: 1081180919}
   coolTimeText: {fileID: 1339064572}
@@ -50049,7 +50059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1701300161}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50680,7 +50690,7 @@ GameObject:
   - component: {fileID: 1761844549}
   - component: {fileID: 1761844548}
   - component: {fileID: 1761844550}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube_025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52645,7 +52655,7 @@ GameObject:
   - component: {fileID: 1897784249}
   - component: {fileID: 1897784248}
   - component: {fileID: 1897784250}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52834,7 +52844,7 @@ GameObject:
   - component: {fileID: 1907196787}
   - component: {fileID: 1907196786}
   - component: {fileID: 1907196788}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: wall_base1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59365,7 +59375,7 @@ GameObject:
   - component: {fileID: 2056229849}
   - component: {fileID: 2056229848}
   - component: {fileID: 2056229850}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube_028
   m_TagString: Untagged
   m_Icon: {fileID: 0}

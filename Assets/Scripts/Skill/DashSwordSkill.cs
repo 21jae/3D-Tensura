@@ -41,7 +41,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         if (!isDashing)
         {
             //플레이어가 바라보는 방향으로 설정한 거리만큼 Dash합니다.
-            dashTarget = transform.position + transform.forward * dashDistance;
+            dashTarget = playerController.transform.position + playerController.transform.forward * dashDistance;
             isDashing = true;
         }
     }
@@ -51,12 +51,12 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         if (isDashing)
         {
             //현재 위치에서 목표 방향까지 이동
-            transform.position = Vector3.MoveTowards(transform.position, dashTarget, dashSpeed * Time.deltaTime);
+            playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, dashTarget, dashSpeed * Time.deltaTime);
 
             //대쉬를 통해 목표지점에 매우 가까워지면 이펙트를 발생시킵니다
-            if (Vector3.Distance(transform.position, dashTarget) < 0.5f)
+            if (Vector3.Distance(playerController.transform.position, dashTarget) < 0.5f)
             {
-                Instantiate(dashSwordPrefab, transform.position, transform.rotation);
+                Instantiate(dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
                 DashDamageInRadius();
 
                 isDashing = false;
@@ -67,7 +67,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     private void DashDamageInRadius()
     {
         //이펙트 범위 안에 Enemy만 감지하는 콜라이더와 레이어 생성
-        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, damageRadius, layerMask);
+        Collider[] hitEnemies = Physics.OverlapSphere(playerController.transform.position, damageRadius, layerMask);
         
         //플레이어의 현재 공격력을 전달하여 스킬 데미지를 호출합니다.
         float damageToDeal = dashSwordSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);

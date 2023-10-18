@@ -56,7 +56,7 @@ public class BossLizard : EnemyController
 
     private void UseSpecialSkill()
     {
-        Debug.Log("스킬 사용!");
+        //Debug.Log("스킬 사용!");
         animator.SetTrigger(Skill);
     }
 }
