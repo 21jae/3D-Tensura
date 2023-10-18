@@ -3,12 +3,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Skills", menuName = "RPG/CharacterSkills")]
 public class SOSkill : ScriptableObject
 {
-    [Tooltip("스킬 데미지를 백분율로 설정합니다.")]
-    public float skillDamageMultiplier;
-    public float coolTime;
-
     public string animationName;
     public Sprite skillIcon;
+    public float skillDamageMultiplier; //데미지 백분율
+    public float skillCoolTime;
+
+    [TextArea(3,10)]
+    [SerializeField] private string skillDescription;
 
     public float CalculateSkillDamage(float playerAttackPower)
     {

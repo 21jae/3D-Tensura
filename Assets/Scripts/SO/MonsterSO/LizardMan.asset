@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0df7b623b26d24785cdfa644d9ea29, type: 3}
-  m_Name: OrcBasic
+  m_Name: LizardMan
   m_EditorClassIdentifier: 
-  characterName: Orc
-  maxHealth: 1000
-  currentHealth: 1000
-  attackPower: 200
-  defense: 50
+  characterName: LizardMan
+  maxHealth: 500
+  currentHealth: 500
+  attackPower: 25
+  defense: 5

@@ -761,7 +761,7 @@ Transform:
   m_Children:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &35456824
 MonoBehaviour:
@@ -13260,6 +13260,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315976017}
+  - component: {fileID: 315976022}
+  - component: {fileID: 315976021}
+  - component: {fileID: 315976020}
+  - component: {fileID: 315976019}
+  - component: {fileID: 315976018}
   m_Layer: 0
   m_Name: SkillManager
   m_TagString: Untagged
@@ -13280,8 +13285,86 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &315976018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315976016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d2b2370dd32b947874d7ea73aa186e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blessingHuman: {fileID: 4543339264667279237, guid: 6575872c368b03d4c8595d08aac1d832,
+    type: 3}
+  blessingEffect: {fileID: 358707268122730347, guid: f6ffa189c1106a0499f678cd2212a2b8,
+    type: 3}
+  buffEffect: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5,
+    type: 3}
+--- !u!114 &315976019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315976016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07273ddc544fbbf4c8a0d09728ce1224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  predationSkillPos: {fileID: 1381321546498227889}
+  predationPrefab: {fileID: 7491826636943448716, guid: 4c8d7e0fed771d84fac62870e4b5471e,
+    type: 3}
+--- !u!114 &315976020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315976016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453594441954a94188cf5715b1443ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSwordSkillData: {fileID: 11400000, guid: 4f65ae78e69531b41b5f081f0f2063df, type: 2}
+  dashSwordPrefab: {fileID: 6190829364242256209, guid: 0d78fac3d8ed4744780d1848af52d89d,
+    type: 3}
+  damageRadius: 8
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &315976021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315976016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc30a09c43420a4aa64fb658256f77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackBuffPrefab: {fileID: 7155335147208632822, guid: 97c43495f80a3244fad1301dfafbe252,
+    type: 3}
+--- !u!114 &315976022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315976016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df245490840e8b14c841fef050e4242a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &321271332
 GameObject:
   m_ObjectHideFlags: 0
@@ -13336,7 +13419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: d6877c4f70c171443a4b01eb8fb297a9, type: 2}
-  player: {fileID: 1526926058}
   imageIcon: {fileID: 321271336}
   imageCooltime: {fileID: 778360815}
   coolTimeText: {fileID: 1469736321}
@@ -13396,8 +13478,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1526926058}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 315976022}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
         m_MethodName: ActivatePredationSkill
         m_Mode: 1
         m_Arguments:
@@ -21064,7 +21146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 12af2c8bdb423434083384f56dd2e57e, type: 2}
-  player: {fileID: 1526926058}
   imageIcon: {fileID: 488490626}
   imageCooltime: {fileID: 2019661239}
   coolTimeText: {fileID: 714647702}
@@ -21124,8 +21205,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1526926058}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 315976022}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
         m_MethodName: ActivatebuffSkill
         m_Mode: 1
         m_Arguments:
@@ -22120,7 +22201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: ed2aef8a611fd1c47badfbebbd273ca4, type: 2}
-  player: {fileID: 1526926058}
   imageIcon: {fileID: 610898404}
   imageCooltime: {fileID: 254665481}
   coolTimeText: {fileID: 447564785}
@@ -22180,8 +22260,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1526926058}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 315976022}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
         m_MethodName: ActivateBlessSkill
         m_Mode: 1
         m_Arguments:
@@ -27790,7 +27870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699137082
 GameObject:
@@ -42358,7 +42438,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091199209
 GameObject:
@@ -43140,7 +43220,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136724332
 GameObject:
@@ -43449,7 +43529,7 @@ Transform:
   - {fileID: 1654863628}
   - {fileID: 287226598}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1179448436 stripped
 Transform:
@@ -47341,12 +47421,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1526926057}
   - component: {fileID: 1526926059}
-  - component: {fileID: 1526926058}
   - component: {fileID: 1526926060}
-  - component: {fileID: 1526926061}
-  - component: {fileID: 1526926062}
-  - component: {fileID: 1526926064}
-  - component: {fileID: 1526926065}
+  - component: {fileID: 1526926058}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -47368,7 +47444,7 @@ Transform:
   m_Children:
   - {fileID: 543450653043921726}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1526926058
 MonoBehaviour:
@@ -47382,9 +47458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c77cced67a481d4b841a9148e26b95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: 13693492b2244c048b8e3d0053379831, type: 2}
+  playerStatManager: {fileID: 1835990373}
+  skillManager: {fileID: 315976022}
   cooldownTime: 0.8
-  currentAttackPower: 30
 --- !u!143 &1526926059
 CharacterController:
   m_ObjectHideFlags: 0
@@ -47434,72 +47510,6 @@ CapsuleCollider:
   m_Height: 2.1519961
   m_Direction: 1
   m_Center: {x: 0, y: 0.92400193, z: 0}
---- !u!114 &1526926061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526926056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07273ddc544fbbf4c8a0d09728ce1224, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  predationSkillPos: {fileID: 1381321546498227889}
-  predationPrefab: {fileID: 7491826636943448716, guid: 4c8d7e0fed771d84fac62870e4b5471e,
-    type: 3}
---- !u!114 &1526926062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526926056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f453594441954a94188cf5715b1443ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSwordSkillData: {fileID: 11400000, guid: 4f65ae78e69531b41b5f081f0f2063df, type: 2}
-  dashSwordPrefab: {fileID: 6190829364242256209, guid: 0d78fac3d8ed4744780d1848af52d89d,
-    type: 3}
-  damageRadius: 10
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &1526926064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526926056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d2b2370dd32b947874d7ea73aa186e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blessingHuman: {fileID: 4543339264667279237, guid: 6575872c368b03d4c8595d08aac1d832,
-    type: 3}
-  blessingEffect: {fileID: 358707268122730347, guid: f6ffa189c1106a0499f678cd2212a2b8,
-    type: 3}
-  buffEffect: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5,
-    type: 3}
---- !u!114 &1526926065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526926056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc30a09c43420a4aa64fb658256f77c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackBuffPrefab: {fileID: 7155335147208632822, guid: 97c43495f80a3244fad1301dfafbe252,
-    type: 3}
 --- !u!1 &1528169491
 GameObject:
   m_ObjectHideFlags: 0
@@ -48432,7 +48442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 4f65ae78e69531b41b5f081f0f2063df, type: 2}
-  player: {fileID: 1526926058}
   imageIcon: {fileID: 1606126077}
   imageCooltime: {fileID: 1081180919}
   coolTimeText: {fileID: 1339064572}
@@ -48492,8 +48501,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1526926058}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 315976022}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
         m_MethodName: ActivateDashSkill
         m_Mode: 1
         m_Arguments:
@@ -51745,6 +51754,51 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1876866979}
   m_SourcePrefab: {fileID: 100100000, guid: 67caafe28606d6a44b17be7be9fc6216, type: 3}
+--- !u!1 &1835990372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1835990374}
+  - component: {fileID: 1835990373}
+  m_Layer: 0
+  m_Name: StatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1835990373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835990372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1322bf61585fd4d9ff0047efbf50f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats: {fileID: 11400000, guid: 13693492b2244c048b8e3d0053379831, type: 2}
+--- !u!4 &1835990374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835990372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1845701675
 GameObject:
   m_ObjectHideFlags: 0

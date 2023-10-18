@@ -2,17 +2,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public CharacterStats playerStats;
     private CharacterController characterController;
+    public PlayerStatManager playerStatManager;
     private Animator animator;
     private Joystick controller;
     private MoveObject moveObject;
 
-    //Skill
-    private PredationSkill predationskill;
-    private DashSwordSkill dashSwordskill;
-    private BuffSkill buffSkill;
-    private BlessingSkill blessingskill;
+    [SerializeField] private SkillManager skillManager;
 
     //Attack
     [SerializeField] private float cooldownTime = 2f;
@@ -21,7 +17,6 @@ public class PlayerController : MonoBehaviour
     private float lastClickTimed = 0f;
     private float maxComboDelay = 1f;
 
-    public float currentAttackPower;
 
     #region Animator
     private static readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
@@ -39,18 +34,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         controller = FindObjectOfType<Joystick>();
         moveObject = GetComponent<MoveObject>();
-
-        predationskill = GetComponent<PredationSkill>();
-        buffSkill = GetComponent<BuffSkill>();
-        dashSwordskill = GetComponent<DashSwordSkill>();
-        blessingskill = GetComponent<BlessingSkill>();
-
-        currentAttackPower = playerStats.attackPower;
     }
 
     private void Start()
     {
-        Debug.Log(playerStats.attackPower.ToString());
     }
 
     private void Update()   
@@ -117,15 +104,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    #endregion
-
-    #region 스킬발동
-    public void ActivateSkill(SOSkill skill) => animator.Play(skill.animationName);
-    public void ActivatePredationSkill() => predationskill.ActivatePredation();
-    public void ActivatebuffSkill() => buffSkill.ActivateTime();
-    public void ActivateDashSkill() => dashSwordskill.ActivateDash();
-    public void ActivateBlessSkill() => blessingskill.ActivateBless();
-
     #endregion
 
     #region 벽체크

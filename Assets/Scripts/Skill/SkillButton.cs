@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class SkillButton : MonoBehaviour
 {
     public SOSkill skill;
-    public PlayerController player;
+    //public PlayerController player;
+    private SkillManager skillManager;
     public Image imageIcon;
     public Image imageCooltime;
     public Text coolTimeText;
@@ -13,6 +14,7 @@ public class SkillButton : MonoBehaviour
 
     private void Start()
     {
+        skillManager = GetComponent<SkillManager>();
         skillButton = GetComponent<Button>();
         imageIcon.sprite = skill.skillIcon;
         imageCooltime.fillAmount = 0;
@@ -26,7 +28,8 @@ public class SkillButton : MonoBehaviour
             return;
         }
 
-        player.ActivateSkill(skill);
+        //player.ActivateSkill(skill);
+        skillManager.ReadSkill(skill);
         StartCoroutine(SkillCooltime());
     }
 
@@ -34,13 +37,13 @@ public class SkillButton : MonoBehaviour
     {
         skillButton.interactable = false;
 
-        float remainingTime = skill.coolTime;
+        float remainingTime = skill.skillCoolTime;
         imageCooltime.fillAmount = 1;
 
         while (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
-            imageCooltime.fillAmount = remainingTime / skill.coolTime;
+            imageCooltime.fillAmount = remainingTime / skill.skillCoolTime;
             coolTimeText.text = Mathf.CeilToInt(remainingTime).ToString();
 
             yield return null;

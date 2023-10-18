@@ -16,3 +16,5 @@ MonoBehaviour:
   coolTime: 45
   animationName: Player_Skill03
   skillIcon: {fileID: -1732597458, guid: 51777b3d5b50e7b4bbc3d62b8c8898dd, type: 3}
+  skillDescription: "\uC624\uC758 : \uC8FC\uBCC0 \uC801\uC744 \uB04C\uC5B4\uB2F9\uAE30\uBA70
+    \uC9D1\uC5B4 \uC0BC\uD0B5\uB2C8\uB2E4."
