@@ -10,6 +10,7 @@ public class SkillManager : MonoBehaviour
     private DashSwordSkill dashSwordSkill;
     private PredationSkill predationSkill;
     private BlessingSkill blessingSkill;
+    private SpecialSkill specialSkill;
 
     private void Awake()
     {
@@ -18,7 +19,8 @@ public class SkillManager : MonoBehaviour
         buffSkill = GetComponent<BuffSkill>();
         dashSwordSkill = GetComponent<DashSwordSkill>();
         predationSkill = GetComponent<PredationSkill>();
-        blessingSkill = GetComponent<BlessingSkill>(); 
+        blessingSkill = GetComponent<BlessingSkill>();
+        specialSkill = GetComponent<SpecialSkill>();
     }
 
     public void ReadSkill(SOSkill skill)
@@ -28,8 +30,9 @@ public class SkillManager : MonoBehaviour
 
     public void ActivatebuffSkill() => buffSkill.ActivateSkill();    //버프 스킬 발동
     public void ActivateDashSkill() => dashSwordSkill.ActivateSkill();   //대쉬 스킬 발동
-    public void ActivatePredationSkill() => predationSkill.ActivateSkill();  //오의 발동
+    public void ActivatePredationSkill() => predationSkill.ActivateSkill();  //포식 발동
     public void ActivateBlessSkill() => blessingSkill.ActivateSkill();  //가호 발동
+    public void ACtivateMegidoSkill() => specialSkill.ActivateSkill();  //오의 발동
 
 }
 

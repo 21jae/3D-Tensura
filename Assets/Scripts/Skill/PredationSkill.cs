@@ -11,10 +11,10 @@ public class PredationSkill : MonoBehaviour, ISkill
     [SerializeField] private GameObject predationPrefab;
 
     [Header("Èí¼ö ¼³Á¤")]
+    [SerializeField] private GameObject predationPosition;
     [SerializeField] private float predationRaidus;
     [SerializeField] private float predationForce;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private GameObject predationPosition;
 
     private const float PREDATION_ANGLE = 70f;
     private const float PREDATION_DURATION = 5f;
