@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     //Attack
     [SerializeField] private float cooldownTime = 2f;
     private float nextAttackTime = 0f;
-    private static int comboStack = 0;
+    private static int COMBOSTACK = 0;
     private float lastClickTimed = 0f;
     private float maxComboDelay = 1f;
 
@@ -36,10 +36,6 @@ public class PlayerController : MonoBehaviour
         moveObject = GetComponent<MoveObject>();
     }
 
-    private void Start()
-    {
-    }
-
     private void Update()   
     {
         AttackUpdate();
@@ -49,7 +45,6 @@ public class PlayerController : MonoBehaviour
 
         CheckHitWall();
     }
-
 
     #region Attack
     private void AttackUpdate()
@@ -66,11 +61,11 @@ public class PlayerController : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack04"))
         {
             animator.SetBool(Attack04, false);
-            comboStack = 0;
+            COMBOSTACK = 0;
         }
 
         if (Time.time - lastClickTimed > maxComboDelay)
-            comboStack = 0;
+            COMBOSTACK = 0;
     }
 
     public void OnClick()
@@ -78,27 +73,27 @@ public class PlayerController : MonoBehaviour
         if (Time.time > nextAttackTime)
         {
             lastClickTimed = Time.time;
-            comboStack++;
+            COMBOSTACK++;
 
-            if (comboStack == 1)
+            if (COMBOSTACK == 1)
             {
                 //스매쉬 사운드
                 animator.SetBool(Attack01, true);
             }
 
-            comboStack = Mathf.Clamp(comboStack, 0, 4);
+            COMBOSTACK = Mathf.Clamp(COMBOSTACK, 0, 4);
 
-            if (comboStack >= 2 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
+            if (COMBOSTACK >= 2 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
             {
                 animator.SetBool(Attack01, false);
                 animator.SetBool(Attack02, true);
             }
-            if (comboStack >= 3 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02"))
+            if (COMBOSTACK >= 3 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02"))
             {
                 animator.SetBool(Attack02, false);
                 animator.SetBool(Attack03, true);
             }
-            if (comboStack >= 4 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03"))
+            if (COMBOSTACK >= 4 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03"))
             {
                 animator.SetBool(Attack03, false);
                 animator.SetBool(Attack04, true);

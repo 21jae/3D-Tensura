@@ -6,20 +6,21 @@ public class PredationSkill : MonoBehaviour, ISkill
 {
     private PlayerController playerController;
 
+    [Header("스킬 데이터")]
     [SerializeField] private SOSkill predationSkillData;
-    [SerializeField] private GameObject predationSkillPos;
     [SerializeField] private GameObject predationPrefab;
 
-    [SerializeField] private float predationRaidus;    //흡수 범위
-    [SerializeField] private float predationForce;     //흡수 속도
-    [SerializeField] private LayerMask layerMask;           //흡수 가능한 오브젝트
+    [Header("흡수 설정")]
+    [SerializeField] private float predationRaidus;
+    [SerializeField] private float predationForce;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private GameObject predationPosition;
 
-    private Vector3 directionToPredation;   //흡수 방향
-    private float distanceForce;            //흡입 속도 조절
-    private float angleOfPredation = 45f;   //흡수 각도
-    private float predationDuration = 5f;
+    private const float PREDATION_ANGLE = 70f;
+    private const float PREDATION_DURATION = 5f;
+    private const float THRESHOLD = 3f;
 
-    private bool isPredation;
+    private bool isPredationActive;
 
     private void Awake()
     {
@@ -33,70 +34,89 @@ public class PredationSkill : MonoBehaviour, ISkill
 
     private void Update()
     {
-        if (isPredation)
+        if (isPredationActive)
         {
-            Predation();
+            AbsorbObjectInRadius();
         }
     }
 
-    private void Predation()
+    private void AbsorbObjectInRadius()
     {
-        //범위 안에 있는 오브젝트를 흡수 범위만큼 감지합니다.
         Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, predationRaidus, layerMask);
-        
+
         foreach (Collider obj in objectInRange)
         {
-            Debug.Log($"감지된 오브젝트 이름 : {obj.name}");
-
-            //감지된 오브젝트 사이의 방향 각도 계산
-            Vector3 directionToObject = (obj.transform.position - playerController.transform.position).normalized;
-
-            //플레이어가 바라보는 방향과 오브젝트 방향 사이의 각도
-            float angle = Vector3.Angle(playerController.transform.forward, directionToObject);
-
-            //오브젝트가 부채꼴 범위(45도) 내에 있다면
-            if (angle < angleOfPredation)
+            if (ObjectInPredationAngle(obj))
             {
-                directionToPredation = (playerController.transform.position - obj.transform.position).normalized;
-                float distance = Vector3.Distance(playerController.transform.position, obj.transform.position);
-
-                //흡수 속도 거리에 따라 조절
-                distanceForce = (1 - (distance / predationRaidus)) * predationForce;
-                obj.transform.position += directionToPredation * distanceForce * Time.deltaTime;
-                
                 EnemyController enemy = obj.GetComponent<EnemyController>();
 
-                if (distance <= 1f)
+                if (enemy != null)
                 {
-                    float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
-
-                    if (enemy != null && enemy.enemyStats.currentHealth <= enemy.enemyStats.maxHealth * 0.5f)
-                    {
-                        IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
-                        if (damageableEnemy != null)
-                        {
-                            damageableEnemy.TakeDamage(damaegeToDeal);
-                            Debug.Log($"오의 데미지 : {damaegeToDeal}");
-                        }
-                    }
+                    ApplyDamageToEnemy(enemy);
+                    EnoughAbsorb(enemy, obj);
                 }
-
             }
         }
     }
+
+    private bool ObjectInPredationAngle(Collider obj)
+    {
+        Vector3 directionToObject = (obj.transform.position - playerController.transform.position).normalized;      //감지된 오브젝트 사이의 방향 각도 계산
+        float angle = Vector3.Angle(playerController.transform.forward, directionToObject);                         //플레이어가 바라보는 방향과 오브젝트 방향 사이의 각도
+
+        return angle < PREDATION_ANGLE;
+    }
+
+    private void ApplyDamageToEnemy(EnemyController enemy)
+    {
+        float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
+        IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
+
+        if (damageableEnemy != null)
+        {
+            damageableEnemy.TakeDamage(damaegeToDeal);
+            Debug.Log($"포식 데미지 : {damaegeToDeal}");
+        }
+    }
+
+    private void EnoughAbsorb(EnemyController enemy, Collider obj)
+    {
+        if (enemy.enemyStats.currentHealth <= enemy.enemyStats.maxHealth * 0.3f)
+        {
+
+            Vector3 directionToAbsorb = (playerController.transform.position - obj.transform.position).normalized;
+            float distancToPlayer = Vector3.Distance(playerController.transform.position, obj.transform.position);
+            float absorptionSpeed = (1 - (distancToPlayer / predationRaidus)) * predationForce;
+
+            obj.transform.position += directionToAbsorb * absorptionSpeed * Time.deltaTime;
+
+            UpdateObjectScale(obj);
+        }
+    }
+
+    private void UpdateObjectScale(Collider obj)
+    {
+        float distanceToPredationPos = Vector3.Distance(obj.transform.position, predationPosition.transform.position);
+        float scaleReduce = Mathf.Clamp(distanceToPredationPos / 10f, 0.1f, 1f);
+        obj.transform.localScale = Vector3.one * scaleReduce;
+
+        if (obj.transform.localScale.x <= 0.2f && distanceToPredationPos <= THRESHOLD)
+        {
+            Destroy(obj.gameObject);
+            Debug.Log("포식");    
+        }
+    }
+
     public void ActivateSkill()
     {
-        ActivatePredation();
-        isPredation = true;
-        Instantiate(predationPrefab, predationSkillPos.transform.position, playerController.transform.rotation);
+        isPredationActive = true;
+        Instantiate(predationPrefab, predationPosition.transform.position, playerController.transform.rotation);
         StartCoroutine(ActivatePredation());
-
     }
 
     private IEnumerator ActivatePredation()
     {
-        yield return new WaitForSeconds(predationDuration);
-        isPredation = false;
+        yield return new WaitForSeconds(PREDATION_DURATION);
+        isPredationActive = false;
     }
-
 }
