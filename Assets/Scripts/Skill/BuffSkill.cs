@@ -6,13 +6,18 @@ public class BuffSkill : MonoBehaviour, ISkill
     public GameObject attackBuffPrefab;
     private PlayerController playerController;
 
-    private float attackPowerBuffAmount = 0.3f; //30% 상승
-    private float buffDuration = 3f;            //버프 지속시간
+    private float attackPowerBuffPercentage = 0.3f;
+    private float buffDuration = 3f;
+    private float originalAttackPower;
+    private float increaseAttackPower;
 
-    private float originalAttackPower;          //기본 ATK 값
-    private float increaseAttackPower;          //증가된 ATK 값
-
+    #region 초기화
     private void Awake()
+    {
+        Initialize();
+    }
+
+    private void Initialize()
     {
         playerController = FindObjectOfType<PlayerController>();
 
@@ -21,7 +26,9 @@ public class BuffSkill : MonoBehaviour, ISkill
             Debug.LogError("Not found playerController");
         }
     }
+    #endregion
 
+    #region 스킬 활성화 및 버프 로직
     public void ActivateSkill()
     {
         ActivateTime();
@@ -37,22 +44,25 @@ public class BuffSkill : MonoBehaviour, ISkill
 
     private IEnumerator ApplyAttackBuff()
     {
-        //버프 전 공격력 계산
-        originalAttackPower = playerController.playerStatManager.currentAttackPower;
+        CalculateAndApplyAttackPower();
 
-        //버프로 인한 증가량 계산
-        increaseAttackPower = originalAttackPower * attackPowerBuffAmount;
-
-        //공격력 증가 적용
-        playerController.playerStatManager.ModifyAttackPower(increaseAttackPower);
-        Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}");
-
-        //공격 버프 지속시간
         yield return new WaitForSeconds(buffDuration);
 
-        //공격력 원상 복구
+        ResetAttackPowerToOriginal();
+    }
+
+    private void CalculateAndApplyAttackPower()
+    {
+        originalAttackPower = playerController.playerStatManager.currentAttackPower;
+        increaseAttackPower = originalAttackPower * attackPowerBuffPercentage;
+        playerController.playerStatManager.ModifyAttackPower(increaseAttackPower);
+        Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}");
+    }
+    
+    private void ResetAttackPowerToOriginal()
+    {
         playerController.playerStatManager.ModifyAttackPower(-increaseAttackPower);
         Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}");
     }
-
+    #endregion
 }

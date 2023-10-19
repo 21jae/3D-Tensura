@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class BlessingSkill : MonoBehaviour, ISkill
 {
+    [Header("가호 프리팹")]
     public GameObject blessingHuman;
     public GameObject blessingEffect;
     public GameObject buffEffect;
+
+    [Header("가호 변수")]
     private float offsetDistance = 2f;
-    private float destoryPrefab = 4f;
+    private float destoryPrefabDuration = 4f;
+    private float buffDuration = 10f;
 
-    /// <summary>
-    /// 스테이터스 상승
-    /// </summary>
+    [Header("버프 변수")]
+    private float healthBuffPercentage = 0.3f;
+    private float attackPowerBuffPercentage = 0.2f;
+    private float defenseBuffPercentage = 0.2f;
+
     private PlayerController playerController;
+    private float originalAttackPower; 
+    private float originalDefense;     
+    private float modifiedHP;          
+    private float modifiedAttackPower; 
+    private float modifiedDefense;
 
-    private float healthBuff = 0.3f;        //30%증가
-    private float attackPowerBuff = 0.2f;   //15%증가
-    private float defenseBuff = 0.2f;       //20%증가
-    private float buffDuration = 10f;       //버프 지속시간
-    private float originalAttackPower;      //기본 ATK 값
-    private float originalDefense;          //기본 DEF 값
-
-    //증가시킬 스탯 값
-    private float modifiedHP;               //증가 될 HP 값
-    private float modifiedAttackPower;      //증가 될 ATK 값
-    private float modifiedDefense;          //증가 될 DEF 값
-
-
+    #region 초기화
     private void Awake()
+    {
+        Initialize();
+    }
+
+    private void Initialize()
     {
         playerController = FindObjectOfType<PlayerController>();
 
@@ -37,59 +41,73 @@ public class BlessingSkill : MonoBehaviour, ISkill
             Debug.LogError("Not found playerController");
         }
     }
+    #endregion
 
+    #region 버프 처리 메서드
     public void ActivateSkill()
     {
-        ActivateBless();
+        ActivateBlessing();
     }
 
-    private void ActivateBless()
+    private void ActivateBlessing()
     {
-        //
         Vector3 spawnPosition = playerController.transform.position - playerController.transform.forward * offsetDistance;
         Quaternion rotationTowardsPlayer = Quaternion.LookRotation(playerController.transform.position - spawnPosition);
 
-        GameObject bless = Instantiate(blessingHuman, spawnPosition, rotationTowardsPlayer);
-        StartCoroutine(WaitAndBless(bless, destoryPrefab));
+        GameObject blessingIntance = Instantiate(blessingHuman, spawnPosition, rotationTowardsPlayer);
+        StartCoroutine(WaitAndBless(blessingIntance, destoryPrefabDuration));
     }
 
-    private IEnumerator WaitAndBless(GameObject blessing, float seconds)
+    private IEnumerator WaitAndBless(GameObject blessingIntance, float destoryPrefabDuration)
     {
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSeconds(destoryPrefabDuration);
+        Destroy(blessingIntance);
 
-        Destroy(blessing);
         BuffToPlayer();
     }
 
     private void BuffToPlayer()
     {
-        Instantiate(blessingEffect, playerController.transform.position, Quaternion.identity);
-        Debug.Log("체력 및 스테이터스 상승!");
+        ShowBlessingEffectAtPlayer();
 
-        //현재 체력 증가량 계산 및 증가 적용
-        modifiedHP = playerController.playerStatManager.currentHP * healthBuff;
-        playerController.playerStatManager.ModifyHealth(modifiedHP);
+        CalculateAndApplyStatsBuff();
 
-        //버프 전 공격력 증가량 계산
-        originalAttackPower = playerController.playerStatManager.currentAttackPower;    
-        //공격력 증가량 계산 및 증가 적용
-        modifiedAttackPower = originalAttackPower * attackPowerBuff;
-        playerController.playerStatManager.ModifyAttackPower(modifiedAttackPower);
-
-        //버프 전 방어력 증가량 계산
-        originalDefense = playerController.playerStatManager.currentDefense;
-
-        //방어력 증가 계산 및 증가 적용
-        modifiedDefense = originalDefense * defenseBuff;
-        playerController.playerStatManager.ModifyDefence(modifiedDefense);
-
-        Debug.Log($" MaxHP : {playerController.playerStatManager.currentMaxHP}, " + $"HP : {playerController.playerStatManager.currentHP}," +
-            $"ATK : {playerController.playerStatManager.currentAttackPower}, DEF : {playerController.playerStatManager.currentDefense}");
-
-        GameObject buff = Instantiate(buffEffect, playerController.transform.position, Quaternion.identity);
-        buff.transform.SetParent(playerController.transform);
+        ShowBuffEffectOnPlayer();
 
         StartCoroutine(ApplyStatusBuff());
+    }
+
+    private void ShowBlessingEffectAtPlayer()
+    {
+        Instantiate(blessingEffect, playerController.transform.position, Quaternion.identity);
+        Debug.Log("체력 및 스테이터스 상승!");
+    }
+    #endregion
+
+    #region 가호 버프 로직 
+    private void CalculateAndApplyStatsBuff()
+    {
+        //HP 버프
+        modifiedHP = playerController.playerStatManager.currentHP * healthBuffPercentage;
+        playerController.playerStatManager.ModifyHealth(modifiedHP);
+
+        //공격력 버프
+        originalAttackPower = playerController.playerStatManager.currentAttackPower;
+        modifiedAttackPower = originalAttackPower * attackPowerBuffPercentage;
+        playerController.playerStatManager.ModifyAttackPower(modifiedAttackPower);
+
+        //방어력 버프
+        originalDefense = playerController.playerStatManager.currentDefense;
+        modifiedDefense = originalDefense * defenseBuffPercentage;
+        playerController.playerStatManager.ModifyDefence(modifiedDefense);
+
+        DebugPlayerStats();
+    }
+
+    private void ShowBuffEffectOnPlayer()
+    {
+        GameObject buffInstance = Instantiate(buffEffect, playerController.transform.position, Quaternion.identity);
+        buffInstance.transform.SetParent(playerController.transform);
     }
 
     private IEnumerator ApplyStatusBuff()
@@ -103,4 +121,13 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
         Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}, DEF : {playerController.playerStatManager.currentDefense}");
     }
+
+    private void DebugPlayerStats()
+    {
+        Debug.Log($" MaxHP : {playerController.playerStatManager.currentMaxHP}, " +
+                     $" HP : {playerController.playerStatManager.currentHP}, " +
+                    $" ATK : {playerController.playerStatManager.currentAttackPower}, " +
+                    $" DEF : {playerController.playerStatManager.currentDefense} ");
+    }
+    #endregion
 }

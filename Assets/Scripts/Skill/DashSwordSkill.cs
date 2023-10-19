@@ -3,19 +3,34 @@ using UnityEngine;
 
 public class DashSwordSkill : MonoBehaviour, ISkill
 {
+    [Header("스킬 데이터")]
     [SerializeField] private SOSkill dashSwordSkillData;
-    public GameObject dashSwordPrefab;
-    private PlayerController playerController;
+    [SerializeField] private GameObject dashSwordPrefab;
 
-    private float dashDistance = 5.0f;          //대쉬 사거리
-    private float dashSpeed = 10.0f;            //대쉬 속도
-    [SerializeField] float damageRadius = 8.0f; //공격 범위
+    [Header("대쉬 설정")]
+    private float dashDistance = 5.0f;
+    private float dashSpeed = 10.0f;
+
+    [Header("공격 설정")]
+    [SerializeField] float damageRadius = 8.0f;
     [SerializeField] LayerMask layerMask;
 
+    private PlayerController playerController;
+    private Vector3 dashTarget;
     private bool isDashing;
-    private Vector3 dashTarget; //목표 방향
 
+    #region 초기화 및 업데이트
     private void Awake()
+    {
+        Initialize();
+    }
+
+    private void Update()
+    {
+        HandleDashing();
+    }
+
+    private void Initialize()
     {
         playerController = FindObjectOfType<PlayerController>();
 
@@ -24,55 +39,44 @@ public class DashSwordSkill : MonoBehaviour, ISkill
             Debug.LogError("Not found playerController");
         }
     }
+    #endregion
 
-
-    private void Update()
-    {
-        Dashing();
-    }
-
-    public void ActivateSkill()
-    {
-        ActivateDash();
-    }
-
-    private void ActivateDash()
+    #region 대쉬로직
+    private void StartDash()
     {
         if (!isDashing)
         {
-            //플레이어가 바라보는 방향으로 설정한 거리만큼 Dash합니다.
             dashTarget = playerController.transform.position + playerController.transform.forward * dashDistance;
             isDashing = true;
         }
     }
 
-    private void Dashing()
+    private void HandleDashing()
     {
         if (isDashing)
         {
-            //현재 위치에서 목표 방향까지 이동
-            playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, dashTarget, dashSpeed * Time.deltaTime);
+            MoveAndDashAttack();
+        }
+    }
 
-            //대쉬를 통해 목표지점에 매우 가까워지면 이펙트를 발생시킵니다
-            if (Vector3.Distance(playerController.transform.position, dashTarget) < 0.5f)
-            {
-                Instantiate(dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
-                DashDamageInRadius();
+    private void MoveAndDashAttack()
+    {
+        playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, dashTarget, dashSpeed * Time.deltaTime);
 
-                isDashing = false;
-            }
+        if (Vector3.Distance(playerController.transform.position, dashTarget) < 0.5f)
+        {
+            Instantiate(dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
+            DashDamageInRadius();
+
+            isDashing = false;
         }
     }
 
     private void DashDamageInRadius()
     {
-        //이펙트 범위 안에 Enemy만 감지하는 콜라이더와 레이어 생성
         Collider[] hitEnemies = Physics.OverlapSphere(playerController.transform.position, damageRadius, layerMask);
-        
-        //플레이어의 현재 공격력을 전달하여 스킬 데미지를 호출합니다.
         float damageToDeal = dashSwordSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
 
-        //생성된 콜라이더 안에 적이 있다면 데미지를 전달합니다.
         foreach (Collider enemy in hitEnemies)
         {
             IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
@@ -82,4 +86,12 @@ public class DashSwordSkill : MonoBehaviour, ISkill
             }
         }
     }
+    #endregion
+
+    #region 스킬 활성화
+    public void ActivateSkill()
+    {
+        StartDash();
+    }
+    #endregion 
 }

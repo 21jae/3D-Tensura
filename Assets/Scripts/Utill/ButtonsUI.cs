@@ -1,12 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class ButtonsUI : MonoBehaviour
 {
     private PlayerController _playerController;
-    private bool isClick;
     private bool isPointerDown;
     private float clickInterval = 0.2f;
 
@@ -36,6 +33,7 @@ public class ButtonsUI : MonoBehaviour
     {
         while (isPointerDown)
         {
+            Debug.Log("Å¬¸¯Áß");
             _playerController.OnClick();
             yield return new WaitForSeconds(clickInterval);
         }

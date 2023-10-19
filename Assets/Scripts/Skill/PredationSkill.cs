@@ -16,13 +16,19 @@ public class PredationSkill : MonoBehaviour, ISkill
     [SerializeField] private float predationForce;
     [SerializeField] private LayerMask layerMask;
 
-    private const float PREDATION_ANGLE = 70f;
+    private const float PREDATION_ANGLE = 60f;
     private const float PREDATION_DURATION = 5f;
     private const float THRESHOLD = 3f;
 
     private bool isPredationActive;
 
+    #region 초기화 및 업데이트
     private void Awake()
+    {
+        Initialize();
+    }
+
+    private void Initialize()
     {
         playerController = FindObjectOfType<PlayerController>();
 
@@ -39,7 +45,9 @@ public class PredationSkill : MonoBehaviour, ISkill
             AbsorbObjectInRadius();
         }
     }
+    #endregion
 
+    #region 흡수 로직
     private void AbsorbObjectInRadius()
     {
         Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, predationRaidus, layerMask);
@@ -66,7 +74,6 @@ public class PredationSkill : MonoBehaviour, ISkill
 
         return angle < PREDATION_ANGLE;
     }
-
     private void ApplyDamageToEnemy(EnemyController enemy)
     {
         float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
@@ -106,7 +113,9 @@ public class PredationSkill : MonoBehaviour, ISkill
             Debug.Log("포식");    
         }
     }
+    #endregion
 
+    #region 스킬 활성화
     public void ActivateSkill()
     {
         isPredationActive = true;
@@ -119,4 +128,5 @@ public class PredationSkill : MonoBehaviour, ISkill
         yield return new WaitForSeconds(PREDATION_DURATION);
         isPredationActive = false;
     }
+    #endregion
 }

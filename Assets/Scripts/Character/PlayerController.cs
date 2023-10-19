@@ -10,25 +10,31 @@ public class PlayerController : MonoBehaviour
     private Joystick controller;
     private MoveObject moveObject;
 
-    //Attack
+    [Header("공격")]
     [SerializeField] private float cooldownTime = 2f;
     private float nextAttackTime = 0f;
     private static int COMBOSTACK = 0;
     private float lastClickTimed = 0f;
-    private float maxComboDelay = 1f;
+    private float maxComboDelay = 3f;
 
+    [Header("벽 체크")]
+    [SerializeField] private float rayDistance = 1.5f;
+    private const int WALL_LAYER_MASK = 1 << 6;
 
-    #region Animator
-    private static readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
-    private static readonly int Attack01 = Animator.StringToHash("Attack01");
-    private static readonly int Attack02 = Animator.StringToHash("Attack02");
-    private static readonly int Attack03 = Animator.StringToHash("Attack03");
-    private static readonly int Attack04 = Animator.StringToHash("Attack04");
-    #endregion
+    [Header("애니메이션 Hash")]
+    private readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
+    private readonly int Attack01 = Animator.StringToHash("Attack01");
+    private readonly int Attack02 = Animator.StringToHash("Attack02");
+    private readonly int Attack03 = Animator.StringToHash("Attack03");
+    private readonly int Attack04 = Animator.StringToHash("Attack04");
 
-    //Ray
-
+    #region 초기화 및 업데이트 로직
     private void Awake()
+    {
+        InitializeComponents();
+    }
+
+    private void InitializeComponents()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
@@ -36,29 +42,40 @@ public class PlayerController : MonoBehaviour
         moveObject = GetComponent<MoveObject>();
     }
 
-    private void Update()   
+    private void Update()
     {
         AttackUpdate();
 
-        float moveSpeed = controller.Direction.magnitude;
-        animator.SetFloat(MoveSpeed, moveSpeed);
+        MovementUpdate();
 
         CheckHitWall();
     }
+    #endregion
 
-    #region Attack
+    private void MovementUpdate()
+    {
+        float moveSpeed = controller.Direction.magnitude;
+        animator.SetFloat(MoveSpeed, moveSpeed);
+    }
+
+    #region 콤보 어택
+    private bool IsAnimatorStateNameAndNormalized(string attackState, float threshold = 0.7f)
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName(attackState) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > threshold;
+    }
+
     private void AttackUpdate()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
+        if (IsAnimatorStateNameAndNormalized("Attack01"))
             animator.SetBool(Attack01, false);
 
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02"))
+        if (IsAnimatorStateNameAndNormalized("Attack02"))
             animator.SetBool(Attack02, false);
 
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03"))
+        if (IsAnimatorStateNameAndNormalized("Attack03"))
             animator.SetBool(Attack03, false);
 
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack04"))
+        if (IsAnimatorStateNameAndNormalized("Attack04"))
         {
             animator.SetBool(Attack04, false);
             COMBOSTACK = 0;
@@ -77,29 +94,29 @@ public class PlayerController : MonoBehaviour
 
             if (COMBOSTACK == 1)
             {
-                //스매쉬 사운드
                 animator.SetBool(Attack01, true);
             }
 
             COMBOSTACK = Mathf.Clamp(COMBOSTACK, 0, 4);
 
-            if (COMBOSTACK >= 2 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
+            if (COMBOSTACK >= 2 && IsAnimatorStateNameAndNormalized("Attack01"))
             {
                 animator.SetBool(Attack01, false);
                 animator.SetBool(Attack02, true);
             }
-            if (COMBOSTACK >= 3 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02"))
+            if (COMBOSTACK >= 3 && IsAnimatorStateNameAndNormalized("Attack02"))
             {
                 animator.SetBool(Attack02, false);
                 animator.SetBool(Attack03, true);
             }
-            if (COMBOSTACK >= 4 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack03"))
+            if (COMBOSTACK >= 4 && IsAnimatorStateNameAndNormalized("Attack03"))
             {
                 animator.SetBool(Attack03, false);
                 animator.SetBool(Attack04, true);
             }
         }
     }
+
     #endregion
 
     #region 벽체크
@@ -107,10 +124,8 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hitInfo;
         Vector3 rayDirection = transform.forward;
-        float rayDistance = 1.5f;
-        int wallLayerMask = 1 << 6;
 
-        if (Physics.Raycast(transform.position, rayDirection, out hitInfo, rayDistance, wallLayerMask))
+        if (Physics.Raycast(transform.position, rayDirection, out hitInfo, rayDistance, WALL_LAYER_MASK))
         {
             characterController.Move(Vector3.zero);
             Debug.Log("충돌중");
@@ -119,12 +134,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Vector3 rayDirection = transform.forward;
-        float rayDistance = 1.5f;
-        Color rayColor = Color.red;
-
-        Vector3 rayStartPos = transform.position + Vector3.up;
-        Debug.DrawRay(rayStartPos, rayDirection * rayDistance, rayColor);
+        Debug.DrawRay(transform.position + Vector3.up, transform.forward * rayDistance, Color.red);
     }
     #endregion
 }
