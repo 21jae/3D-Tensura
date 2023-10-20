@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class MeshTrailTut : MonoBehaviour
+public class MeshTrail : MonoBehaviour
 {
     public float activeTime = 2f;
     private bool isTrailActive;

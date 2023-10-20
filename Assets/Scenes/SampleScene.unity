@@ -13666,10 +13666,12 @@ MonoBehaviour:
   specialSkillData: {fileID: 11400000, guid: 92928a6a455bed64cb4c2d7477fe3d2e, type: 2}
   megidoCircle: {fileID: 1101996775575296279, guid: 4281fab0bdf446b4b94d5c25e7127e4f,
     type: 3}
-  megidoPosPrefab: {fileID: 8046306856200971445, guid: ed196de973aaefd43860a23539c2551c,
+  megidoPosPrefab: {fileID: 1132321590208249585, guid: ed196de973aaefd43860a23539c2551c,
+    type: 3}
+  megidoTargetPrefab: {fileID: 8046306856200971445, guid: 12489af9174428a42bd002eb8cb42746,
     type: 3}
   jumpHeight: 15
-  jumpSpeed: 12
+  jumpSpeed: 15
   wingMesh: {fileID: 6754331959872606881}
   maskMesh: {fileID: 209396110165241817}
 --- !u!1 &321271332
