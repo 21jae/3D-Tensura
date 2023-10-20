@@ -18,6 +18,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
     [SerializeField] private float jumpSpeed = 10f;
     [SerializeField] private GameObject wingMesh;
     [SerializeField] private GameObject maskMesh;
+    [SerializeField] private GameObject swordMesh;
+    private Vector3 originalPosition;
 
     private List<Transform> magicStartPosition = new List<Transform>();
     private List<Transform> magicTargetPosition = new List<Transform>();
@@ -44,27 +46,30 @@ public class SpecialSkill : MonoBehaviour, ISkill
     private void ActivateMeshes()
     {
 
-        if (wingMesh != null && maskMesh != null)
+        if (wingMesh != null && maskMesh != null && swordMesh != null)
         {
             wingMesh.gameObject.SetActive(true);
             maskMesh.gameObject.SetActive(true);
+            swordMesh.gameObject.SetActive(false);
         }
         else
         {
-            Debug.LogWarning("WingMesh & MaskMesh not Found!");
+            Debug.LogWarning("Meshes not Found!");
         }
     }
 
     public void ActivateSkill()
     {
         StartCoroutine(ExeCuteJump());
+
     }
 
     private IEnumerator ExeCuteJump()
     {
         ActivateMeshes();
 
-        // megidoCircle Prefab을 플레이어가 바라보는 방향에서 10 만큼 떨어진 지점에 생성시킨다.
+        originalPosition = playerController.transform.position;
+
         Vector3 megidoCirclePos = playerController.transform.position + playerController.transform.forward * 10f;
         GameObject createdMegidoCircle = Instantiate(megidoCircle, megidoCirclePos, Quaternion.identity);
 
@@ -74,12 +79,13 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         //도약중
         animator.Play("Player_Skill05_2");
+        float targetZ = playerController.transform.position.z + jumpHeight;
         float targetY = playerController.transform.position.y + jumpHeight;
 
         while (playerController.transform.position.y < targetY)
         {
             playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, new Vector3(playerController.transform.position.x,
-                targetY, playerController.transform.position.z), jumpSpeed * Time.deltaTime);
+                targetY, targetZ), jumpSpeed * Time.deltaTime);
             yield return null;
         }
 
@@ -111,10 +117,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
         //발사하기 전 잠깐 대기
         yield return new WaitForSeconds(0.5f);
 
-        //animaotr.Play("Player_Skill05_4") 발사하는 애니메이션 실행한다.
         animator.Play("Player_Skill05_4");
         
-        //애니메이션이 실행되면 magicPos에사 magicTarget으로 향하는 광선을 1회 발사한다.
         //List로 생성한 magicStartPosition에 저장된 각 위치에서
         var tempList = new List<Transform>(magicStartPosition);
 
@@ -148,8 +152,15 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         Destroy(createdMegidoCircle);
 
+        while (Vector3.Distance(playerController.transform.position, originalPosition) > 0.1f)
+        {
+            playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, originalPosition, jumpSpeed * Time.deltaTime);
+
+            yield return null;
+        }
 
     }
+
 
     private IEnumerator ShootRayFromTo(Transform from, Transform to, float speed)
     {
@@ -220,8 +231,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
             createdCount++;
             
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
         }
-
     }
 }

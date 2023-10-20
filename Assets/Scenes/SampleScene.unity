@@ -13670,10 +13670,11 @@ MonoBehaviour:
     type: 3}
   megidoTargetPrefab: {fileID: 8046306856200971445, guid: 12489af9174428a42bd002eb8cb42746,
     type: 3}
-  jumpHeight: 15
+  jumpHeight: 20
   jumpSpeed: 15
   wingMesh: {fileID: 6754331959872606881}
   maskMesh: {fileID: 209396110165241817}
+  swordMesh: {fileID: 716504013}
 --- !u!1 &321271332
 GameObject:
   m_ObjectHideFlags: 0
