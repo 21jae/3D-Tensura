@@ -147,6 +147,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
         magicTargetPosition.Clear();    //리스트 지우기
 
         Destroy(createdMegidoCircle);
+
+
     }
 
     private IEnumerator ShootRayFromTo(Transform from, Transform to, float speed)
