@@ -32,7 +32,7 @@ public class SkillManager : MonoBehaviour
     public void ActivateDashSkill() => dashSwordSkill.ActivateSkill();   //대쉬 스킬 발동
     public void ActivatePredationSkill() => predationSkill.ActivateSkill();  //포식 발동
     public void ActivateBlessSkill() => blessingSkill.ActivateSkill();  //가호 발동
-    public void ACtivateMegidoSkill() => specialSkill.ActivateSkill();  //오의 발동
+    public void ActivateMegidoSkill() => specialSkill.ActivateSkill();  //오의 발동
 
 }
 

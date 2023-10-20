@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationName: Player_Skill03
   skillIcon: {fileID: 21300000, guid: d98cec196e3c6dd4ba1cdec83aabd4f7, type: 2}
-  skillDamageMultiplier: 1.001
+  skillDamageMultiplier: 0.8
   skillCoolTime: 5
   skillDescription: "\uB9E4 \uCD08\uB9C8\uB2E4 \uB370\uBBF8\uC9C0\uB97C \uC8FC\uBA70,
     \uC801\uC758 HP\uAC00 30%\uC774\uD558\uB77C\uBA74 \uB04C\uC5B4\uB2F9\uACA8 \uC9D1\uC5B4

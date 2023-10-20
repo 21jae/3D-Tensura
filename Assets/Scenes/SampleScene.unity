@@ -755,7 +755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35456822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5499983}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1165,7 +1165,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 315976022}
         m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
-        m_MethodName: ACtivateMegidoSkill
+        m_MethodName: ActivateMegidoSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8370,6 +8370,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test
       objectReference: {fileID: 0}
+    - target: {fileID: 6918204784505859893, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9100057964142209781, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
         type: 3}
       propertyPath: m_RootOrder
@@ -13609,7 +13614,7 @@ MonoBehaviour:
     type: 3}
   predationPosition: {fileID: 1381321546498227889}
   predationRaidus: 20
-  predationForce: 15
+  predationForce: 25
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -13659,6 +13664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialSkillData: {fileID: 11400000, guid: 92928a6a455bed64cb4c2d7477fe3d2e, type: 2}
+  megidoCircle: {fileID: 1101996775575296279, guid: 4281fab0bdf446b4b94d5c25e7127e4f,
+    type: 3}
   megidoPosPrefab: {fileID: 8046306856200971445, guid: ed196de973aaefd43860a23539c2551c,
     type: 3}
   jumpHeight: 15
@@ -29713,6 +29720,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6918204784505859893, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9100057964142209781, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
         type: 3}
       propertyPath: m_RootOrder
@@ -42031,6 +42043,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6918204784505859893, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9100057964142209781, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
         type: 3}
       propertyPath: m_RootOrder
@@ -43370,6 +43387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Test (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918204784505859893, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100057964142209781, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
         type: 3}
@@ -45344,6 +45366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Test (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918204784505859893, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100057964142209781, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
         type: 3}
@@ -48042,6 +48069,7 @@ GameObject:
   - component: {fileID: 1526926059}
   - component: {fileID: 1526926060}
   - component: {fileID: 1526926058}
+  - component: {fileID: 1526926061}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -48057,7 +48085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526926056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.55}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48130,6 +48158,26 @@ CapsuleCollider:
   m_Height: 2.1519961
   m_Direction: 1
   m_Center: {x: 0, y: 0.92400193, z: 0}
+--- !u!114 &1526926061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526926056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52019ae57119a7428135e086e263675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTime: 2
+  meshRefreshRate: 0.1
+  meshDestroyDelay: 3
+  positionToSpawn: {fileID: 1526926057}
+  mat: {fileID: 2100000, guid: 8e2f271fc087d9541979440400edd1b0, type: 2}
+  shaderVarRef: _Alpha
+  shaderVarRate: 0.1
+  shaderVarRefreshRate: 0.05
 --- !u!1 &1528169491
 GameObject:
   m_ObjectHideFlags: 0
@@ -48398,6 +48446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Test (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918204784505859893, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9100057964142209781, guid: 2b1dcc46407bf9d4ab4b0a3bf8941a29,
         type: 3}

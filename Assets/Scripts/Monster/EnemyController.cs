@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour, IDamageable
 {
     public CharacterStats enemyStats;
     [SerializeField] private GameObject hitPrefab;
+    [SerializeField] private GameObject predationHit;
+
     protected MonsterAI monsterAI;
     protected Animator animator;
     protected NavMeshAgent navMeshAgent;
@@ -18,6 +20,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     protected float distanceToPlayer;
 
     public bool isReadyToAttack = true;
+    private bool hasPredationHitSpawned;
     public float attackRange = 2f;
 
     protected float stopTime = 1.5f;
@@ -106,7 +109,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     #endregion
 
     #region 데미지 받기
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, bool isPredation = false)
     {
         float damageToTake = amount - enemyStats.defense;
 
@@ -117,8 +120,20 @@ public class EnemyController : MonoBehaviour, IDamageable
 
         Debug.Log(enemyStats.currentHealth);
         animator.SetTrigger(Damage);
-        Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
-        Instantiate(hitPrefab, effectPosition, Quaternion.identity);
+
+
+        if (isPredation && !hasPredationHitSpawned)    //isPredation(흡수스킬)이 true일땐 이 hit 프리팹을 생성한다.
+        {
+            GameObject hitInstance = Instantiate(predationHit, transform.position, Quaternion.identity);
+            hitInstance.transform.SetParent(transform);
+            hasPredationHitSpawned = true;
+            //나중에 움직임 0으로 만들기
+        }
+        else if (!isPredation)
+        {
+            Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
+            Instantiate(hitPrefab, effectPosition, Quaternion.identity);
+        }
 
         if (enemyStats.currentHealth <= 0f)
         {

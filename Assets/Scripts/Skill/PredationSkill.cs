@@ -16,9 +16,10 @@ public class PredationSkill : MonoBehaviour, ISkill
     [SerializeField] private float predationForce;
     [SerializeField] private LayerMask layerMask;
 
+    //흡수 각도, 지속시간, 범위
     private const float PREDATION_ANGLE = 60f;
     private const float PREDATION_DURATION = 5f;
-    private const float THRESHOLD = 3f;
+    private const float THRESHOLD = 3f; 
 
     private bool isPredationActive;
 
@@ -72,8 +73,9 @@ public class PredationSkill : MonoBehaviour, ISkill
         Vector3 directionToObject = (obj.transform.position - playerController.transform.position).normalized;      //감지된 오브젝트 사이의 방향 각도 계산
         float angle = Vector3.Angle(playerController.transform.forward, directionToObject);                         //플레이어가 바라보는 방향과 오브젝트 방향 사이의 각도
 
-        return angle < PREDATION_ANGLE;
+        return angle < PREDATION_ANGLE; //방향 사이의 각도보다 흡수 각도가 크다면 흡수 가능하다.
     }
+
     private void ApplyDamageToEnemy(EnemyController enemy)
     {
         float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
@@ -81,22 +83,20 @@ public class PredationSkill : MonoBehaviour, ISkill
 
         if (damageableEnemy != null)
         {
-            damageableEnemy.TakeDamage(damaegeToDeal);
+            damageableEnemy.TakeDamage(damaegeToDeal, true);
             Debug.Log($"포식 데미지 : {damaegeToDeal}");
         }
     }
 
     private void EnoughAbsorb(EnemyController enemy, Collider obj)
     {
-        if (enemy.enemyStats.currentHealth <= enemy.enemyStats.maxHealth * 0.3f)
+        if (enemy.enemyStats.currentHealth <= enemy.enemyStats.maxHealth * 0.4f)
         {
-
             Vector3 directionToAbsorb = (playerController.transform.position - obj.transform.position).normalized;
             float distancToPlayer = Vector3.Distance(playerController.transform.position, obj.transform.position);
             float absorptionSpeed = (1 - (distancToPlayer / predationRaidus)) * predationForce;
 
             obj.transform.position += directionToAbsorb * absorptionSpeed * Time.deltaTime;
-
             UpdateObjectScale(obj);
         }
     }
@@ -126,7 +126,7 @@ public class PredationSkill : MonoBehaviour, ISkill
     private IEnumerator ActivatePredation()
     {
         yield return new WaitForSeconds(PREDATION_DURATION);
-        isPredationActive = false;
-    }
+        isPredationActive =false;
+    }   
     #endregion
 }

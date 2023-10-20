@@ -97,6 +97,8 @@ MonoBehaviour:
   enemyStats: {fileID: 11400000, guid: 19a6e66b6101f824da078e6c764ae7f4, type: 2}
   hitPrefab: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
     type: 3}
+  predationHit: {fileID: 7053385775836331393, guid: 354b6251e950209409c75ab984acf000,
+    type: 3}
   isReadyToAttack: 1
   attackRange: 2
 --- !u!114 &5755860222683668374

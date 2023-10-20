@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   characterName: LizardMan
-  maxHealth: 5000
-  currentHealth: 4000
+  maxHealth: 3000
+  currentHealth: 3000
   attackPower: 25
-  defense: 5
+  defense: 10
