@@ -128,7 +128,25 @@ public class SpecialSkill : MonoBehaviour, ISkill
         }
 
         //10초간 반복된다.
+        yield return new WaitForSeconds(10f);
+
         //10초뒤엔 공격이 끝나므로 magicPos,magicTarget,magicCircle을 삭제시킨다.
+
+        foreach (Transform startPos in tempList)
+        {
+            Destroy(startPos.gameObject);
+        }
+
+        magicStartPosition.Clear();
+
+        foreach (Transform targetPos in magicTargetPosition)
+        {
+            Destroy(targetPos.gameObject);
+        }
+
+        magicTargetPosition.Clear();    //리스트 지우기
+
+        Destroy(createdMegidoCircle);
     }
 
     private IEnumerator ShootRayFromTo(Transform from, Transform to, float speed)
