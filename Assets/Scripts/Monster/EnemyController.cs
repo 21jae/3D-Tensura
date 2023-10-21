@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     protected Animator animator;
     protected NavMeshAgent navMeshAgent;
     protected Transform target;
+
     //Attack
     protected float attackDelay = 2f;
     protected float reattackTime = 1f;

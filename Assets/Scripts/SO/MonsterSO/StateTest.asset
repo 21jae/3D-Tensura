@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0df7b623b26d24785cdfa644d9ea29, type: 3}
-  m_Name: LizardWoman
+  m_Name: StateTest
   m_EditorClassIdentifier: 
-  characterName: LizardMan
-  maxHealth: 5000
-  currentHealth: 1396
-  attackPower: 25
-  defense: 5
-  speed: 3
+  characterName: Test
+  maxHealth: 100
+  currentHealth: 100
+  attackPower: 10
+  defense: 10
+  speed: 3.5

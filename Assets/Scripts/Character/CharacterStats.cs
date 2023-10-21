@@ -8,4 +8,5 @@ public class CharacterStats : ScriptableObject
     public float currentHealth;
     public float attackPower;
     public float defense;
+    public float speed;
 }
