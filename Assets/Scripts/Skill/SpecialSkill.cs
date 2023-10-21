@@ -62,6 +62,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
     {
         StartCoroutine(ExeCuteJump());
 
+        //대현자 사운드 및 텍스트 호출하기
+        //Debug.Log("대현자 : 메기도 준비가 완료되었습니다.");
     }
 
     private IEnumerator ExeCuteJump()
@@ -73,13 +75,14 @@ public class SpecialSkill : MonoBehaviour, ISkill
         Vector3 megidoCirclePos = playerController.transform.position + playerController.transform.forward * 10f;
         GameObject createdMegidoCircle = Instantiate(megidoCircle, megidoCirclePos, Quaternion.identity);
 
+        //애니메이션 스테이트 체크 타이밍 겹쳐서 0.1초간 텀을 줬다.
         yield return new WaitForSeconds(0.1f);
 
         yield return new WaitUntil(() => { AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0); return !state.IsName("Player_Skill05_1") || state.normalizedTime >= 1f; });
 
         //도약중
         animator.Play("Player_Skill05_2");
-        float targetZ = playerController.transform.position.z + jumpHeight;
+        float targetZ = playerController.transform.position.z + 3f;
         float targetY = playerController.transform.position.y + jumpHeight;
 
         while (playerController.transform.position.y < targetY)
@@ -93,33 +96,22 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         yield return new WaitForSeconds(skillDelay);
 
-        // 광선을 발사할 Pos가 생성 되었다면 다음 for문 실행
-        // 매직 타겟 생성 for문
         for (int i = 0; i < 30; i++)
         {
-            //매직서클 위치에서 x,z값으로 생성, 랜덤하게 지면으로부터 1 떨어진 부분부터 8까지 부분도 고려하여 생성
             Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 10f), UnityEngine.Random.Range(-15f, 15f));
-
-            // 이후 megidoTargetPrefab을 MegidoCircle안에 생성시킨다.
             Transform magicTarget = Instantiate(megidoTargetPrefab, createdMegidoCircle.transform.position + randomTargetOffset, Quaternion.identity);
 
             magicTargetPosition.Add(magicTarget);
-
             yield return new WaitForSeconds(0.05f);
         }
 
-        yield return new WaitUntil(() => { AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0); return !state.IsName("Player_Skill05_2") || state.normalizedTime >= 1f; });
-        animator.Play("Player_Skill05_3");
-
-        //대현자 사운드 및 텍스트 호출하기
-        Debug.Log("대현자 : 메기도 준비가 완료되었습니다.");
+        animator.Play("Player_Skill05_4");
 
         //발사하기 전 잠깐 대기
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
-        animator.Play("Player_Skill05_4");
         
-        //List로 생성한 magicStartPosition에 저장된 각 위치에서
+        //StartPosition을 안전히 저장할 tempList
         var tempList = new List<Transform>(magicStartPosition);
 
         foreach (Transform startPos in tempList)
@@ -127,15 +119,13 @@ public class SpecialSkill : MonoBehaviour, ISkill
             int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
             Transform endPos = magicTargetPosition[randomTargetIndex];
 
-            //광선 발사 : 발사된 광선은 빠른속도로 magicTarget끼리 랜덤으로 목표를 정하여 무한히 튕긴다.
             StartCoroutine(ShootRayFromTo(startPos, endPos, 15f));
         }
 
-        //10초간 반복된다.
+        //메기도 지속시간
         yield return new WaitForSeconds(10f);
 
-        //10초뒤엔 공격이 끝나므로 magicPos,magicTarget,magicCircle을 삭제시킨다.
-
+        //지속시간 종료됐으므로 프리펩 및 List에 저장된 것들 제거
         foreach (Transform startPos in tempList)
         {
             Destroy(startPos.gameObject);
@@ -148,10 +138,11 @@ public class SpecialSkill : MonoBehaviour, ISkill
             Destroy(targetPos.gameObject);
         }
 
-        magicTargetPosition.Clear();    //리스트 지우기
+        magicTargetPosition.Clear();
 
         Destroy(createdMegidoCircle);
 
+        //원래 위치로 복귀
         while (Vector3.Distance(playerController.transform.position, originalPosition) > 0.1f)
         {
             playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, originalPosition, jumpSpeed * Time.deltaTime);
@@ -159,10 +150,11 @@ public class SpecialSkill : MonoBehaviour, ISkill
             yield return null;
         }
 
+        animator.SetFloat("MoveSpeed", 0f);
     }
 
 
-    private IEnumerator ShootRayFromTo(Transform from, Transform to, float speed)
+    private IEnumerator ShootRayFromTo(Transform from, Transform to, float raySpeed)
     {
         Vector3 startPosition = from.position;
         Vector3 endPosition = to.position;
@@ -178,44 +170,40 @@ public class SpecialSkill : MonoBehaviour, ISkill
             Ray ray = new Ray(startPosition, endPosition - startPosition);
             RaycastHit hitInfo;
 
-            if (Physics.Raycast(ray, out hitInfo, speed * Time.deltaTime))
+            if (Physics.Raycast(ray, out hitInfo, raySpeed * Time.deltaTime))
             {
-                if (hitInfo.transform == to)    //광선이 목표에 도달했다면
+                if (hitInfo.transform == to)
                 {
-                    Debug.Log("광선이 목표에 도달");
                     //새로운 랜덤 타겟 생성
                     int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
                     to = magicTargetPosition[randomTargetIndex];
                     endPosition = to.position;
                 }
             }
+            Debug.DrawLine(startPosition, endPosition, Color.red, 0.5f);
 
-            Debug.DrawLine(startPosition, endPosition, Color.red, 0.2f);
-
-            Debug.Log("새로운 목표를 또 찾는가?");
-            startPosition = ray.GetPoint(speed * Time.deltaTime);
+            startPosition = ray.GetPoint(raySpeed * Time.deltaTime);
             yield return null;
         }
     }
 
-
     private IEnumerator CreateMagicPosWithInterval(int count, float interval)
     {
-        Vector3 centerPos = playerController.transform.position + new Vector3(0f , 3f, -1f);
+        Vector3 centerPos = playerController.transform.position + new Vector3(0f , 3.5f, -1f);
 
         List<Vector3> possiblePosition = new List<Vector3>();
 
         for (int i = 0; i < 6; i++)
         {
-            possiblePosition.Add(centerPos + new Vector3((i - 2.5f) * interval, UnityEngine.Random.Range(0f, 1.5f), -interval));
+            possiblePosition.Add(centerPos + new Vector3((i - 2.5f) * interval, 0, -interval));
         }
         for (int i = 0; i < 5; i++)
         {
-            possiblePosition.Add(centerPos + new Vector3((i - 2f) * interval, UnityEngine.Random.Range(0f, 1.5f), 0));
+            possiblePosition.Add(centerPos + new Vector3((i - 2f) * interval, 0, 0));
         }
         for (int i = 0; i < 4; i++)
         {
-            possiblePosition.Add(centerPos + new Vector3((i - 1.5f) * interval, UnityEngine.Random.Range(0f, 1.5f), interval));
+            possiblePosition.Add(centerPos + new Vector3((i - 1.5f) * interval, 0, interval));
         }
 
         int createdCount = 0;   //생성된 magicPos의 수 추적

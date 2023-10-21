@@ -48173,9 +48173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52019ae57119a7428135e086e263675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeTime: 2
-  meshRefreshRate: 0.1
-  meshDestroyDelay: 3
+  activeTime: 3.5
+  meshRefreshRate: 0.05
+  meshDestroyDelay: 2.5
   positionToSpawn: {fileID: 1526926057}
   mat: {fileID: 2100000, guid: 8e2f271fc087d9541979440400edd1b0, type: 2}
   shaderVarRef: _Alpha
