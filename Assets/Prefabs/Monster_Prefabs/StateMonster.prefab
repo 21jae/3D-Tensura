@@ -99,9 +99,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   enemyStats: {fileID: 11400000, guid: e5ebd18a81217d94da99972db07f718f, type: 2}
+  hitPrefab: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
+    type: 3}
+  predationHit: {fileID: 7053385775836331393, guid: 354b6251e950209409c75ab984acf000,
+    type: 3}
   patrolRadius: 5
   patrolDuration: 3
   detectionRadius: 8
+  attackInterval: 1.5
+  guardInterval: 2
 --- !u!1001 &2647146919889163311
 PrefabInstance:
   m_ObjectHideFlags: 0

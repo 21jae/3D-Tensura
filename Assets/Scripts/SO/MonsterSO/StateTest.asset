@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: StateTest
   m_EditorClassIdentifier: 
   characterName: Test
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 3000
+  currentHealth: 3000
   attackPower: 10
   defense: 10
   speed: 3.5

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,38 +13,34 @@ public class Enemy : MonoBehaviour, IDamageable
         PATROL,
         CHASE,
         ATTACK,
-        EVADE,
+        GUARD,
         DEATH
     }
     public State currentState;
-
-    /// <summary>
-    /// 컴포넌트
-    /// </summary>
-
     public CharacterStats enemyStats;
-    //[SerializeField] private GameObject hitPrefab;
-    //[SerializeField] private GameObject predationHit;
+
+    [SerializeField] private GameObject hitPrefab;
+    [SerializeField] private GameObject predationHit;
+
     private Animator animator;
     private Transform playerTransform;
 
-
-    /// <summary>
-    /// Idle 및 Patrol
-    /// </summary>
-
+    //Patrol
     [SerializeField] private float patrolRadius = 5f;   //순찰 반경
     [SerializeField] private float patrolDuration = 5f; //한 위치에 멈춰있을 시간
     [SerializeField] private float detectionRadius = 8f;  //플레이어 감지 거리
     private Vector3 nextPatrolPoint;
+    private float stopDistance = 2.5f;  //플레이어와 일정 거리 유지
 
-    /// <summary>
-    /// Attack
-    /// </summary>
-
+    //Attack
     [SerializeField] private float attackInterval = 1.5f;    //공격 간격
     private Coroutine attackRoutine;    //현재 공격을 코루틴에 저장한다.
     private bool isAttacking = false;
+
+    //Guard
+    [SerializeField] private float guardInterval = 1.5f;  //가드 지속시간
+    private Coroutine guardRoutine;
+    private bool hasPredationHitSpawned = false;
 
 
     private void Awake()
@@ -92,8 +89,8 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.ATTACK:
                 ExitAttack();
                 break;
-            case State.EVADE:
-                ExitEvade();
+            case State.GUARD:
+                ExitGuard();
                 break;
             case State.DEATH:
                 ExitDeath();
@@ -119,8 +116,8 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.ATTACK:
                 EnterAttack();
                 break;
-            case State.EVADE:
-                EnterEvade();
+            case State.GUARD:
+                EnterGuard();
                 break;
             case State.DEATH:
                 EnterDeath();
@@ -144,8 +141,8 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.ATTACK:
                 ExcuteAttack();
                 break;
-            case State.EVADE:
-                ExcuteEvade();
+            case State.GUARD:
+                ExcuteGuard();
                 break;
             case State.DEATH:
                 ExcuteDeath();
@@ -158,39 +155,34 @@ public class Enemy : MonoBehaviour, IDamageable
     #region Enter State
     private void EnterIdle()
     {
-        
     }
 
     private void EnterPatrol()
     {
-        
-
     }
+
     private void EnterChase()
     {
-        
-        animator.SetFloat("Speed", 1.5f);
     }
 
     private void EnterAttack()
     {
-        //현재 상태에서 수행될 로직\
-        
-
     }
 
-    private void EnterEvade()
+    private void EnterGuard()
     {
-        //현재 상태에서 수행될 로직
-        
+        animator.SetFloat("Speed", 0f);
 
+        if (guardRoutine != null)
+        {
+            StopCoroutine(guardRoutine);
+        }
+
+        guardRoutine = StartCoroutine(GuardAnimationRoutine());
     }
 
     private void EnterDeath()
     {
-        //현재 상태에서 수행될 로직
-        
-
     }
     #endregion
 
@@ -204,11 +196,9 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         animator.SetFloat("Speed", 1f);
 
-        //플레이어를 찾는 거리와 다음 움직일 지점 찾기
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
         float distanceToPatrolPoint = Vector3.Distance(transform.position, nextPatrolPoint);
 
-        //플레이어를 감지했다면
         if (distanceToPlayer <= detectionRadius)
         {
             ChangeState(State.CHASE);
@@ -233,43 +223,57 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcuteChase()
     {
-        // 플레이어를 발견했다면 쳐다보게합니다.
+        animator.SetFloat("Speed", 1.5f);
+
         Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0f, directionToPlayer.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, enemyStats.speed * Time.deltaTime);
 
-        // 플레이어를 추격
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.transform.position, enemyStats.speed * Time.deltaTime);
 
-        // 일정 거리 좁혀지면 AttackState 수행
-        if (distanceToPlayer <= 2f)
+        // 일정거리 이상일때만 추적한다. (겹침 방지)
+        if (distanceToPlayer > stopDistance)
         {
-            ChangeState(State.ATTACK);
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.transform.position, enemyStats.speed * Time.deltaTime);
+        }
+
+        if (distanceToPlayer <= 2.5f)
+        {
+            animator.SetFloat("Speed", 0f);
+
+            float chance = UnityEngine.Random.Range(0f, 1f);
+
+            if (chance <= 0.25f) 
+            {
+                ChangeState(State.GUARD);
+            }
+            else
+            {
+                ChangeState(State.ATTACK);
+            }
+
             return;
         }
 
-        //그러나 일정거리 이상 벗어나면 다시 chase상태로 전환
+        //일정거리 이상 벗어나면 추적상태 종료
         if (distanceToPlayer > detectionRadius)
         {
             ChangeState(State.PATROL);
             return;
         }
-
     }
 
     private void ExcuteAttack()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
 
-        if (distanceToPlayer <= 2f && !isAttacking)
+        if (distanceToPlayer <= 2.5f && !isAttacking)
         {
-
             animator.SetFloat("Speed", 0f);
             attackRoutine = StartCoroutine(AttackPlayer());
             isAttacking = true;
         }
-        else if(distanceToPlayer > 2f && isAttacking)
+        else if (distanceToPlayer > 2.5f && isAttacking)
         {
             StopCoroutine(attackRoutine);
             animator.SetBool("isAttacking", false);
@@ -281,14 +285,24 @@ public class Enemy : MonoBehaviour, IDamageable
     }
 
 
-    private void ExcuteEvade()
+    private void ExcuteGuard()
     {
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
 
+        if (distanceToPlayer <= 2.5f)
+        {
+            animator.SetFloat("Speed", 0f);
+        }
+        else if (distanceToPlayer > 2.5f)
+        {
+            ChangeState(State.CHASE);
+        }
     }
 
     private void ExcuteDeath()
     {
-
+        //animator.SetTrigger("Die");
+        Destroy(gameObject, 1.6f);
     }
     #endregion
 
@@ -314,7 +328,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     }
 
-    private void ExitEvade()
+    private void ExitGuard()
     {
 
     }
@@ -330,14 +344,43 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float amount, bool isPredation = false)
     {
         //데미지 받을때 수행될 로직.
+        float damageToTake = amount - enemyStats.defense;
+
+        if (damageToTake < 0f)
+            damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
+
+        enemyStats.currentHealth -= damageToTake;
+
+        //만약 Guard 애니메이션이 실행중이라면 받는 데미지 절반
+
+        Debug.Log(enemyStats.currentHealth);
+
+        //animator hit 애니메이션 실행
+
+
+        if (isPredation && !hasPredationHitSpawned)    //isPredation(흡수스킬)이 true일땐 이 hit 프리팹을 생성한다.
+        {
+            GameObject hitInstance = Instantiate(predationHit, transform.position, Quaternion.identity);
+            hitInstance.transform.SetParent(transform);
+            hasPredationHitSpawned = true;
+            //나중에 움직임 0으로 만들기
+        }
+        else if (!isPredation)
+        {
+            Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
+            Instantiate(hitPrefab, effectPosition, Quaternion.identity);
+        }
+
+        if (enemyStats.currentHealth <= 0f)
+        {
+            ChangeState(State.DEATH);
+        }
     }
 
 
     #region Patrol Methods
     private void ChooseNextPatrolPoint()
     {
-        Debug.Log("순찰 지점 탐색");
-
         float randomX = UnityEngine.Random.Range(-patrolRadius, patrolRadius);
         float randomZ = UnityEngine.Random.Range(-patrolRadius, patrolRadius);
 
@@ -346,8 +389,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private IEnumerator StayForAWhile()
     {
-        Debug.Log("멈추겠습니다.");
-
         ChangeState(State.IDLE);
         yield return new WaitForSeconds(patrolDuration);
         ChooseNextPatrolPoint();
@@ -357,6 +398,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
 
     #region Chase Methods
+
     #endregion
 
     #region Attack Methods
@@ -365,8 +407,6 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         while (true)
         {
-            Debug.Log("공격을 다시 하는가?");
-
             animator.SetBool("isAttacking", true);
 
             yield return new WaitForSeconds(attackInterval);
@@ -376,12 +416,24 @@ public class Enemy : MonoBehaviour, IDamageable
             //애니메이션 길이 (공격 간격)을 고려하여 살짝 대기
             yield return new WaitForSeconds(attackInterval - 1f);
 
-            //나중에 데미지 로직 추가
+            //데미지 로직 추가
         }
     }
 
     #endregion
 
+    #region Guard Methods
 
+    private IEnumerator GuardAnimationRoutine()
+    {
+        animator.SetBool("isGuarding", true);
 
+        yield return new WaitForSeconds(guardInterval);
+
+        animator.SetBool("isGuarding", false);
+        yield return new WaitForSeconds(guardInterval - 1f);
+        ChangeState(State.CHASE);
+    }
+
+    #endregion
 }
