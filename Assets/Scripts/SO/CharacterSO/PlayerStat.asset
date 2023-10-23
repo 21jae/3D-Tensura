@@ -17,4 +17,4 @@ MonoBehaviour:
   currentHealth: 1000
   attackPower: 30
   defense: 15
-  speed: 0
+  speed: 1

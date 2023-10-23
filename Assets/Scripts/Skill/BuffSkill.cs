@@ -58,7 +58,7 @@ public class BuffSkill : MonoBehaviour, ISkill
         playerController.playerStatManager.ModifyAttackPower(increaseAttackPower);
         Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}");
     }
-    
+
     private void ResetAttackPowerToOriginal()
     {
         playerController.playerStatManager.ModifyAttackPower(-increaseAttackPower);

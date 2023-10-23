@@ -19,7 +19,7 @@ public class PredationSkill : MonoBehaviour, ISkill
     //흡수 각도, 지속시간, 범위
     private const float PREDATION_ANGLE = 60f;
     private const float PREDATION_DURATION = 5f;
-    private const float THRESHOLD = 3f; 
+    private const float THRESHOLD = 3f;
 
     private bool isPredationActive;
 
@@ -57,7 +57,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         {
             if (ObjectInPredationAngle(obj))
             {
-                EnemyController enemy = obj.GetComponent<EnemyController>();
+                Enemy enemy = obj.GetComponent<Enemy>();
 
                 if (enemy != null)
                 {
@@ -76,7 +76,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         return angle < PREDATION_ANGLE; //방향 사이의 각도보다 흡수 각도가 크다면 흡수 가능하다.
     }
 
-    private void ApplyDamageToEnemy(EnemyController enemy)
+    private void ApplyDamageToEnemy(Enemy enemy)
     {
         float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
         IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
@@ -88,9 +88,9 @@ public class PredationSkill : MonoBehaviour, ISkill
         }
     }
 
-    private void EnoughAbsorb(EnemyController enemy, Collider obj)
+    private void EnoughAbsorb(Enemy enemy, Collider obj)
     {
-        if (enemy.enemyStats.currentHealth <= enemy.enemyStats.maxHealth * 0.4f)
+        if (enemy.enemyStats.currentHP <= enemy.enemyStats.currentMaxHP * 0.4f)
         {
             Vector3 directionToAbsorb = (playerController.transform.position - obj.transform.position).normalized;
             float distancToPlayer = Vector3.Distance(playerController.transform.position, obj.transform.position);
@@ -110,7 +110,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         if (obj.transform.localScale.x <= 0.2f && distanceToPredationPos <= THRESHOLD)
         {
             Destroy(obj.gameObject);
-            Debug.Log("포식");    
+            Debug.Log("포식");
         }
     }
     #endregion
@@ -126,7 +126,7 @@ public class PredationSkill : MonoBehaviour, ISkill
     private IEnumerator ActivatePredation()
     {
         yield return new WaitForSeconds(PREDATION_DURATION);
-        isPredationActive =false;
-    }   
+        isPredationActive = false;
+    }
     #endregion
 }

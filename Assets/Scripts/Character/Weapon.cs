@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]private  PlayerStatManager playerStatManager;
+    [SerializeField] private CharacterStatManager playerStatManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,4 +18,3 @@ public class Weapon : MonoBehaviour
         }
     }
 }
-    

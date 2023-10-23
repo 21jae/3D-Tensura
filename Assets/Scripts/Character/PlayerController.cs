@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IDamageable
 {
     private CharacterController characterController;
-    public PlayerStatManager playerStatManager;
+    public CharacterStatManager playerStatManager;
     public SkillManager skillManager;
 
     private Animator animator;

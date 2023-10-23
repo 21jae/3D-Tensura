@@ -2,17 +2,9 @@ using UnityEngine;
 
 public class MonsterWeapon : MonoBehaviour
 {
-    private Enemy enemy;
-    
-    [SerializeField] private PlayerStatManager enemyStatManager;
+    [SerializeField] private CharacterStatManager enemyStatManager;
     [SerializeField] private LayerMask playerLayer;
     private float damageRadius = 5f;
-
-    private void Awake()
-    {
-        enemy = GetComponent<Enemy>();
-    }
-
 
     public void DealDamageToPlayersInRadius()
     {

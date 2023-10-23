@@ -1,12 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatManager : MonoBehaviour
+public class CharacterStatManager : MonoBehaviour
 {
     [SerializeField] private CharacterStats baseStats;
-    
+
     public float currentAttackPower { get; set; }
-    public float currentMaxHP {get; set;}
-    public float currentHP {get; set;}
+    public float currentMaxHP { get; set; }
+    public float currentHP { get; set; }
     public float currentDefense { get; set; }
     public float currentSpeed { get; set; }
 
@@ -33,10 +34,10 @@ public class PlayerStatManager : MonoBehaviour
     public void ModifyAttackPower(float amount)
     {
         currentAttackPower += amount;
-    } 
+    }
 
     public void ModifyDefence(float amount)
-    { 
+    {
         currentDefense += amount;
     }
 }

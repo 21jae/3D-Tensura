@@ -20,10 +20,10 @@ public class BlessingSkill : MonoBehaviour, ISkill
     private float defenseBuffPercentage = 0.2f;
 
     private PlayerController playerController;
-    private float originalAttackPower; 
-    private float originalDefense;     
-    private float modifiedHP;          
-    private float modifiedAttackPower; 
+    private float originalAttackPower;
+    private float originalDefense;
+    private float modifiedHP;
+    private float modifiedAttackPower;
     private float modifiedDefense;
 
     #region √ ±‚»≠

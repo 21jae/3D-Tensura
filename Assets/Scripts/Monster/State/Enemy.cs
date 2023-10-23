@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     public State currentState;
 
-    [SerializeField] private PlayerStatManager statManager;
+    public CharacterStatManager enemyStats;
     [SerializeField] private GameObject hitPrefab;
     [SerializeField] private GameObject predationHit;
     [SerializeField] private GameObject attackParticlePrefab;
@@ -182,7 +182,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         animator.SetFloat("Speed", 1f);
         DistanceToPlayer();
-        
+
         float distanceToPatrolPoint = Vector3.Distance(transform.position, nextPatrolPoint);
 
         //범위 안에 들어왔다면 추적상태로 전환
@@ -198,7 +198,7 @@ public class Enemy : MonoBehaviour, IDamageable
             StartCoroutine(StayForAWhile());
             return;
         }
-        
+
         //순찰 지점을 바라보며 이동하기
         else
         {
@@ -217,7 +217,7 @@ public class Enemy : MonoBehaviour, IDamageable
         // 일정거리 이상일때만 추적한다
         if (DistanceToPlayer() > stopDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, statManager.currentSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyStats.currentSpeed * Time.deltaTime);
         }
 
         // 범위 안에 들어왔다면
@@ -290,16 +290,16 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float amount, bool isPredation = false)
     {
         //데미지 받을때 수행될 로직.
-        float damageToTake = amount - statManager.currentDefense;
+        float damageToTake = amount - enemyStats.currentDefense;
 
         if (damageToTake < 0f)
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
 
-        statManager.currentHP -= damageToTake;
+        enemyStats.currentHP -= damageToTake;
 
         //만약 Guard 애니메이션이 실행중이라면 받는 데미지 절반
 
-        Debug.Log(statManager.currentHP);
+        Debug.Log(enemyStats.currentHP);
 
         //animator hit 애니메이션 실행
 
@@ -316,7 +316,7 @@ public class Enemy : MonoBehaviour, IDamageable
             Instantiate(hitPrefab, effectPosition, Quaternion.identity);
         }
 
-        if (statManager.currentHP <= 0f)
+        if (enemyStats.currentHP <= 0f)
         {
             ChangeState(State.DEATH);
         }
@@ -331,14 +331,14 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     private void MoveTowardsPoint(Vector3 targetPoint)
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPoint, statManager.currentSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint, enemyStats.currentSpeed * Time.deltaTime);
     }
 
     private void LookTowardsPoint(Vector3 targetPoint)
     {
         Vector3 direction = (targetPoint - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, statManager.currentSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, enemyStats.currentSpeed * Time.deltaTime);
     }
 
     private void StopIfNearPlayer()
@@ -388,7 +388,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
                 animator.SetBool("isAttacking", false);
 
-                yield return new WaitForSeconds(attackInterval -1f);
+                yield return new WaitForSeconds(attackInterval - 1f);
                 isAttacking = false;
             }
             else
