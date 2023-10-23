@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Test
   maxHealth: 3000
-  currentHealth: 2714
-  attackPower: 50
+  currentHealth: 100
+  attackPower: 20
   defense: 10
   speed: 3.5

@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamageable
 {
+    [HideInInspector] public CharacterStatManager playerStatManager;
     private CharacterController characterController;
-    public CharacterStatManager playerStatManager;
     public SkillManager skillManager;
 
     private Animator animator;
@@ -16,6 +17,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     private static int COMBOSTACK = 0;
     private float lastClickTimed = 0f;
     private float maxComboDelay = 3f;
+
+    [Header("중력")]
+    private float _gravity = -9.81f;
+    private Vector3 velocity = Vector3.zero;
 
     [Header("벽 체크")]
     [SerializeField] private float rayDistance = 1.5f;
@@ -36,6 +41,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void InitializeComponents()
     {
+        playerStatManager = GetComponent<CharacterStatManager>();
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
         controller = FindObjectOfType<Joystick>();
@@ -44,18 +50,42 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Update()
     {
+        ApplyGravity();
+
         AttackUpdate();
 
         MovementUpdate();
 
         CheckHitWall();
+
+
     }
+
     #endregion
 
     private void MovementUpdate()
     {
         float moveSpeed = controller.Direction.magnitude;
         animator.SetFloat(MoveSpeed, moveSpeed);
+    }
+
+    private void ApplyGravity()
+    {
+        if (characterController.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+        velocity.y += _gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("안밀려");
+        }
     }
 
     #region 콤보 어택

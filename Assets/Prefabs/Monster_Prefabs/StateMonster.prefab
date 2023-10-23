@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8787391761303193051}
   - component: {fileID: 958987871875396281}
   - component: {fileID: 3115632544363487382}
+  - component: {fileID: 7175954595772396998}
   m_Layer: 6
   m_Name: StateMonster
   m_TagString: Enemy
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 6102819980546020278}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8787391761303193051
 CapsuleCollider:
@@ -98,16 +99,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  enemyStats: {fileID: 11400000, guid: e5ebd18a81217d94da99972db07f718f, type: 2}
+  characterStatManager: {fileID: 0}
   hitPrefab: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
     type: 3}
   predationHit: {fileID: 7053385775836331393, guid: 354b6251e950209409c75ab984acf000,
     type: 3}
-  patrolRadius: 5
+  attackParticlePrefab: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
+    type: 3}
+  deathPrefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473,
+    type: 3}
+  patrolRadius: 7
   patrolDuration: 3
   detectionRadius: 8
   attackInterval: 1.5
   guardInterval: 2
+--- !u!114 &7175954595772396998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381508996201260629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15922716f42912c4f8c157d625e3ba1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats: {fileID: 11400000, guid: e5ebd18a81217d94da99972db07f718f, type: 2}
 --- !u!1 &7772734590478261639
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,8 +136,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2225256650189541443}
   - component: {fileID: 8542087328702795290}
+  - component: {fileID: 618207962355892743}
   m_Layer: 6
-  m_Name: Spear
+  m_Name: SpearSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,6 +181,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.003892736, y: 0.025113024, z: 0.003618044}
   m_Center: {x: -0.0014162181, y: 0.002756976, z: -0.00016918246}
+--- !u!114 &618207962355892743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772734590478261639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3822bc86ef0138e4fa4418bffbeaae02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStatManager: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &2647146919889163311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -263,7 +298,7 @@ PrefabInstance:
     - target: {fileID: 7982547713382446037, guid: 64064a350298c5246b8a30b893294ece,
         type: 3}
       propertyPath: m_Name
-      value: gabirusword Variant
+      value: basicLizardSword
       objectReference: {fileID: 0}
     - target: {fileID: 7982547713382446037, guid: 64064a350298c5246b8a30b893294ece,
         type: 3}
@@ -275,7 +310,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 476755305359393859, guid: 64064a350298c5246b8a30b893294ece, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

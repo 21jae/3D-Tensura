@@ -35,7 +35,7 @@ public class TriggerZone : MonoBehaviour
 
                         for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].lizardCount; i++)
                         {
-                            Vector3 spawnPosition = player.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                            Vector3 spawnPosition = player.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
                             int randomLizard = Random.Range(0, 2);  // Lizard Man or Woman ¼ÒÈ¯
                             MonsterTypes.LizardType type = randomLizard == 0 ? MonsterTypes.LizardType.Man : MonsterTypes.LizardType.Woman;
                             spawnManager.SpawnLizard(type, spawnPosition);

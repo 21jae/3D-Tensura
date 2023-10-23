@@ -15,10 +15,11 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     public State currentState;
 
-    public CharacterStatManager enemyStats;
+    [HideInInspector] public CharacterStatManager characterStatManager;
     [SerializeField] private GameObject hitPrefab;
     [SerializeField] private GameObject predationHit;
     [SerializeField] private GameObject attackParticlePrefab;
+    [SerializeField] private GameObject deathPrefab;
 
     private Animator animator;
     private Transform playerTransform;
@@ -53,6 +54,7 @@ public class Enemy : MonoBehaviour, IDamageable
         animator = GetComponentInChildren<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         monsterWeapon = GetComponentInChildren<MonsterWeapon>();
+        characterStatManager = GetComponent<CharacterStatManager>();
 
 
         ChooseNextPatrolPoint();
@@ -170,7 +172,12 @@ public class Enemy : MonoBehaviour, IDamageable
         guardRoutine = StartCoroutine(GuardAnimationRoutine());
     }
 
-    private void EnterDeath() { }
+    private void EnterDeath()
+    {
+        animator.SetTrigger("Death");
+        Destroy(gameObject, 1.5f);
+        Instantiate(deathPrefab, transform.position + Vector3.up, Quaternion.identity);
+    }
     #endregion
 
     #region ExcuteState
@@ -217,7 +224,7 @@ public class Enemy : MonoBehaviour, IDamageable
         // 일정거리 이상일때만 추적한다
         if (DistanceToPlayer() > stopDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyStats.currentSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, characterStatManager.currentSpeed * Time.deltaTime);
         }
 
         // 범위 안에 들어왔다면
@@ -255,6 +262,7 @@ public class Enemy : MonoBehaviour, IDamageable
         //범위 밖으로 나가면 공격 종료
         else if (DistanceToPlayer() > stopDistance)
         {
+            animator.SetBool("isAttacking", false);
             ChangeState(State.CHASE);
         }
     }
@@ -290,16 +298,16 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float amount, bool isPredation = false)
     {
         //데미지 받을때 수행될 로직.
-        float damageToTake = amount - enemyStats.currentDefense;
+        float damageToTake = amount - characterStatManager.currentDefense;
 
         if (damageToTake < 0f)
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
 
-        enemyStats.currentHP -= damageToTake;
+        characterStatManager.currentHP -= damageToTake;
 
         //만약 Guard 애니메이션이 실행중이라면 받는 데미지 절반
 
-        Debug.Log(enemyStats.currentHP);
+        Debug.Log(characterStatManager.currentHP);
 
         //animator hit 애니메이션 실행
 
@@ -316,7 +324,7 @@ public class Enemy : MonoBehaviour, IDamageable
             Instantiate(hitPrefab, effectPosition, Quaternion.identity);
         }
 
-        if (enemyStats.currentHP <= 0f)
+        if (characterStatManager.currentHP <= 0f)
         {
             ChangeState(State.DEATH);
         }
@@ -331,14 +339,14 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     private void MoveTowardsPoint(Vector3 targetPoint)
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPoint, enemyStats.currentSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint, characterStatManager.currentSpeed * Time.deltaTime);
     }
 
     private void LookTowardsPoint(Vector3 targetPoint)
     {
         Vector3 direction = (targetPoint - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, enemyStats.currentSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, characterStatManager.currentSpeed * Time.deltaTime);
     }
 
     private void StopIfNearPlayer()
@@ -379,16 +387,15 @@ public class Enemy : MonoBehaviour, IDamageable
                 animator.SetFloat("Speed", 0f);
                 isAttacking = true;
 
-                yield return new WaitForSeconds(attackInterval);
+                yield return new WaitForSeconds(attackInterval -1f);
                 animator.SetBool("isAttacking", true);
 
-                yield return new WaitForSeconds(attackInterval - 1f);
+                yield return new WaitForSeconds(attackInterval -1f);
                 SpawnAttackParticle();
-
 
                 animator.SetBool("isAttacking", false);
 
-                yield return new WaitForSeconds(attackInterval - 1f);
+                yield return new WaitForSeconds(attackInterval);
                 isAttacking = false;
             }
             else
@@ -408,10 +415,9 @@ public class Enemy : MonoBehaviour, IDamageable
         GameObject particleInstance = Instantiate(attackParticlePrefab, particlePosition, particleRotation);
         ParticleSystem ps = particleInstance.GetComponent<ParticleSystem>();
 
-        if (ps != null)
+        if (ps.CompareTag("Player"))
         {
             Debug.Log("데미지 전달");
-
             monsterWeapon.DealDamageToPlayersInRadius();
         }
     }

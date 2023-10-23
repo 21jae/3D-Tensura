@@ -20,6 +20,7 @@ public class MonsterWeapon : MonoBehaviour
             {
                 damageablePlayer.TakeDamage(damageToDeal);
             }
+
         }
     }
 

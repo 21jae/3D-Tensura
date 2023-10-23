@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3517756139800291635}
-  - component: {fileID: 3210290982191875010}
   - component: {fileID: 2222532338110032262}
-  - component: {fileID: -255387745596527339}
-  - component: {fileID: -8667530525376704978}
-  - component: {fileID: -8579405980486441116}
+  - component: {fileID: 7720191016388125744}
+  - component: {fileID: -6510541500101494044}
+  - component: {fileID: 937332399413909286}
   m_Layer: 6
   m_Name: Enemy2
   m_TagString: Enemy
@@ -37,28 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &3210290982191875010
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6107582892283342839}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 1.5
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!136 &2222532338110032262
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -66,7 +43,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6107582892283342839}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5f1ab608202a5fc419d16a6b807ac7db, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -82,7 +59,7 @@ CapsuleCollider:
   m_Height: 2.5976784
   m_Direction: 1
   m_Center: {x: 0, y: 1.3508135, z: 0}
---- !u!114 &-255387745596527339
+--- !u!114 &7720191016388125744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,15 +68,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6107582892283342839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8bfa5a5dcd591d448a7d177bae3806a, type: 3}
+  m_Script: {fileID: 11500000, guid: ab1f8751f6383fe4da8a4e4ecf880d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: aef4997cc29b3a84eae5217716167928, type: 2}
+  currentState: 0
+  characterStatManager: {fileID: 0}
   hitPrefab: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
     type: 3}
-  isReadyToAttack: 1
-  attackRange: 2
---- !u!114 &-8667530525376704978
+  predationHit: {fileID: 7053385775836331393, guid: 354b6251e950209409c75ab984acf000,
+    type: 3}
+  attackParticlePrefab: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
+    type: 3}
+  deathPrefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473,
+    type: 3}
+  patrolRadius: 5
+  patrolDuration: 5
+  detectionRadius: 10
+  attackInterval: 1.5
+  guardInterval: 1.5
+--- !u!114 &-6510541500101494044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,12 +95,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6107582892283342839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 755051a484065024bb42c00416cacbb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 15922716f42912c4f8c157d625e3ba1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  canRotate: 1
---- !u!54 &-8579405980486441116
+  baseStats: {fileID: 11400000, guid: aef4997cc29b3a84eae5217716167928, type: 2}
+--- !u!54 &937332399413909286
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +107,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6107582892283342839}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -136,9 +122,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &1758362548066154301
 PrefabInstance:
