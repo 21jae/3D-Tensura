@@ -7,7 +7,8 @@ public class PlayerStatManager : MonoBehaviour
     public float currentAttackPower { get; set; }
     public float currentMaxHP {get; set;}
     public float currentHP {get; set;}
-    public float currentDefense {get; set;}
+    public float currentDefense { get; set; }
+    public float currentSpeed { get; set; }
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class PlayerStatManager : MonoBehaviour
         currentMaxHP = baseStats.maxHealth;
         currentHP = baseStats.currentHealth;
         currentDefense = baseStats.defense;
+        currentSpeed = baseStats.speed;
     }
 
     private void Start()

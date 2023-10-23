@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private CharacterStats playerStats;
+    [SerializeField]private  PlayerStatManager playerStatManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
 
             if (damageable != null) //IDamageable 인터페이스를 구현하고있는지 확인
             {
-                float damageToDeal = playerStats.attackPower;
+                float damageToDeal = playerStatManager.currentAttackPower;
                 damageable.TakeDamage(damageToDeal);
             }
         }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     private CharacterController characterController;
     public PlayerStatManager playerStatManager;
@@ -137,4 +137,18 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position + Vector3.up, transform.forward * rayDistance, Color.red);
     }
     #endregion
+
+    public void TakeDamage(float amount, bool isPredation = false)
+    {
+        float damageToTake = amount - playerStatManager.currentDefense;
+
+        if (damageToTake < 0f)
+            damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
+
+        playerStatManager.currentHP -= damageToTake;
+
+        //만약 Guard 애니메이션이 실행중이라면 받는 데미지 절반
+
+        Debug.Log(playerStatManager.currentHP);
+    }
 }
