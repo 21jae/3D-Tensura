@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        ApplyGravity();
+        //ApplyGravity();
 
         AttackUpdate();
 
@@ -69,16 +69,16 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator.SetFloat(MoveSpeed, moveSpeed);
     }
 
-    private void ApplyGravity()
-    {
-        if (characterController.isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
+    //private void ApplyGravity()
+    //{
+    //    if (characterController.isGrounded && velocity.y < 0)
+    //    {
+    //        velocity.y = -2f;
+    //    }
 
-        velocity.y += _gravity * Time.deltaTime;
-        characterController.Move(velocity * Time.deltaTime);
-    }
+    //    velocity.y += _gravity * Time.deltaTime;
+    //    characterController.Move(velocity * Time.deltaTime);
+    //}
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
