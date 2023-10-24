@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamageable
@@ -12,26 +14,34 @@ public class PlayerController : MonoBehaviour, IDamageable
     private MoveObject moveObject;
 
     [Header("공격")]
-    [SerializeField] private float cooldownTime = 2f;
-    private float nextAttackTime = 0f;
     private static int COMBOSTACK = 0;
-    private float lastClickTimed = 0f;
-    private float maxComboDelay = 3f;
-
-    [Header("중력")]
-    private float _gravity = -9.81f;
-    private Vector3 velocity = Vector3.zero;
+    private float lastButtonPressTime = 0f;
+    private bool isButtonPressed = false;
 
     [Header("벽 체크")]
     [SerializeField] private float rayDistance = 1.5f;
     private const int WALL_LAYER_MASK = 1 << 6;
 
+    [Header("피격")]
+    [SerializeField] private float invincibilityDuration = 1f;
+    [SerializeField] private float blinkDuration = 0.1f;
+    [SerializeField] private float knockbackStrength = 5f;
+    [SerializeField] private float knockbackDuration = 0.1f;
+    private List<Renderer> characterRenderers = new List<Renderer>();
+    private bool isInvincible;
+
+
+    #region
     [Header("애니메이션 Hash")]
     private readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
     private readonly int Attack01 = Animator.StringToHash("Attack01");
     private readonly int Attack02 = Animator.StringToHash("Attack02");
     private readonly int Attack03 = Animator.StringToHash("Attack03");
     private readonly int Attack04 = Animator.StringToHash("Attack04");
+    private readonly int Death = Animator.StringToHash("Death");
+    private readonly int Damage = Animator.StringToHash("Damage");
+
+    #endregion
 
     #region 초기화 및 업데이트 로직
     private void Awake()
@@ -46,19 +56,17 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator = GetComponentInChildren<Animator>();
         controller = FindObjectOfType<Joystick>();
         moveObject = GetComponent<MoveObject>();
+        
+        characterRenderers.AddRange(GetComponentsInChildren<Renderer>());
     }
 
     private void Update()
     {
-        //ApplyGravity();
-
         AttackUpdate();
 
         MovementUpdate();
 
         CheckHitWall();
-
-
     }
 
     #endregion
@@ -69,82 +77,78 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator.SetFloat(MoveSpeed, moveSpeed);
     }
 
-    //private void ApplyGravity()
-    //{
-    //    if (characterController.isGrounded && velocity.y < 0)
-    //    {
-    //        velocity.y = -2f;
-    //    }
-
-    //    velocity.y += _gravity * Time.deltaTime;
-    //    characterController.Move(velocity * Time.deltaTime);
-    //}
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("안밀려");
-        }
-    }
-
     #region 콤보 어택
-    private bool IsAnimatorStateNameAndNormalized(string attackState, float threshold = 0.7f)
+    public bool IsAnimatorStateNameAndNormalized(string attackState, float threshold = 0.7f)
     {
         return animator.GetCurrentAnimatorStateInfo(0).IsName(attackState) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > threshold;
     }
 
     private void AttackUpdate()
     {
-        if (IsAnimatorStateNameAndNormalized("Attack01"))
-            animator.SetBool(Attack01, false);
-
-        if (IsAnimatorStateNameAndNormalized("Attack02"))
-            animator.SetBool(Attack02, false);
-
-        if (IsAnimatorStateNameAndNormalized("Attack03"))
-            animator.SetBool(Attack03, false);
-
-        if (IsAnimatorStateNameAndNormalized("Attack04"))
+        if (isButtonPressed)
         {
-            animator.SetBool(Attack04, false);
-            COMBOSTACK = 0;
-        }
+            lastButtonPressTime = Time.time;
 
-        if (Time.time - lastClickTimed > maxComboDelay)
-            COMBOSTACK = 0;
-    }
-
-    public void OnClick()
-    {
-        if (Time.time > nextAttackTime)
-        {
-            lastClickTimed = Time.time;
-            COMBOSTACK++;
-
-            if (COMBOSTACK == 1)
+            if (COMBOSTACK == 0)
             {
+                //사운드 재생
                 animator.SetBool(Attack01, true);
             }
 
-            COMBOSTACK = Mathf.Clamp(COMBOSTACK, 0, 4);
-
-            if (COMBOSTACK >= 2 && IsAnimatorStateNameAndNormalized("Attack01"))
+            else if (COMBOSTACK >= 1 && IsAnimatorStateNameAndNormalized("Attack01"))
             {
+                //사운드 재생
+
                 animator.SetBool(Attack01, false);
                 animator.SetBool(Attack02, true);
             }
-            if (COMBOSTACK >= 3 && IsAnimatorStateNameAndNormalized("Attack02"))
+            else if (COMBOSTACK >= 2 && IsAnimatorStateNameAndNormalized("Attack02"))
             {
+                //사운드 재생
+
                 animator.SetBool(Attack02, false);
                 animator.SetBool(Attack03, true);
             }
-            if (COMBOSTACK >= 4 && IsAnimatorStateNameAndNormalized("Attack03"))
+            else if (COMBOSTACK >= 3 && IsAnimatorStateNameAndNormalized("Attack03"))
             {
+                //사운드 재생
+
                 animator.SetBool(Attack03, false);
                 animator.SetBool(Attack04, true);
             }
+
+            else if (IsAnimatorStateNameAndNormalized("Attack04"))
+            {
+                ResetAttackAnimation();
+            }
+
+            COMBOSTACK = (COMBOSTACK + 1) % 4;
         }
+        else if (Time.time - lastButtonPressTime > 1f)
+        {
+            ResetAttackAnimation();
+        }
+    }
+
+    private void ResetAttackAnimation()
+    {
+        animator.SetBool(Attack01, false);
+        animator.SetBool(Attack02, false);
+        animator.SetBool(Attack03, false);
+        animator.SetBool(Attack04, false);
+        COMBOSTACK = 0;
+
+    }
+
+    public void StartButtonPress()
+    {
+        isButtonPressed = true;
+    }
+
+    public void EndButtonPress()
+    {
+        isButtonPressed = false;
+        COMBOSTACK = 0;
     }
 
     #endregion
@@ -170,15 +174,63 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage(float amount, bool isPredation = false)
     {
+        if (isInvincible)
+        {
+            return;
+        }
+        
         float damageToTake = amount - playerStatManager.currentDefense;
 
         if (damageToTake < 0f)
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
 
         playerStatManager.currentHP -= damageToTake;
-
-        //만약 Guard 애니메이션이 실행중이라면 받는 데미지 절반
+        StartCoroutine(Knockback());
+        animator.SetBool(Damage, true);
+        StartCoroutine(BecomeInvincible());
 
         Debug.Log(playerStatManager.currentHP);
+
+        if (playerStatManager.currentHP <= 0f)
+        {
+            animator.SetTrigger("Death");
+            Destroy(gameObject, 3.5f);
+            
+            //UI창 출력 및 죽음사운드
+        }
+    }
+
+    private IEnumerator Knockback()
+    {
+        float endTime = Time.time + knockbackDuration;
+        Vector3 knockbackDirection = -transform.forward;
+
+        while (Time.time < endTime)
+        {
+            characterController.Move(knockbackDirection * knockbackStrength * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    private IEnumerator BecomeInvincible()
+    {
+        isInvincible = true;
+        float invincibilityEndTime = Time.time + invincibilityDuration;
+
+        while (Time.time < invincibilityEndTime)
+        {
+            foreach (var renderer in characterRenderers)
+            {
+                renderer.enabled = !renderer.enabled;
+            }
+            yield return new WaitForSeconds(blinkDuration);
+        }
+
+        foreach (var renderer in characterRenderers)
+        {
+            renderer.enabled = true;
+        }
+        animator.SetBool(Damage, false);
+        isInvincible = false;
     }
 }

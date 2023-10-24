@@ -15,6 +15,6 @@ MonoBehaviour:
   characterName: LizardMan
   maxHealth: 2000
   currentHealth: 2000
-  attackPower: 25
-  defense: 5
-  speed: 3
+  attackPower: 80
+  defense: 25
+  speed: 4

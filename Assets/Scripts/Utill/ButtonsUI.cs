@@ -12,30 +12,13 @@ public class ButtonsUI : MonoBehaviour
         _playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
-    public void ClickButtonAttack()
-    {
-        _playerController.OnClick();
-    }
-
     public void OnPointerDown()
     {
-        isPointerDown = true;
-        StartCoroutine(ClickCoroutine());
+        _playerController.StartButtonPress();
     }
 
     public void OnPointerUp()
     {
-        isPointerDown = false;
-        StopCoroutine(ClickCoroutine());
-    }
-
-    IEnumerator ClickCoroutine()
-    {
-        while (isPointerDown)
-        {
-            Debug.Log("Å¬¸¯Áß");
-            _playerController.OnClick();
-            yield return new WaitForSeconds(clickInterval);
-        }
+        _playerController.EndButtonPress();
     }
 }

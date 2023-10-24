@@ -42,6 +42,10 @@ public class Enemy : MonoBehaviour, IDamageable
     private Coroutine guardRoutine;
     private bool hasPredationHitSpawned = false;
 
+    //Damage
+    private bool isRecoveringFormBigDamage;
+    private float DamageInterval = 1.5f;
+
 
     private void Awake()
     {
@@ -55,7 +59,6 @@ public class Enemy : MonoBehaviour, IDamageable
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         monsterWeapon = GetComponentInChildren<MonsterWeapon>();
         characterStatManager = GetComponent<CharacterStatManager>();
-
 
         ChooseNextPatrolPoint();
     }
@@ -216,6 +219,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcuteChase()
     {
+        if (isRecoveringFormBigDamage)
+        {
+            return;
+        }
+
         animator.SetFloat("Speed", 1.5f);
 
         DistanceToPlayer();
@@ -286,7 +294,16 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExitChase() { }
 
-    private void ExitAttack() { }
+    private void ExitAttack() 
+    {
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+            isAttacking = false;
+        }
+
+        animator.SetBool("isAttacking", false);
+    }
 
     private void ExitGuard() { }
 
@@ -305,18 +322,13 @@ public class Enemy : MonoBehaviour, IDamageable
 
         characterStatManager.currentHP -= damageToTake;
 
-        //만약 Guard 애니메이션이 실행중이라면 받는 데미지 절반
-
         Debug.Log(characterStatManager.currentHP);
-
-        //animator hit 애니메이션 실행
 
         if (isPredation && !hasPredationHitSpawned)    //isPredation(흡수스킬)이 true일땐 이 hit 프리팹을 생성한다.
         {
             GameObject hitInstance = Instantiate(predationHit, transform.position, Quaternion.identity);
             hitInstance.transform.SetParent(transform);
             hasPredationHitSpawned = true;
-            //나중에 움직임 0으로 만들기
         }
         else if (!isPredation)
         {
@@ -328,8 +340,16 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             ChangeState(State.DEATH);
         }
+
+        //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
+        float damagePercentage = damageToTake / characterStatManager.currentHP;
+        if (damagePercentage > 0.35f)
+        {
+            StartCoroutine(PlayBigDamageAnimation());
+        }
+
     }
-    #endregion`
+    #endregion
 
     #region 재사용 가능한 메서드
 
@@ -355,6 +375,23 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             animator.SetFloat("Speed", 0f);
         }
+    }
+    private IEnumerator PlayBigDamageAnimation()
+    {
+        isRecoveringFormBigDamage = true;
+
+        StopIfNearPlayer();
+        animator.SetBool("BigDamage", true);
+        yield return new WaitForSeconds(DamageInterval);
+
+        animator.SetBool("BigDamage", false);
+        animator.SetBool("StandUp", true);
+        yield return new WaitForSeconds(DamageInterval);
+
+        animator.SetBool("StandUp", false);
+        yield return new WaitForSeconds(DamageInterval);
+
+        isRecoveringFormBigDamage = false;
     }
     #endregion
 
@@ -387,7 +424,7 @@ public class Enemy : MonoBehaviour, IDamageable
                 animator.SetFloat("Speed", 0f);
                 isAttacking = true;
 
-                yield return new WaitForSeconds(attackInterval -1f);
+                yield return new WaitForSeconds(attackInterval);
                 animator.SetBool("isAttacking", true);
 
                 yield return new WaitForSeconds(attackInterval -1f);
@@ -415,9 +452,8 @@ public class Enemy : MonoBehaviour, IDamageable
         GameObject particleInstance = Instantiate(attackParticlePrefab, particlePosition, particleRotation);
         ParticleSystem ps = particleInstance.GetComponent<ParticleSystem>();
 
-        if (ps.CompareTag("Player"))
+        if (ps != null)
         {
-            Debug.Log("데미지 전달");
             monsterWeapon.DealDamageToPlayersInRadius();
         }
     }

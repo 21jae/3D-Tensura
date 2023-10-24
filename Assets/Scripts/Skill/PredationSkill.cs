@@ -51,6 +51,8 @@ public class PredationSkill : MonoBehaviour, ISkill
     #region 흡수 로직
     private void AbsorbObjectInRadius()
     {
+        //사운드 재생
+
         Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, predationRaidus, layerMask);
 
         foreach (Collider obj in objectInRange)
@@ -109,6 +111,8 @@ public class PredationSkill : MonoBehaviour, ISkill
 
         if (obj.transform.localScale.x <= 0.2f && distanceToPredationPos <= THRESHOLD)
         {
+            //사운드 재생
+
             Destroy(obj.gameObject);
             Debug.Log("포식");
         }

@@ -4,7 +4,7 @@ public class MonsterWeapon : MonoBehaviour
 {
     [SerializeField] private CharacterStatManager enemyStatManager;
     [SerializeField] private LayerMask playerLayer;
-    private float damageRadius = 5f;
+    [SerializeField] private float damageRadius = 5f;
 
     public void DealDamageToPlayersInRadius()
     {

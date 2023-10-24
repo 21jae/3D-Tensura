@@ -18670,7 +18670,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.4
+        time: 0.36666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -18679,7 +18679,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.8333333
+        time: 0.6
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -18691,7 +18691,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Root/VFXAttack/Snow slash (1)
+    path: Root/VFXAttack/Attack02_Slash
     classID: 1
     script: {fileID: 0}
     flags: 0
@@ -18713,7 +18713,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4147610608
+      path: 2094658639
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -38683,7 +38683,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.4
+        time: 0.36666667
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -38692,7 +38692,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.8333333
+        time: 0.6
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -38704,7 +38704,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Root/VFXAttack/Snow slash (1)
+    path: Root/VFXAttack/Attack02_Slash
     classID: 1
     script: {fileID: 0}
     flags: 0
