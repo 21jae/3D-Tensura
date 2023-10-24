@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private GameObject attackParticlePrefab;
     [SerializeField] private GameObject deathPrefab;
 
-    private Animator animator;
+    [HideInInspector] public Animator animator;
     private Transform playerTransform;
     private MonsterWeapon monsterWeapon;
 
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private float DamageInterval = 1.5f;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         InitializeComponents();
     }

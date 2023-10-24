@@ -1,30 +1,40 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : Enemy
 {
-    private SkillManager skillManager;
+    private BossThunderSkill thunderSKill;
+    private BossDashSkill bossdashSkill;
 
-    private void Awake()
+    protected override void Awake()
     {
-        skillManager = FindObjectOfType<SkillManager>();
+        base.Awake();
 
-        if (skillManager == null)
-        {
-            Debug.LogError("SkillManager not found in the scene!");
-            return;
-        }
+        thunderSKill = GetComponent<BossThunderSkill>();
+        bossdashSkill = GetComponent<BossDashSkill>();
+    }
 
+    private void Start()
+    {
         StartCoroutine(ThunderSkillRoutine());
+        StartCoroutine(bossSkillRoutine());
     }
 
     private IEnumerator ThunderSkillRoutine()
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f);
-            skillManager.ActiveThunderSkill();
+            yield return new WaitForSeconds(3f);
+            thunderSKill.CastThunderSkill();
+        }
+    }
+    private IEnumerator bossSkillRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(50f);
+            bossdashSkill.BossDash();
         }
     }
 

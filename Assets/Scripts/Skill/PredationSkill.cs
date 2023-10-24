@@ -9,6 +9,7 @@ public class PredationSkill : MonoBehaviour, ISkill
     [Header("스킬 데이터")]
     [SerializeField] private SOSkill predationSkillData;
     [SerializeField] private GameObject predationPrefab;
+    [SerializeField] private GameObject predationPosPrefab;
 
     [Header("흡수 설정")]
     [SerializeField] private GameObject predationPosition;
@@ -123,6 +124,7 @@ public class PredationSkill : MonoBehaviour, ISkill
     public void ActivateSkill()
     {
         isPredationActive = true;
+        Instantiate(predationPosPrefab, predationPosition.transform.position + new Vector3(0f, -1f, 0f), playerController.transform.rotation);
         Instantiate(predationPrefab, predationPosition.transform.position, playerController.transform.rotation);
         StartCoroutine(ActivatePredation());
     }

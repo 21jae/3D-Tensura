@@ -4,36 +4,23 @@ using UnityEngine;
 public class BossThunderSkill : MonoBehaviour
 {
     [Header("보스스킬 데이터")]
+    private CharacterStatManager characterStatManager;
     [SerializeField] private SOSkill thunderSkillData;  //ScritableObject로 만든 스킬데이터
     [SerializeField] private GameObject thunder;
 
-    private Enemy enemy;
     private Transform playerTransform;
-    [SerializeField] private float thunderRadius = 8.0f;
+    private float thunderRadius = 8f;
     [SerializeField] private LayerMask layerMask;
 
     private void Awake()
     {
         Initialize();
-
     }
 
     private void Initialize()
     {
-        enemy = FindObjectOfType<Enemy>();
-
-        if (enemy == null)
-        {
-            Debug.Log("enemy를 찾을 수 없음.");
-            return;
-        }
-
+        characterStatManager = GetComponent<CharacterStatManager>();
         playerTransform = FindObjectOfType<PlayerController>().transform;
-
-        if (playerTransform == null)
-        {
-            Debug.Log("플레이어 위치 찾을 수 없음");
-        }
     }
 
     public void CastThunderSkill()
@@ -44,37 +31,37 @@ public class BossThunderSkill : MonoBehaviour
     private IEnumerator ThunderStrikeRoutine()
     {
         //플레이어 위치에 경고선 생성
-        Vector3 warningPosition = new Vector3(playerTransform.position.x, 0.1f, playerTransform.position.z);
+        Vector3 warningPosition = new Vector3(playerTransform.position.x, 0f, playerTransform.position.z);
 
         GameObject warningLine = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         warningLine.transform.position = warningPosition;
-        warningLine.transform.localScale = new Vector3(thunderRadius, 0.1f, thunderRadius);
+        warningLine.transform.localScale = new Vector3(thunderRadius, 0.05f, thunderRadius);
+
+        Destroy(warningLine.GetComponent<Collider>());
 
         Renderer renderer = warningLine.GetComponent<Renderer>();
         renderer.material.color = Color.red;
-        Destroy(warningLine.transform, 1f);
+        Destroy(warningLine, 1.5f);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
-        GameObject instantiateThunder = Instantiate(thunder, playerTransform.position, Quaternion.identity);
+        GameObject instantiateThunder = Instantiate(thunder, warningPosition, Quaternion.identity);
         Destroy(instantiateThunder, 2f);
 
-        Collider[] hitColliders = Physics.OverlapSphere(playerTransform.position, thunderRadius, layerMask);
+        Collider[] hitColliders = Physics.OverlapSphere(warningPosition, 3f, layerMask);
 
-        foreach (var hit in hitColliders)
+        float damageToDeal = thunderSkillData.CalculateSkillDamage(characterStatManager.currentAttackPower);
+
+        foreach (Collider hit in hitColliders)
         {
+            IDamageable damageableplayer = playerTransform.GetComponent<IDamageable>();
+
+            if (hit.CompareTag("Player"))
             {
-                if (hit.CompareTag("Player"))
-                {
-                    Debug.Log("hit Thunder");
-                    break;
-                }
+                Debug.Log("hit Thunder");
+                damageableplayer.TakeDamage(damageToDeal);
+                break;
             }
         }
-
-        //보스는 번개를 플레이어의 위치를 추적해서 떨어트림
-        //떨어트리기 전에 바닥에 Color.Red 경고선을 생성
-        //1초후 그 위치에 thunder 파티클 시스템 프리팹 생성
-        //만약 번개가 플레이어에게 적중했다면 Debug.Log("hit thunder"); 출력
     }
 }

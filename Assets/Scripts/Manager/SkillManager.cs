@@ -13,8 +13,6 @@ public class SkillManager : MonoBehaviour
     private BlessingSkill blessingSkill;
     private SpecialSkill specialSkill;
 
-    [Header("보스 스킬")]
-    private BossThunderSkill bossSkill01;
     private void Awake()
     {
         animator = FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>();
@@ -24,8 +22,6 @@ public class SkillManager : MonoBehaviour
         predationSkill = GetComponent<PredationSkill>();
         blessingSkill = GetComponent<BlessingSkill>();
         specialSkill = GetComponent<SpecialSkill>();
-
-        bossSkill01 = GetComponent<BossThunderSkill>();
     }
 
     public void ReadSkill(SOSkill skill)
@@ -38,9 +34,6 @@ public class SkillManager : MonoBehaviour
     public void ActivatePredationSkill() => predationSkill.ActivateSkill();  //포식 발동
     public void ActivateBlessSkill() => blessingSkill.ActivateSkill();  //가호 발동
     public void ActivateMegidoSkill() => specialSkill.ActivateSkill();  //오의 발동
-
-
-    public void ActiveThunderSkill() => bossSkill01.CastThunderSkill(); //번개 발동
 }
 
 

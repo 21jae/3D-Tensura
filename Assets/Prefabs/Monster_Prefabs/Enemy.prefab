@@ -1689,14 +1689,15 @@ GameObject:
   - component: {fileID: 4967517941440505089}
   - component: {fileID: 4458821802076340931}
   - component: {fileID: 3955982055541547694}
-  - component: {fileID: 1682020066352266611}
+  - component: {fileID: 4811800705809000956}
+  - component: {fileID: -4672063002301562455}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3521550724868074717
 Transform:
   m_ObjectHideFlags: 0
@@ -1711,7 +1712,7 @@ Transform:
   m_Children:
   - {fileID: 7196022251642430025}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4967517941440505089
 CapsuleCollider:
@@ -1771,38 +1772,49 @@ MonoBehaviour:
     type: 3}
   deathPrefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473,
     type: 3}
-  patrolRadius: 5
-  patrolDuration: 4
-  detectionRadius: 15
+  animator: {fileID: 0}
+  patrolRadius: 10
+  patrolDuration: 3
+  detectionRadius: 30
   attackInterval: 1.5
   guardInterval: 1.5
---- !u!54 &1682020066352266611
-Rigidbody:
+--- !u!114 &4811800705809000956
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3995100918946396388}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa2da8afd44baa4d8f9c42365063bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thunderSkillData: {fileID: 11400000, guid: 4f1c5184e6317fe4f875fd3492224f08, type: 2}
+  thunder: {fileID: 2470815583294805853, guid: af7893b349c4b304a93c0670fce02694, type: 3}
+  layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
+    m_Bits: 128
+--- !u!114 &-4672063002301562455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995100918946396388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5b39b0c4b3e94b91442483cb75448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSKill: {fileID: 11400000, guid: 0b84fcfd715b8494caca2f4af7aff6df, type: 2}
+  dashEffect: {fileID: 8608917286184711326, guid: cd0af1b665b527e44b91195e38bbafcc,
+    type: 3}
+  layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+    m_Bits: 128
+  dashDistance: 10
+  dashSpeed: 5
 --- !u!1 &4032972462141184803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,7 +4195,7 @@ Animator:
   m_GameObject: {fileID: 9132509743920799368}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b0d47be582f0ce14cb32543a786206a6, type: 3}
-  m_Controller: {fileID: 9100000, guid: b421e6e06201ba044b9a7889b80a2fdd, type: 2}
+  m_Controller: {fileID: 9100000, guid: a69efab3b3b3c4547bdc96b39f6992fe, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
