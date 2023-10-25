@@ -93,7 +93,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             yield return null;
         }
 
-        StartCoroutine(CreateMagicPosWithInterval(15, 2f));
+        StartCoroutine(CreateMagicPosWithInterval(18, 2.5f));
 
         yield return new WaitForSeconds(skillDelay);
 
@@ -120,7 +120,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
             Transform endPos = magicTargetPosition[randomTargetIndex];
 
-            StartCoroutine(ShootRayFromTo(startPos, endPos, 150f));
+            StartCoroutine(ShootRayFromTo(startPos, endPos, 100f));
         }
 
         //메기도 지속시간
@@ -167,6 +167,16 @@ public class SpecialSkill : MonoBehaviour, ISkill
         }
 
         GameObject megidoRayInstance = Instantiate(megidoRayPrefab, startPosition, Quaternion.identity);
+        LineRenderer lineRenderer = megidoRayInstance.GetComponent<LineRenderer>();
+
+        lineRenderer.positionCount = 2;
+        lineRenderer.SetPosition(0, startPosition);
+        lineRenderer.SetPosition(1, startPosition);
+        lineRenderer.startWidth = 0.25f;
+        lineRenderer.endWidth = 0.25f;
+
+        SetMaxAlpha(lineRenderer);
+
         MegidoRay megidoScript = megidoRayInstance.GetComponent<MegidoRay>();
 
         while (true) 
@@ -181,6 +191,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
                 if (hitInfo.transform)
                 {
                     //새로운 랜덤 타겟 생성
+                    lineRenderer.SetPosition(1, megidoRayInstance.transform.position);
+
                     int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
                     to = magicTargetPosition[randomTargetIndex];
                     endPosition = to.position;
@@ -193,6 +205,10 @@ public class SpecialSkill : MonoBehaviour, ISkill
                 int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
                 to = magicTargetPosition[randomTargetIndex];
                 endPosition = to.position;
+                lineRenderer.SetPosition(0, megidoRayInstance.transform.position);
+                lineRenderer.SetPosition(1, megidoRayInstance.transform.position);
+
+                //StartCoroutine(DestroyAfterDelay(megidoRayInstance, 2f));
             }
 
             yield return null;
@@ -217,10 +233,14 @@ public class SpecialSkill : MonoBehaviour, ISkill
         {
             possiblePosition.Add(centerPos + new Vector3((i - 1.5f) * interval, 0, interval));
         }
+        for (int i = 0; i < 3; i++)
+        {
+            possiblePosition.Add(centerPos + new Vector3((i - 1f) * interval, 0, interval));
+        }
 
         int createdCount = 0;   //생성된 magicPos의 수 추적
 
-        while (createdCount < 15)
+        while (createdCount < 18)
         {
             int randomIndex = UnityEngine.Random.Range(0, possiblePosition.Count);  //랜덤한 위치의 인덱스를 생성
             Vector3 randomPos = possiblePosition[randomIndex];
@@ -233,5 +253,42 @@ public class SpecialSkill : MonoBehaviour, ISkill
             
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    private IEnumerator DestroyAfterDelay(GameObject megidoRay, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        LineRenderer lineRenderer = megidoRay.GetComponent<LineRenderer>();
+        float fadeDuration = 5.0f; // 잔상이 사라지는 데 걸리는 시간
+        float startAlpha = lineRenderer.startColor.a;
+        float endAlpha = lineRenderer.endColor.a;
+
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            float normalizedTime = t / fadeDuration;
+            Color newStartColor = new Color(lineRenderer.startColor.r, lineRenderer.startColor.g, lineRenderer.startColor.b, Mathf.Lerp(startAlpha, 0, normalizedTime));
+            Color newEndColor = new Color(lineRenderer.endColor.r, lineRenderer.endColor.g, lineRenderer.endColor.b, Mathf.Lerp(endAlpha, 0, normalizedTime));
+
+            lineRenderer.startColor = newStartColor;
+            lineRenderer.endColor = newEndColor;
+
+            yield return null;
+        }
+
+        lineRenderer.startColor = new Color(lineRenderer.startColor.r, lineRenderer.startColor.g, lineRenderer.startColor.b, 0);
+        lineRenderer.endColor = new Color(lineRenderer.endColor.r, lineRenderer.endColor.g, lineRenderer.endColor.b, 0);
+    }
+
+    private void SetMaxAlpha(LineRenderer lineRenderer)
+    {
+        Color startColor = lineRenderer.startColor;
+        Color endColor = lineRenderer.endColor;
+
+        startColor.a = 1f;
+        endColor.a = 1f;
+
+        lineRenderer.startColor = startColor;
+        lineRenderer.endColor = endColor;
     }
 }
