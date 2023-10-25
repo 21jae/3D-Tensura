@@ -26,7 +26,15 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //몬스터의 프리�
                 break;
         }
 
-        return CreateMonsterPrefab(prefab, position);
+        Monster monster = CreateMonsterPrefab(prefab, position);
+
+        if (type == MonsterTypes.LizardType.Boss)
+        {
+            monster.SetAsBoss();
+            Debug.Log("보스 적용 및 생성");
+        }
+
+        return monster;
     }
 
     public Monster CreateOrc(MonsterTypes.OrcType type, Vector3 position)

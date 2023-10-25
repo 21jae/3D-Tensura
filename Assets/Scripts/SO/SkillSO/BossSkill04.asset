@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4eb012022aacd740adafa332d696c46, type: 3}
-  m_Name: BossSkill01
+  m_Name: BossSkill04
   m_EditorClassIdentifier: 
-  animationName: Boss_Skill01
-  skillIcon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  skillDamageMultiplier: 4.5
-  skillCoolTime: 1
-  skillDescription: "\uBCF4\uC2A4\uAC00 \uC8FC\uAE30\uC801\uC73C\uB85C \uBC88\uAC1C\uB97C
-    \uB5A8\uC5B4\uD2B8\uB9BD\uB2C8\uB2E4."
+  animationName: Boss_Skill03_2
+  skillIcon: {fileID: 1810930272, guid: 51777b3d5b50e7b4bbc3d62b8c8898dd, type: 3}
+  skillDamageMultiplier: 3.2
+  skillCoolTime: 0
+  skillDescription: "\uBCFC\uD14D\uC2A4 \uC2A4\uD53C\uC5B4 \uD3ED\uBC1C"

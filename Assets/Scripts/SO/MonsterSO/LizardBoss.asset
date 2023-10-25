@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LizardBoss
   m_EditorClassIdentifier: 
   characterName: LizardMan
-  maxHealth: 2000
-  currentHealth: 2000
-  attackPower: 100
+  maxHealth: 4000
+  currentHealth: 4000
+  attackPower: 300
   defense: 25
   speed: 4

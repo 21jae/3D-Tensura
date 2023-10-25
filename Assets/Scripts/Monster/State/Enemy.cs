@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
@@ -11,6 +13,7 @@ public class Enemy : MonoBehaviour, IDamageable
         CHASE,
         ATTACK,
         GUARD,
+        SKILL,
         DEATH
     }
     public State currentState;
@@ -20,17 +23,19 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private GameObject predationHit;
     [SerializeField] private GameObject attackParticlePrefab;
     [SerializeField] private GameObject deathPrefab;
+    public GameObject swordPrefab;
 
     [HideInInspector] public Animator animator;
     private Transform playerTransform;
     private MonsterWeapon monsterWeapon;
+    private Monster monster;
 
     //Patrol
     [SerializeField] private float patrolRadius = 5f;   //순찰 반경
     [SerializeField] private float patrolDuration = 5f; //한 위치에 멈춰있을 시간
     [SerializeField] private float detectionRadius = 8f;  //플레이어 감지 거리
     private Vector3 nextPatrolPoint;
-    private float stopDistance = 2.5f;  //플레이어와 일정 거리 유지
+    [SerializeField] private float stopDistance = 2.5f;  //플레이어와 일정 거리 유지
 
     //Attack
     [SerializeField] private float attackInterval = 1.5f;    //공격 간격
@@ -59,6 +64,7 @@ public class Enemy : MonoBehaviour, IDamageable
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         monsterWeapon = GetComponentInChildren<MonsterWeapon>();
         characterStatManager = GetComponent<CharacterStatManager>();
+        monster = GetComponent<Monster>();
 
         ChooseNextPatrolPoint();
     }
@@ -68,7 +74,7 @@ public class Enemy : MonoBehaviour, IDamageable
         ExecuteState();
     }
 
-    private void ChangeState(State newState)
+    protected virtual void ChangeState(State newState)
     {
         if (currentState != newState)
         {
@@ -101,11 +107,15 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.GUARD:
                 EnterGuard();
                 break;
+            case State.SKILL:
+                EnterSkill();
+                break;
             case State.DEATH:
                 EnterDeath();
                 break;
         }
     }
+
     private void ExecuteState()
     {
         StopIfNearPlayer();
@@ -127,11 +137,15 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.GUARD:
                 ExcuteGuard();
                 break;
+            case State.SKILL:
+                ExcuteSkill();
+                break;
             case State.DEATH:
                 ExcuteDeath();
                 break;
         }
     }
+
     private void ExitState(State state)
     {
         switch (currentState)
@@ -151,11 +165,16 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.GUARD:
                 ExitGuard();
                 break;
+            case State.SKILL:
+                ExitSkill();
+                break;
             case State.DEATH:
                 ExitDeath();
                 break;
         }
     }
+
+
 
     #endregion
 
@@ -165,6 +184,50 @@ public class Enemy : MonoBehaviour, IDamageable
     private void EnterPatrol() { }
     private void EnterChase() { }
     private void EnterAttack() { }
+    private void EnterSkill() 
+    {
+        Debug.Log("스킬발동");
+
+        Boss boss = GetComponent<Boss>();
+        List<Action> possbileSkills = new List<Action>();
+
+        if (!boss.skillActive)
+        {
+            possbileSkills.Add(() =>
+            {
+                animator.SetBool("Boss_Skill01", true);
+                animator.SetFloat("Speed", 0f);
+                boss.BossSkill01();
+            });
+        }
+
+        if (!boss.skillActive2)
+        {
+            possbileSkills.Add(() =>
+            {
+                boss.BossSkill02();
+            });
+        }
+
+        if (!boss.skillActive3)
+        {
+            possbileSkills.Add(() =>
+            {
+                boss.BossSkill03();
+            });
+        }
+
+        if (possbileSkills.Count > 0)
+        {
+            int randomSkillIndex = UnityEngine.Random.Range(0, possbileSkills.Count);
+            possbileSkills[randomSkillIndex]();
+        }
+        else
+        {
+            Debug.Log("스킬 못 찾음");
+        }
+    }
+
     private void EnterGuard()
     {
         if (guardRoutine != null)
@@ -235,22 +298,51 @@ public class Enemy : MonoBehaviour, IDamageable
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, characterStatManager.currentSpeed * Time.deltaTime);
         }
 
-        // 범위 안에 들어왔다면
-        if (DistanceToPlayer() <= stopDistance)
+
+        if (!monster.IsBoss)
         {
-            float chance = UnityEngine.Random.Range(0f, 1f);
-
-            if (chance <= 0.75f) // 75% 확률로 공격 상태 전환
+            // 일반 몬스터라면
+            if (DistanceToPlayer() <= stopDistance)
             {
-                ChangeState(State.ATTACK);
-            }
-            else   // 25% 확률로 가드 상태 전환
-            {
-                ChangeState(State.GUARD);
-            }
+                float chance = UnityEngine.Random.Range(0f, 1f);
 
-            return;
+                if (chance <= 0.75f) // 75% 확률로 공격 상태 전환
+                {
+                    ChangeState(State.ATTACK);
+                }
+                else   // 25% 확률로 가드 상태 전환
+                {
+                    ChangeState(State.GUARD);
+                }
+
+                return;
+            }
         }
+        else
+        {
+            // Boss라면
+            if (DistanceToPlayer() <= stopDistance)
+            {
+                float chance = UnityEngine.Random.Range(0f, 1f);
+
+                if (chance <= 0.5f)// 50%확률로 공격)
+                {
+                    ChangeState(State.ATTACK);
+                }
+                else if (chance <= 0.8f)  //30%확률로 스킬
+                {
+                    ChangeState(State.SKILL);
+                }
+                else    //20%확률로 가드
+                {
+                    ChangeState(State.GUARD);
+                }
+
+                return;
+            }
+        }
+
+
 
         //일정거리 이상 벗어나면 추적 종료
         if (DistanceToPlayer() > detectionRadius)
@@ -277,6 +369,10 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcuteGuard()
     {
+    }
+    private void ExcuteSkill()
+    {
+
     }
 
     private void ExcuteDeath()
@@ -306,7 +402,7 @@ public class Enemy : MonoBehaviour, IDamageable
     }
 
     private void ExitGuard() { }
-
+    private void ExitSkill() { }
     private void ExitDeath() { }
 
     #endregion
@@ -362,7 +458,7 @@ public class Enemy : MonoBehaviour, IDamageable
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, characterStatManager.currentSpeed * Time.deltaTime);
     }
 
-    private void LookTowardsPoint(Vector3 targetPoint)
+    public void LookTowardsPoint(Vector3 targetPoint)
     {
         Vector3 direction = (targetPoint - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
@@ -372,6 +468,11 @@ public class Enemy : MonoBehaviour, IDamageable
     private void StopIfNearPlayer()
     {
         if (DistanceToPlayer() <= stopDistance)
+        {
+            animator.SetFloat("Speed", 0f);
+        }
+
+        if (monster.IsBoss && DistanceToPlayer() <= 3f)
         {
             animator.SetFloat("Speed", 0f);
         }

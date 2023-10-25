@@ -7,7 +7,7 @@ public class MoveObject : MonoBehaviour
     private Joystick controller;
     private CharacterController characterController;
 
-    [SerializeField] private float speed = 5f;
+    public float speed = 5f;
 
     private void Awake()
     {

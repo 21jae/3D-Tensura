@@ -27,11 +27,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private float blinkDuration = 0.1f;
     [SerializeField] private float knockbackStrength = 5f;
     [SerializeField] private float knockbackDuration = 0.1f;
+    [SerializeField] private float damageInterval = 1.5f;
     private List<Renderer> characterRenderers = new List<Renderer>();
     private bool isInvincible;
+    private bool isRecoveringFormBigDamage;
+    private bool isSkillDamage;
 
 
-    #region
+    #region 애니메이션
     [Header("애니메이션 Hash")]
     private readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
     private readonly int Attack01 = Animator.StringToHash("Attack01");
@@ -40,6 +43,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     private readonly int Attack04 = Animator.StringToHash("Attack04");
     private readonly int Death = Animator.StringToHash("Death");
     private readonly int Damage = Animator.StringToHash("Damage");
+    private readonly int BigDamage = Animator.StringToHash("BigDamage");
+    private readonly int StandUp = Animator.StringToHash("StandUp");
+
 
     #endregion
 
@@ -178,23 +184,39 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             return;
         }
-        
+
+        StopPlayer();
+
         float damageToTake = amount - playerStatManager.currentDefense;
 
         if (damageToTake < 0f)
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
 
         playerStatManager.currentHP -= damageToTake;
-        StartCoroutine(Knockback());
-        animator.SetBool(Damage, true);
-        StartCoroutine(BecomeInvincible());
+
+        //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
+        float damagePercentage = damageToTake / playerStatManager.currentHP;
+        
+        if (damagePercentage > 0.25f)
+        {
+            StartCoroutine(PlayBigDamageAnimation());
+            StartCoroutine(BecomeInvincible());
+
+        }
+
+        else if (damagePercentage > 0.05f)
+        {
+            animator.SetBool(Damage, true);
+            StartCoroutine(BecomeInvincible());
+            StartCoroutine(Knockback());
+        }
 
         Debug.Log(playerStatManager.currentHP);
 
         if (playerStatManager.currentHP <= 0f)
         {
-            animator.SetTrigger("Death");
-            Destroy(gameObject, 3.5f);
+            animator.SetTrigger(Death);
+            Destroy(gameObject, 2.5f);
             
             //UI창 출력 및 죽음사운드
         }
@@ -210,6 +232,25 @@ public class PlayerController : MonoBehaviour, IDamageable
             characterController.Move(knockbackDirection * knockbackStrength * Time.deltaTime);
             yield return null;
         }
+
+        animator.SetBool(Damage, false);
+    }
+
+    private IEnumerator PlayBigDamageAnimation()
+    {
+        isRecoveringFormBigDamage = true;
+
+        animator.SetBool(BigDamage, true);
+        yield return new WaitForSeconds(damageInterval);
+
+        animator.SetBool(BigDamage, false);
+        animator.SetBool(StandUp, true);
+        yield return new WaitForSeconds(damageInterval);
+
+        animator.SetBool(StandUp, false);
+        yield return new WaitForSeconds(damageInterval);
+
+        isRecoveringFormBigDamage = false;
     }
 
     private IEnumerator BecomeInvincible()
@@ -230,7 +271,12 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             renderer.enabled = true;
         }
-        animator.SetBool(Damage, false);
         isInvincible = false;
+    }
+
+    private void StopPlayer()
+    {
+        characterController.Move(Vector3.zero);
+        animator.SetFloat(MoveSpeed, 0f);
     }
 }

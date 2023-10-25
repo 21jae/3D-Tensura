@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerStat
   m_EditorClassIdentifier: 
   characterName: Rimuru
-  maxHealth: 1000
-  currentHealth: 1000
-  attackPower: 100
+  maxHealth: 3000
+  currentHealth: 3000
+  attackPower: 70
   defense: 10
   speed: 1
