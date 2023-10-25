@@ -10,6 +10,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
     [SerializeField] private GameObject megidoCircle;
     [SerializeField] private Transform megidoPosPrefab;
     [SerializeField] private Transform megidoTargetPrefab;
+    [SerializeField] private GameObject megidoRayPrefab;
     private float skillDelay = 1f;
 
 
@@ -96,9 +97,9 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         yield return new WaitForSeconds(skillDelay);
 
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 40; i++)
         {
-            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 10f), UnityEngine.Random.Range(-15f, 15f));
+            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 16f), UnityEngine.Random.Range(-15f, 15f));
             Transform magicTarget = Instantiate(megidoTargetPrefab, createdMegidoCircle.transform.position + randomTargetOffset, Quaternion.identity);
 
             magicTargetPosition.Add(magicTarget);
@@ -119,11 +120,11 @@ public class SpecialSkill : MonoBehaviour, ISkill
             int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
             Transform endPos = magicTargetPosition[randomTargetIndex];
 
-            StartCoroutine(ShootRayFromTo(startPos, endPos, 15f));
+            StartCoroutine(ShootRayFromTo(startPos, endPos, 150f));
         }
 
         //메기도 지속시간
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(30f);
 
         //지속시간 종료됐으므로 프리펩 및 List에 저장된 것들 제거
         foreach (Transform startPos in tempList)
@@ -165,14 +166,19 @@ public class SpecialSkill : MonoBehaviour, ISkill
             magicStartPosition.Remove(from);
         }
 
-        while (Vector3.Distance(startPosition, endPosition) > 0.1f) 
+        GameObject megidoRayInstance = Instantiate(megidoRayPrefab, startPosition, Quaternion.identity);
+        MegidoRay megidoScript = megidoRayInstance.GetComponent<MegidoRay>();
+
+        while (true) 
         {
-            Ray ray = new Ray(startPosition, endPosition - startPosition);
+            megidoScript.MoveToWards(endPosition, raySpeed);
+
+            Ray ray = new Ray(megidoRayInstance.transform.position, endPosition - megidoRayInstance.transform.position);
             RaycastHit hitInfo;
 
             if (Physics.Raycast(ray, out hitInfo, raySpeed * Time.deltaTime))
             {
-                if (hitInfo.transform == to)
+                if (hitInfo.transform)
                 {
                     //새로운 랜덤 타겟 생성
                     int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
@@ -180,9 +186,15 @@ public class SpecialSkill : MonoBehaviour, ISkill
                     endPosition = to.position;
                 }
             }
-            Debug.DrawLine(startPosition, endPosition, Color.red, 0.5f);
+            
+            if (Vector3.Distance(megidoRayInstance.transform.position, endPosition) <= 0.01f)
+            {
+                //새로운 랜덤 타겟 생성
+                int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
+                to = magicTargetPosition[randomTargetIndex];
+                endPosition = to.position;
+            }
 
-            startPosition = ray.GetPoint(raySpeed * Time.deltaTime);
             yield return null;
         }
     }
