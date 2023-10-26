@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UICharacterHP : MonoBehaviour
+public class UIPlayerHP : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     [SerializeField] private PlayerController playerController;
