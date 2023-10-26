@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [HideInInspector] public CharacterStatManager playerStatManager;
     private CharacterController characterController;
     public SkillManager skillManager;
+    public InventoryObject inventory;
 
     private Animator animator;
     private Joystick controller;
@@ -73,6 +74,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         MovementUpdate();
 
         CheckHitWall();
+
+        InventoryTest();
     }
 
     #endregion
@@ -279,4 +282,33 @@ public class PlayerController : MonoBehaviour, IDamageable
         characterController.Move(Vector3.zero);
         animator.SetFloat(MoveSpeed, 0f);
     }
+
+    #region 인벤토리
+    public void OnTriggerEnter(Collider other)
+    {
+        var item = other.GetComponent<Item>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
+    }
+
+    private void InventoryTest()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            inventory.Save();
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            inventory.Load();
+        }
+    }
+    #endregion
 }
