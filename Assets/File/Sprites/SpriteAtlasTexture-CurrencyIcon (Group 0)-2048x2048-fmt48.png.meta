@@ -1,0 +1,2679 @@
+fileFormatVersion: 2
+guid: d6638331c2b8fd744b00ac92af3a1339
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1594
+        width: 161
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a1c2e117b874d4c8e8cf8ad3440429
+      internalID: 68966251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1593
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044e6517f0cf7834c8e5cb34ef346641
+      internalID: -2106015299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_2
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1723
+        width: 141
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6c8cdbffaa64549bd8993bad1b5d86
+      internalID: 2107642335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1420
+        width: 173
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e442d242b66cbb4aa1b0359cf56e95b
+      internalID: 1459779314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1428
+        width: 129
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6d2803680956442a0688da6f75fc14
+      internalID: 745875751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_5
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1564
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72476ba0bc69b55478510f062986cfbc
+      internalID: -307118311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1568
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e860910738f1140bc4febb733b6779
+      internalID: 1028248070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_7
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1579
+        width: 148
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188c12ce25032404b86767d258bf9c6d
+      internalID: 1051612285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_8
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1545
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b92a375eb23081429ad6cf465c9c97c
+      internalID: 810478929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_9
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1539
+        width: 145
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2dd572b4ccd8d45975892836feb581
+      internalID: -164086115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_10
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 1516
+        width: 140
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dded5385a4c25be46884ee4db485c009
+      internalID: 1575830998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_11
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1523
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fc6750016b1cb4ca0399f791a94482
+      internalID: -236990260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_12
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1428
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5fb390773d8004896afd9246a417f0
+      internalID: 664836767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_13
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1398
+        width: 158
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40db841f9a559a4a93f40d21917f330
+      internalID: 559373330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_14
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1531
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6227246d0f28bdd4886e7db6223529a2
+      internalID: -1182649196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_15
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1388
+        width: 148
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f648b74142852c4d83bc0c000ab39c5
+      internalID: 1148282216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_16
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1388
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec0ad82a4605e146b8389c153f89e24
+      internalID: -74873241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1509
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f07b127d460af542af9ea5c6f6d13df
+      internalID: -2116525924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_18
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1358
+        width: 127
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045601b2be2b3b54c92da7a7f3b1541b
+      internalID: -209568344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_19
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1459
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce89eded7835b484492683284b8f9748
+      internalID: -15044581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1240
+        width: 174
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2149100e6a63ff45bff5b943e94cac7
+      internalID: 1735195791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_21
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1256
+        width: 183
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d187937a8aa0042b6722763f0d1854
+      internalID: 271354877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_22
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1223
+        width: 158
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e7f72fdbc172f4a988dc7b4311b6b5
+      internalID: -1756326010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_23
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1364
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe43c33b1855b044699ee5c9333c7962
+      internalID: 1336233231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_24
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1231
+        width: 138
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f9abb8922291141a5f51b320417fcd
+      internalID: 1161364469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_25
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1218
+        width: 139
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee0a381a7a6bfb4bbb7359d09e2f533
+      internalID: 1107673028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_26
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1219
+        width: 122
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65c14a2e38579c4eb8d55bd4d4b53aa
+      internalID: -1672545730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_27
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1356
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9a9154df1c7e84c9ad801a02214ee8
+      internalID: 1192447631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_28
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 1219
+        width: 110
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf7c7572d96aef4797f0f9a70b2ffac
+      internalID: -1135289364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_29
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 1289
+        width: 129
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e54c118c563ca4eb6501a78e41c01e
+      internalID: -588990244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_30
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1278
+        width: 122
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690de92721f666d4b948bdf114446e23
+      internalID: -322267878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_31
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1200
+        width: 152
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46a6f09ad4ad1142a3c5b3698619e91
+      internalID: 1032033883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_32
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 1352
+        width: 42
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85fbcb8e0af36647b5266cd57aebbab
+      internalID: 1779010636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_33
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1314
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca34925b6f89fd04a923a123e6c580f4
+      internalID: 1457038614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_34
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 1332
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe7aee24c4a5a849a50dd0b0a5bb413
+      internalID: 1032644375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_35
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1300
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ef879cc3c1c0441a3f9b71c3210a96
+      internalID: 239026219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_36
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1076
+        width: 169
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d971c75fe6408b24c8bccbec2de976d3
+      internalID: -177865559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_37
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 1250
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784da4a89f82d454b9f536d7366bd38c
+      internalID: -1159856434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_38
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 1133
+        width: 134
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ea279f7211aa647804fb3c0799865e
+      internalID: 1066978427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_39
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1132
+        width: 130
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b77cb824bacb9c439016926b1abdcf7
+      internalID: 861478651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1060
+        width: 174
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ceb449fbda3b2340bc478c97f7ca4fc
+      internalID: 1634647104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_41
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1036
+        width: 172
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c16983b1a0d2a94392fc66557ae73e1
+      internalID: -683342885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_42
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1054
+        width: 171
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b910b14fcade450429447f88c74a10df
+      internalID: 1543906173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_43
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1054
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a4a397142c6254fa719efe5ba644ad
+      internalID: -820643058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_44
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1052
+        width: 140
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152c4b4c47276ea4597a6d2dffb2a2f6
+      internalID: 818616639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_45
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1205
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a34609093aa5147ba9fe600564fe17
+      internalID: -1974602701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_46
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1184
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb57c516ad5e864488cd1f95befa8189
+      internalID: -1343418690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_47
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1052
+        width: 142
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85844f94332d02f43be6cfa366ec1dde
+      internalID: -1606432598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_48
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 981
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfcee82bb0d64d47a402ae6117829c8
+      internalID: -251275830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_49
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 981
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c93376ad042d6845a037b3b3296c75e
+      internalID: 838004408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_50
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 1120
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a205ac0b345eb4cb8376a0b416849e
+      internalID: -1613590386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_51
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 891
+        width: 172
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b587e0b146cf094aa1231738105550f
+      internalID: -110046210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_52
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 919
+        width: 118
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c656cb2b0c8e2674099ca5ec96c8e6e4
+      internalID: -1632722683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_53
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1056
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15af0acec2045764987ad614742292b4
+      internalID: -1627929053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_54
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 929
+        width: 110
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f4fe2c119cd334eb60cbe85ed00871
+      internalID: 2116107470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_55
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 880
+        width: 174
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb5d13a522811f4383f00ad46540db2
+      internalID: -1176864520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_56
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 864
+        width: 172
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f533a240da98c1a4e823c654f9687632
+      internalID: 704421335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_57
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 868
+        width: 169
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9962d9ef71fb8841bcb9e071695716f
+      internalID: -1736788420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_58
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 869
+        width: 169
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221db5a4eeb100141890cda9dcfdf44a
+      internalID: 321471820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_59
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 869
+        width: 169
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f78df5acdca6d4d97021be2e328853
+      internalID: -2056312491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_60
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 1014
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73ec7637cbfbbd4cb83611f0d4a713d
+      internalID: -911632862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_61
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 978
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159eac4c992156f44a7580a515626266
+      internalID: -1876256255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_62
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 795
+        width: 169
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03753e96bd64f5044aee0095ec5c3ad9
+      internalID: -1563506623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_63
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 796
+        width: 150
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b7b89325d0a2e499aacee60a312198
+      internalID: -2118425276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_64
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 950
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac392cd3c1fdd946b030acbc5c469a4
+      internalID: 520821756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_65
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 668
+        width: 186
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bae4f4c765aa8241b2d850c09053b5b
+      internalID: 423911562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_66
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 679
+        width: 185
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5e9e27b91cef94abd26d0a888fe7d6
+      internalID: -1442630495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_67
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 653
+        width: 185
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543b0bfd4926dba48b3cf262664e3f76
+      internalID: -1896489357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_68
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 656
+        width: 188
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f97ff41dec47074d88da2a237ab016c
+      internalID: -139528802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_69
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 656
+        width: 184
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3448ae88297e4e47bf59ec002434675
+      internalID: -551640895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_70
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 642
+        width: 194
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35ac7a175556de489f4d07024b2868a
+      internalID: -2143559517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_71
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 792
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cff4930e64c4f4bbfc84d554d6129f
+      internalID: -131795374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_72
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 737
+        width: 174
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0f4548d315062439cbcca4aefdff1d
+      internalID: 1739775193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_73
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 743
+        width: 169
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4849d1b7a875345923a5cafb065b4f
+      internalID: 106711699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_74
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 743
+        width: 169
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55bef4ea035b761429e2fcb9109d40ca
+      internalID: 1749422322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_75
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 468
+        width: 186
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb0ed41fb69f59542b5429613a17aa42
+      internalID: 473614561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_76
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 597
+        width: 170
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91adec9c330fbc489c802a2cebf51ac
+      internalID: -1386259201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_77
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 597
+        width: 164
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9630c3c5d42542498838c56c6dd88e7
+      internalID: -898654832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_78
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 587
+        width: 47
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857b6b3d6a5c3a14ba31a5eddd33c0b6
+      internalID: 1017422676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_79
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 562
+        width: 187
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19e5904df951294fb1077e0aef49020
+      internalID: 416744805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_80
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 664
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2261d9fd65a894ca9693afdfdd52bb
+      internalID: -796876403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_81
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 562
+        width: 174
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6dc08464ff1bd94db0296612862cbe6
+      internalID: -292875693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_82
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 189
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee72c2335d3594849a85afbc1b1cfa46
+      internalID: -363895353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_83
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 441
+        width: 185
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5adc22bdecd07488302fbd1a7c00b0
+      internalID: 26243403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_84
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 447
+        width: 185
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d273e7e5af4e4394a9e146e172b562e3
+      internalID: -1550059378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_85
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 447
+        width: 184
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563d81a9d7d44264ca5aa4d37869fdeb
+      internalID: 922892807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_86
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 446
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9285a3715463e8247bdaaff440a4d47a
+      internalID: 1954872447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_87
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 403
+        width: 187
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b39ba5754e72af4687b1046eb1922b1
+      internalID: -1968013704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_88
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 578
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7b2750d8425a341899dc67b2b712d4
+      internalID: 1874916124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_89
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 387
+        width: 177
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7f38f62e9691344b2d87aa1f444222
+      internalID: -688253133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_90
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 387
+        width: 187
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cf2e5a6f4bb3f41b3e58cea4db16a7
+      internalID: -1064692830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_91
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 489
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfb147c4cbd489439ba31fb21b9c3e1
+      internalID: 774292864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_92
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 378
+        width: 176
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af14259be03e118429b7c4e7a89fa407
+      internalID: 470057484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_93
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 224
+        width: 193
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b29d5f53c8280a47b3a276ae143b647
+      internalID: 1132524804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_94
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 232
+        width: 195
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80647940db7b234487c64661c13defd
+      internalID: 2050122922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_95
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 235
+        width: 204
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b1d41cdba56c64baa7f87dc1549544
+      internalID: 1637117044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_96
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 235
+        width: 189
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955abf1db243bfc4998f2a8e197a5738
+      internalID: 999267474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_97
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 235
+        width: 189
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e727cfd34d69b7439641d62925044d8
+      internalID: 625943206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_98
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 207
+        width: 204
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40915971d7a52684c93c48e744586f19
+      internalID: -1922094511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_99
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 198
+        width: 191
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fba9a4dba91584dae518633412ef4a
+      internalID: -1753734020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_100
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 198
+        width: 194
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980e76ac05710da4c9c9f78512bebb10
+      internalID: 1790517112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_101
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 191
+        width: 181
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed75f69220c2f640a2226cd0b5a91e2
+      internalID: -309111236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 212
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e1cb989a6d11148b5e369bf6e1de0d
+      internalID: 1530162212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_103
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 193
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b83ae74290162a408cf5c9ba1bd1e55
+      internalID: 1996828456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_104
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 0
+        width: 193
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c60ae1186bfc2d46946fd7490727908
+      internalID: 1784753860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_105
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 0
+        width: 193
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06143732f5f24524698e696bcad53d79
+      internalID: -258924467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_106
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 2
+        width: 187
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7208350f99a41014bb5453454a91f275
+      internalID: 978217449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_107
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5adab3679406f4ba64dca3da09f362
+      internalID: 1177277701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_108
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 2
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd1ac58ad2144b41980a019e9f1d00c
+      internalID: -1090824260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_109
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 2
+        width: 194
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3668c3e61b5ea4daeb634c13e83348
+      internalID: 1397732800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_110
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 84
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e706390e330db243936feb01e84589c
+      internalID: -502476341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_111
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 44
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a3f28ad0d02db418a59579218fe290
+      internalID: -1218220081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_112
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 60
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36e21351fb7c5948899ef85f3a88a7c
+      internalID: -62621732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_113
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 12
+        width: 164
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ceb851dd2bce5942a615d6c06e617e2
+      internalID: 1322344053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_114
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 0
+        width: 192
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe3eb9d6c1b1b44daf4043959c34e89
+      internalID: -216557336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_115
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 0
+        width: 204
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 655aeaf2df2005841a7cbcf32136d16d
+      internalID: 719743548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a87459ce1184c59498a3ebe6ca61b517
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_0: 68966251
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_1: -2106015299
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_10: 1575830998
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_100: 1790517112
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_101: -309111236
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_102: 1530162212
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_103: 1996828456
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_104: 1784753860
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_105: -258924467
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_106: 978217449
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_107: 1177277701
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_108: -1090824260
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_109: 1397732800
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_11: -236990260
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_110: -502476341
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_111: -1218220081
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_112: -62621732
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_113: 1322344053
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_114: -216557336
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_115: 719743548
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_12: 664836767
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_13: 559373330
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_14: -1182649196
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_15: 1148282216
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_16: -74873241
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_17: -2116525924
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_18: -209568344
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_19: -15044581
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_2: 2107642335
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_20: 1735195791
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_21: 271354877
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_22: -1756326010
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_23: 1336233231
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_24: 1161364469
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_25: 1107673028
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_26: -1672545730
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_27: 1192447631
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_28: -1135289364
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_29: -588990244
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_3: 1459779314
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_30: -322267878
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_31: 1032033883
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_32: 1779010636
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_33: 1457038614
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_34: 1032644375
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_35: 239026219
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_36: -177865559
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_37: -1159856434
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_38: 1066978427
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_39: 861478651
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_4: 745875751
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_40: 1634647104
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_41: -683342885
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_42: 1543906173
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_43: -820643058
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_44: 818616639
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_45: -1974602701
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_46: -1343418690
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_47: -1606432598
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_48: -251275830
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_49: 838004408
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_5: -307118311
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_50: -1613590386
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_51: -110046210
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_52: -1632722683
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_53: -1627929053
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_54: 2116107470
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_55: -1176864520
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_56: 704421335
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_57: -1736788420
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_58: 321471820
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_59: -2056312491
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_6: 1028248070
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_60: -911632862
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_61: -1876256255
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_62: -1563506623
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_63: -2118425276
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_64: 520821756
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_65: 423911562
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_66: -1442630495
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_67: -1896489357
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_68: -139528802
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_69: -551640895
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_7: 1051612285
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_70: -2143559517
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_71: -131795374
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_72: 1739775193
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_73: 106711699
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_74: 1749422322
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_75: 473614561
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_76: -1386259201
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_77: -898654832
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_78: 1017422676
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_79: 416744805
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_8: 810478929
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_80: -796876403
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_81: -292875693
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_82: -363895353
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_83: 26243403
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_84: -1550059378
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_85: 922892807
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_86: 1954872447
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_87: -1968013704
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_88: 1874916124
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_89: -688253133
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_9: -164086115
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_90: -1064692830
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_91: 774292864
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_92: 470057484
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_93: 1132524804
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_94: 2050122922
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_95: 1637117044
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_96: 999267474
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_97: 625943206
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_98: -1922094511
+      SpriteAtlasTexture-CurrencyIcon (Group 0)-2048x2048-fmt48_99: -1753734020
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 648424f25bef7974e8e59c31a2e6e458, type: 3}
-  m_Name: Default
+  m_Name: ManaStone
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8781270521407642693, guid: 845799f0797d17e468c1de4240c15449, type: 3}
+  Id: 0
+  uiDisplay: {fileID: 1177277701, guid: d6638331c2b8fd744b00ac92af3a1339, type: 3}
   type: 2
-  description: 
+  description: "\uB9C8\uC815\uC11D"

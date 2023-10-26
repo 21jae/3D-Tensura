@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941dfce13a9a6f045ad246c0a484e03f, type: 3}
   m_Name: Monkfish
   m_EditorClassIdentifier: 
-  prefab: {fileID: 201174390489458348, guid: cb5bb9e7110637143bb9e1305ea616d4, type: 3}
+  Id: 1
+  uiDisplay: {fileID: -1968013704, guid: d6638331c2b8fd744b00ac92af3a1339, type: 3}
   type: 0
-  description: "\uD68C\uBCF5"
+  description: "\uD68C\uBCF5\uC57D"
   restoreValue: 100

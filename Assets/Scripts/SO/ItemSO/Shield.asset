@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317e6c9fd203e164fbd92b4fa97930c6, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  prefab: {fileID: 201174390489458348, guid: 1086ec83a631d8847a8e84a6c287d6b8, type: 3}
+  Id: 2
+  uiDisplay: {fileID: -898654832, guid: d6638331c2b8fd744b00ac92af3a1339, type: 3}
   type: 1
-  description: "\uC274\uB4DC"
+  description: "\uB9AC\uBB34\uB8E8\uC758 \uC637"
   atkBonus: 0
   defenceBonus: 10
