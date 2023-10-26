@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8046306856200971445}
   - component: {fileID: 8975660807900112335}
   - component: {fileID: 4118629302517556025}
-  - component: {fileID: 8532779648096616373}
+  - component: {fileID: 3964418674204462022}
   m_Layer: 0
   m_Name: MegidoTarget
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4319194440573908265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.28, y: 13.46, z: 12.91}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa21b7300a890e5428f88330c938138a, type: 2}
+  - {fileID: 2100000, guid: 8eca89fc450f8684ab32e137fac6550f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8532779648096616373
+--- !u!135 &3964418674204462022
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

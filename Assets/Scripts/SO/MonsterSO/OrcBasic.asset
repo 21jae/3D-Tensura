@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: OrcBasic
   m_EditorClassIdentifier: 
   characterName: Orc
-  maxHealth: 1000
-  currentHealth: 1000
-  attackPower: 200
-  defense: 50
-  speed: 3
+  maxHealth: 1500
+  currentHealth: 1500
+  attackPower: 40
+  defense: 40
+  speed: 2.5

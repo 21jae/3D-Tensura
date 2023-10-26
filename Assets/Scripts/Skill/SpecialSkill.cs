@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class SpecialSkill : MonoBehaviour, ISkill
@@ -11,6 +13,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
     [SerializeField] private Transform megidoPosPrefab;
     [SerializeField] private Transform megidoTargetPrefab;
     [SerializeField] private GameObject megidoRayPrefab;
+    [SerializeField] private GameObject megidoHitPrefab;
+    [SerializeField] private GameObject megidoExplosion;
     private float skillDelay = 1f;
 
 
@@ -22,10 +26,14 @@ public class SpecialSkill : MonoBehaviour, ISkill
     [SerializeField] private GameObject swordMesh;
     private Vector3 originalPosition;
 
+    [SerializeField] private LayerMask layerMask;
+
     private List<Transform> magicStartPosition = new List<Transform>();
     private List<Transform> magicTargetPosition = new List<Transform>();
+    private List<GameObject> createdMegidoRays = new List<GameObject>();
 
     private PlayerController playerController;
+    private Enemy enemy;
     private Animator animator;
 
     private void Awake()
@@ -37,16 +45,17 @@ public class SpecialSkill : MonoBehaviour, ISkill
     {
         playerController = FindObjectOfType<PlayerController>();
         animator = playerController.GetComponentInChildren<Animator>();
+        enemy = FindObjectOfType<Enemy>();
+
 
         if (playerController == null)
         {
             Debug.Log("컨트롤러 없음");
         }
     }
-    
+
     private void ActivateMeshes()
     {
-
         if (wingMesh != null && maskMesh != null && swordMesh != null)
         {
             wingMesh.gameObject.SetActive(true);
@@ -73,7 +82,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         originalPosition = playerController.transform.position;
 
-        Vector3 megidoCirclePos = playerController.transform.position + playerController.transform.forward * 10f;
+        Vector3 megidoCirclePos = playerController.transform.position + playerController.transform.forward * 30f;
         GameObject createdMegidoCircle = Instantiate(megidoCircle, megidoCirclePos, Quaternion.identity);
 
         //애니메이션 스테이트 체크 타이밍 겹쳐서 0.1초간 텀을 줬다.
@@ -93,13 +102,13 @@ public class SpecialSkill : MonoBehaviour, ISkill
             yield return null;
         }
 
-        StartCoroutine(CreateMagicPosWithInterval(18, 2.5f));
+        StartCoroutine(CreateMagicPosWithInterval(15, 2f));
 
         yield return new WaitForSeconds(skillDelay);
 
-        for (int i = 0; i < 40; i++)
+        for (int i = 0; i < 88; i++)
         {
-            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 16f), UnityEngine.Random.Range(-15f, 15f));
+            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-18f, 20f), UnityEngine.Random.Range(0f, 12f), UnityEngine.Random.Range(-18f, 20f));
             Transform magicTarget = Instantiate(megidoTargetPrefab, createdMegidoCircle.transform.position + randomTargetOffset, Quaternion.identity);
 
             magicTargetPosition.Add(magicTarget);
@@ -111,7 +120,16 @@ public class SpecialSkill : MonoBehaviour, ISkill
         //발사하기 전 잠깐 대기
         yield return new WaitForSeconds(1f);
 
-        
+        Vector3 targetPosition = new Vector3(playerController.transform.position.x, playerController.transform.position.y - 6f, playerController.transform.position.z + 6f);
+        float moveSpeed = 4f;
+
+        while (Vector3.Distance(playerController.transform.position, targetPosition) > 0.1f)
+        {
+            playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+
         //StartPosition을 안전히 저장할 tempList
         var tempList = new List<Transform>(magicStartPosition);
 
@@ -120,11 +138,17 @@ public class SpecialSkill : MonoBehaviour, ISkill
             int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
             Transform endPos = magicTargetPosition[randomTargetIndex];
 
-            StartCoroutine(ShootRayFromTo(startPos, endPos, 100f));
+            StartCoroutine(ShootRayFromTo(startPos, endPos, 180f));
         }
 
         //메기도 지속시간
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(5f);
+
+        foreach (GameObject ray in createdMegidoRays)
+        {
+            Destroy(ray);
+        }
+        createdMegidoRays.Clear();
 
         //지속시간 종료됐으므로 프리펩 및 List에 저장된 것들 제거
         foreach (Transform startPos in tempList)
@@ -151,6 +175,24 @@ public class SpecialSkill : MonoBehaviour, ISkill
             yield return null;
         }
 
+        GameObject explosion = Instantiate(megidoExplosion, megidoCirclePos, Quaternion.identity);
+
+        Collider[] hitEnemies = Physics.OverlapSphere(explosion.transform.position, 50f, layerMask);
+        float damageToDeal = specialSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
+
+        foreach (Collider enemy in hitEnemies)
+        {
+            IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
+            if (damageableEnemy != null)
+            {
+                damageableEnemy.TakeDamage(damageToDeal);
+            }
+        }
+
+        wingMesh.gameObject.SetActive(false);
+        maskMesh.gameObject.SetActive(false);
+        swordMesh.gameObject.SetActive(true);
+
         animator.SetFloat("MoveSpeed", 0f);
     }
 
@@ -160,6 +202,9 @@ public class SpecialSkill : MonoBehaviour, ISkill
         Vector3 startPosition = from.position;
         Vector3 endPosition = to.position;
 
+        Vector3 middlePosition = (startPosition + endPosition) / 2;
+        middlePosition.y += UnityEngine.Random.Range(1f, 3f);
+
         //광선을 1회 발사했다면 megidoPos 해당 위치가 List에 저장된 magicPosition를 제거시켜, 다시 pos로 돌아가지않게합니다.
         if (magicStartPosition.Contains(from))
         {
@@ -167,19 +212,28 @@ public class SpecialSkill : MonoBehaviour, ISkill
         }
 
         GameObject megidoRayInstance = Instantiate(megidoRayPrefab, startPosition, Quaternion.identity);
+        createdMegidoRays.Add(megidoRayInstance);
         LineRenderer lineRenderer = megidoRayInstance.GetComponent<LineRenderer>();
+
+        int segments = 20;
+        lineRenderer.positionCount = segments;
+
+        for (int i = 0; i < segments; i++)
+        {
+            float t = i / (float)(segments - 1);
+            Vector3 point = BezierCurve(t, startPosition, middlePosition, endPosition);
+            lineRenderer.SetPosition(i, point);
+        }
 
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, startPosition);
         lineRenderer.SetPosition(1, startPosition);
-        lineRenderer.startWidth = 0.25f;
-        lineRenderer.endWidth = 0.25f;
-
-        SetMaxAlpha(lineRenderer);
+        lineRenderer.startWidth = 0.08f;
+        lineRenderer.endWidth = 0.08f;
 
         MegidoRay megidoScript = megidoRayInstance.GetComponent<MegidoRay>();
 
-        while (true) 
+        while (true)
         {
             megidoScript.MoveToWards(endPosition, raySpeed);
 
@@ -198,26 +252,25 @@ public class SpecialSkill : MonoBehaviour, ISkill
                     endPosition = to.position;
                 }
             }
-            
+
             if (Vector3.Distance(megidoRayInstance.transform.position, endPosition) <= 0.01f)
             {
                 //새로운 랜덤 타겟 생성
+                Instantiate(megidoHitPrefab, megidoRayInstance.transform.position, Quaternion.identity);
                 int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
                 to = magicTargetPosition[randomTargetIndex];
                 endPosition = to.position;
                 lineRenderer.SetPosition(0, megidoRayInstance.transform.position);
                 lineRenderer.SetPosition(1, megidoRayInstance.transform.position);
-
-                //StartCoroutine(DestroyAfterDelay(megidoRayInstance, 2f));
             }
-
             yield return null;
         }
+
     }
 
     private IEnumerator CreateMagicPosWithInterval(int count, float interval)
     {
-        Vector3 centerPos = playerController.transform.position + new Vector3(0f , 3.5f, -1f);
+        Vector3 centerPos = playerController.transform.position + new Vector3(0f, 3.5f, -1f);
 
         List<Vector3> possiblePosition = new List<Vector3>();
 
@@ -233,14 +286,9 @@ public class SpecialSkill : MonoBehaviour, ISkill
         {
             possiblePosition.Add(centerPos + new Vector3((i - 1.5f) * interval, 0, interval));
         }
-        for (int i = 0; i < 3; i++)
-        {
-            possiblePosition.Add(centerPos + new Vector3((i - 1f) * interval, 0, interval));
-        }
-
         int createdCount = 0;   //생성된 magicPos의 수 추적
 
-        while (createdCount < 18)
+        while (createdCount < 15)
         {
             int randomIndex = UnityEngine.Random.Range(0, possiblePosition.Count);  //랜덤한 위치의 인덱스를 생성
             Vector3 randomPos = possiblePosition[randomIndex];
@@ -250,45 +298,21 @@ public class SpecialSkill : MonoBehaviour, ISkill
             magicStartPosition.Add(magicPos);
 
             createdCount++;
-            
+
             yield return new WaitForSeconds(0.1f);
         }
     }
 
-    private IEnumerator DestroyAfterDelay(GameObject megidoRay, float delay)
+    private Vector3 BezierCurve(float t, Vector3 p0, Vector3 p1, Vector3 p2)
     {
-        yield return new WaitForSeconds(delay);
+        float u = 1 - t;
+        float tt = t * t;
+        float uu = u * u;
 
-        LineRenderer lineRenderer = megidoRay.GetComponent<LineRenderer>();
-        float fadeDuration = 5.0f; // 잔상이 사라지는 데 걸리는 시간
-        float startAlpha = lineRenderer.startColor.a;
-        float endAlpha = lineRenderer.endColor.a;
+        Vector3 p = uu * p0;
+        p += 2 * u * t * p1;
+        p += tt * p2;
 
-        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
-        {
-            float normalizedTime = t / fadeDuration;
-            Color newStartColor = new Color(lineRenderer.startColor.r, lineRenderer.startColor.g, lineRenderer.startColor.b, Mathf.Lerp(startAlpha, 0, normalizedTime));
-            Color newEndColor = new Color(lineRenderer.endColor.r, lineRenderer.endColor.g, lineRenderer.endColor.b, Mathf.Lerp(endAlpha, 0, normalizedTime));
-
-            lineRenderer.startColor = newStartColor;
-            lineRenderer.endColor = newEndColor;
-
-            yield return null;
-        }
-
-        lineRenderer.startColor = new Color(lineRenderer.startColor.r, lineRenderer.startColor.g, lineRenderer.startColor.b, 0);
-        lineRenderer.endColor = new Color(lineRenderer.endColor.r, lineRenderer.endColor.g, lineRenderer.endColor.b, 0);
-    }
-
-    private void SetMaxAlpha(LineRenderer lineRenderer)
-    {
-        Color startColor = lineRenderer.startColor;
-        Color endColor = lineRenderer.endColor;
-
-        startColor.a = 1f;
-        endColor.a = 1f;
-
-        lineRenderer.startColor = startColor;
-        lineRenderer.endColor = endColor;
+        return p;
     }
 }

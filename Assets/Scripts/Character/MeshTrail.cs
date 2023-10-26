@@ -23,9 +23,7 @@ public class MeshTrail : MonoBehaviour
 
     private void Awake()
     {   
-        //Getcomponet 's' 
         skinnedMeshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();  
-
     }
 
     void Update()

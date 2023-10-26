@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private GameObject attackParticlePrefab;
     [SerializeField] private GameObject deathPrefab;
     public GameObject swordPrefab;
+    public GameObject shieldPrefab;
 
     [HideInInspector] public Animator animator;
     private Transform playerTransform;
@@ -46,10 +47,12 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float guardInterval = 1.5f;  //가드 지속시간
     private Coroutine guardRoutine;
     private bool hasPredationHitSpawned = false;
+    private bool isGuarding = false;
 
     //Damage
-    private bool isRecoveringFormBigDamage;
     private float DamageInterval = 1.5f;
+    private bool isRecoveringFormBigDamage = false;
+    private bool isBeingDestroy = false;
 
 
     protected virtual void Awake()
@@ -238,10 +241,11 @@ public class Enemy : MonoBehaviour, IDamageable
         guardRoutine = StartCoroutine(GuardAnimationRoutine());
     }
 
-    private void EnterDeath()
+    public void EnterDeath()
     {
+        isBeingDestroy = true;
         animator.SetTrigger("Death");
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject);
         Instantiate(deathPrefab, transform.position + Vector3.up, Quaternion.identity);
     }
     #endregion
@@ -299,18 +303,18 @@ public class Enemy : MonoBehaviour, IDamageable
         }
 
 
-        if (!monster.IsBoss)
+        if (monster.IsLizard)
         {
-            // 일반 몬스터라면
+            //공격 타입의 리자드는 공격 위주
             if (DistanceToPlayer() <= stopDistance)
             {
                 float chance = UnityEngine.Random.Range(0f, 1f);
 
-                if (chance <= 0.75f) // 75% 확률로 공격 상태 전환
+                if (chance <= 0.8f) // 80% 확률로 공격 상태 전환
                 {
                     ChangeState(State.ATTACK);
                 }
-                else   // 25% 확률로 가드 상태 전환
+                else   // 10% 확률로 가드 상태 전환
                 {
                     ChangeState(State.GUARD);
                 }
@@ -318,22 +322,43 @@ public class Enemy : MonoBehaviour, IDamageable
                 return;
             }
         }
-        else
+
+        else if (monster.IsOrc)
         {
-            // Boss라면
+            //방어 타입의 오크는 가드 위주
             if (DistanceToPlayer() <= stopDistance)
             {
                 float chance = UnityEngine.Random.Range(0f, 1f);
 
-                if (chance <= 0.5f)// 50%확률로 공격)
+                if (chance <= 0.8f) //80 % 확률로 방어 상태 전환
+                {
+                    ChangeState(State.GUARD);
+                }
+                else
                 {
                     ChangeState(State.ATTACK);
                 }
-                else if (chance <= 0.8f)  //30%확률로 스킬
+
+                return;
+            }
+        }
+
+        else if (monster.IsBoss)
+        {
+            // Boss는 특수스킬 사용
+            if (DistanceToPlayer() <= stopDistance)
+            {
+                float chance = UnityEngine.Random.Range(0f, 1f);
+
+                if (chance <= 0.55f)// 55%확률로 공격)
+                {
+                    ChangeState(State.ATTACK);
+                }
+                else if (chance <= 0.95f)  //40%확률로 스킬
                 {
                     ChangeState(State.SKILL);
                 }
-                else    //20%확률로 가드
+                else    //5%확률로 가드
                 {
                     ChangeState(State.GUARD);
                 }
@@ -341,7 +366,6 @@ public class Enemy : MonoBehaviour, IDamageable
                 return;
             }
         }
-
 
 
         //일정거리 이상 벗어나면 추적 종료
@@ -414,7 +438,14 @@ public class Enemy : MonoBehaviour, IDamageable
         float damageToTake = amount - characterStatManager.currentDefense;
 
         if (damageToTake < 0f)
+        {
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
+        }
+
+        if (isGuarding)
+        {
+            damageToTake *= 0.2f;   //가드중이라면 받는 데미지 80%감소
+        }
 
         characterStatManager.currentHP -= damageToTake;
 
@@ -429,7 +460,15 @@ public class Enemy : MonoBehaviour, IDamageable
         else if (!isPredation)
         {
             Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
-            Instantiate(hitPrefab, effectPosition, Quaternion.identity);
+            
+            if (monster.IsBoss && monster.IsLizard)
+            {
+                Instantiate(hitPrefab, effectPosition, Quaternion.identity);
+            }
+            else if (monster.IsOrc)
+            {
+                Instantiate(hitPrefab, shieldPrefab.transform.position, Quaternion.identity);
+            }
         }
 
         if (characterStatManager.currentHP <= 0f)
@@ -439,11 +478,29 @@ public class Enemy : MonoBehaviour, IDamageable
 
         //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
         float damagePercentage = damageToTake / characterStatManager.currentHP;
-        if (damagePercentage > 0.35f)
+        if (monster.IsBoss && monster.IsLizard && damagePercentage > 0.35f)
         {
             StartCoroutine(PlayBigDamageAnimation());
         }
 
+        if (monster.IsOrc && damagePercentage > 0.25f)
+        {
+            StartCoroutine(PlayOrcDamageAnimation());
+        }
+    }
+
+    private IEnumerator PlayOrcDamageAnimation()
+    {
+        StopIfNearPlayer();
+        animator.SetBool("Damage", true);
+        yield return new WaitForSeconds(DamageInterval);
+
+        animator.SetBool("BigDamage", false);
+        animator.SetBool("StandUp", true);
+        yield return new WaitForSeconds(DamageInterval);
+
+        animator.SetBool("StandUp", false);
+        yield return new WaitForSeconds(DamageInterval);
     }
     #endregion
 
@@ -472,27 +529,18 @@ public class Enemy : MonoBehaviour, IDamageable
             animator.SetFloat("Speed", 0f);
         }
 
-        if (monster.IsBoss && DistanceToPlayer() <= 3f)
-        {
-            animator.SetFloat("Speed", 0f);
-        }
+        //if (monster.IsBoss && DistanceToPlayer() <= 3f)
+        //{
+        //    animator.SetFloat("Speed", 0f);
+        //}
     }
     private IEnumerator PlayBigDamageAnimation()
     {
-        isRecoveringFormBigDamage = true;
-
         StopIfNearPlayer();
+
         animator.SetBool("BigDamage", true);
-        yield return new WaitForSeconds(DamageInterval);
-
+        yield return new WaitForSeconds(DamageInterval - 0.3f);
         animator.SetBool("BigDamage", false);
-        animator.SetBool("StandUp", true);
-        yield return new WaitForSeconds(DamageInterval);
-
-        animator.SetBool("StandUp", false);
-        yield return new WaitForSeconds(DamageInterval);
-
-        isRecoveringFormBigDamage = false;
     }
     #endregion
 
@@ -564,13 +612,31 @@ public class Enemy : MonoBehaviour, IDamageable
     #region 가드 메서드
     private IEnumerator GuardAnimationRoutine()
     {
-        animator.SetBool("isGuarding", true);
+        isGuarding = true;
 
-        yield return new WaitForSeconds(guardInterval);
+        if (monster.IsLizard && monster.IsBoss)
+        {
+            animator.SetBool("isGuarding", true);
 
-        animator.SetBool("isGuarding", false);
-        yield return new WaitForSeconds(guardInterval - 1f);
-        ChangeState(State.CHASE);
+            yield return new WaitForSeconds(guardInterval);
+
+            animator.SetBool("isGuarding", false);
+            yield return new WaitForSeconds(guardInterval - 1f);
+            ChangeState(State.CHASE);
+        }
+
+        if (monster.IsOrc)
+        {
+            animator.SetBool("isGuarding", true);
+
+            yield return new WaitForSeconds(guardInterval + 1.7f);
+
+            animator.SetBool("isGuarding", false);
+            yield return new WaitForSeconds(guardInterval - 1f);
+            ChangeState(State.CHASE);
+        }
+
+        isGuarding = false;
     }
 
     #endregion

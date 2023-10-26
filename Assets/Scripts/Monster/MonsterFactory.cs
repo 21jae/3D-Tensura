@@ -31,7 +31,12 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //몬스터의 프리�
         if (type == MonsterTypes.LizardType.Boss)
         {
             monster.SetAsBoss();
-            Debug.Log("보스 적용 및 생성");
+            Debug.Log("리자드 보스 적용 및 생성");
+        }
+        else
+        {
+            Debug.Log("리자드 일반 적용 및 생성");
+            monster.SetAsLizard();
         }
 
         return monster;
@@ -51,7 +56,20 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //몬스터의 프리�
                 break;
         }
 
-        return CreateMonsterPrefab(prefab, position);
+        Monster monster =  CreateMonsterPrefab(prefab, position);
+
+        if (type == MonsterTypes.OrcType.Boss)
+        {
+            monster.SetAsBoss();
+            Debug.Log("오크 보스 적용 및 생성");
+        }
+        else
+        {
+            monster.SetAsOrc();
+            Debug.Log("오크 일반 적용 및 생성");
+        }
+
+        return monster;
     }
 
     private Monster CreateMonsterPrefab(GameObject prefab, Vector3 position)
