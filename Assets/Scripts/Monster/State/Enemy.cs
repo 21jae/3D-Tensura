@@ -330,7 +330,7 @@ public class Enemy : MonoBehaviour, IDamageable
             {
                 float chance = UnityEngine.Random.Range(0f, 1f);
 
-                if (chance <= 0.8f) //80 % 확률로 방어 상태 전환
+                if (chance <= 0.99f) //80 % 확률로 방어 상태 전환
                 {
                     ChangeState(State.GUARD);
                 }

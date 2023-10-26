@@ -63,7 +63,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     {
         playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, dashTarget, dashSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(playerController.transform.position, dashTarget) < 0.5f)
+        if (Vector3.Distance(playerController.transform.position, dashTarget) < 0.1f)
         {
             Instantiate(dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
             DashDamageInRadius();
