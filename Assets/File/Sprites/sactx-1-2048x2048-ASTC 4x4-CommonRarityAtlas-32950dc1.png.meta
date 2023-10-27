@@ -106,6 +106,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,12 +139,12 @@ TextureImporter:
       name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_0
       rect:
         serializedVersion: 2
-        x: 258
-        y: 1134
-        width: 260
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 879
+        width: 255
+        height: 252
+      alignment: 9
+      pivot: {x: 3.7990746, y: 1.6282544}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,6 +152,132 @@ TextureImporter:
       bones: []
       spriteID: 2513b6078233d3e438a979ec673ed6d0
       internalID: 1527953971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_1
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 524
+        width: 249
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd461c5dce3cc3448307f82df6ba7ba
+      internalID: 1153233138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_2
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1915
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ceccce4007ad4429e50bfcce87c2d7
+      internalID: 1489427295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1658
+        width: 250
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9acde1d5e4ba91499fed8d2ad88680b
+      internalID: -327710042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_4
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 1303
+        width: 253
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149bde599c6a930459c1161448d550f1
+      internalID: -1049954519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_5
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 263
+        width: 251
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0ef588a72abd1439035f8dc96c5b39
+      internalID: 116672875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_6
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1141
+        width: 251
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc12922137366b439865569d61866b0
+      internalID: 777642641
       vertices: []
       indices: 
       edges: []
@@ -142,6 +294,12 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_0: 1527953971
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_1: 1153233138
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_2: 1489427295
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_3: -327710042
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_4: -1049954519
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_5: 116672875
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_6: 777642641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

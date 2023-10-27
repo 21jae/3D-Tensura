@@ -17,17 +17,21 @@ public class MoveObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 direction = Vector3.forward * controller.Vertical;
-        direction += Vector3.right * controller.Horizontal;
+        if (!UIInventory.INVENTORY_ACTIVATED)
+        {
+            Vector3 direction = Vector3.forward * controller.Vertical;
+            direction += Vector3.right * controller.Horizontal;
 
-        if (direction == Vector3.zero) return;
+            if (direction == Vector3.zero) return;
 
-        Vector3 dirAngle = Quaternion.LookRotation(direction).eulerAngles;
-        Vector3 camPivotAngle = camPivot.eulerAngles;
+            Vector3 dirAngle = Quaternion.LookRotation(direction).eulerAngles;
+            Vector3 camPivotAngle = camPivot.eulerAngles;
 
-        Vector3 moveAngle = Vector3.up * (dirAngle.y + camPivotAngle.y);
+            Vector3 moveAngle = Vector3.up * (dirAngle.y + camPivotAngle.y);
 
-        player.rotation = Quaternion.Euler(moveAngle);
-        characterController.Move(player.forward * speed * Time.fixedDeltaTime);
+            player.rotation = Quaternion.Euler(moveAngle);
+            characterController.Move(player.forward * speed * Time.fixedDeltaTime);
+        }
+
     }
 }
