@@ -291,8 +291,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  hpTextMeshPro: {fileID: 0}
   lerpSpeed: 3
+  damagePrefab: {fileID: 4963043610507861658, guid: be9cbdc7b826d434aa79768b575ad08d,
+    type: 3}
+  canvasTransform: {fileID: 772821169729353430}
 --- !u!1 &5925425644594855680
 GameObject:
   m_ObjectHideFlags: 0

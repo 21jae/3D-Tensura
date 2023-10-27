@@ -33,7 +33,12 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //몬스터의 프리�
             monster.SetAsBoss();
             Debug.Log("리자드 보스 적용 및 생성");
         }
-        else
+        else if (type == MonsterTypes.LizardType.Man)
+        {
+            Debug.Log("리자드 일반 적용 및 생성");
+            monster.SetAsLizard();
+        }
+        else if (type == MonsterTypes.LizardType.Woman)
         {
             Debug.Log("리자드 일반 적용 및 생성");
             monster.SetAsLizard();

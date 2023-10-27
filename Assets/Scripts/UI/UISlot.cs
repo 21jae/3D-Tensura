@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UISlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler ,IDropHandler 
+public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler ,IDropHandler 
 {
     [Header("Background Images")]
     [SerializeField] private Image itemBackgroundImage; //아이템 배경이미지
@@ -13,6 +13,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, ID
     [SerializeField] private Sprite bg2;    //Used 배경
     [SerializeField] private Sprite bg3;    //Ingredient 배경
     [SerializeField] private Sprite bg4;    //ETC배경
+    [SerializeField] private UISlotToolTip slotTooltip;
 
     public Item item;
     public int itemCount;
@@ -20,6 +21,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, ID
 
     [SerializeField] private GameObject CountImage;
     [SerializeField] private Text text_Count;
+
 
     //이미지 투명도 조절
     private void SetColor(float _alpha)
@@ -180,5 +182,18 @@ public class UISlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, ID
             UIDragSlot.instance.transform.position = eventData.position;
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (item != null)
+        {
+            slotTooltip.ShowToolTipe(item, transform.position);
+        }
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        slotTooltip.HideToolTip();
+    }
+
     #endregion
 }

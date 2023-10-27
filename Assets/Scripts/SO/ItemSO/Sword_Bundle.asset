@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sword_Bundle
   m_EditorClassIdentifier: 
   itemName: Sword
+  itemDesc: 'Rimuru sword : ATK + 10'
   itemType: 0
   itemImage: {fileID: -188283652, guid: f67de1f37e5ba9e418ff563b3d53e24d, type: 3}
   itemPrefab: {fileID: 8679021915608349305, guid: 06dc9276509232e47a2de0ed36292ee7,
     type: 3}
-  weaponType: 

@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         }
 
-        else if (damagePercentage > 0.05f)
+        else if (damagePercentage > 0.01f)
         {
             animator.SetBool(Damage, true);
             StartCoroutine(BecomeInvincible());

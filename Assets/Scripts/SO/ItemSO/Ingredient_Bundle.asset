@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fc321b556e88e4283390ebde706f6b, type: 3}
   m_Name: Ingredient_Bundle
   m_EditorClassIdentifier: 
-  itemName: Ingredients
+  itemName: "\uC7AC\uB8CC"
+  itemDesc: This is Ingredients.
   itemType: 2
   itemImage: {fileID: -139528802, guid: d6638331c2b8fd744b00ac92af3a1339, type: 3}
   itemPrefab: {fileID: 769679835648780049, guid: 911a574a522e8d84c9b96f4a424e86e1,

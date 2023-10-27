@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void InitializeComponents()
     {
         ChangeState(State.PATROL);
+
         animator = GetComponentInChildren<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         monsterWeapon = GetComponentInChildren<MonsterWeapon>();
@@ -310,7 +311,7 @@ public class Enemy : MonoBehaviour, IDamageable
             {
                 float chance = UnityEngine.Random.Range(0f, 1f);
 
-                if (chance <= 0.8f) // 80% 확률로 공격 상태 전환
+                if (chance <= 0.99f) // 80% 확률로 공격 상태 전환
                 {
                     ChangeState(State.ATTACK);
                 }
@@ -369,7 +370,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
 
         //일정거리 이상 벗어나면 추적 종료
-        if (DistanceToPlayer() > detectionRadius)
+        if (monster.IsLizard && DistanceToPlayer() > detectionRadius)
         {
             ChangeState(State.PATROL);
             return;
@@ -401,6 +402,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcuteDeath()
     {
+        animator.SetTrigger("Death");
         Destroy(gameObject, 1.6f);
     }
 
@@ -451,6 +453,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
         Debug.Log(characterStatManager.currentHP);
 
+        Vector3 monsterWorldPosition = this.transform.position; // 몬스터의 현재 위치
+        UIMonsterHP.Instance.CreateDamagePopup(damageToTake, monsterWorldPosition);
+
         if (isPredation && !hasPredationHitSpawned)    //isPredation(흡수스킬)이 true일땐 이 hit 프리팹을 생성한다.
         {
             GameObject hitInstance = Instantiate(predationHit, transform.position, Quaternion.identity);
@@ -461,7 +466,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
             
-            if (monster.IsBoss && monster.IsLizard)
+            if (monster.IsLizard)
             {
                 Instantiate(hitPrefab, effectPosition, Quaternion.identity);
             }
@@ -477,8 +482,8 @@ public class Enemy : MonoBehaviour, IDamageable
         }
 
         //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
-        float damagePercentage = damageToTake / characterStatManager.currentHP;
-        if (monster.IsBoss && monster.IsLizard && damagePercentage > 0.35f)
+        float damagePercentage = damageToTake / characterStatManager.currentMaxHP;
+        if (monster.IsLizard && damagePercentage > 0.5f)
         {
             StartCoroutine(PlayBigDamageAnimation());
         }
@@ -524,7 +529,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void StopIfNearPlayer()
     {
-        if (DistanceToPlayer() <= stopDistance)
+        if (monster.IsLizard && monster.IsOrc && DistanceToPlayer() <= stopDistance)
         {
             animator.SetFloat("Speed", 0f);
         }
@@ -541,6 +546,12 @@ public class Enemy : MonoBehaviour, IDamageable
         animator.SetBool("BigDamage", true);
         yield return new WaitForSeconds(DamageInterval - 0.3f);
         animator.SetBool("BigDamage", false);
+
+        animator.SetBool("StandUp", true);
+        yield return new WaitForSeconds(DamageInterval);
+
+        animator.SetBool("StandUp", false);
+        yield return new WaitForSeconds(DamageInterval);
     }
     #endregion
 

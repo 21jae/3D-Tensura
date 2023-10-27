@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0df7b623b26d24785cdfa644d9ea29, type: 3}
   m_Name: LizardWoman
   m_EditorClassIdentifier: 
-  characterName: LizardMan
-  maxHealth: 1000
-  currentHealth: 1000
+  characterName: LizardWoman
+  maxHealth: 700
+  currentHealth: 700
   attackPower: 50
   defense: 5
   speed: 2.5

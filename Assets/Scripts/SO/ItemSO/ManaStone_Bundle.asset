@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ManaStone_Bundle
   m_EditorClassIdentifier: 
   itemName: ManaStone
+  itemDesc: Monster`s ManaStone.
   itemType: 3
   itemImage: {fileID: 1177277701, guid: d6638331c2b8fd744b00ac92af3a1339, type: 3}
   itemPrefab: {fileID: 6394740258544401271, guid: 8a636d19939981c4c8190bf44d38527f,

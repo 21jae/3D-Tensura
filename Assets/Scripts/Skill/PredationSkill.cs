@@ -93,7 +93,7 @@ public class PredationSkill : MonoBehaviour, ISkill
 
     private void EnoughAbsorb(Enemy enemy, Collider obj)
     {
-        if (enemy.characterStatManager.currentHP <= enemy.characterStatManager.currentMaxHP * 0.4f)
+        if (enemy.characterStatManager.currentHP <= enemy.characterStatManager.currentMaxHP * 0.3f)
         {
             Vector3 directionToAbsorb = (playerController.transform.position - obj.transform.position).normalized;
             float distancToPlayer = Vector3.Distance(playerController.transform.position, obj.transform.position);

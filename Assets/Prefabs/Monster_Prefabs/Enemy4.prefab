@@ -2386,10 +2386,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7321073
-  m_Height: 3.0982819
+  m_Radius: 1.3729715
+  m_Height: 3.8687077
   m_Direction: 1
-  m_Center: {x: -0, y: 1.6164837, z: 0}
+  m_Center: {x: 0, y: 2.0016966, z: 0}
 --- !u!114 &-4779584624511682958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,13 +2412,14 @@ MonoBehaviour:
     type: 3}
   deathPrefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473,
     type: 3}
-  swordPrefab: {fileID: 0}
+  swordPrefab: {fileID: 5981608820722368083, guid: 3ec25a54b5ab75541b65f74ce50d9f6b,
+    type: 3}
   shieldPrefab: {fileID: 679735414130846873}
   animator: {fileID: 0}
-  patrolRadius: 5
+  patrolRadius: 10
   patrolDuration: 5
   detectionRadius: 15
-  stopDistance: 2.5
+  stopDistance: 6
   attackInterval: 1.5
   guardInterval: 1.5
 --- !u!114 &-4358264044255285951
@@ -2442,7 +2443,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834980177871857617}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2457,9 +2458,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &19231265446515470
 MonoBehaviour:

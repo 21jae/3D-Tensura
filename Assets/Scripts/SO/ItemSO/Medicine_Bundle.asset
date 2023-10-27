@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Medicine_Bundle
   m_EditorClassIdentifier: 
   itemName: Medicine
+  itemDesc: Health Potiion
   itemType: 1
   itemImage: {fileID: 1322344053, guid: d6638331c2b8fd744b00ac92af3a1339, type: 3}
   itemPrefab: {fileID: 5739170367923476013, guid: 6ffe23198e8f7ff4da5a355ac1bea770,
     type: 3}
-  weaponType: 

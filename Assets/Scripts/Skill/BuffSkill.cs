@@ -6,8 +6,8 @@ public class BuffSkill : MonoBehaviour, ISkill
     public GameObject attackBuffPrefab;
     private PlayerController playerController;
 
-    private float attackPowerBuffPercentage = 0.3f;
-    private float buffDuration = 3f;
+    private float attackPowerBuffPercentage = 0.6f;
+    private float buffDuration = 20f;
     private float originalAttackPower;
     private float increaseAttackPower;
 
