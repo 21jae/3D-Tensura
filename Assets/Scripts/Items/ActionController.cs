@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class ActionController : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Text actionText;
     [SerializeField] private UIInventory inventory;
+    public PlayerSlimeController slimeController;
     private bool pickupActivated;
     private RaycastHit hitInfo;
 
@@ -22,9 +24,50 @@ public class ActionController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            PredationObject();
+            PickupItemsInExpandRange();
             CheckItem();
             CanPickUp();
         }
+    }
+
+    private void PickupItemsInExpandRange()
+    {
+        //float expandRange = range * 2f;
+    }
+
+    private void PredationObject()
+    {
+        StartCoroutine(GrowAndShirink());
+    }
+
+    private IEnumerator GrowAndShirink()
+    {
+        //포식시 플레이어의 크기가 2배 증가
+        slimeController.transform.localScale *= 2;
+
+        float duration = 0.5f;
+        float magnitude = 0.1f;
+
+        Vector3 originalPosition = slimeController.transform.position;
+        float elapsed = 0f;
+        
+        while (elapsed < duration)
+        {
+            float x = originalPosition.x + UnityEngine.Random.Range(-0.6f, 0.6f) * magnitude;
+            float y = originalPosition.y + UnityEngine.Random.Range(-0.6f, 0.6f) * magnitude;
+            float z = originalPosition.z + UnityEngine.Random.Range(-0.6f, 0.6f) * magnitude;
+
+            slimeController.transform.position = new Vector3(x, y, z);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        slimeController.transform.position = originalPosition;
+
+        yield return new WaitForSeconds(0.8f);
+        slimeController.transform.localScale /= 2;
     }
 
     private void CanPickUp()

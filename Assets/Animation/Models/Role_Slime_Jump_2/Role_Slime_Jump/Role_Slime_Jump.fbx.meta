@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: c2000b4af25b9f94797952dec5d58fbc
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Role_Slime_Jump(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Role_Slime_Jump
+      parentName: Role_Slime_Jump(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.6165948, y: 0.52640915, z: -0.5203515, w: -0.26821375}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy007
+      parentName: Role_Slime_Jump
+      position: {x: -0, y: 0, z: 1.0165438e-11}
+      rotation: {x: -0.23002139, y: -0.6809198, z: 0.3308598, w: 0.6115311}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy001
+      parentName: Dummy007
+      position: {x: -0.0006552248, y: 0.0007176905, z: 0.0010215022}
+      rotation: {x: -0.66323787, y: 0.2749455, z: 0.24564715, w: 0.6512894}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
+    - name: Dummy002
+      parentName: Dummy001
+      position: {x: -0.0008818364, y: 1.9073486e-10, z: 0}
+      rotation: {x: -0.00000023841864, y: 0.0000002384186, z: -0.000000014900602,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy003
+      parentName: Dummy007
+      position: {x: 0.0007562477, y: 0.0007176906, z: 0.0010671808}
+      rotation: {x: -0.33365437, y: 0.6234381, z: 0.62343806, w: 0.33365357}
+      scale: {x: 0.9999999, y: 1, z: 0.9999998}
+    - name: Dummy004
+      parentName: Dummy003
+      position: {x: -0.0009058337, y: 4.7683715e-11, z: 9.536743e-11}
+      rotation: {x: -0.0000002384186, y: 0.00000023841858, z: 0.000000014901481, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: Dummy006
+      parentName: Dummy007
+      position: {x: -0, y: 0.0010954295, z: -0.0004960755}
+      rotation: {x: 0.44254974, y: -0.29684633, z: 0.77816576, w: -0.33240053}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dummy005
+      parentName: Dummy006
+      position: {x: -0.0012948929, y: -5.7220456e-10, z: 0}
+      rotation: {x: 1.1368684e-13, y: -3.3881318e-21, z: -0.000000029802322, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone010
+      parentName: Dummy007
+      position: {x: 0.0000021694973, y: -0.000036208683, z: 0.000103520804}
+      rotation: {x: 0.3514931, y: 0.34957364, z: 0.41695914, w: 0.7618372}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone011
+      parentName: Bone010
+      position: {x: -0.00083592325, y: -1.9986181e-10, z: 6.050022e-11}
+      rotation: {x: -0.000013589809, y: -0.000000037131215, z: 0.0027322737, w: 0.9999963}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone012
+      parentName: Bone011
+      position: {x: -0.00083593064, y: -1.3634562e-10, z: 8.847378e-11}
+      rotation: {x: -0.00021958008, y: -0.0000012248396, z: 0.005578012, w: 0.99998444}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone013
+      parentName: Bone012
+      position: {x: -0.00080399815, y: 1.6093253e-10, z: 1.3113022e-10}
+      rotation: {x: 8.737455e-13, y: -2.1316282e-14, z: 1.8625006e-26, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: slime_eat
+      parentName: Role_Slime_Jump
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone004
+      parentName: Role_Slime_Jump
+      position: {x: -0, y: 0.0010954295, z: -0.0004960755}
+      rotation: {x: -0.5072802, y: 0.46663085, z: 0.7215209, w: 0.065804265}
+      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+    - name: Bone009
+      parentName: Bone004
+      position: {x: -0.0012948927, y: -1.4921957e-10, z: -1.9073486e-10}
+      rotation: {x: -9.5741165e-11, y: -0.00000005960463, z: 5.480054e-12, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Bone006
+      parentName: Role_Slime_Jump
+      position: {x: 0.0007562476, y: 0.00071769056, z: 0.0010671808}
+      rotation: {x: -0.33365437, y: 0.6234381, z: 0.62343794, w: 0.33365372}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999997}
+    - name: Bone008
+      parentName: Bone006
+      position: {x: -0.0009058334, y: -3.8146972e-10, z: 1.9073486e-10}
+      rotation: {x: 3.5043338e-12, y: -0.00000009113259, z: 0.000000014901136, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.9999998}
+    - name: Bone005
+      parentName: Role_Slime_Jump
+      position: {x: -0.0006552248, y: 0.00071769045, z: 0.0010215022}
+      rotation: {x: -0.6547585, y: 0.2670046, z: 0.2670044, w: 0.65475833}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: Bone007
+      parentName: Bone005
+      position: {x: -0.0008818361, y: -9.536743e-11, z: 4.7683715e-11}
+      rotation: {x: 0.00000008198823, y: -7.024816e-22, z: -8.568079e-15, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
