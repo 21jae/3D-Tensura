@@ -26,14 +26,29 @@ public class ActionController : MonoBehaviour
         {
             PredationObject();
             PickupItemsInExpandRange();
-            CheckItem();
-            CanPickUp();
         }
     }
 
     private void PickupItemsInExpandRange()
     {
-        //float expandRange = range * 2f;
+        float expandRange = range * 2f;
+
+        Collider[] hitColliders = Physics.OverlapSphere(slimeController.transform.position, expandRange, layerMask);
+
+        foreach (var hitColl in hitColliders) 
+        {
+            if (hitColl.CompareTag("Item"))
+            {
+                ItemPickUp itemPickUp = hitColl.GetComponent<ItemPickUp>();
+                if (itemPickUp != null)
+                {
+                    Debug.Log(hitColl.transform.GetComponent<ItemPickUp>().item.itemName + " 위장 보관완료");
+                    inventory.AcquireItem(itemPickUp.item);
+                    Destroy(hitColl.gameObject);
+                    InfoDisappear();
+                }
+            }
+        }
     }
 
     private void PredationObject()
@@ -43,10 +58,9 @@ public class ActionController : MonoBehaviour
 
     private IEnumerator GrowAndShirink()
     {
-        //포식시 플레이어의 크기가 2배 증가
         slimeController.transform.localScale *= 2;
 
-        float duration = 0.5f;
+        float duration = 0.4f;
         float magnitude = 0.1f;
 
         Vector3 originalPosition = slimeController.transform.position;
@@ -54,9 +68,9 @@ public class ActionController : MonoBehaviour
         
         while (elapsed < duration)
         {
-            float x = originalPosition.x + UnityEngine.Random.Range(-0.6f, 0.6f) * magnitude;
-            float y = originalPosition.y + UnityEngine.Random.Range(-0.6f, 0.6f) * magnitude;
-            float z = originalPosition.z + UnityEngine.Random.Range(-0.6f, 0.6f) * magnitude;
+            float x = originalPosition.x + UnityEngine.Random.Range(-0.8f, 0.8f) * magnitude;
+            float y = originalPosition.y + UnityEngine.Random.Range(-0.8f, 0.8f) * magnitude;
+            float z = originalPosition.z + UnityEngine.Random.Range(-0.8f, 0.8f) * magnitude;
 
             slimeController.transform.position = new Vector3(x, y, z);
 
@@ -69,21 +83,6 @@ public class ActionController : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         slimeController.transform.localScale /= 2;
     }
-
-    private void CanPickUp()
-    {
-        if (pickupActivated)
-        {
-            if (hitInfo.transform != null)
-            {
-                Debug.Log(hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "위장 보관완료");
-                inventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
-                Destroy(hitInfo.transform.gameObject);
-                InfoDisappear();
-            }
-        }
-    }
-
     private void CheckItem()
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, range, layerMask))
@@ -100,7 +99,6 @@ public class ActionController : MonoBehaviour
         }
     }
 
-
     private void ItemInfoAppear()
     {
         pickupActivated = true;
@@ -113,6 +111,4 @@ public class ActionController : MonoBehaviour
         pickupActivated = false;
         actionText.gameObject.SetActive(false);
     }
-
-
 }
