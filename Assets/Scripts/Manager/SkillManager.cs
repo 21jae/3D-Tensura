@@ -12,6 +12,7 @@ public class SkillManager : MonoBehaviour
     private PredationSkill predationSkill;
     private BlessingSkill blessingSkill;
     private SpecialSkill specialSkill;
+    private SlimePoison slimePoison;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class SkillManager : MonoBehaviour
         predationSkill = GetComponent<PredationSkill>();
         blessingSkill = GetComponent<BlessingSkill>();
         specialSkill = GetComponent<SpecialSkill>();
+        slimePoison = GetComponent<SlimePoison>();
     }
 
     public void ReadSkill(SOSkill skill)
@@ -34,6 +36,9 @@ public class SkillManager : MonoBehaviour
     public void ActivatePredationSkill() => predationSkill.ActivateSkill();  //포식 발동
     public void ActivateBlessSkill() => blessingSkill.ActivateSkill();  //가호 발동
     public void ActivateMegidoSkill() => specialSkill.ActivateSkill();  //오의 발동
+
+    //slime
+    public void ActivePoisonSkill() => slimePoison.ActivateSkill();
 }
 
 

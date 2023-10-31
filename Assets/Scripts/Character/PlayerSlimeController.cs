@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class PlayerSlimeController : MonoBehaviour
 {
-    [SerializeField] private GameObject waterAttack;
-
+    [HideInInspector] public CharacterStatManager playerStatManager;
     [HideInInspector] public Animator animator;
+    [SerializeField] private GameObject waterAttack;
     private Joystick controller;
     private MoveObject moveObject;
     private Rigidbody rigidbody;
+    
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class PlayerSlimeController : MonoBehaviour
 
     private void InitializeComponents()
     {
+        playerStatManager = GetComponent<CharacterStatManager>();
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         controller = FindObjectOfType<Joystick>();
