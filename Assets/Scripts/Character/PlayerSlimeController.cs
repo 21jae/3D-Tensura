@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSlimeController : MonoBehaviour
 {
+    //public GameObject player2
     [HideInInspector] public CharacterStatManager playerStatManager;
     [HideInInspector] public Animator animator;
     [SerializeField] private GameObject waterAttack;
@@ -40,8 +40,6 @@ public class PlayerSlimeController : MonoBehaviour
 
     public void StartAttack()
     {
-        //UIAttackButton에서 버튼 누를시 호출
-        //animator.SetTrigger("Attack");
         StartCoroutine(PerformAttack());
     }
 
