@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IDamageable
 {
     [HideInInspector] public CharacterStatManager playerStatManager;
-    private CharacterController characterController;
+    [HideInInspector] public CharacterController characterController;
     public SkillManager skillManager;
 
     private Animator animator;

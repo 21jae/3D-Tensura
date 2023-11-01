@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7348304850145033535}
   - component: {fileID: 2733137668508095583}
   - component: {fileID: 5461878291993014909}
+  - component: {fileID: -2136782884665733795}
+  - component: {fileID: 8711212184581586370}
   m_Layer: 0
   m_Name: SlimePoision
   m_TagString: Untagged
@@ -4902,6 +4904,39 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!65 &-2136782884665733795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705361514685067119}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.630486, y: 1, z: 7.618269}
+  m_Center: {x: 0, y: -0.00005129118, z: 3.8944795}
+--- !u!114 &8711212184581586370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705361514685067119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad49a7308a9c48648a90841bd4318831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4420560051118900952
 GameObject:
   m_ObjectHideFlags: 0

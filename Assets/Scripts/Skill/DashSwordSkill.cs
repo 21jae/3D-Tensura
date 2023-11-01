@@ -62,14 +62,22 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     private void MoveAndDashAttack()
     {
         playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, dashTarget, dashSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(playerController.transform.position, dashTarget) < 0.1f)
+        Vector3 direction = (dashTarget - playerController.transform.position).normalized;
+        float distance = Vector3.Distance(playerController.transform.position, dashTarget);
+        
+        if (distance > 0.5f)
         {
+            playerController.characterController.Move(direction * dashSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Debug.Log("¹ßµ¿");
             Instantiate(dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
             DashDamageInRadius();
 
             isDashing = false;
         }
+
     }
 
     private void DashDamageInRadius()

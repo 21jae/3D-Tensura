@@ -42,7 +42,7 @@ public class PlayerSlimeController : MonoBehaviour
         GameObject waterAttackInstance = ObjectPool.instance.GetPooledObject("SlimePoision");
         if (waterAttackInstance != null)
         {
-            waterAttackInstance.transform.position = transform.position + transform.forward * 1.5f + Vector3.up * 0.5f;
+            waterAttackInstance.transform.position = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
             waterAttackInstance.transform.rotation = transform.rotation;
             waterAttackInstance.SetActive(true);
 
