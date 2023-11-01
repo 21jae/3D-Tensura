@@ -1375,7 +1375,7 @@ RectTransform:
   - {fileID: 6820993806303101267}
   - {fileID: 1375992563257683895}
   - {fileID: 1245031024127028285}
-  - {fileID: 8130724932841908359}
+  - {fileID: 8861344769206366481}
   - {fileID: 1626845725176560363}
   - {fileID: 1486532910107695680}
   - {fileID: 6693807064794895583}
@@ -1749,7 +1749,6 @@ GameObject:
   - component: {fileID: 944055744250107658}
   - component: {fileID: 2004684688513647184}
   - component: {fileID: 4487226707888819990}
-  - component: {fileID: 4955328956038415556}
   m_Layer: 5
   m_Name: PlayerCanvas
   m_TagString: Untagged
@@ -1781,7 +1780,7 @@ RectTransform:
   - {fileID: 882873337451226213}
   - {fileID: 4680246800828801931}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1851,18 +1850,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4955328956038415556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219421395035451577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481dfa3328cc93745952644a7cfc8bcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3247352427175337261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,7 +3171,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4955328956038415556}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIAttackButton, Assembly-CSharp
         m_MethodName: OnPointerDown
         m_Mode: 1
@@ -4134,7 +4121,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8130724932841908359}
+  m_Father: {fileID: 8861344769206366481}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -8591,17 +8578,17 @@ PrefabInstance:
         type: 3}
       propertyPath: itemImage
       value: 
-      objectReference: {fileID: 8130724932841908360}
+      objectReference: {fileID: 385291086469621307}
     - target: {fileID: 402497743942963546, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
         type: 3}
       propertyPath: CountImage
       value: 
-      objectReference: {fileID: 8130724932841908361}
+      objectReference: {fileID: 6478889036886262679}
     - target: {fileID: 402497743942963546, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
         type: 3}
       propertyPath: text_Count
       value: 
-      objectReference: {fileID: 8130724932841908362}
+      objectReference: {fileID: 7518104527047946209}
     - target: {fileID: 402497743942963546, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
         type: 3}
       propertyPath: slotTooltip
@@ -8752,13 +8739,7 @@ PrefabInstance:
       addedObject: {fileID: 5485203216965034320}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c5da4360cb4834a8c16a63ffdcb86d, type: 3}
---- !u!224 &8130724932841908359 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 734070389339822487, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8130724932841908358}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8130724932841908360 stripped
+--- !u!114 &385291086469621307 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8470979583604248253, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
     type: 3}
@@ -8770,13 +8751,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8130724932841908361 stripped
+--- !u!1 &6478889036886262679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2972235565840427793, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
     type: 3}
   m_PrefabInstance: {fileID: 8130724932841908358}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8130724932841908362 stripped
+--- !u!114 &7518104527047946209 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1766412723694258023, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
     type: 3}
@@ -8788,6 +8769,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &8861344769206366481 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 734070389339822487, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8130724932841908358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8297766550077293209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9166,7 +9153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddaeb8cd7f890484b9f5c69f2c93a4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
   camPivot: {fileID: 0}
   speed: 5
 --- !u!224 &465524083376633195 stripped

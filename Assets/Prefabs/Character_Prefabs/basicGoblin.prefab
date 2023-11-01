@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1609390810898116243
+--- !u!1 &6237749541104754381
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5908698281308122165}
+  - component: {fileID: 4673127371447793929}
+  - component: {fileID: 3762386173367503065}
   m_Layer: 0
   m_Name: basicGoblin
   m_TagString: Untagged
@@ -16,29 +17,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5908698281308122165
+--- !u!4 &4673127371447793929
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609390810898116243}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 6237749541104754381}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -59.925, y: 1.2072985, z: 87.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 74803692139879447}
+  - {fileID: 7902264030007442664}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &469351770030603260
+--- !u!95 &3762386173367503065
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237749541104754381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fa9ed7ef74957af41b626d224ccdb58c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 46c5623877703c340b6a4b287a03cf0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &7647325717667896067
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5908698281308122165}
+    m_TransformParent: {fileID: 4673127371447793929}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fa9ed7ef74957af41b626d224ccdb58c,
         type: 3}
@@ -117,6 +139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5816368189602670477, guid: fa9ed7ef74957af41b626d224ccdb58c,
         type: 3}
+      propertyPath: m_Bones.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -5816368189602670477, guid: fa9ed7ef74957af41b626d224ccdb58c,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 486286f88fb0e7a41bde9bb645ddd102, type: 2}
@@ -125,14 +152,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
+    - target: {fileID: 2639527607351891703, guid: fa9ed7ef74957af41b626d224ccdb58c,
+        type: 3}
+      propertyPath: m_Bones.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639527607351891703, guid: fa9ed7ef74957af41b626d224ccdb58c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 434d4cc39825dca44a5426ad9d319855, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -1991483208404182251, guid: fa9ed7ef74957af41b626d224ccdb58c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa9ed7ef74957af41b626d224ccdb58c, type: 3}
---- !u!4 &74803692139879447 stripped
+--- !u!4 &7902264030007442664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa9ed7ef74957af41b626d224ccdb58c,
     type: 3}
-  m_PrefabInstance: {fileID: 469351770030603260}
+  m_PrefabInstance: {fileID: 7647325717667896067}
   m_PrefabAsset: {fileID: 0}

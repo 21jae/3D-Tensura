@@ -137,5 +137,5 @@ Material:
     - _MainTexturePanning: {r: 0, g: 0, b: 0, a: 0}
     - _MidColor: {r: 1, g: 0.44479147, b: 0, a: 0}
     - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _WhiteColor: {r: 1, g: 0.8950032, b: 0, a: 0}
+    - _WhiteColor: {r: 0.06132078, g: 0.29273096, b: 1, a: 0}
   m_BuildTextureStacks: []

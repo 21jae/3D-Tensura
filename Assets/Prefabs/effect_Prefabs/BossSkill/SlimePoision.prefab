@@ -25,10 +25,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3705361514685067119}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0.28021127, y: -0, z: -0, w: 0.9599384}
+  m_LocalPosition: {x: 0, y: -0.030622184, z: -0.104904406}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7740385495400722064}
   - {fileID: 4420560051432611400}
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 4420560052290873502}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -32.546, y: 0, z: 0}
 --- !u!198 &2733137668508095583
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.3443396, g: 0.6460042, b: 1, a: 0.69411767}
+      minColor: {r: 0.16233535, g: 0.3658729, b: 0.6037736, a: 0.69411767}
       maxColor: {r: 0.085395135, g: 0.30533314, b: 0.9528302, a: 0.5176471}
       maxGradient:
         serializedVersion: 2
@@ -1380,7 +1380,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -4929,8 +4929,8 @@ Transform:
   m_GameObject: {fileID: 4420560051118900952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7348304850145033535}
   m_RootOrder: 2
@@ -5603,7 +5603,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -7352,8 +7352,8 @@ Transform:
   m_GameObject: {fileID: 4420560051432611401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7348304850145033535}
   m_RootOrder: 1
@@ -7512,7 +7512,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 2
       minColor: {r: 0, g: 0.17975421, b: 0.5372549, a: 0.87058824}
-      maxColor: {r: 0.54509807, g: 0.7217251, b: 0.7254902, a: 0.8666667}
+      maxColor: {r: 0.40258992, g: 0.61015356, b: 0.7830189, a: 0.8666667}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8611,7 +8611,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -12268,8 +12268,8 @@ Transform:
   m_GameObject: {fileID: 4420560052290873503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.39, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7348304850145033535}
   m_RootOrder: 3
@@ -12427,7 +12427,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.48406646, b: 0.5372549, a: 0.87058824}
+      minColor: {r: 0, g: 0.19196147, b: 0.5372549, a: 0.87058824}
       maxColor: {r: 0, g: 0.09014525, b: 0.24705882, a: 0.8666667}
       maxGradient:
         serializedVersion: 2
@@ -13527,7 +13527,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -17184,8 +17184,8 @@ Transform:
   m_GameObject: {fileID: 6272217117267647393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7348304850145033535}
   m_RootOrder: 0
@@ -18331,7 +18331,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1

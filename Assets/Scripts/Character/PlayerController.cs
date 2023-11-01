@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamageable
@@ -32,6 +33,15 @@ public class PlayerController : MonoBehaviour, IDamageable
     private bool isInvincible;
     private bool isRecoveringFormBigDamage;
     private bool isSkillDamage;
+
+    [Header("중력 설정")]
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float groundDistance = 0.2f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundMask;
+    private Vector3 velocity;
+    private bool isGrounded;
+
 
 
     #region 애니메이션
@@ -70,6 +80,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (!UIInventory.INVENTORY_ACTIVATED)
         {
+            ApplyGravityScale();
+
             AttackUpdate();
 
             MovementUpdate();
@@ -78,12 +90,26 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+
     #endregion
 
     private void MovementUpdate()
     {
         float moveSpeed = controller.Direction.magnitude;
         animator.SetFloat(MoveSpeed, moveSpeed);
+    }
+
+    private void ApplyGravityScale()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
     }
 
     #region 콤보 어택
@@ -94,7 +120,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void AttackUpdate()
     {
-        if (isButtonPressed)
+        if (isButtonPressed && Time.time - lastButtonPressTime <= 0.8f)
         {
             lastButtonPressTime = Time.time;
 
@@ -131,7 +157,8 @@ public class PlayerController : MonoBehaviour, IDamageable
                 ResetAttackAnimation();
             }
 
-            COMBOSTACK = (COMBOSTACK + 1) % 4;
+            //COMBOSTACK = (COMBOSTACK + 1) % 4;
+            isButtonPressed = false;
         }
         else if (Time.time - lastButtonPressTime > 1f)
         {
@@ -152,12 +179,18 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void StartButtonPress()
     {
         isButtonPressed = true;
+        lastButtonPressTime = Time.time;
+
+        if (COMBOSTACK < 3)
+            COMBOSTACK++;
+
+        else
+            COMBOSTACK = 0;
     }
 
     public void EndButtonPress()
     {
         isButtonPressed = false;
-        COMBOSTACK = 0;
     }
 
     #endregion
@@ -282,8 +315,4 @@ public class PlayerController : MonoBehaviour, IDamageable
         characterController.Move(Vector3.zero);
         animator.SetFloat(MoveSpeed, 0f);
     }
-
-    #region 인벤토리
-
-    #endregion
 }
