@@ -19,7 +19,7 @@ public class PredationSkill : MonoBehaviour, ISkill
 
     //흡수 각도, 지속시간, 범위
     private const float PREDATION_ANGLE = 60f;
-    private const float PREDATION_DURATION = 5f;
+    private const float PREDATION_DURATION = 3f;
     private const float THRESHOLD = 3f;
 
     private bool isPredationActive;
@@ -44,7 +44,14 @@ public class PredationSkill : MonoBehaviour, ISkill
     {
         if (isPredationActive)
         {
-            AbsorbObjectInRadius();
+            if (playerController.isMoving())
+            {
+                CancelPredation();
+            }
+            else
+            {
+                AbsorbObjectInRadius();
+            }
         }
     }
     #endregion
@@ -60,7 +67,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         {
             if (ObjectInPredationAngle(obj))
             {
-                Enemy enemy = obj.GetComponent<Enemy>();
+                FieldEnemy enemy = obj.GetComponent<FieldEnemy>();
 
                 if (enemy != null)
                 {
@@ -71,6 +78,18 @@ public class PredationSkill : MonoBehaviour, ISkill
         }
     }
 
+    private void CancelPredation()
+    {
+        isPredationActive = false;
+
+        if (predationPrefab != null)
+        {
+            playerController.StopPlayer();
+            Destroy(predationPrefab);
+        }
+    }
+
+
     private bool ObjectInPredationAngle(Collider obj)
     {
         Vector3 directionToObject = (obj.transform.position - playerController.transform.position).normalized;      //감지된 오브젝트 사이의 방향 각도 계산
@@ -79,7 +98,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         return angle < PREDATION_ANGLE; //방향 사이의 각도보다 흡수 각도가 크다면 흡수 가능하다.
     }
 
-    private void ApplyDamageToEnemy(Enemy enemy)
+    private void ApplyDamageToEnemy(FieldEnemy enemy)
     {
         float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
         IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
@@ -91,7 +110,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         }
     }
 
-    private void EnoughAbsorb(Enemy enemy, Collider obj)
+    private void EnoughAbsorb(FieldEnemy enemy, Collider obj)
     {
         if (enemy.characterStatManager.currentHP <= enemy.characterStatManager.currentMaxHP * 0.3f)
         {

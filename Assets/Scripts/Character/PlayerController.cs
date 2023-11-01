@@ -310,9 +310,14 @@ public class PlayerController : MonoBehaviour, IDamageable
         isInvincible = false;
     }
 
-    private void StopPlayer()
+    public void StopPlayer()
     {
         characterController.Move(Vector3.zero);
         animator.SetFloat(MoveSpeed, 0f);
+    }
+
+    public bool isMoving()
+    {
+        return characterController.velocity.magnitude > 0.1f;
     }
 }

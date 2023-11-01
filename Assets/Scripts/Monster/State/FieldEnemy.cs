@@ -161,7 +161,6 @@ public class FieldEnemy : MonoBehaviour, IDamageable
     {
         isBeingDestroy = true;
         animator.SetTrigger("Death");
-        Destroy(gameObject, 2f);
         Instantiate(deathPrefab, transform.position + Vector3.up, Quaternion.identity);
     }
     #endregion
@@ -249,8 +248,6 @@ public class FieldEnemy : MonoBehaviour, IDamageable
 
     private void ExcuteDeath()
     {
-        animator.SetTrigger("Death");
-        Destroy(gameObject, 1.6f);
     }
 
     #endregion
