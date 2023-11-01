@@ -9,6 +9,9 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //¸ó½ºÅÍÀÇ ÇÁ¸®Æ
     public GameObject orcBasic;
     public GameObject orcBoss;
 
+    public GameObject wolfBasic;
+
+    #region ¸ó½ºÅÍ »ý¼º
     public Monster CreateLizard(MonsterTypes.LizardType type, Vector3 position)
     {
         GameObject prefab = null;
@@ -61,7 +64,7 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //¸ó½ºÅÍÀÇ ÇÁ¸®Æ
                 break;
         }
 
-        Monster monster =  CreateMonsterPrefab(prefab, position);
+        Monster monster = CreateMonsterPrefab(prefab, position);
 
         if (type == MonsterTypes.OrcType.Boss)
         {
@@ -76,6 +79,17 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //¸ó½ºÅÍÀÇ ÇÁ¸®Æ
 
         return monster;
     }
+
+    public Monster CreateWolf(MonsterTypes.WolfType type, Vector3 position)
+    {
+        GameObject prefab = wolfBasic;
+
+        Monster monster = CreateMonsterPrefab(prefab, position);
+
+        return monster;
+    }
+
+    #endregion
 
     private Monster CreateMonsterPrefab(GameObject prefab, Vector3 position)
     {

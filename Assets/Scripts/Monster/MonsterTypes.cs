@@ -3,7 +3,8 @@ public static class MonsterTypes
     public enum MainType
     {
         Lizard,
-        Orc
+        Orc,
+        Wolf
     }
 
     public enum LizardType
@@ -17,5 +18,10 @@ public static class MonsterTypes
     {
         Basic,
         Boss
+    }
+
+    public enum WolfType
+    {
+        Basic
     }
 }

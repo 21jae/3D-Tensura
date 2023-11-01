@@ -5,7 +5,8 @@ public class TriggerZone : MonoBehaviour
     public enum ZoneType
     {
         LizardZone,
-        OrcZone
+        OrcZone,
+        WolfType
     }
 
     public ZoneType zoneType;
@@ -57,6 +58,15 @@ public class TriggerZone : MonoBehaviour
                             spawnManager.SpawnOrc(MonsterTypes.OrcType.Basic, spawnPosition);
                         }
                     }
+                    break;
+
+                case ZoneType.WolfType:
+                    for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].wolfCount; i++)
+                    {
+                        Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(-6, 6));
+                        spawnManager.SpawnWolf(MonsterTypes.WolfType.Basic, spawnPosition);
+                    }
+
                     break;
             }
 

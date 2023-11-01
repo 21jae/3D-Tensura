@@ -53,6 +53,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
         animator = GetComponentInChildren<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         monsterWeapon = GetComponentInChildren<MonsterWeapon>();
+
         characterStatManager = GetComponent<CharacterStatManager>();
 
         ChooseNextPatrolPoint();
@@ -148,7 +149,10 @@ public class FieldEnemy : MonoBehaviour, IDamageable
     #endregion
 
     #region Enter State
-    private void EnterIdle() { }
+    private void EnterIdle() 
+    {
+        animator.SetFloat("Speed", 0f);
+    }
     private void EnterPatrol() { }
     private void EnterChase() { }
     private void EnterAttack() { }
@@ -157,7 +161,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
     {
         isBeingDestroy = true;
         animator.SetTrigger("Death");
-        Destroy(gameObject);
+        Destroy(gameObject, 2f);
         Instantiate(deathPrefab, transform.position + Vector3.up, Quaternion.identity);
     }
     #endregion
@@ -291,6 +295,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
 
         Vector3 monsterWorldPosition = transform.position; // 몬스터의 현재 위치
         UIMonsterHP.Instance.CreateDamagePopup(damageToTake, monsterWorldPosition);
+
 
         if (isPredation)    //isPredation(흡수스킬)이 true일땐 이 hit 프리팹을 생성한다.
         {

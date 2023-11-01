@@ -18,4 +18,9 @@ public class SpawnManager : MonoBehaviour   //생성된 몬스터를 적절한 위치에 배치
         monsterFactory.CreateOrc(type, position);
     }
 
+    public void SpawnWolf(MonsterTypes.WolfType type, Vector3 position)
+    {
+        monsterFactory.CreateWolf(type, position);
+    }
+
 }

@@ -8,7 +8,7 @@ public class SlimePoisonAttack : MonoBehaviour
 
     private void Awake()
     {
-        slimeController = GetComponent<PlayerSlimeController>();
+        slimeController = FindObjectOfType<PlayerSlimeController>();
     }
 
     private void OnTriggerEnter(Collider other)

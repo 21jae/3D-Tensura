@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIMonsterHP : MonoBehaviour
 {
     [SerializeField] private Slider slider;
-    [SerializeField] private Enemy enemy;
+    [SerializeField] private FieldEnemy enemy;
     [SerializeField] private AnimationCurve hpChangeCurve;
     [SerializeField] private float lerpSpeed = 3f;
     [SerializeField] private GameObject damagePrefab;
@@ -22,6 +22,7 @@ public class UIMonsterHP : MonoBehaviour
         {
             Instance = this;
         }
+
         else
         {
             Destroy(gameObject);
@@ -62,7 +63,6 @@ public class UIMonsterHP : MonoBehaviour
 
     public void CreateDamagePopup(float damageAmount, Vector3 monsterWorldPosition)
     {
-        //Vector3 monsterWorldPosition = enemy.transform.position;
         Vector3 monsterScreenPosition = Camera.main.WorldToScreenPoint(monsterWorldPosition);
         monsterScreenPosition.y += 50;
 
@@ -82,7 +82,7 @@ public class UIMonsterHP : MonoBehaviour
 
     private IEnumerator MoveAndFadeOut(GameObject popupInstance)
     {
-        const float duration = 1f; // 총 효과 지속 시간
+        const float DURATION = 1f; // 총 효과 지속 시간
         float timer = 0;
 
         Vector3 initialPosition = popupInstance.transform.position;
@@ -91,9 +91,9 @@ public class UIMonsterHP : MonoBehaviour
         TextMeshProUGUI textComponent = popupInstance.GetComponent<TextMeshProUGUI>();
         Color initialColor = textComponent.color;
 
-        while (timer < duration)
+        while (timer < DURATION)
         {
-            float progress = timer / duration;
+            float progress = timer / DURATION;
 
             // 팝업 위치 업데이트
             popupInstance.transform.position = Vector3.Lerp(initialPosition, targetPosition, progress);
