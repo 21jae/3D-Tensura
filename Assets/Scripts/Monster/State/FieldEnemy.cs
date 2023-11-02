@@ -22,6 +22,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
     [HideInInspector] public Animator animator;
     private Transform playerTransform;
     private MonsterWeapon monsterWeapon;
+    public MonsterTypes.MainType mainType;
 
     //Patrol
     [SerializeField] private float patrolRadius = 5f;   //¼øÂû ¹Ý°æ

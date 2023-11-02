@@ -1,0 +1,20 @@
+<Quest>
+	<QuestTitle>Quest Tutorial</QuestTitle>
+	<Nodes>
+		<Node>
+			<NodeTitle>DanCS</NodeTitle>
+			<NodeText>Welcome to my simple quest tutorial!</NodeText>
+			<NodeImage>slayer</NodeImage>
+		</Node>
+		<Node>
+			<NodeTitle>DanCS</NodeTitle>
+			<NodeText>Hope you enjoy the tutorial. If you found this video helpful make sure to subscribe</NodeText>
+			<NodeImage>matt</NodeImage>
+		</Node>
+		<Node>
+			<NodeTitle>DanCS</NodeTitle>
+			<NodeText>Also you can like the video if you enjoyed it!</NodeText>
+			<NodeImage>matt</NodeImage>
+		</Node>
+	</Nodes>
+</Quest>
