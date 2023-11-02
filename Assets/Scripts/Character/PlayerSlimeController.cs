@@ -12,9 +12,6 @@ public class PlayerSlimeController : MonoBehaviour
     private Rigidbody rigidbody;
 
     [SerializeField] private GameObject playerCanvas;
-    [SerializeField] private UIDialogue uiDialogue;
-    public UIDialogue UIDialogue => uiDialogue;
-    public IInteractable interactable { get; set; }
 
 
 
@@ -25,7 +22,6 @@ public class PlayerSlimeController : MonoBehaviour
 
     private void InitializeComponents()
     {
-        uiDialogue.OnDialogueClose += EnablePlayerCanvas;
         playerStatManager = GetComponent<CharacterStatManager>();
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
@@ -35,8 +31,6 @@ public class PlayerSlimeController : MonoBehaviour
     private void Update()
     {
         MovementUpdate();
-
-        PlayerDialgoue();
     }
 
 
@@ -64,34 +58,5 @@ public class PlayerSlimeController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         ObjectPool.instance.ReturnObjectToPool("SlimePoision", objectToReturn);
 
-    }
-
-    private void PlayerDialgoue()
-    {
-        if (uiDialogue.isOpen)
-        {
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (interactable != null)
-            {
-                if (!uiDialogue.isOpen)
-                {
-                    playerCanvas.SetActive(false);
-                    interactable.Interact(this);
-                }
-            }
-        }
-    }
-    private void EnablePlayerCanvas()
-    {
-        playerCanvas.SetActive(true);
-    }
-
-    private void OnDestroy()
-    {
-        uiDialogue.OnDialogueClose -= EnablePlayerCanvas;
     }
 }
