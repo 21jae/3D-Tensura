@@ -1,0 +1,8 @@
+using UnityEngine;
+
+[System.Serializable]
+public class PlayerRunData
+{
+    [field: SerializeField][field: Range(1f, 3f)] public float SpeedModifier { get; private set; } = 1f;
+
+}
