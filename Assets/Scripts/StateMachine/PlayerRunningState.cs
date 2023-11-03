@@ -11,7 +11,7 @@ public class PlayerRunningState : PlayerGroundedState
     {
         base.Enter();
 
-        stateMachine.ReusableData.MovementSpeedModifier = 1f;
+        stateMachine.ReusableData.MovementSpeedModifier = movementData.RunData.SpeedModifier;
     }
     #endregion
 

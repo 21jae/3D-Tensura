@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class PlayerRotationData : MonoBehaviour
+[System.Serializable]
+public class PlayerRotationData
 {
+    //[field: SerializeField][field: Range(10f, 500f)] public float RotationSpeed { get; private set; } = 100f;
 
 }

@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public PlayerInput Input { get; private set; }
     public Transform MainCameraTransfrom { get; private set; }
     
-    
     private PlayerMovementStateMachine movementStateMachine;
 
 
