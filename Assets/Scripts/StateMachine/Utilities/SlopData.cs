@@ -1,16 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SlopData : MonoBehaviour
+[System.Serializable]
+public class SlopData
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [field: SerializeField][field: Range(0f, 1f)] public float StepHeightPercentage { get; private set; }
 }
