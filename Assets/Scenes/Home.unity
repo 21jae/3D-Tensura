@@ -1163,9 +1163,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
-  m_Height: 1.7
+  m_Height: 1.2835001
   m_Direction: 1
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 1.05825, z: 0}
 --- !u!54 &1934868763
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1374,6 +1374,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 35044a0713984c145a35d0144060d9ad,
         type: 2}
+    - target: {fileID: 3516005274430965342, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7,
+        type: 3}
+      propertyPath: <LayerData>k__BackingField.<GroundLayer>k__BackingField.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516005274430965342, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7,
+        type: 3}
+      propertyPath: <ColliderUtility>k__BackingField.<SlopeData>k__BackingField.<StepHeightPercentage>k__BackingField
+      value: 0.245
+      objectReference: {fileID: 0}
     - target: {fileID: 6066506140058235748, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7,
         type: 3}
       propertyPath: m_Name

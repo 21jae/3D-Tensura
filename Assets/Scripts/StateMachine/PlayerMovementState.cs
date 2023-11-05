@@ -13,7 +13,7 @@ public class PlayerMovementState : IState
     protected Vector3 dampedTargetRotationCurrentVelocity;
     protected Vector3 dampedTargetRotationPassedTime;
 
-    public PlayerMovementState(PlayerMovementStateMachine playerMovementStateMachine)   //playerStateMachine.Player. 줄이기위하여 생성
+    public PlayerMovementState(PlayerMovementStateMachine playerMovementStateMachine) 
     {
         stateMachine = playerMovementStateMachine;
 
@@ -135,7 +135,7 @@ public class PlayerMovementState : IState
 
     protected float GetMovementSpeed()
     {
-        return movementData.BaseSpeed * stateMachine.ReusableData.MovementSpeedModifier;
+        return movementData.BaseSpeed * stateMachine.ReusableData.MovementSpeedModifier * stateMachine.ReusableData.MovementOnSlopeSpeedModifier; ;
     }
 
     protected Vector3 GetPlayerHorizontalVelocity() //AddForce는 이미 존재하는 힘에 속도를 추가하므로 기존 속도를 제거해야만 한다.
@@ -145,6 +145,11 @@ public class PlayerMovementState : IState
         playerHorizontalVelocity.y = 0f;
 
         return playerHorizontalVelocity;
+    }
+
+    protected Vector3 GetPlayerVerticalVelocity()
+    {
+        return new Vector3(0f, stateMachine.Player.Rigidbody.velocity.y, 0f);
     }
 
     protected void ResetVelocity()
