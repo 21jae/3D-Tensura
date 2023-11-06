@@ -151,7 +151,7 @@ public class PlayerMovementState : IState
 
     protected float GetMovementSpeed()
     {
-        return movementData.BaseSpeed * stateMachine.ReusableData.MovementSpeedModifier * stateMachine.ReusableData.MovementOnSlopeSpeedModifier; ;
+        return movementData.BaseSpeed * stateMachine.ReusableData.MovementSpeedModifier * stateMachine.ReusableData.MovementOnSlopeSpeedModifier;
     }
 
     protected Vector3 GetPlayerHorizontalVelocity() //AddForce는 이미 존재하는 힘에 속도를 추가하므로 기존 속도를 제거해야만 한다.

@@ -13,7 +13,7 @@ public class PlayerGroundedState : PlayerMovementState
         base.PhysicsUpdate();
 
         FloatCapsule();
-
+        CheckForFalling();
     }
 
     #endregion
@@ -35,7 +35,7 @@ public class PlayerGroundedState : PlayerMovementState
 
             if (groundAngle <= 20f && groundAngle <= 45f)
             {
-                stateMachine.Player.Rigidbody.AddForce(Vector3.down * stateMachine.Player.Rigidbody.mass * 1.5f ,ForceMode.Acceleration);
+                stateMachine.Player.Rigidbody.AddForce(Vector3.down * stateMachine.Player.Rigidbody.mass * 1.5f, ForceMode.Acceleration);
             }
 
             if (slopeSpeedModifier > 0)
@@ -54,7 +54,6 @@ public class PlayerGroundedState : PlayerMovementState
             }
         }
     }
-
     private float SetSlopeSpeedModifierOnAngle(float angle)
     {
         float slopeSpeedModifier = movementData.SlopeSpeedAngles.Evaluate(angle);
@@ -62,68 +61,66 @@ public class PlayerGroundedState : PlayerMovementState
         return slopeSpeedModifier;
     }
 
-
-
     #endregion
 
     #region 재사용 가능 메서드
     protected virtual void OnMove()
+{
+    if (stateMachine.ReusableData.ShouldWalk)
     {
-        if (stateMachine.ReusableData.ShouldWalk)
-        {
-            stateMachine.ChangeState(stateMachine.WalkingState);
+        stateMachine.ChangeState(stateMachine.WalkingState);
 
-            return;
-        }
-
-        stateMachine.ChangeState(stateMachine.RunningState);
+        return;
     }
 
-    //콜백
-    protected override void AddInputActionsCallbacks()
-    {
-        base.AddInputActionsCallbacks();
+    stateMachine.ChangeState(stateMachine.RunningState);
+}
 
-        stateMachine.Player.Input.PlayerActions.Movement.canceled += OnMovementCanceled;
-        stateMachine.Player.Input.PlayerActions.Sprint.started += OnSprintStarted;
-        stateMachine.Player.Input.PlayerActions.Jump.started += OnJumpStarted;
-    }
+//콜백
+protected override void AddInputActionsCallbacks()
+{
+    base.AddInputActionsCallbacks();
 
-    protected override void RemoveInputActionsCallbacks()
-    {
-        base.RemoveInputActionsCallbacks();
+    stateMachine.Player.Input.PlayerActions.Movement.canceled += OnMovementCanceled;
+    stateMachine.Player.Input.PlayerActions.Sprint.started += OnSprintStarted;
+    stateMachine.Player.Input.PlayerActions.Jump.started += OnJumpStarted;
+}
 
-        stateMachine.Player.Input.PlayerActions.Movement.canceled -= OnMovementCanceled;
-        stateMachine.Player.Input.PlayerActions.Sprint.started -= OnSprintStarted;
-        stateMachine.Player.Input.PlayerActions.Jump.started -= OnJumpStarted;
-    }
+protected override void RemoveInputActionsCallbacks()
+{
+    base.RemoveInputActionsCallbacks();
 
-    #endregion
+    stateMachine.Player.Input.PlayerActions.Movement.canceled -= OnMovementCanceled;
+    stateMachine.Player.Input.PlayerActions.Sprint.started -= OnSprintStarted;
+    stateMachine.Player.Input.PlayerActions.Jump.started -= OnJumpStarted;
+}
 
-
-    #region 입력 방식
-
-    protected override void OnWalkToggleStated(InputAction.CallbackContext context)
-    {
-        base.OnWalkToggleStated(context);
-
-        stateMachine.ChangeState(stateMachine.RunningState);
-    }
-
-    protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
-    {
-        stateMachine.ChangeState(stateMachine.IdlingState);
-    }
+#endregion
 
 
-    protected virtual void OnSprintStarted(InputAction.CallbackContext context)
-    {
-        stateMachine.ChangeState(stateMachine.SprintingState);
-    }
+#region 입력 방식
 
-    protected virtual void OnJumpStarted(InputAction.CallbackContext context)
-    {
-        stateMachine.ChangeState(stateMachine.JumpingState);
-    }
+protected override void OnWalkToggleStated(InputAction.CallbackContext context)
+{
+    base.OnWalkToggleStated(context);
+
+    stateMachine.ChangeState(stateMachine.RunningState);
+}
+
+protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
+{
+    stateMachine.ChangeState(stateMachine.IdlingState);
+}
+
+
+protected virtual void OnSprintStarted(InputAction.CallbackContext context)
+{
+    stateMachine.ChangeState(stateMachine.SprintingState);
+}
+
+protected virtual void OnJumpStarted(InputAction.CallbackContext context)
+{
+    stateMachine.ChangeState(stateMachine.JumpingState);
+}
     #endregion
 }

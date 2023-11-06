@@ -42,5 +42,4 @@ public class Player : MonoBehaviour
     {
         movementStateMachine.PhysicsUpdate();
     }
-
 }
