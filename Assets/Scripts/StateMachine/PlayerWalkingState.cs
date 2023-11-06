@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerWalkingState : PlayerGroundedState
 {
@@ -15,5 +16,15 @@ public class PlayerWalkingState : PlayerGroundedState
     }
     #endregion
 
-        
+    protected override void OnMovementCanceled(InputAction.CallbackContext context)
+    {
+        stateMachine.ChangeState(stateMachine.LightStoppingState);
+    }
+
+    protected override void OnWalkToggleStated(InputAction.CallbackContext context)
+    {
+        base.OnWalkToggleStated(context);
+
+        stateMachine.ChangeState(stateMachine.RunningState);
+    }
 }

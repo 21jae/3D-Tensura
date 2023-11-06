@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +6,7 @@ public class PlayerMovementState : IState
 {
     protected PlayerMovementStateMachine stateMachine;
     protected PlayerGroundedData movementData;
+    protected PlayerAirborneData airborneData;
 
     protected Vector3 currentTargetRotation;
     protected Vector3 timeToReachTargetRotation;
@@ -18,6 +18,7 @@ public class PlayerMovementState : IState
         stateMachine = playerMovementStateMachine;
 
         movementData = stateMachine.Player.Data.GroundedData;
+        airborneData = stateMachine.Player.Data.AirborneData;
 
         InitializeData();
     }
@@ -51,11 +52,26 @@ public class PlayerMovementState : IState
         Move();
     }
 
-
     public virtual void Update()
     {
 
     }
+
+    public virtual void OnAnimationEnterEvent()
+    {
+
+    }
+
+    public virtual void OnAnimationExitEvent()
+    {
+
+    }
+
+    public virtual void OnAnimationTransitionEvent()
+    {
+
+    }
+
     #endregion
 
     #region 메인 메서드
@@ -197,8 +213,21 @@ public class PlayerMovementState : IState
         return Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
     }
 
+    protected void DecelerateHorizontally()
+    {
+        //반대방향으로 힘을줘 감속
+        Vector3 playerHoriozontalVelocity = GetPlayerHorizontalVelocity();
+        stateMachine.Player.Rigidbody.AddForce(-playerHoriozontalVelocity * stateMachine.ReusableData.MovementDecelerationForce, ForceMode.Acceleration);
+    }
 
-
+    protected bool IsMovingHorizontally(float minimumMagnitude = 0.1f)
+    {
+        //DecelerateHorizontally는 움직임이지 않는경우에만 감속하기에 추가
+        Vector3 playerHorizontalVelocity = GetPlayerHorizontalVelocity();
+        Vector2 playerHorizontalMovement = new Vector2(playerHorizontalVelocity.x, playerHorizontalVelocity.z);
+        
+        return playerHorizontalMovement.magnitude > minimumMagnitude;
+    }
 
     //콜백
     protected virtual void AddInputActionsCallbacks()
@@ -218,5 +247,7 @@ public class PlayerMovementState : IState
     {
         stateMachine.ReusableData.ShouldWalk = !stateMachine.ReusableData.ShouldWalk;   //키를 누를때마다 bool값 변경
     }
+
+
     #endregion
 }

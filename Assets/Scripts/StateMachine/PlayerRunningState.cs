@@ -16,7 +16,10 @@ public class PlayerRunningState : PlayerGroundedState
     #endregion
 
     #region 입력 방식
-
+    protected override void OnMovementCanceled(InputAction.CallbackContext context)
+    {
+        stateMachine.ChangeState(stateMachine.MediumStoppingState);
+    }
     protected override void OnWalkToggleStated(InputAction.CallbackContext context) //만약 또 눌렀다면
     {
         base.OnWalkToggleStated(context);

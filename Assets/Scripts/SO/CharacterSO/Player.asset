@@ -14,21 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <GroundedData>k__BackingField:
     <BaseSpeed>k__BackingField: 5
+    <FloatRayDistance>k__BackingField: 1.5
+    <SlopeGravityMultiplier>k__BackingField: 2
+    <SlopeLimit>k__BackingField: 55
     <SlopeSpeedAngles>k__BackingField:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: -0.016666668
-        outSlope: -0.016666668
+        inSlope: -0.020000001
+        outSlope: -0.020000001
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 15
-        value: 0.75
+        value: 0.7
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 30
+        value: 0.65
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -37,7 +49,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 55.1
-        value: 0.4
+        value: 0.1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -69,3 +81,28 @@ MonoBehaviour:
       <SpeedModifier>k__BackingField: 0.225
     <RunData>k__BackingField:
       <SpeedModifier>k__BackingField: 1
+    <SprintData>k__BackingField:
+      <SpeedModifier>k__BackingField: 2
+    <StopData>k__BackingField:
+      <LightDecelerationFroce>k__BackingField: 5
+      <MediumDecelerationFroce>k__BackingField: 6.5
+      <HardDecelerationFroce>k__BackingField: 5
+  <AirborneData>k__BackingField:
+    <JumpData>k__BackingField:
+      <GroundCheckDistance>k__BackingField: 2
+      <JumpForceModifierOnSlopeUpwards>k__BackingField:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      <JumpForceModifierOnSlopeDownwards>k__BackingField:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      <StationaryForce>k__BackingField: {x: 0, y: 5, z: 0}
+      <WeakForce>k__BackingField: {x: 0, y: 0, z: 0}
+      <MediumForce>k__BackingField: {x: 3.5, y: 5, z: 3.5}
+      <StrongForce>k__BackingField: {x: 5, y: 5, z: 5}
