@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4eb012022aacd740adafa332d696c46, type: 3}
   m_Name: Skill02
   m_EditorClassIdentifier: 
+  skillName: DashSkill
   animationName: Player_Skill02
   skillIcon: {fileID: 1422873908, guid: 51777b3d5b50e7b4bbc3d62b8c8898dd, type: 3}
   skillDamageMultiplier: 2.5

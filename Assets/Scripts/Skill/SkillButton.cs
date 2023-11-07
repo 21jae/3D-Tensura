@@ -18,6 +18,8 @@ public class SkillButton : MonoBehaviour
         imageIcon.sprite = skill.skillIcon;
         imageCooltime.fillAmount = 0;
         coolTimeText.text = "";
+
+        SetSkillActive(false);
     }
 
     public void OnClicked()
@@ -29,6 +31,13 @@ public class SkillButton : MonoBehaviour
 
         skillManager.ReadSkill(skill);
         StartCoroutine(SkillCooltime());
+    }
+
+    public void SetSkillActive(bool isActive)
+    {
+        imageIcon.gameObject.SetActive(isActive);
+        imageCooltime.gameObject.SetActive(isActive);
+        coolTimeText.gameObject.SetActive(isActive);
     }
 
     private IEnumerator SkillCooltime()

@@ -24,8 +24,7 @@ public class UIChange : MonoBehaviour
     {
         player1.SetActive(true);
         player2.SetActive(false);
-        //player1ModeUI.SetActive(true);
-        //player2ModeUI.SetActive(false);
+        gameObject.SetActive(false);
         UpdateUI(true);
     }
 
@@ -40,13 +39,9 @@ public class UIChange : MonoBehaviour
         if (player1.activeSelf)
         {
             StartCoroutine(SwitchCharacter(player1, player2));
-            //player1ModeUI.SetActive(false);
-            //player2ModeUI.SetActive(true);
         }
         else if (player2.activeSelf)
         {
-            //player1ModeUI.SetActive(true);
-            //player2ModeUI.SetActive(false);
             StartCoroutine(SwitchCharacter(player2, player1));
         }
     }
