@@ -7,12 +7,10 @@ public class PlayerSlimeController : MonoBehaviour
     [HideInInspector] public CharacterStatManager playerStatManager;
     [HideInInspector] public Animator animator;
     [SerializeField] private GameObject waterAttack;
+    [SerializeField] private GameObject playerCanvas;
     private Joystick controller;
     private MoveObject moveObject;
     private Rigidbody rigidbody;
-
-    [SerializeField] private GameObject playerCanvas;
-
 
 
     private void Awake()

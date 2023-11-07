@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6457b2874f0b1f438d3358842baee0a, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  <GroundData>k__BackingField:
+    <AttackData>k__BackingField:
+      comboStack: 0
+      lastButtonPressTime: 0
+      isButtonPressed: 0
+    <HitData>k__BackingField:
+      <invincibilityDuration>k__BackingField: 1
+      <blinkDuration>k__BackingField: 0.1
+      <knockbackStrength>k__BackingField: 5
+      <knockbackDuration>k__BackingField: 0.1
+      <damageInterval>k__BackingField: 1.5
+      <isInvincible>k__BackingField: 0
+      <isRecoveringForBigDamage>k__BackingField: 0
+    <LayerData>k__BackingField:
+      <GroundLayer>k__BackingField:
+        serializedVersion: 2
+        m_Bits: 256
+    <CheckData>k__BackingField:
+      <groundDistance>k__BackingField: 0.2
+    <WallData>k__BackingField:
+      <rayDistance>k__BackingField: 1.5
+      wallLayerMask: 64
+  <AirData>k__BackingField:
+    <GravityData>k__BackingField:
+      <gravity>k__BackingField: -9.81
+      <VerticalVelocity>k__BackingField: -0.9194354

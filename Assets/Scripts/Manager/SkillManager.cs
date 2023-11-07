@@ -24,6 +24,14 @@ public class SkillManager : MonoBehaviour
         specialSkill = GetComponent<SpecialSkill>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q)) 
+        {
+            ActivatebuffSkill();
+        }
+    }
+
     public void ReadSkill(SOSkill skill)
     {
         animator.Play(skill.animationName); //스킬 읽기
