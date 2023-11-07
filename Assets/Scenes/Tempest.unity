@@ -10181,6 +10181,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2094835587451289786, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2351403081486664911, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
         type: 3}
       propertyPath: inventory
@@ -10208,6 +10213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119341179869438810, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119341179869438810, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
+        type: 3}
       propertyPath: skillManager
       value: 
       objectReference: {fileID: 324835992}
@@ -10222,6 +10232,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: db4cf8bcfa438a04aaf358dc4387605d,
         type: 2}
+    - target: {fileID: 5119341179869438810, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
+        type: 3}
+      propertyPath: <skillManager>k__BackingField
+      value: 
+      objectReference: {fileID: 324835992}
     - target: {fileID: 5404828407809085925, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
         type: 3}
       propertyPath: m_RootOrder
@@ -13963,7 +13978,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1604404418}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnAttackButton
+        m_MethodName: StartButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

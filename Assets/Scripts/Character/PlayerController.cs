@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamageable
 {
-    [HideInInspector] public CharacterStatManager playerStatManager;
-    [HideInInspector] public CharacterController characterController;
-    public SkillManager skillManager;
-
-    private Animator animator;
-    private Joystick controller;
-    private MoveObject moveObject;
-
+    [field: Header("Data")]
     [field: SerializeField] public PlayerSO Data { get; private set; }
+
+    [field: Header("Animation")]
+    [field: SerializeField] public AnimationData AnimationData { get; private set; }
+
+    public CharacterStatManager playerStatManager  { get; private set; }
+    public CharacterController characterController { get; private set; }
+    public SkillManager skillManager   { get; private set; }
+    public Animator animator { get; private set; }
+    public Joystick controller  { get; private set; }
+    public MoveObject moveObject { get; private set; }
+
+
     private List<Renderer> characterRenderers = new List<Renderer>();
 
     #region 초기화 및 업데이트 로직
@@ -28,6 +33,8 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator = GetComponentInChildren<Animator>();
         controller = FindObjectOfType<Joystick>();
         moveObject = GetComponent<MoveObject>();
+
+        AnimationData.Initialize();
 
         characterRenderers.AddRange(GetComponentsInChildren<Renderer>());
     }
@@ -50,7 +57,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void MovementUpdate()
     {
         float moveSpeed = controller.Direction.magnitude;
-        animator.SetFloat("MoveSpeed", moveSpeed);
+        animator.SetFloat(AnimationData.MoveParmeterName, moveSpeed);
     }
 
     private void ApplyGravityScale()
@@ -82,29 +89,29 @@ public class PlayerController : MonoBehaviour, IDamageable
             if (Data.GroundData.AttackData.comboStack == 0)
             {
                 //사운드 재생
-                animator.SetBool("Attack01", true);
+                animator.SetBool(AnimationData.Attack01ParmeterName, true);
             }
 
             else if (Data.GroundData.AttackData.comboStack >= 1 && IsAnimatorStateNameAndNormalized("Attack01"))
             {
                 //사운드 재생
 
-                animator.SetBool("Attack01", false);
-                animator.SetBool("Attack02", true);
+                animator.SetBool(AnimationData.Attack01ParmeterName, false);
+                animator.SetBool(AnimationData.Attack02ParmeterName, true);
             }
             else if (Data.GroundData.AttackData.comboStack >= 2 && IsAnimatorStateNameAndNormalized("Attack02"))
             {
                 //사운드 재생
 
-                animator.SetBool("Attack02", false);
-                animator.SetBool("Attack03", true);
+                animator.SetBool(AnimationData.Attack02ParmeterName, false);
+                animator.SetBool(AnimationData.Attack03ParmeterName, true);
             }
             else if (Data.GroundData.AttackData.comboStack >= 3 && IsAnimatorStateNameAndNormalized("Attack03"))
             {
                 //사운드 재생
 
-                animator.SetBool("Attack03", false);
-                animator.SetBool("Attack04", true);
+                animator.SetBool(AnimationData.Attack03ParmeterName, false);
+                animator.SetBool(AnimationData.Attack04ParmeterName, true);
             }
 
             else if (IsAnimatorStateNameAndNormalized("Attack04"))
@@ -122,10 +129,10 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void ResetAttackAnimation()
     {
-        animator.SetBool("Attack01", false);
-        animator.SetBool("Attack02", false);
-        animator.SetBool("Attack03", false);
-        animator.SetBool("Attack04", false);
+        animator.SetBool(AnimationData.Attack01ParmeterName, false);
+        animator.SetBool(AnimationData.Attack02ParmeterName, false);
+        animator.SetBool(AnimationData.Attack03ParmeterName, false);
+        animator.SetBool(AnimationData.Attack04ParmeterName, false);
         Data.GroundData.AttackData.comboStack = 0;
 
     }
@@ -155,7 +162,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         RaycastHit hitInfo;
         Vector3 rayDirection = transform.forward;
 
-        if (Physics.Raycast(transform.position, rayDirection, out hitInfo, Data.GroundData.WallData.rayDistance , Data.GroundData.WallData.wallLayerMask))
+        if (Physics.Raycast(transform.position, rayDirection, out hitInfo, Data.GroundData.WallData.rayDistance, Data.GroundData.WallData.wallLayerMask))
         {
             characterController.Move(Vector3.zero);
             Debug.Log("충돌중");
@@ -196,7 +203,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         else if (damagePercentage > 0.01f)
         {
-            animator.SetBool("Damage", true);
+            animator.SetBool(AnimationData.DamageParmeterName, true);
             StartCoroutine(BecomeInvincible());
             StartCoroutine(Knockback());
         }
@@ -205,7 +212,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (playerStatManager.currentHP <= 0f)
         {
-            animator.SetTrigger("Death");
+            animator.SetTrigger(AnimationData.DeathParmeterName);
             Destroy(gameObject, 2.5f);
 
             //UI창 출력 및 죽음사운드
@@ -223,21 +230,21 @@ public class PlayerController : MonoBehaviour, IDamageable
             yield return null;
         }
 
-        animator.SetBool("Damage", false);
+        animator.SetBool(AnimationData.DamageParmeterName, false);
     }
 
     private IEnumerator PlayBigDamageAnimation()
     {
         Data.GroundData.HitData.SetIsRecoveringForBigDamage(true);
 
-        animator.SetBool("BigDamage", true);
+        animator.SetBool(AnimationData.BigDamageParmeterName, true);
         yield return new WaitForSeconds(Data.GroundData.HitData.damageInterval);
 
-        animator.SetBool("BigDamage", false);
-        animator.SetBool("StandUp", true);
+        animator.SetBool(AnimationData.BigDamageParmeterName, false);
+        animator.SetBool(AnimationData.StandUpParmeterName, true);
         yield return new WaitForSeconds(Data.GroundData.HitData.damageInterval);
 
-        animator.SetBool("StandUp", false);
+        animator.SetBool(AnimationData.StandUpParmeterName, false);
         yield return new WaitForSeconds(Data.GroundData.HitData.damageInterval);
 
         Data.GroundData.HitData.SetIsRecoveringForBigDamage(false);
@@ -269,7 +276,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public void StopPlayer()
     {
         characterController.Move(Vector3.zero);
-        animator.SetFloat("MoveSpeed", 0f);
+        animator.SetFloat(AnimationData.MoveParmeterName, 0f);
     }
 
     public bool isMoving()

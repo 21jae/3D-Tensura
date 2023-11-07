@@ -64,7 +64,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, dashTarget, dashSpeed * Time.deltaTime);
         Vector3 direction = (dashTarget - playerController.transform.position).normalized;
         float distance = Vector3.Distance(playerController.transform.position, dashTarget);
-        
+
         if (distance > 0.5f)
         {
             playerController.characterController.Move(direction * dashSpeed * Time.deltaTime);

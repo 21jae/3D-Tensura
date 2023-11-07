@@ -3913,7 +3913,6 @@ GameObject:
   - component: {fileID: 3177372747121798730}
   - component: {fileID: 3516005274430965342}
   - component: {fileID: 86570342155977897}
-  - component: {fileID: 7436096320974301440}
   m_Layer: 0
   m_Name: Miulan
   m_TagString: Player
@@ -3950,12 +3949,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c381d2cb33cb84f9c4f5ccfe67ce10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStatManager: {fileID: 0}
+  characterController: {fileID: 0}
+  skillManager: {fileID: 0}
+  animator: {fileID: 0}
+  controller: {fileID: 0}
   <Data>k__BackingField: {fileID: 11400000, guid: 35044a0713984c145a35d0144060d9ad,
     type: 2}
-  <LayerData>k__BackingField:
-    <GroundLayer>k__BackingField:
-      serializedVersion: 2
-      m_Bits: 256
 --- !u!114 &86570342155977897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3968,33 +3968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f105d2a3d5ba1447aecb737cb8375f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &7436096320974301440
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6066506140058235748}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 1
 --- !u!1 &6074672590291079214
 GameObject:
   m_ObjectHideFlags: 0

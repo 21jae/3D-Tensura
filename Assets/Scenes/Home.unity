@@ -123,6 +123,162 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &92848522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92848529}
+  - component: {fileID: 92848528}
+  - component: {fileID: 92848527}
+  - component: {fileID: 92848526}
+  - component: {fileID: 92848525}
+  - component: {fileID: 92848524}
+  - component: {fileID: 92848523}
+  m_Layer: 0
+  m_Name: SkillManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &92848523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e320bf9fb7bf24449de5984ac009387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialSkillData: {fileID: 11400000, guid: 92928a6a455bed64cb4c2d7477fe3d2e, type: 2}
+  megidoCircle: {fileID: 1101996775575296279, guid: 4281fab0bdf446b4b94d5c25e7127e4f,
+    type: 3}
+  megidoPosPrefab: {fileID: 1132321590208249585, guid: ed196de973aaefd43860a23539c2551c,
+    type: 3}
+  megidoTargetPrefab: {fileID: 8046306856200971445, guid: 12489af9174428a42bd002eb8cb42746,
+    type: 3}
+  megidoRayPrefab: {fileID: 5996583619918816737, guid: 20f442a081936564c8db4d7abcd30a55,
+    type: 3}
+  megidoHitPrefab: {fileID: 1758473627833946668, guid: 9b21333b068a5084ba09535839bee3c8,
+    type: 3}
+  megidoExplosion: {fileID: 596458122368916253, guid: 6d04d9eb4d7b6404cbde27b7666c4f59,
+    type: 3}
+  jumpHeight: 20
+  jumpSpeed: 15
+  wingMesh: {fileID: 0}
+  maskMesh: {fileID: 0}
+  swordMesh: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &92848524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d2b2370dd32b947874d7ea73aa186e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blessingHuman: {fileID: 4543339264667279237, guid: 6575872c368b03d4c8595d08aac1d832,
+    type: 3}
+  blessingEffect: {fileID: 358707268122730347, guid: f6ffa189c1106a0499f678cd2212a2b8,
+    type: 3}
+  buffEffect: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5,
+    type: 3}
+--- !u!114 &92848525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07273ddc544fbbf4c8a0d09728ce1224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  predationSkillData: {fileID: 11400000, guid: d6877c4f70c171443a4b01eb8fb297a9, type: 2}
+  predationPrefab: {fileID: 7491826636943448716, guid: 4c8d7e0fed771d84fac62870e4b5471e,
+    type: 3}
+  predationPosPrefab: {fileID: 7191587212381984308, guid: 44dd69e033b55c24bbbe349e3af1b553,
+    type: 3}
+  predationPosition: {fileID: 0}
+  predationRaidus: 20
+  predationForce: 15
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &92848526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453594441954a94188cf5715b1443ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSwordSkillData: {fileID: 11400000, guid: 4f65ae78e69531b41b5f081f0f2063df, type: 2}
+  dashSwordPrefab: {fileID: 6190829364242256209, guid: 0d78fac3d8ed4744780d1848af52d89d,
+    type: 3}
+  damageRadius: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &92848527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc30a09c43420a4aa64fb658256f77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackBuffPrefab: {fileID: 7155335147208632822, guid: 97c43495f80a3244fad1301dfafbe252,
+    type: 3}
+--- !u!114 &92848528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df245490840e8b14c841fef050e4242a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &92848529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92848522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303711982
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7194dc27b9df64c8beca7482ee8e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerIndex: -1
+  AutoEnableInputs: 1
+  XYAxis: {fileID: 0}
+  ZAxis: {fileID: 0}
 --- !u!114 &303711984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,11 +412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a692fe8587c3c48a9c895d76e94705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDistance: 6
-  minimumDistance: 1
-  maximumDistance: 6
-  smoothing: 4
-  zoomSensitivity: 1
 --- !u!1 &335419769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,6 +1203,32 @@ CapsuleCollider:
   m_Height: 1.75
   m_Direction: 1
   m_Center: {x: 0, y: 0.875, z: 0}
+--- !u!143 &1665068215
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665068213}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1712839058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,9 +1594,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3516005274430965342, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7,
         type: 3}
+      propertyPath: skillManager
+      value: 
+      objectReference: {fileID: 92848528}
+    - target: {fileID: 3516005274430965342, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7,
+        type: 3}
       propertyPath: <Data>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 35044a0713984c145a35d0144060d9ad,
+      objectReference: {fileID: 11400000, guid: db4cf8bcfa438a04aaf358dc4387605d,
         type: 2}
     - target: {fileID: 3516005274430965342, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7,
         type: 3}
@@ -1455,4 +1641,8 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1665068214}
+    - targetCorrespondingSourceObject: {fileID: 6066506140058235748, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1665068215}
   m_SourcePrefab: {fileID: 100100000, guid: 2c3cb219ac8d4b74f93bcd35cac47ad7, type: 3}
