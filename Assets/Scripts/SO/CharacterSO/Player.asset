@@ -15,6 +15,7 @@ MonoBehaviour:
   <GroundedData>k__BackingField:
     <BaseSpeed>k__BackingField: 5
     <FloatRayDistance>k__BackingField: 1.5
+    <GroundCheckDistance>k__BackingField: 0.3
     <SlopeGravityMultiplier>k__BackingField: 2
     <SlopeLimit>k__BackingField: 55
     <SlopeSpeedAngles>k__BackingField:
@@ -89,7 +90,7 @@ MonoBehaviour:
       <HardDecelerationFroce>k__BackingField: 5
   <AirborneData>k__BackingField:
     <JumpData>k__BackingField:
-      <GroundCheckDistance>k__BackingField: 2
+      <GroundCheckDistance>k__BackingField: 0.26
       <JumpForce>k__BackingField: 5
       <JumpBufferTime>k__BackingField: 0.2
       <JumpForceModifierOnSlopeUpwards>k__BackingField:
