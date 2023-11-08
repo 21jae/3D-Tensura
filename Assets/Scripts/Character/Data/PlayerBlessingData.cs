@@ -13,11 +13,4 @@ public class PlayerBlessingData
     [field: SerializeField][field: Range(0f, 1f)] public float healthBuffPercentage { get; private set; } = 0.3f;
     [field: SerializeField][field: Range(0f, 1f)] public float attackPowerBuffPercentage { get; private set; } = 0.2f;
     [field: SerializeField][field: Range(0f, 1f)] public float defenseBuffPercentage { get; private set; } = 0.2f;
-
-    [field: SerializeField] public float originalAttackPower {get; set;}
-    [field: SerializeField] public float originalDefense {get; set;}
-
-    [field: SerializeField] public float modifiedHP {get; set;}
-    [field: SerializeField] public float modifiedAttackPower {get; set;}
-    [field: SerializeField] public float modifiedDefense {get; set;}
 }

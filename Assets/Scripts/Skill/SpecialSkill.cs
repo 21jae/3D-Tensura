@@ -1,38 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class SpecialSkill : MonoBehaviour, ISkill
 {
-    [Header("스킬 데이터")]
-    [SerializeField] private SOSkill specialSkillData;
-    [SerializeField] private GameObject megidoCircle;
-    [SerializeField] private Transform megidoPosPrefab;
-    [SerializeField] private Transform megidoTargetPrefab;
-    [SerializeField] private GameObject megidoRayPrefab;
-    [SerializeField] private GameObject megidoHitPrefab;
-    [SerializeField] private GameObject megidoExplosion;
-    private float skillDelay = 1f;
-
-
-    [Header("도약")]
-    [SerializeField] private float jumpHeight = 15f;
-    [SerializeField] private float jumpSpeed = 10f;
-    [SerializeField] private GameObject wingMesh;
-    [SerializeField] private GameObject maskMesh;
-    [SerializeField] private GameObject swordMesh;
     private Vector3 originalPosition;
-
-    [SerializeField] private LayerMask layerMask;
 
     private List<Transform> magicStartPosition = new List<Transform>();
     private List<Transform> magicTargetPosition = new List<Transform>();
     private List<GameObject> createdMegidoRays = new List<GameObject>();
 
     private PlayerController playerController;
+    private SkillManager skillManager;
     private Enemy enemy;
     private Animator animator;
 
@@ -46,7 +25,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         playerController = FindObjectOfType<PlayerController>();
         animator = playerController.GetComponentInChildren<Animator>();
         enemy = FindObjectOfType<Enemy>();
-
+        skillManager = GetComponent<SkillManager>();
 
         if (playerController == null)
         {
@@ -56,11 +35,13 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
     private void ActivateMeshes()
     {
-        if (wingMesh != null && maskMesh != null && swordMesh != null)
+        if (skillManager.skillData.MegidoData.wingMesh != null && 
+            skillManager.skillData.MegidoData.maskMesh != null &&
+            skillManager.skillData.MegidoData.swordMesh != null)
         {
-            wingMesh.gameObject.SetActive(true);
-            maskMesh.gameObject.SetActive(true);
-            swordMesh.gameObject.SetActive(false);
+            skillManager.skillData.MegidoData.wingMesh.gameObject.SetActive(true);
+            skillManager.skillData.MegidoData.maskMesh.gameObject.SetActive(true);
+            skillManager.skillData.MegidoData.swordMesh.gameObject.SetActive(false);
         }
         else
         {
@@ -83,7 +64,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         originalPosition = playerController.transform.position;
 
         Vector3 megidoCirclePos = playerController.transform.position + playerController.transform.forward * 30f;
-        GameObject createdMegidoCircle = Instantiate(megidoCircle, megidoCirclePos, Quaternion.identity);
+        GameObject createdMegidoCircle = Instantiate(skillManager.skillData.MegidoData.megidoCircle, megidoCirclePos, Quaternion.identity);
 
         //애니메이션 스테이트 체크 타이밍 겹쳐서 0.1초간 텀을 줬다.
         yield return new WaitForSeconds(0.1f);
@@ -93,23 +74,23 @@ public class SpecialSkill : MonoBehaviour, ISkill
         //도약중
         animator.Play("Player_Skill05_2");
         float targetZ = playerController.transform.position.z + 3f;
-        float targetY = playerController.transform.position.y + jumpHeight;
+        float targetY = playerController.transform.position.y + skillManager.skillData.MegidoData.jumpHeight;
 
         while (playerController.transform.position.y < targetY)
         {
             playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, new Vector3(playerController.transform.position.x,
-                targetY, targetZ), jumpSpeed * Time.deltaTime);
+                targetY, targetZ), skillManager.skillData.MegidoData.jumpSpeed * Time.deltaTime);
             yield return null;
         }
 
         StartCoroutine(CreateMagicPosWithInterval(15, 2f));
 
-        yield return new WaitForSeconds(skillDelay);
+        yield return new WaitForSeconds(skillManager.skillData.MegidoData.skillDelay);
 
         for (int i = 0; i < 88; i++)
         {
             Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-18f, 20f), UnityEngine.Random.Range(0f, 12f), UnityEngine.Random.Range(-18f, 20f));
-            Transform magicTarget = Instantiate(megidoTargetPrefab, createdMegidoCircle.transform.position + randomTargetOffset, Quaternion.identity);
+            Transform magicTarget = Instantiate(skillManager.skillData.MegidoData.megidoTargetPrefab, createdMegidoCircle.transform.position + randomTargetOffset, Quaternion.identity);
 
             magicTargetPosition.Add(magicTarget);
             yield return new WaitForSeconds(0.05f);
@@ -170,15 +151,15 @@ public class SpecialSkill : MonoBehaviour, ISkill
         //원래 위치로 복귀
         while (Vector3.Distance(playerController.transform.position, originalPosition) > 0.1f)
         {
-            playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, originalPosition, jumpSpeed * Time.deltaTime);
+            playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, originalPosition, skillManager.skillData.MegidoData.jumpSpeed * Time.deltaTime);
 
             yield return null;
         }
 
-        GameObject explosion = Instantiate(megidoExplosion, megidoCirclePos, Quaternion.identity);
+        GameObject explosion = Instantiate(skillManager.skillData.MegidoData.megidoExplosion, megidoCirclePos, Quaternion.identity);
 
-        Collider[] hitEnemies = Physics.OverlapSphere(explosion.transform.position, 50f, layerMask);
-        float damageToDeal = specialSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
+        Collider[] hitEnemies = Physics.OverlapSphere(explosion.transform.position, 50f, playerController.Data.GroundData.LayerData.GroundLayer);
+        float damageToDeal = skillManager.skillData.MegidoData.specialSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
 
         foreach (Collider enemy in hitEnemies)
         {
@@ -189,9 +170,9 @@ public class SpecialSkill : MonoBehaviour, ISkill
             }
         }
 
-        wingMesh.gameObject.SetActive(false);
-        maskMesh.gameObject.SetActive(false);
-        swordMesh.gameObject.SetActive(true);
+        skillManager.skillData.MegidoData.wingMesh.gameObject.SetActive(false);
+        skillManager.skillData.MegidoData.maskMesh.gameObject.SetActive(false);
+        skillManager.skillData.MegidoData.swordMesh.gameObject.SetActive(true);
 
         animator.SetFloat("MoveSpeed", 0f);
     }
@@ -211,7 +192,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             magicStartPosition.Remove(from);
         }
 
-        GameObject megidoRayInstance = Instantiate(megidoRayPrefab, startPosition, Quaternion.identity);
+        GameObject megidoRayInstance = Instantiate(skillManager.skillData.MegidoData.megidoRayPrefab, startPosition, Quaternion.identity);
         createdMegidoRays.Add(megidoRayInstance);
         LineRenderer lineRenderer = megidoRayInstance.GetComponent<LineRenderer>();
 
@@ -256,7 +237,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             if (Vector3.Distance(megidoRayInstance.transform.position, endPosition) <= 0.01f)
             {
                 //새로운 랜덤 타겟 생성
-                Instantiate(megidoHitPrefab, megidoRayInstance.transform.position, Quaternion.identity);
+                Instantiate(skillManager.skillData.MegidoData.megidoHitPrefab, megidoRayInstance.transform.position, Quaternion.identity);
                 int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
                 to = magicTargetPosition[randomTargetIndex];
                 endPosition = to.position;
@@ -294,7 +275,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             Vector3 randomPos = possiblePosition[randomIndex];
             possiblePosition.RemoveAt(randomIndex); //이미 선택한 위치는 다시 선택하지않음
 
-            Transform magicPos = Instantiate(megidoPosPrefab, randomPos, Quaternion.identity);
+            Transform magicPos = Instantiate(skillManager.skillData.MegidoData.megidoPosPrefab, randomPos, Quaternion.identity);
             magicStartPosition.Add(magicPos);
 
             createdCount++;

@@ -1030,12 +1030,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8588208782104976514}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &113493581 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 504774941022333006, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1114135013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &116973242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 0772100964bc9cf4c98fdd1ed6381d59,
@@ -3470,11 +3464,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <skillData>k__BackingField:
+    <ChangeStats>k__BackingField:
+      <originalAttack>k__BackingField: 0
+      <modifiedAttack>k__BackingField: 0
+      <originalDefense>k__BackingField: 0
+      <modifiedDefense>k__BackingField: 0
+      <modifiedHP>k__BackingField: 0
+      <originalSpeed>k__BackingField: 0
+      <modifiedSpeed>k__BackingField: 0
     <BuffData>k__BackingField:
-      attackPowerBuffPercentage: 0.6
-      buffDuration: 30
-      <originalAttackPower>k__BackingField: 0
-      <increaseAttackPower>k__BackingField: 0
+      <attackPowerBuffPercentage>k__BackingField: 0.6
+      <buffDuration>k__BackingField: 30
     <BlessingData>k__BackingField:
       <offsetDistance>k__BackingField: 2
       <destoryPrefabDuration>k__BackingField: 4
@@ -3482,11 +3482,36 @@ MonoBehaviour:
       <healthBuffPercentage>k__BackingField: 0.3
       <attackPowerBuffPercentage>k__BackingField: 0.2
       <defenseBuffPercentage>k__BackingField: 0.2
-      <originalAttackPower>k__BackingField: 0
-      <originalDefense>k__BackingField: 0
-      <modifiedHP>k__BackingField: 0
-      <modifiedAttackPower>k__BackingField: 0
-      <modifiedDefense>k__BackingField: 0
+    <DashData>k__BackingField:
+      <dashDistance>k__BackingField: 5
+      <dashSpeed>k__BackingField: 10
+      <damageRadius>k__BackingField: 8
+      <isDashing>k__BackingField: 0
+      <dashTarget>k__BackingField: {x: 0, y: 0, z: 0}
+    <PredationData>k__BackingField:
+      <predationRaidus>k__BackingField: 20
+      <predationForce>k__BackingField: 15
+      <predationPosition>k__BackingField: {fileID: 420978538}
+      <PREDATION_ANGLE>k__BackingField: 60
+      <PREDATION_DURATION>k__BackingField: 3
+      <THRESHOLD>k__BackingField: 3
+      <isPredationActive>k__BackingField: 0
+    <MegidoData>k__BackingField:
+      <skillDelay>k__BackingField: 1
+      <jumpHeight>k__BackingField: 15
+      <jumpSpeed>k__BackingField: 10
+      <wingMesh>k__BackingField: {fileID: 0}
+      <maskMesh>k__BackingField: {fileID: 0}
+      <swordMesh>k__BackingField: {fileID: 0}
+      <specialSkillData>k__BackingField: {fileID: 0}
+      <megidoCircle>k__BackingField: {fileID: 0}
+      <megidoPosPrefab>k__BackingField: {fileID: 0}
+      <megidoTargetPrefab>k__BackingField: {fileID: 0}
+      <megidoRayPrefab>k__BackingField: {fileID: 0}
+      <megidoHitPrefab>k__BackingField: {fileID: 0}
+      <megidoExplosion>k__BackingField: {fileID: 0}
+      <rayWidth>k__BackingField: 0.1
+      <explosionRadius>k__BackingField: 50
 --- !u!114 &324835994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3499,27 +3524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e320bf9fb7bf24449de5984ac009387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialSkillData: {fileID: 11400000, guid: 92928a6a455bed64cb4c2d7477fe3d2e, type: 2}
-  megidoCircle: {fileID: 1101996775575296279, guid: 4281fab0bdf446b4b94d5c25e7127e4f,
-    type: 3}
-  megidoPosPrefab: {fileID: 1132321590208249585, guid: ed196de973aaefd43860a23539c2551c,
-    type: 3}
-  megidoTargetPrefab: {fileID: 8046306856200971445, guid: 12489af9174428a42bd002eb8cb42746,
-    type: 3}
-  megidoRayPrefab: {fileID: 5996583619918816737, guid: 20f442a081936564c8db4d7abcd30a55,
-    type: 3}
-  megidoHitPrefab: {fileID: 1758473627833946668, guid: 9b21333b068a5084ba09535839bee3c8,
-    type: 3}
-  megidoExplosion: {fileID: 596458122368916253, guid: 6d04d9eb4d7b6404cbde27b7666c4f59,
-    type: 3}
-  jumpHeight: 20
-  jumpSpeed: 15
-  wingMesh: {fileID: 2141371548}
-  maskMesh: {fileID: 113493581}
-  swordMesh: {fileID: 1141095468}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &324835995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3555,12 +3559,6 @@ MonoBehaviour:
     type: 3}
   predationPosPrefab: {fileID: 7191587212381984308, guid: 44dd69e033b55c24bbbe349e3af1b553,
     type: 3}
-  predationPosition: {fileID: 420978538}
-  predationRaidus: 20
-  predationForce: 15
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &324835997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3576,10 +3574,6 @@ MonoBehaviour:
   dashSwordSkillData: {fileID: 11400000, guid: 4f65ae78e69531b41b5f081f0f2063df, type: 2}
   dashSwordPrefab: {fileID: 6190829364242256209, guid: 0d78fac3d8ed4744780d1848af52d89d,
     type: 3}
-  damageRadius: 5
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &324835998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11347,12 +11341,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0772100964bc9cf4c98fdd1ed6381d59, type: 3}
---- !u!1 &1141095468 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 777630153199462468, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1114135013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1141933956 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1766412723694258023, guid: d9c5da4360cb4834a8c16a63ffdcb86d,
@@ -19331,12 +19319,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 0772100964bc9cf4c98fdd1ed6381d59,
     type: 3}
   m_PrefabInstance: {fileID: 374665041}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2141371548 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4000649701842230642, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1114135013}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &2146627547 stripped
 RectTransform:

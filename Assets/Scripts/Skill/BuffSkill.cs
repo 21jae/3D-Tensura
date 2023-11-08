@@ -50,15 +50,15 @@ public class BuffSkill : MonoBehaviour, ISkill
 
     private void CalculateAndApplyAttackPower()
     {
-        skillManager.skillData.BuffData.originalAttackPower = CharacterStatManager.instance.currentData.currentAttackPower;
-        skillManager.skillData.BuffData.increaseAttackPower = skillManager.skillData.BuffData.originalAttackPower * skillManager.skillData.BuffData.attackPowerBuffPercentage;
-        CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.BuffData.increaseAttackPower);
+        skillManager.skillData.ChangeStats.originalAttack = CharacterStatManager.instance.currentData.currentAttackPower;
+        skillManager.skillData.ChangeStats.modifiedAttack = skillManager.skillData.ChangeStats.originalAttack * skillManager.skillData.BuffData.attackPowerBuffPercentage;
+        CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.ChangeStats.modifiedAttack);
         Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}");
     }
 
     private void ResetAttackPowerToOriginal()
     {
-        CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.BuffData.increaseAttackPower);
+        CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.ChangeStats.modifiedAttack);
         Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}");
     }
     #endregion

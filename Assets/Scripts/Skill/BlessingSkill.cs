@@ -12,7 +12,6 @@ public class BlessingSkill : MonoBehaviour, ISkill
     private PlayerController playerController;
     private SkillManager skillManager;
 
-
     #region 초기화
     private void Awake()
     {
@@ -76,18 +75,18 @@ public class BlessingSkill : MonoBehaviour, ISkill
     private void CalculateAndApplyStatsBuff()
     {
         //HP 버프
-        skillManager.skillData.BlessingData.modifiedHP = CharacterStatManager.instance.currentData.currentHP * skillManager.skillData.BlessingData.healthBuffPercentage;
-        CharacterStatManager.instance.ModifyHealth(skillManager.skillData.BlessingData.modifiedHP);
+        skillManager.skillData.ChangeStats.modifiedHP = CharacterStatManager.instance.currentData.currentHP * skillManager.skillData.BlessingData.healthBuffPercentage;
+        CharacterStatManager.instance.ModifyHealth(skillManager.skillData.ChangeStats.modifiedHP);
 
         //공격력 버프
-        skillManager.skillData.BlessingData.originalAttackPower = CharacterStatManager.instance.currentData.currentAttackPower;
-        skillManager.skillData.BlessingData.modifiedAttackPower = skillManager.skillData.BlessingData.originalAttackPower * skillManager.skillData.BlessingData.attackPowerBuffPercentage;
-        CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.BlessingData.modifiedAttackPower);
+        skillManager.skillData.ChangeStats.originalAttack = CharacterStatManager.instance.currentData.currentAttackPower;
+        skillManager.skillData.ChangeStats.modifiedAttack = skillManager.skillData.ChangeStats.originalAttack * skillManager.skillData.BlessingData.attackPowerBuffPercentage;
+        CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.ChangeStats.modifiedAttack);
 
         //방어력 버프
-        skillManager.skillData.BlessingData.originalDefense = CharacterStatManager.instance.currentData.currentDefense;
-        skillManager.skillData.BlessingData.modifiedDefense = skillManager.skillData.BlessingData.originalDefense * skillManager.skillData.BlessingData.defenseBuffPercentage;
-        CharacterStatManager.instance.ModifyDefence(skillManager.skillData.BlessingData.modifiedDefense);
+        skillManager.skillData.ChangeStats.originalDefense = CharacterStatManager.instance.currentData.currentDefense;
+        skillManager.skillData.ChangeStats.modifiedDefense = skillManager.skillData.ChangeStats.originalDefense * skillManager.skillData.BlessingData.defenseBuffPercentage;
+        CharacterStatManager.instance.ModifyDefence(skillManager.skillData.ChangeStats.modifiedDefense);
 
         DebugPlayerStats();
     }
@@ -104,18 +103,18 @@ public class BlessingSkill : MonoBehaviour, ISkill
         Debug.Log("가호의 지속시간 종료");
 
         //공격력 및 방어력 원상 복구
-        CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.BlessingData.modifiedAttackPower);
-        CharacterStatManager.instance.ModifyDefence(-skillManager.skillData.BlessingData.modifiedDefense);
+        CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.ChangeStats.modifiedAttack);
+        CharacterStatManager.instance.ModifyDefence(-skillManager.skillData.ChangeStats.modifiedDefense);
 
         Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}, DEF : {CharacterStatManager.instance.currentData.currentDefense}");
     }
 
     private void DebugPlayerStats()
     {
-        Debug.Log($" MaxHP : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
-                     $" HP : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
+        Debug.Log($" MaxHP : {CharacterStatManager.instance.currentData.currentMaxHP}, " +
+                     $" HP : {CharacterStatManager.instance.currentData.currentHP}, " +
                     $" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
-                    $" DEF : {CharacterStatManager.instance.currentData.currentAttackPower} ");
+                    $" DEF : {CharacterStatManager.instance.currentData.currentDefense} ");
     }
     #endregion
 }

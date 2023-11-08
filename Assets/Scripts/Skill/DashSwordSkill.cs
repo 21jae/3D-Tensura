@@ -7,17 +7,8 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     [SerializeField] private SOSkill dashSwordSkillData;
     [SerializeField] private GameObject dashSwordPrefab;
 
-    [Header("대쉬 설정")]
-    private float dashDistance = 5.0f;
-    private float dashSpeed = 10.0f;
-
-    [Header("공격 설정")]
-    [SerializeField] float damageRadius = 8.0f;
-    [SerializeField] LayerMask layerMask;
-
     private PlayerController playerController;
-    private Vector3 dashTarget;
-    private bool isDashing;
+    private SkillManager skillManager;
 
     #region 초기화 및 업데이트
     private void Awake()
@@ -33,6 +24,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     private void Initialize()
     {
         playerController = FindObjectOfType<PlayerController>();
+        skillManager = GetComponent<SkillManager>();
 
         if (playerController == null)
         {
@@ -44,16 +36,16 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     #region 대쉬로직
     private void StartDash()
     {
-        if (!isDashing)
+        if (!skillManager.skillData.DashData.isDashing)
         {
-            dashTarget = playerController.transform.position + playerController.transform.forward * dashDistance;
-            isDashing = true;
+            skillManager.skillData.DashData.SetDashTarget(playerController.transform.position + playerController.transform.forward * skillManager.skillData.DashData.dashDistance);
+            skillManager.skillData.DashData.SetIsDashing(true);
         }
     }
 
     private void HandleDashing()
     {
-        if (isDashing)
+        if (skillManager.skillData.DashData.isDashing)
         {
             MoveAndDashAttack();
         }
@@ -61,28 +53,27 @@ public class DashSwordSkill : MonoBehaviour, ISkill
 
     private void MoveAndDashAttack()
     {
-        playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, dashTarget, dashSpeed * Time.deltaTime);
-        Vector3 direction = (dashTarget - playerController.transform.position).normalized;
-        float distance = Vector3.Distance(playerController.transform.position, dashTarget);
+        playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, skillManager.skillData.DashData.dashTarget, skillManager.skillData.DashData.dashSpeed * Time.deltaTime);
+        Vector3 direction = (skillManager.skillData.DashData.dashTarget - playerController.transform.position).normalized;
+        float distance = Vector3.Distance(playerController.transform.position, skillManager.skillData.DashData.dashTarget);
 
         if (distance > 0.5f)
         {
-            playerController.characterController.Move(direction * dashSpeed * Time.deltaTime);
+            playerController.characterController.Move(direction * skillManager.skillData.DashData.dashSpeed * Time.deltaTime);
         }
         else
         {
-            Debug.Log("발동");
             Instantiate(dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
             DashDamageInRadius();
 
-            isDashing = false;
+            skillManager.skillData.DashData.SetIsDashing(false);
         }
 
     }
 
     private void DashDamageInRadius()
     {
-        Collider[] hitEnemies = Physics.OverlapSphere(playerController.transform.position, damageRadius, layerMask);
+        Collider[] hitEnemies = Physics.OverlapSphere(playerController.transform.position, skillManager.skillData.DashData.damageRadius, playerController.Data.GroundData.LayerData.GroundLayer);
         float damageToDeal = dashSwordSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
 
         foreach (Collider enemy in hitEnemies)
