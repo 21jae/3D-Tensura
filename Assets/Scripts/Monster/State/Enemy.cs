@@ -300,7 +300,7 @@ public class Enemy : MonoBehaviour, IDamageable
         // 일정거리 이상일때만 추적한다
         if (DistanceToPlayer() > stopDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, characterStatManager.currentSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, characterStatManager.currentData.currentSpeed * Time.deltaTime);
         }
 
 
@@ -437,7 +437,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float amount, bool isPredation = false)
     {
         //데미지 받을때 수행될 로직.
-        float damageToTake = amount - characterStatManager.currentDefense;
+        float damageToTake = amount - characterStatManager.currentData.currentDefense;
 
         if (damageToTake < 0f)
         {
@@ -449,9 +449,9 @@ public class Enemy : MonoBehaviour, IDamageable
             damageToTake *= 0.2f;   //가드중이라면 받는 데미지 80%감소
         }
 
-        characterStatManager.currentHP -= damageToTake;
+        characterStatManager.currentData.currentHP -= damageToTake;
 
-        Debug.Log(characterStatManager.currentHP);
+        Debug.Log(characterStatManager.currentData.currentHP);
 
         Vector3 monsterWorldPosition = this.transform.position; // 몬스터의 현재 위치
         UIMonsterHP.Instance.CreateDamagePopup(damageToTake, monsterWorldPosition);
@@ -476,13 +476,13 @@ public class Enemy : MonoBehaviour, IDamageable
             }
         }
 
-        if (characterStatManager.currentHP <= 0f)
+        if (characterStatManager.currentData.currentHP <= 0f)
         {
             ChangeState(State.DEATH);
         }
 
         //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
-        float damagePercentage = damageToTake / characterStatManager.currentMaxHP;
+        float damagePercentage = damageToTake / characterStatManager.currentData.currentMaxHP;
         if (monster.IsLizard && damagePercentage > 0.5f)
         {
             StartCoroutine(PlayBigDamageAnimation());
@@ -517,14 +517,14 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     private void MoveTowardsPoint(Vector3 targetPoint)
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPoint, characterStatManager.currentSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint, characterStatManager.currentData.currentSpeed * Time.deltaTime);
     }
 
     public void LookTowardsPoint(Vector3 targetPoint)
     {
         Vector3 direction = (targetPoint - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, characterStatManager.currentSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, characterStatManager.currentData.currentSpeed * Time.deltaTime);
     }
 
     private void StopIfNearPlayer()

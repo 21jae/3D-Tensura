@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class UIDragSlot : MonoBehaviour
 {
+    //아이템 이미지
+    [SerializeField] private Image imageItem;
     static public UIDragSlot instance;
     public UISlot dragSlot;
 
@@ -11,8 +13,6 @@ public class UIDragSlot : MonoBehaviour
         instance = this;
     }
 
-    //아이템 이미지
-    [SerializeField] private Image imageItem;
 
     public void DragSetImage(Image _itemImage)
     {

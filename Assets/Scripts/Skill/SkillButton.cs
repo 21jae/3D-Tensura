@@ -19,7 +19,7 @@ public class SkillButton : MonoBehaviour
         imageCooltime.fillAmount = 0;
         coolTimeText.text = "";
 
-        SetSkillActive(false);
+        //SetSkillActive(false);
     }
 
     public void OnClicked()
@@ -33,12 +33,12 @@ public class SkillButton : MonoBehaviour
         StartCoroutine(SkillCooltime());
     }
 
-    public void SetSkillActive(bool isActive)
-    {
-        imageIcon.gameObject.SetActive(isActive);
-        imageCooltime.gameObject.SetActive(isActive);
-        coolTimeText.gameObject.SetActive(isActive);
-    }
+    //public void SetSkillActive(bool isActive)
+    //{
+    //    imageIcon.gameObject.SetActive(isActive);
+    //    imageCooltime.gameObject.SetActive(isActive);
+    //    coolTimeText.gameObject.SetActive(isActive);
+    //}
 
     private IEnumerator SkillCooltime()
     {

@@ -81,7 +81,7 @@ public class BossBoltextSkill : MonoBehaviour
 
         Collider[] hitColliders = Physics.OverlapSphere(spear.transform.position, 1f, layerMask);
 
-        float damageToDeal = boltexSkillData.CalculateSkillDamage(characterStatManager.currentAttackPower);
+        float damageToDeal = boltexSkillData.CalculateSkillDamage(characterStatManager.currentData.currentAttackPower);
 
         foreach (Collider hit in hitColliders)
         {
@@ -102,7 +102,7 @@ public class BossBoltextSkill : MonoBehaviour
 
         Collider[] hitExplosiion = Physics.OverlapSphere(spear.transform.position, 4f, layerMask);
 
-        damageToDeal = bolteExploisionSkillData.CalculateSkillDamage(characterStatManager.currentAttackPower);
+        damageToDeal = bolteExploisionSkillData.CalculateSkillDamage(characterStatManager.currentData.currentAttackPower);
 
         foreach (Collider hit in hitExplosiion)
         {

@@ -6,11 +6,11 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 {
     [Header("Background Images")]
     [SerializeField] private Image itemBackgroundImage; //아이템 배경이미지
-    [SerializeField] private Sprite defaultBg;  //기본배경
-    [SerializeField] private Sprite bg1;    //equipment 배경
-    [SerializeField] private Sprite bg2;    //Used 배경
-    [SerializeField] private Sprite bg3;    //Ingredient 배경
-    [SerializeField] private Sprite bg4;    //ETC배경
+    [SerializeField] private Sprite defaultBg;          //기본배경
+    [SerializeField] private Sprite bg1;                //equipment 배경
+    [SerializeField] private Sprite bg2;                //Used 배경
+    [SerializeField] private Sprite bg3;                //Ingredient 배경
+    [SerializeField] private Sprite bg4;                //ETC배경
     [SerializeField] private UISlotToolTip slotTooltip;
 
     public Item item;
@@ -91,7 +91,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     }
 
     //슬롯 초기화
-    private void ClearSlot()
+    public void ClearSlot()
     {
         item = null;
         itemCount = 0;
@@ -109,23 +109,15 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            if (item != null)
+            if (item != null && item.itemType == Item.ItemType.Equipment)
             {
-                if (item.itemType == Item.ItemType.Equipment)
-                {
-                    //장착
-                }
-                else if (item.itemType == Item.ItemType.Used)
-                {
-                    //소모
-                    Debug.Log(item.itemName + " 를 사용했습니다.");
-                    SetSlotCount(-1);
-                }
-                else 
-                {
-                
-                }
-
+                UIInventory.instance.TryEquipment(this);
+            }
+            else if (item.itemType == Item.ItemType.Used)
+            {
+                //소모
+                Debug.Log(item.itemName + " 를 사용했습니다.");
+                SetSlotCount(-1);
             }
         }
     }
@@ -172,11 +164,10 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public void OnBeginDrag(PointerEventData eventData)
     {
         //아이템을 눌렀을 경우에
-        if (item != null)   
+        if (item != null && item.itemType == Item.ItemType.Equipment)   
         {
             UIDragSlot.instance.dragSlot = this;    //드래그시 전부 넣어줌
             UIDragSlot.instance.DragSetImage(itemImage);    //이미지도 변경
-            
             UIDragSlot.instance.transform.position = eventData.position;
         }
     }

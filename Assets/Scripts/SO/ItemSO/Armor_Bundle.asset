@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Armor_Bundle
   m_EditorClassIdentifier: 
   itemName: Armor
-  itemDesc: 'Rimuru Armor : DEF + 10'
+  itemDesc: 'Rimuru Armor : DEF + 20
+
+'
   itemType: 0
+  eqipmentType: 2
   itemImage: {fileID: -898654832, guid: d6638331c2b8fd744b00ac92af3a1339, type: 3}
   itemPrefab: {fileID: 5981608820722368083, guid: 3ec25a54b5ab75541b65f74ce50d9f6b,
     type: 3}
+  <equipmentStats>k__BackingField: {fileID: 11400000, guid: ad0bc6f88f56fd046864daf628faf08a,
+    type: 2}

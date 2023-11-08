@@ -15,7 +15,7 @@ public class UIPlayerHP : MonoBehaviour
     {
         UpdateHpUIText();
 
-        targetHpPercentage = playerController.playerStatManager.currentHP / playerController.playerStatManager.currentMaxHP;
+        targetHpPercentage = playerController.playerStatManager.currentData.currentHP / playerController.playerStatManager.currentData.currentMaxHP;
         slider.value = targetHpPercentage;
     }
 
@@ -23,7 +23,7 @@ public class UIPlayerHP : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            playerController.playerStatManager.currentHP -= 150f;
+            playerController.playerStatManager.currentData.currentHP -= 150f;
         }
 
         HandleHp();
@@ -35,10 +35,10 @@ public class UIPlayerHP : MonoBehaviour
 
     private void HandleHp()
     {
-        targetHpPercentage = playerController.playerStatManager.currentHP / playerController.playerStatManager.currentMaxHP;
+        targetHpPercentage = playerController.playerStatManager.currentData.currentHP / playerController.playerStatManager.currentData.currentMaxHP;
     }
     private void UpdateHpUIText()
     {
-        hpTextMeshPro.text = string.Format("{0} / {1}", playerController.playerStatManager.currentHP, playerController.playerStatManager.currentMaxHP);
+        hpTextMeshPro.text = string.Format("{0} / {1}", playerController.playerStatManager.currentData.currentHP, playerController.playerStatManager.currentData.currentMaxHP);
     }
 }

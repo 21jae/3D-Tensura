@@ -165,7 +165,7 @@ TextureImporter:
         width: 249
         height: 250
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -282,6 +282,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_7
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 522
+        width: 250
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8784290df4b3404785217a4de3391a5
+      internalID: -311493495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_8
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1558
+        width: 259
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930fd696abbfeab42a8d5b365c17ac7e
+      internalID: -1673623816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_9
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1137
+        width: 249
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b14562cfcee484e9c3162dd7a3f7f4
+      internalID: -837746877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -300,6 +363,9 @@ TextureImporter:
       sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_4: -1049954519
       sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_5: 116672875
       sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_6: 777642641
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_7: -311493495
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_8: -1673623816
+      sactx-1-2048x2048-ASTC 4x4-CommonRarityAtlas-32950dc1_9: -837746877
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

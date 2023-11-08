@@ -14,7 +14,7 @@ public class SlimePoisonAttack : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         IDamageable damageable = other.GetComponent<IDamageable>();
-        float damageToDeal = slimeController.playerStatManager.currentAttackPower;
+        float damageToDeal = slimeController.playerStatManager.currentData.currentAttackPower;
         if (damageable != null)
         {
             damageable.TakeDamage(damageToDeal);

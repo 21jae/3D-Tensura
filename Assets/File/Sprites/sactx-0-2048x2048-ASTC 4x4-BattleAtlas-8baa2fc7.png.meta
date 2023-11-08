@@ -144,7 +144,7 @@ TextureImporter:
         width: 170
         height: 169
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,6 +152,27 @@ TextureImporter:
       bones: []
       spriteID: c83421c505e263440a03d925418eff60
       internalID: 245716824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-2048x2048-ASTC 4x4-BattleAtlas-8baa2fc7_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 490
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6539f0f54673556489084dc5bcecd17b
+      internalID: -297966935
       vertices: []
       indices: 
       edges: []
@@ -168,6 +189,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       sactx-0-2048x2048-ASTC 4x4-BattleAtlas-8baa2fc7_0: 245716824
+      sactx-0-2048x2048-ASTC 4x4-BattleAtlas-8baa2fc7_1: -297966935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

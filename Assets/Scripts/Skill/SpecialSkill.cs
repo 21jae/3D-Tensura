@@ -178,7 +178,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         GameObject explosion = Instantiate(megidoExplosion, megidoCirclePos, Quaternion.identity);
 
         Collider[] hitEnemies = Physics.OverlapSphere(explosion.transform.position, 50f, layerMask);
-        float damageToDeal = specialSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
+        float damageToDeal = specialSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
 
         foreach (Collider enemy in hitEnemies)
         {

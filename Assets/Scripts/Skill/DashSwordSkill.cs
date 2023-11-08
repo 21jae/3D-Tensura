@@ -83,7 +83,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     private void DashDamageInRadius()
     {
         Collider[] hitEnemies = Physics.OverlapSphere(playerController.transform.position, damageRadius, layerMask);
-        float damageToDeal = dashSwordSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
+        float damageToDeal = dashSwordSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
 
         foreach (Collider enemy in hitEnemies)
         {

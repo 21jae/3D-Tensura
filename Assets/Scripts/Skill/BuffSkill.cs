@@ -5,11 +5,7 @@ public class BuffSkill : MonoBehaviour, ISkill
 {
     public GameObject attackBuffPrefab;
     private PlayerController playerController;
-
-    private float attackPowerBuffPercentage = 0.6f;
-    private float buffDuration = 20f;
-    private float originalAttackPower;
-    private float increaseAttackPower;
+    private SkillManager skillManager;
 
     #region √ ±‚»≠
     private void Awake()
@@ -19,6 +15,7 @@ public class BuffSkill : MonoBehaviour, ISkill
 
     private void Initialize()
     {
+        skillManager = GetComponent<SkillManager>();
         playerController = FindObjectOfType<PlayerController>();
 
         if (playerController == null)
@@ -46,23 +43,23 @@ public class BuffSkill : MonoBehaviour, ISkill
     {
         CalculateAndApplyAttackPower();
 
-        yield return new WaitForSeconds(buffDuration);
+        yield return new WaitForSeconds(skillManager.skillData.BuffData.buffDuration);
 
         ResetAttackPowerToOriginal();
     }
 
     private void CalculateAndApplyAttackPower()
     {
-        originalAttackPower = playerController.playerStatManager.currentAttackPower;
-        increaseAttackPower = originalAttackPower * attackPowerBuffPercentage;
-        playerController.playerStatManager.ModifyAttackPower(increaseAttackPower);
-        Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}");
+        skillManager.skillData.BuffData.originalAttackPower = CharacterStatManager.instance.currentData.currentAttackPower;
+        skillManager.skillData.BuffData.increaseAttackPower = skillManager.skillData.BuffData.originalAttackPower * skillManager.skillData.BuffData.attackPowerBuffPercentage;
+        CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.BuffData.increaseAttackPower);
+        Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}");
     }
 
     private void ResetAttackPowerToOriginal()
     {
-        playerController.playerStatManager.ModifyAttackPower(-increaseAttackPower);
-        Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}");
+        CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.BuffData.increaseAttackPower);
+        Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}");
     }
     #endregion
 }

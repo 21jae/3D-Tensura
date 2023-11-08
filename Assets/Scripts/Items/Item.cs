@@ -7,8 +7,11 @@ public class Item : ScriptableObject
     [TextArea]
     public string itemDesc;
     public ItemType itemType;
+    public EquipmentType eqipmentType;
     public Sprite itemImage;
     public GameObject itemPrefab;
+
+    [field: SerializeField] public EquipmentStats equipmentStats { get; private set; }
 
     public enum ItemType
     {
@@ -17,14 +20,25 @@ public class Item : ScriptableObject
         Ingredient,
         ETC
     }
+    
+    public enum EquipmentType
+    {
+        None,
+        Hat,
+        Armor,
+        Accessory,
+        Weapon
+    }
+
 
     void Start()
     {
         itemType = ItemType.Equipment;
     }
 
-    void Update()
+    public bool IsEquipmentType(EquipmentType type)
     {
-        
+        return itemType == ItemType.Equipment && eqipmentType == type;
     }
+
 }

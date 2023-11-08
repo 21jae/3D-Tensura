@@ -41,7 +41,7 @@ public class BossDashSkill : MonoBehaviour
 
         Collider[] hitColliders = Physics.OverlapSphere(dashSkillPos.transform.position, 3f, layerMask);
 
-        float damageToDeal = dashSKill.CalculateSkillDamage(characterStatManager.currentAttackPower);
+        float damageToDeal = dashSKill.CalculateSkillDamage(characterStatManager.currentData.currentAttackPower);
 
         foreach (Collider hit in hitColliders)
         {

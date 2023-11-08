@@ -215,7 +215,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
         // 일정거리 이상일때만 추적한다
         if (DistanceToPlayer() > stopDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, characterStatManager.currentSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, characterStatManager.currentData.currentSpeed * Time.deltaTime);
         }
 
         //공격 타입의 리자드는 공격 위주
@@ -280,16 +280,16 @@ public class FieldEnemy : MonoBehaviour, IDamageable
     public void TakeDamage(float amount, bool isPredation = false)
     {
         //데미지 받을때 수행될 로직.
-        float damageToTake = amount - characterStatManager.currentDefense;
+        float damageToTake = amount - characterStatManager.currentData.currentDefense;
 
         if (damageToTake < 0f)
         {
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
         }
 
-        characterStatManager.currentHP -= damageToTake;
+        characterStatManager.currentData.currentHP -= damageToTake;
 
-        Debug.Log(characterStatManager.currentHP);
+        Debug.Log(characterStatManager.currentData.currentHP);
 
         Vector3 monsterWorldPosition = transform.position; // 몬스터의 현재 위치
         UIMonsterHP.Instance.CreateDamagePopup(damageToTake, monsterWorldPosition);
@@ -307,7 +307,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
             Instantiate(hitPrefab, effectPosition, Quaternion.identity);
         }
 
-        if (characterStatManager.currentHP <= 0f)
+        if (characterStatManager.currentData.currentHP <= 0f)
         {
             ChangeState(State.DEATH);
         }
@@ -322,14 +322,14 @@ public class FieldEnemy : MonoBehaviour, IDamageable
     }
     private void MoveTowardsPoint(Vector3 targetPoint)
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPoint, characterStatManager.currentSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint, characterStatManager.currentData.currentSpeed * Time.deltaTime);
     }
 
     public void LookTowardsPoint(Vector3 targetPoint)
     {
         Vector3 direction = (targetPoint - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, characterStatManager.currentSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, characterStatManager.currentData.currentSpeed * Time.deltaTime);
     }
 
     #endregion

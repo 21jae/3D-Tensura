@@ -3,21 +3,26 @@ using UnityEngine;
 
 public class CharacterStatManager : MonoBehaviour
 {
+    [Header("플레이어 스탯")]
     [SerializeField] private CharacterStats baseStats;
+    [field: SerializeField] public PlayerCurrentStatData currentData { get; private set; }
 
-    public float currentAttackPower { get; set; }
-    public float currentMaxHP { get; set; }
-    public float currentHP { get; set; }
-    public float currentDefense { get; set; }
-    public float currentSpeed { get; set; }
+    public static CharacterStatManager instance;
 
     private void Awake()
     {
-        currentAttackPower = baseStats.attackPower;
-        currentMaxHP = baseStats.maxHealth;
-        currentHP = baseStats.currentHealth;
-        currentDefense = baseStats.defense;
-        currentSpeed = baseStats.speed;
+        instance = this;
+
+        InitilizeStats();
+    }
+
+    private void InitilizeStats()
+    {
+        currentData.currentAttackPower = baseStats.attackPower;
+        currentData.currentMaxHP = baseStats.maxHealth;
+        currentData.currentHP = baseStats.currentHealth;
+        currentData.currentDefense = baseStats.defense;
+        currentData.currentSpeed = baseStats.speed;
     }
 
     private void Start()
@@ -27,17 +32,22 @@ public class CharacterStatManager : MonoBehaviour
 
     public void ModifyHealth(float amount)
     {
-        currentHP += amount;
-        currentHP = Mathf.Clamp(currentHP, 0, baseStats.maxHealth);
+        currentData.currentHP += amount;
+        currentData.currentHP = Mathf.Clamp(currentData.currentHP, 0, baseStats.maxHealth);
+    }
+
+    public void ModifyMaxHealth(float amount)
+    {
+        currentData.currentMaxHP += amount;
     }
 
     public void ModifyAttackPower(float amount)
     {
-        currentAttackPower += amount;
+        currentData.currentAttackPower += amount;
     }
 
     public void ModifyDefence(float amount)
     {
-        currentDefense += amount;
+        currentData.currentDefense += amount;
     }
 }

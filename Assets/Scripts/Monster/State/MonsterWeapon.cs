@@ -10,7 +10,7 @@ public class MonsterWeapon : MonoBehaviour
     {
         Collider[] hitPlayer = Physics.OverlapSphere(transform.position, damageRadius, playerLayer);
 
-        float damageToDeal = enemyStatManager.currentAttackPower;
+        float damageToDeal = enemyStatManager.currentData.currentAttackPower;
 
         foreach (var player in hitPlayer)
         {

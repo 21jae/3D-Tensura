@@ -100,7 +100,7 @@ public class PredationSkill : MonoBehaviour, ISkill
 
     private void ApplyDamageToEnemy(FieldEnemy enemy)
     {
-        float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentAttackPower);
+        float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
         IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
 
         if (damageableEnemy != null)
@@ -112,7 +112,7 @@ public class PredationSkill : MonoBehaviour, ISkill
 
     private void EnoughAbsorb(FieldEnemy enemy, Collider obj)
     {
-        if (enemy.characterStatManager.currentHP <= enemy.characterStatManager.currentMaxHP * 0.3f)
+        if (enemy.characterStatManager.currentData.currentHP <= enemy.characterStatManager.currentData.currentMaxHP * 0.3f)
         {
             Vector3 directionToAbsorb = (playerController.transform.position - obj.transform.position).normalized;
             float distancToPlayer = Vector3.Distance(playerController.transform.position, obj.transform.position);

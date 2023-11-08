@@ -33,7 +33,7 @@ public class UIMonsterHP : MonoBehaviour
 
     private void Start()
     {
-        targetHpPercentage = enemy.characterStatManager.currentHP / enemy.characterStatManager.currentMaxHP;
+        targetHpPercentage = enemy.characterStatManager.currentData.currentHP / enemy.characterStatManager.currentData.currentMaxHP;
         slider.value = targetHpPercentage;
     }
 
@@ -41,7 +41,7 @@ public class UIMonsterHP : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            enemy.characterStatManager.currentHP -= 150f;
+            enemy.characterStatManager.currentData.currentHP -= 150f;
         }
 
         HandleHp();
@@ -58,7 +58,7 @@ public class UIMonsterHP : MonoBehaviour
 
     private void HandleHp()
     {
-        targetHpPercentage = enemy.characterStatManager.currentHP / enemy.characterStatManager.currentMaxHP;
+        targetHpPercentage = enemy.characterStatManager.currentData.currentHP / enemy.characterStatManager.currentData.currentMaxHP;
     }
 
     public void CreateDamagePopup(float damageAmount, Vector3 monsterWorldPosition)

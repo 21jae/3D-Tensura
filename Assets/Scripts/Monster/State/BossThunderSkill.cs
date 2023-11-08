@@ -58,7 +58,7 @@ public class BossThunderSkill : MonoBehaviour
 
         Collider[] hitColliders = Physics.OverlapSphere(warningPosition, 6f, layerMask);
 
-        float damageToDeal = thunderSkillData.CalculateSkillDamage(characterStatManager.currentAttackPower);
+        float damageToDeal = thunderSkillData.CalculateSkillDamage(characterStatManager.currentData.currentAttackPower);
 
         foreach (Collider hit in hitColliders)
         {
@@ -96,7 +96,7 @@ public class BossThunderSkill : MonoBehaviour
 
         Collider[] hitColliders = Physics.OverlapSphere(warningPosition, 3f, layerMask);
 
-        float damageToDeal = thunderSkillData.CalculateSkillDamage(characterStatManager.currentAttackPower);
+        float damageToDeal = thunderSkillData.CalculateSkillDamage(characterStatManager.currentData.currentAttackPower);
 
         foreach (Collider hit in hitColliders)
         {

@@ -24,7 +24,7 @@ public class UIChange : MonoBehaviour
     {
         player1.SetActive(true);
         player2.SetActive(false);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         UpdateUI(true);
     }
 

@@ -9,22 +9,9 @@ public class BlessingSkill : MonoBehaviour, ISkill
     public GameObject blessingEffect;
     public GameObject buffEffect;
 
-    [Header("가호 변수")]
-    private float offsetDistance = 2f;
-    private float destoryPrefabDuration = 4f;
-    private float buffDuration = 10f;
-
-    [Header("버프 변수")]
-    private float healthBuffPercentage = 0.3f;
-    private float attackPowerBuffPercentage = 0.2f;
-    private float defenseBuffPercentage = 0.2f;
-
     private PlayerController playerController;
-    private float originalAttackPower;
-    private float originalDefense;
-    private float modifiedHP;
-    private float modifiedAttackPower;
-    private float modifiedDefense;
+    private SkillManager skillManager;
+
 
     #region 초기화
     private void Awake()
@@ -35,6 +22,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
     private void Initialize()
     {
         playerController = FindObjectOfType<PlayerController>();
+        skillManager = GetComponent<SkillManager>();
 
         if (playerController == null)
         {
@@ -51,11 +39,11 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private void ActivateBlessing()
     {
-        Vector3 spawnPosition = playerController.transform.position - playerController.transform.forward * offsetDistance;
+        Vector3 spawnPosition = playerController.transform.position - playerController.transform.forward * skillManager.skillData.BlessingData.offsetDistance;
         Quaternion rotationTowardsPlayer = Quaternion.LookRotation(playerController.transform.position - spawnPosition);
 
         GameObject blessingIntance = Instantiate(blessingHuman, spawnPosition, rotationTowardsPlayer);
-        StartCoroutine(WaitAndBless(blessingIntance, destoryPrefabDuration));
+        StartCoroutine(WaitAndBless(blessingIntance, skillManager.skillData.BlessingData.destoryPrefabDuration));
     }
 
     private IEnumerator WaitAndBless(GameObject blessingIntance, float destoryPrefabDuration)
@@ -88,18 +76,18 @@ public class BlessingSkill : MonoBehaviour, ISkill
     private void CalculateAndApplyStatsBuff()
     {
         //HP 버프
-        modifiedHP = playerController.playerStatManager.currentHP * healthBuffPercentage;
-        playerController.playerStatManager.ModifyHealth(modifiedHP);
+        skillManager.skillData.BlessingData.modifiedHP = CharacterStatManager.instance.currentData.currentHP * skillManager.skillData.BlessingData.healthBuffPercentage;
+        CharacterStatManager.instance.ModifyHealth(skillManager.skillData.BlessingData.modifiedHP);
 
         //공격력 버프
-        originalAttackPower = playerController.playerStatManager.currentAttackPower;
-        modifiedAttackPower = originalAttackPower * attackPowerBuffPercentage;
-        playerController.playerStatManager.ModifyAttackPower(modifiedAttackPower);
+        skillManager.skillData.BlessingData.originalAttackPower = CharacterStatManager.instance.currentData.currentAttackPower;
+        skillManager.skillData.BlessingData.modifiedAttackPower = skillManager.skillData.BlessingData.originalAttackPower * skillManager.skillData.BlessingData.attackPowerBuffPercentage;
+        CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.BlessingData.modifiedAttackPower);
 
         //방어력 버프
-        originalDefense = playerController.playerStatManager.currentDefense;
-        modifiedDefense = originalDefense * defenseBuffPercentage;
-        playerController.playerStatManager.ModifyDefence(modifiedDefense);
+        skillManager.skillData.BlessingData.originalDefense = CharacterStatManager.instance.currentData.currentDefense;
+        skillManager.skillData.BlessingData.modifiedDefense = skillManager.skillData.BlessingData.originalDefense * skillManager.skillData.BlessingData.defenseBuffPercentage;
+        CharacterStatManager.instance.ModifyDefence(skillManager.skillData.BlessingData.modifiedDefense);
 
         DebugPlayerStats();
     }
@@ -112,22 +100,22 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private IEnumerator ApplyStatusBuff()
     {
-        yield return new WaitForSeconds(buffDuration);
+        yield return new WaitForSeconds(skillManager.skillData.BlessingData.buffDuration);
         Debug.Log("가호의 지속시간 종료");
 
         //공격력 및 방어력 원상 복구
-        playerController.playerStatManager.ModifyAttackPower(-modifiedAttackPower);
-        playerController.playerStatManager.ModifyDefence(-modifiedDefense);
+        CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.BlessingData.modifiedAttackPower);
+        CharacterStatManager.instance.ModifyDefence(-skillManager.skillData.BlessingData.modifiedDefense);
 
-        Debug.Log($" ATK : {playerController.playerStatManager.currentAttackPower}, DEF : {playerController.playerStatManager.currentDefense}");
+        Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}, DEF : {CharacterStatManager.instance.currentData.currentDefense}");
     }
 
     private void DebugPlayerStats()
     {
-        Debug.Log($" MaxHP : {playerController.playerStatManager.currentMaxHP}, " +
-                     $" HP : {playerController.playerStatManager.currentHP}, " +
-                    $" ATK : {playerController.playerStatManager.currentAttackPower}, " +
-                    $" DEF : {playerController.playerStatManager.currentDefense} ");
+        Debug.Log($" MaxHP : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
+                     $" HP : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
+                    $" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
+                    $" DEF : {CharacterStatManager.instance.currentData.currentAttackPower} ");
     }
     #endregion
 }

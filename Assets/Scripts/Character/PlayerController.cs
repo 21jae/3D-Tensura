@@ -184,15 +184,15 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         StopPlayer();
 
-        float damageToTake = amount - playerStatManager.currentDefense;
+        float damageToTake = amount - playerStatManager.currentData.currentDefense;
 
         if (damageToTake < 0f)
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
 
-        playerStatManager.currentHP -= damageToTake;
+        playerStatManager.currentData.currentHP -= damageToTake;
 
         //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
-        float damagePercentage = damageToTake / playerStatManager.currentHP;
+        float damagePercentage = damageToTake / playerStatManager.currentData.currentHP;
 
         if (damagePercentage > 0.25f)
         {
@@ -208,9 +208,9 @@ public class PlayerController : MonoBehaviour, IDamageable
             StartCoroutine(Knockback());
         }
 
-        Debug.Log(playerStatManager.currentHP);
+        Debug.Log(playerStatManager.currentData.currentHP);
 
-        if (playerStatManager.currentHP <= 0f)
+        if (playerStatManager.currentData.currentHP <= 0f)
         {
             animator.SetTrigger(AnimationData.DeathParmeterName);
             Destroy(gameObject, 2.5f);
