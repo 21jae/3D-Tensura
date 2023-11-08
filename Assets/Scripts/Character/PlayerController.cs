@@ -60,18 +60,21 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator.SetFloat(AnimationData.MoveParmeterName, moveSpeed);
     }
 
-    private void ApplyGravityScale()
+    public void ApplyGravityScale()
     {
-        if (isGrounded() && Data.AirData.GravityData.VerticalVelocity < 0f)
+        if (Data.AirData.GravityData.isGravityEnabled)
         {
-            Data.AirData.GravityData.VerticalVelocity = 0f;
-        }
-        else
-        {
-            Data.AirData.GravityData.VerticalVelocity += Data.AirData.GravityData.gravity * Time.deltaTime;
-        }
+            if (isGrounded() && Data.AirData.GravityData.VerticalVelocity < 0f)
+            {
+                Data.AirData.GravityData.VerticalVelocity = 0f;
+            }
+            else
+            {
+                Data.AirData.GravityData.VerticalVelocity += Data.AirData.GravityData.gravity * Time.deltaTime;
+            }
 
-        characterController.Move(new Vector3(0f, Data.AirData.GravityData.VerticalVelocity * Time.deltaTime, 0f));
+            characterController.Move(new Vector3(0f, Data.AirData.GravityData.VerticalVelocity * Time.deltaTime, 0f));
+        }
     }
 
     #region ÄÞº¸ ¾îÅÃ

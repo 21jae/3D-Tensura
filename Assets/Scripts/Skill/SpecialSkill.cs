@@ -35,6 +35,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
     private void ActivateMeshes()
     {
+
         if (skillManager.skillData.MegidoData.wingMesh != null && 
             skillManager.skillData.MegidoData.maskMesh != null &&
             skillManager.skillData.MegidoData.swordMesh != null)
@@ -51,9 +52,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
     public void ActivateSkill()
     {
+        playerController.Data.AirData.GravityData.isGravityEnabled = false;
         StartCoroutine(ExeCuteJump());
-
-        //대현자 사운드 및 텍스트 호출하기
         //Debug.Log("대현자 : 메기도 준비가 완료되었습니다.");
     }
 
@@ -123,7 +123,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         }
 
         //메기도 지속시간
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
 
         foreach (GameObject ray in createdMegidoRays)
         {
@@ -175,6 +175,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         skillManager.skillData.MegidoData.swordMesh.gameObject.SetActive(true);
 
         animator.SetFloat("MoveSpeed", 0f);
+        playerController.Data.AirData.GravityData.isGravityEnabled = true;
     }
 
 
@@ -212,11 +213,14 @@ public class SpecialSkill : MonoBehaviour, ISkill
         lineRenderer.startWidth = 0.08f;
         lineRenderer.endWidth = 0.08f;
 
-        MegidoRay megidoScript = megidoRayInstance.GetComponent<MegidoRay>();
 
-        while (true)
+        while (megidoRayInstance != null && Vector3.Distance(megidoRayInstance.transform.position, endPosition) > 0.01f)
         {
-            megidoScript.MoveToWards(endPosition, raySpeed);
+            MegidoRay megidoScript = megidoRayInstance.GetComponent<MegidoRay>();   
+            if (megidoScript != null)
+            {
+                megidoScript.MoveToWards(endPosition, raySpeed);
+            }
 
             Ray ray = new Ray(megidoRayInstance.transform.position, endPosition - megidoRayInstance.transform.position);
             RaycastHit hitInfo;
@@ -247,6 +251,11 @@ public class SpecialSkill : MonoBehaviour, ISkill
             yield return null;
         }
 
+        if (megidoRayInstance != null)
+        {
+            Destroy(megidoRayInstance);
+            createdMegidoRays.Remove(megidoRayInstance);
+        }
     }
 
     private IEnumerator CreateMagicPosWithInterval(int count, float interval)
