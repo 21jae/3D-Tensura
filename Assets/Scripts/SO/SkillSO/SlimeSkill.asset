@@ -16,5 +16,5 @@ MonoBehaviour:
   animationName: Poison
   skillIcon: {fileID: 21300000, guid: 7d34e496eb36e754f82b63525035dd2b, type: 3}
   skillDamageMultiplier: 3
-  skillCoolTime: 10
+  skillCoolTime: 3
   skillDescription: "\uB3C5 \uBC1C\uC0AC"

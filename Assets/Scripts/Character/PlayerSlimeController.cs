@@ -12,7 +12,6 @@ public class PlayerSlimeController : MonoBehaviour
     private MoveObject moveObject;
     private Rigidbody rigidbody;
 
-
     private void Awake()
     {
         InitializeComponents();
@@ -30,7 +29,6 @@ public class PlayerSlimeController : MonoBehaviour
     {
         MovementUpdate();
     }
-
 
     private void MovementUpdate()
     {
@@ -55,6 +53,5 @@ public class PlayerSlimeController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         ObjectPooling.instance.ReturnObjectToPool("SlimePoision", objectToReturn);
-
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SlimePoisonSkill : MonoBehaviour
@@ -6,7 +7,7 @@ public class SlimePoisonSkill : MonoBehaviour
     {
         IDamageable damageable = other.GetComponent<IDamageable>();
         float damageToDeal = CharacterStatManager.instance.currentData.currentAttackPower;
-;
+        ;
         if (damageable != null)
         {
             damageable.TakeDamage(damageToDeal);
