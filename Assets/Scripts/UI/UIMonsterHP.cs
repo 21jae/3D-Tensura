@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIMonsterHP : MonoBehaviour
 {
     [SerializeField] private Slider slider;
-    [SerializeField] private FieldEnemy enemy;
+    [SerializeField] private Enemy enemy;
     [SerializeField] private AnimationCurve hpChangeCurve;
     [SerializeField] private float lerpSpeed = 3f;
     [SerializeField] private GameObject damagePrefab;

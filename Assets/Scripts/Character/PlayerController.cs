@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void InitializeComponents()
     {
+        Data.AirData.GravityData.SetIsGravity(true);
         playerStatManager = GetComponent<CharacterStatManager>();
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
@@ -43,13 +44,18 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (!UIInventory.INVENTORY_ACTIVATED)
         {
-            ApplyGravityScale();
-
             MovementUpdate();
 
             AttackUpdate();
 
             CheckHitWall();
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (!UIInventory.INVENTORY_ACTIVATED)
+        {
+            ApplyGravityScale();
         }
     }
     #endregion
@@ -62,7 +68,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void ApplyGravityScale()
     {
-        if (Data.AirData.GravityData.isGravityEnabled)
+        if (Data.AirData.GravityData.isGravityEnabled == true)
         {
             if (isGrounded() && Data.AirData.GravityData.VerticalVelocity < 0f)
             {

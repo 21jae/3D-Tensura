@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class LayerData
+public class PlayerLayerData
 {
     [field: SerializeField] public LayerMask GroundLayer { get; private set; }
 }

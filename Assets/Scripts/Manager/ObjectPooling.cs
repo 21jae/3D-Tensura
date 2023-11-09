@@ -1,34 +1,19 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Pool
+public class ObjectPooling : MonoBehaviour
 {
-    public string tag;
-    public GameObject prefab;
-    public int size;
-}
+    public static ObjectPooling instance { get; private set; }
 
-
-public class ObjectPool : MonoBehaviour
-{
-    public static ObjectPool instance { get ; private set; }
-
-    //public GameObject objectToPool; //오브젝트 프리펩
-    //public int amountToPool;    //풀에 생성할 오브젝트 수
-    //private List<GameObject> pooledObjects; //풀링된 오브젝트 리스트
-
-    public List<Pool> pools;
+    public List<ObjectPoolData> poolData;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
-
 
     private void Awake()
     {
         if (null == instance)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
 
         InitializePool();
@@ -38,7 +23,7 @@ public class ObjectPool : MonoBehaviour
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (var pool in pools)
+        foreach (var pool in poolData)
         {
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
@@ -55,22 +40,38 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject GetPooledObject(string tag)
     {
-        if (!poolDictionary.ContainsKey(tag))
+        if (poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning("Pool with tag " + tag + " doesn`t exist.");
+            Queue<GameObject> objectQueue = poolDictionary[tag];
+
+            if (objectQueue.Count > 0)
+            {
+                GameObject objSpawn = objectQueue.Dequeue();
+                objSpawn.SetActive(true);
+                return objSpawn;
+            }
+            else
+            {
+                Debug.LogWarning("Pool with tag " + tag + " doesn`t exist.");
+                return null;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Pool does not contain tag: " + tag);
             return null;
         }
 
-        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
-        objectToSpawn.SetActive(true);
-        poolDictionary[tag].Enqueue(objectToSpawn);
+        //GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+        //objectToSpawn.SetActive(true);
+        //poolDictionary[tag].Enqueue(objectToSpawn);
 
-        return objectToSpawn;
+        //return objectToSpawn;
     }
 
     public void ReturnObjectToPool(string tag, GameObject obj)
     {
-        if (poolDictionary.ContainsKey(tag)) 
+        if (poolDictionary.ContainsKey(tag))
         {
             obj.SetActive(false);
             poolDictionary[tag].Enqueue(obj);

@@ -20,44 +20,27 @@ public class TriggerZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Vector3 bossSpawnPosition;
-
             switch (zoneType)
             {
                 case ZoneType.LizardZone:
-                    
-                    if (isBossZone)
-                    {
-                        bossSpawnPosition = transform.position;
-                        spawnManager.SpawnLizard(MonsterTypes.LizardType.Boss, bossSpawnPosition);
-                    }
-                    else
-                    {
 
-                        for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].lizardCount; i++)
-                        {
-                            Vector3 spawnPosition = player.position + new Vector3(Random.Range(-8, 8), 0, Random.Range(-8, 8));
-                            int randomLizard = Random.Range(0, 2);  // Lizard Man or Woman 社発
-                            MonsterTypes.LizardType type = randomLizard == 0 ? MonsterTypes.LizardType.Man : MonsterTypes.LizardType.Woman;
-                            spawnManager.SpawnLizard(type, spawnPosition);
-                        }
+                    for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].lizardCount; i++)
+                    {
+                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-8, 8), 0, Random.Range(-8, 8));
+                        int randomLizard = Random.Range(0, 2);  // Lizard Man or Woman 社発
+                        MonsterTypes.LizardType type = randomLizard == 0 ? MonsterTypes.LizardType.Man : MonsterTypes.LizardType.Woman;
+                        spawnManager.SpawnLizard(type, spawnPosition);
                     }
                     break;
 
                 case ZoneType.OrcZone:
-                    if (isBossZone)
+
+                    for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].orcCount; i++)
                     {
-                        bossSpawnPosition = transform.position;
-                        spawnManager.SpawnOrc(MonsterTypes.OrcType.Boss, bossSpawnPosition);
+                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(-6, 6));
+                        spawnManager.SpawnOrc(MonsterTypes.OrcType.Basic, spawnPosition);
                     }
-                    else
-                    {
-                        for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].orcCount; i++)
-                        {
-                            Vector3 spawnPosition = player.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(-6, 6));
-                            spawnManager.SpawnOrc(MonsterTypes.OrcType.Basic, spawnPosition);
-                        }
-                    }
+
                     break;
 
                 case ZoneType.WolfType:

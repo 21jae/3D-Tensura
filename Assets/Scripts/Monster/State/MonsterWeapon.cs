@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class MonsterWeapon : MonoBehaviour
 {
-    [SerializeField] private CharacterStatManager enemyStatManager;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float damageRadius = 12f;
 
@@ -10,7 +9,7 @@ public class MonsterWeapon : MonoBehaviour
     {
         Collider[] hitPlayer = Physics.OverlapSphere(transform.position, damageRadius, playerLayer);
 
-        float damageToDeal = enemyStatManager.currentData.currentAttackPower;
+        float damageToDeal = CharacterStatManager.instance.currentData.currentAttackPower;
 
         foreach (var player in hitPlayer)
         {

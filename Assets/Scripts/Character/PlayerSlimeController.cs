@@ -40,7 +40,7 @@ public class PlayerSlimeController : MonoBehaviour
 
     public void StartAttack()
     {
-        GameObject waterAttackInstance = ObjectPool.instance.GetPooledObject("SlimePoision");
+        GameObject waterAttackInstance = ObjectPooling.instance.GetPooledObject("SlimePoision");
         if (waterAttackInstance != null)
         {
             waterAttackInstance.transform.position = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
@@ -54,7 +54,7 @@ public class PlayerSlimeController : MonoBehaviour
     private IEnumerator ReturnToPoolAfterDelay(GameObject objectToReturn, float delay)
     {
         yield return new WaitForSeconds(delay);
-        ObjectPool.instance.ReturnObjectToPool("SlimePoision", objectToReturn);
+        ObjectPooling.instance.ReturnObjectToPool("SlimePoision", objectToReturn);
 
     }
 }

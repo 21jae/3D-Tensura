@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
@@ -18,41 +15,20 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     public State currentState;
 
+    [Header("Enemy 스탯")]
     [HideInInspector] public CharacterStatManager characterStatManager;
-    [SerializeField] private GameObject hitPrefab;
-    [SerializeField] private GameObject predationHit;
-    [SerializeField] private GameObject attackParticlePrefab;
-    [SerializeField] private GameObject deathPrefab;
-    public GameObject swordPrefab;
-    public GameObject shieldPrefab;
+
+    [field: Header("Enemy 데이터")]
+    [field: SerializeField] public EnemyStateData Data { get; private set; }
 
     [HideInInspector] public Animator animator;
     private Transform playerTransform;
     private MonsterWeapon monsterWeapon;
     private Monster monster;
 
-    //Patrol
-    [SerializeField] private float patrolRadius = 5f;   //순찰 반경
-    [SerializeField] private float patrolDuration = 5f; //한 위치에 멈춰있을 시간
-    [SerializeField] private float detectionRadius = 8f;  //플레이어 감지 거리
     private Vector3 nextPatrolPoint;
-    [SerializeField] private float stopDistance = 2.5f;  //플레이어와 일정 거리 유지
-
-    //Attack
-    [SerializeField] private float attackInterval = 1.5f;    //공격 간격
-    private Coroutine attackRoutine;    //현재 공격을 코루틴에 저장한다.
-    private bool isAttacking = false;
-
-    //Guard
-    [SerializeField] private float guardInterval = 1.5f;  //가드 지속시간
-    private Coroutine guardRoutine;
-    private bool hasPredationHitSpawned = false;
-    private bool isGuarding = false;
-
-    //Damage
-    private float DamageInterval = 1.5f;
-    private bool isRecoveringFormBigDamage = false;
-    private bool isBeingDestroy = false;
+    private Coroutine attackRoutine;
+    public Coroutine guardRoutine;
 
 
     protected virtual void Awake()
@@ -188,48 +164,9 @@ public class Enemy : MonoBehaviour, IDamageable
     private void EnterPatrol() { }
     private void EnterChase() { }
     private void EnterAttack() { }
-    private void EnterSkill() 
+    private void EnterSkill()
     {
-        Debug.Log("스킬발동");
 
-        Boss boss = GetComponent<Boss>();
-        List<Action> possbileSkills = new List<Action>();
-
-        if (!boss.skillActive)
-        {
-            possbileSkills.Add(() =>
-            {
-                animator.SetBool("Boss_Skill01", true);
-                animator.SetFloat("Speed", 0f);
-                boss.BossSkill01();
-            });
-        }
-
-        if (!boss.skillActive2)
-        {
-            possbileSkills.Add(() =>
-            {
-                boss.BossSkill02();
-            });
-        }
-
-        if (!boss.skillActive3)
-        {
-            possbileSkills.Add(() =>
-            {
-                boss.BossSkill03();
-            });
-        }
-
-        if (possbileSkills.Count > 0)
-        {
-            int randomSkillIndex = UnityEngine.Random.Range(0, possbileSkills.Count);
-            possbileSkills[randomSkillIndex]();
-        }
-        else
-        {
-            Debug.Log("스킬 못 찾음");
-        }
     }
 
     private void EnterGuard()
@@ -244,10 +181,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void EnterDeath()
     {
-        isBeingDestroy = true;
+        Data.HitData.SetIsBeingDestroy(true);
         animator.SetTrigger("Death");
-        Destroy(gameObject);
-        Instantiate(deathPrefab, transform.position + Vector3.up, Quaternion.identity);
+        Destroy(gameObject, 2.5f);
+        Data.HitData.deathPrefab = ObjectPooling.instance.GetPooledObject("Death");
+        Data.HitData.deathPrefab.transform.position = transform.position + Vector3.up;
+        Data.HitData.deathPrefab.SetActive(true);
     }
     #endregion
 
@@ -264,7 +203,7 @@ public class Enemy : MonoBehaviour, IDamageable
         float distanceToPatrolPoint = Vector3.Distance(transform.position, nextPatrolPoint);
 
         //범위 안에 들어왔다면 추적상태로 전환
-        if (DistanceToPlayer() <= detectionRadius)
+        if (DistanceToPlayer() <= Data.PatrolData.detectionRadius)
         {
             ChangeState(State.CHASE);
             return;
@@ -287,7 +226,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcuteChase()
     {
-        if (isRecoveringFormBigDamage)
+        if (Data.HitData.isRecoveringFormBigDamage)
         {
             return;
         }
@@ -298,79 +237,31 @@ public class Enemy : MonoBehaviour, IDamageable
         LookTowardsPoint(playerTransform.position);
 
         // 일정거리 이상일때만 추적한다
-        if (DistanceToPlayer() > stopDistance)
+        if (DistanceToPlayer() > Data.PatrolData.stopDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, characterStatManager.currentData.currentSpeed * Time.deltaTime);
         }
 
 
-        if (monster.IsLizard)
+        if (DistanceToPlayer() <= Data.PatrolData.stopDistance)
         {
-            //공격 타입의 리자드는 공격 위주
-            if (DistanceToPlayer() <= stopDistance)
+            float chance = UnityEngine.Random.Range(0f, 1f);
+
+            if (chance <= 0.7f) // 70% 확률로 공격 상태 전환
             {
-                float chance = UnityEngine.Random.Range(0f, 1f);
-
-                if (chance <= 0.99f) // 80% 확률로 공격 상태 전환
-                {
-                    ChangeState(State.ATTACK);
-                }
-                else   // 10% 확률로 가드 상태 전환
-                {
-                    ChangeState(State.GUARD);
-                }
-
-                return;
+                ChangeState(State.ATTACK);
             }
-        }
-
-        else if (monster.IsOrc)
-        {
-            //방어 타입의 오크는 가드 위주
-            if (DistanceToPlayer() <= stopDistance)
+            else
             {
-                float chance = UnityEngine.Random.Range(0f, 1f);
-
-                if (chance <= 0.99f) //80 % 확률로 방어 상태 전환
-                {
-                    ChangeState(State.GUARD);
-                }
-                else
-                {
-                    ChangeState(State.ATTACK);
-                }
-
-                return;
+                ChangeState(State.GUARD);
             }
+
+            return;
+
         }
-
-        else if (monster.IsBoss)
-        {
-            // Boss는 특수스킬 사용
-            if (DistanceToPlayer() <= stopDistance)
-            {
-                float chance = UnityEngine.Random.Range(0f, 1f);
-
-                if (chance <= 0.55f)// 55%확률로 공격)
-                {
-                    ChangeState(State.ATTACK);
-                }
-                else if (chance <= 0.95f)  //40%확률로 스킬
-                {
-                    ChangeState(State.SKILL);
-                }
-                else    //5%확률로 가드
-                {
-                    ChangeState(State.GUARD);
-                }
-
-                return;
-            }
-        }
-
 
         //일정거리 이상 벗어나면 추적 종료
-        if (monster.IsLizard && DistanceToPlayer() > detectionRadius)
+        if (DistanceToPlayer() > Data.PatrolData.detectionRadius)
         {
             ChangeState(State.PATROL);
             return;
@@ -380,12 +271,12 @@ public class Enemy : MonoBehaviour, IDamageable
     private void ExcuteAttack()
     {
         //범위 내로 들어오면 공격 실행
-        if (DistanceToPlayer() <= stopDistance && !isAttacking)
+        if (DistanceToPlayer() <= Data.PatrolData.stopDistance && !Data.AttackData.isAttacking)
         {
             attackRoutine = StartCoroutine(AttackPlayer());
         }
         //범위 밖으로 나가면 공격 종료
-        else if (DistanceToPlayer() > stopDistance)
+        else if (DistanceToPlayer() > Data.PatrolData.stopDistance)
         {
             animator.SetBool("isAttacking", false);
             ChangeState(State.CHASE);
@@ -402,8 +293,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcuteDeath()
     {
-        animator.SetTrigger("Death");
-        Destroy(gameObject, 1.6f);
     }
 
     #endregion
@@ -416,12 +305,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExitChase() { }
 
-    private void ExitAttack() 
+    private void ExitAttack()
     {
         if (attackRoutine != null)
         {
             StopCoroutine(attackRoutine);
-            isAttacking = false;
+            Data.AttackData.SetIsAttack(false);
         }
 
         animator.SetBool("isAttacking", false);
@@ -437,76 +326,27 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float amount, bool isPredation = false)
     {
         //데미지 받을때 수행될 로직.
-        float damageToTake = amount - characterStatManager.currentData.currentDefense;
+        float damageToTake = amount - CharacterStatManager.instance.currentData.currentDefense;
 
         if (damageToTake < 0f)
         {
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
         }
 
-        if (isGuarding)
-        {
-            damageToTake *= 0.2f;   //가드중이라면 받는 데미지 80%감소
-        }
+        CharacterStatManager.instance.currentData.currentHP -= damageToTake;
+        Debug.Log(CharacterStatManager.instance.currentData.currentHP);
 
-        characterStatManager.currentData.currentHP -= damageToTake;
+        //Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
+        //Data.HitData.hitPrefab = ObjectPooling.instance.GetPooledObject("DamageHit");
+        //Data.HitData.hitPrefab.transform.position = effectPosition;
+        //Data.HitData.hitPrefab.transform.rotation = Quaternion.identity;
 
-        Debug.Log(characterStatManager.currentData.currentHP);
-
-        Vector3 monsterWorldPosition = this.transform.position; // 몬스터의 현재 위치
-        UIMonsterHP.Instance.CreateDamagePopup(damageToTake, monsterWorldPosition);
-
-        if (isPredation && !hasPredationHitSpawned)    //isPredation(흡수스킬)이 true일땐 이 hit 프리팹을 생성한다.
-        {
-            GameObject hitInstance = Instantiate(predationHit, transform.position, Quaternion.identity);
-            hitInstance.transform.SetParent(transform);
-            hasPredationHitSpawned = true;
-        }
-        else if (!isPredation)
-        {
-            Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
-            
-            if (monster.IsLizard)
-            {
-                Instantiate(hitPrefab, effectPosition, Quaternion.identity);
-            }
-            else if (monster.IsOrc)
-            {
-                Instantiate(hitPrefab, shieldPrefab.transform.position, Quaternion.identity);
-            }
-        }
-
-        if (characterStatManager.currentData.currentHP <= 0f)
+        if (CharacterStatManager.instance.currentData.currentHP <= 0f)
         {
             ChangeState(State.DEATH);
         }
-
-        //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
-        float damagePercentage = damageToTake / characterStatManager.currentData.currentMaxHP;
-        if (monster.IsLizard && damagePercentage > 0.5f)
-        {
-            StartCoroutine(PlayBigDamageAnimation());
-        }
-
-        if (monster.IsOrc && damagePercentage > 0.25f)
-        {
-            StartCoroutine(PlayOrcDamageAnimation());
-        }
     }
 
-    private IEnumerator PlayOrcDamageAnimation()
-    {
-        StopIfNearPlayer();
-        animator.SetBool("Damage", true);
-        yield return new WaitForSeconds(DamageInterval);
-
-        animator.SetBool("BigDamage", false);
-        animator.SetBool("StandUp", true);
-        yield return new WaitForSeconds(DamageInterval);
-
-        animator.SetBool("StandUp", false);
-        yield return new WaitForSeconds(DamageInterval);
-    }
     #endregion
 
     #region 재사용 가능한 메서드
@@ -529,37 +369,18 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void StopIfNearPlayer()
     {
-        if (monster.IsLizard && monster.IsOrc && DistanceToPlayer() <= stopDistance)
+        if (DistanceToPlayer() <= Data.PatrolData.stopDistance)
         {
             animator.SetFloat("Speed", 0f);
         }
-
-        //if (monster.IsBoss && DistanceToPlayer() <= 3f)
-        //{
-        //    animator.SetFloat("Speed", 0f);
-        //}
-    }
-    private IEnumerator PlayBigDamageAnimation()
-    {
-        StopIfNearPlayer();
-
-        animator.SetBool("BigDamage", true);
-        yield return new WaitForSeconds(DamageInterval - 0.3f);
-        animator.SetBool("BigDamage", false);
-
-        animator.SetBool("StandUp", true);
-        yield return new WaitForSeconds(DamageInterval);
-
-        animator.SetBool("StandUp", false);
-        yield return new WaitForSeconds(DamageInterval);
     }
     #endregion
 
     #region 순찰 메서드
     private void ChooseNextPatrolPoint()
     {
-        float randomX = UnityEngine.Random.Range(-patrolRadius, patrolRadius);
-        float randomZ = UnityEngine.Random.Range(-patrolRadius, patrolRadius);
+        float randomX = UnityEngine.Random.Range(-Data.PatrolData.patrolRadius, Data.PatrolData.patrolRadius);
+        float randomZ = UnityEngine.Random.Range(-Data.PatrolData.patrolRadius, Data.PatrolData.patrolRadius);
 
         nextPatrolPoint = transform.position + new Vector3(randomX, 0f, randomZ);
     }
@@ -567,7 +388,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private IEnumerator StayForAWhile()
     {
         ChangeState(State.IDLE);
-        yield return new WaitForSeconds(patrolDuration);
+        yield return new WaitForSeconds(Data.PatrolData.patrolDuration);
         ChooseNextPatrolPoint();
         ChangeState(State.PATROL);
     }
@@ -579,21 +400,22 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         while (true)
         {
-            if (!isAttacking)
+            if (!Data.AttackData.isAttacking)
             {
                 animator.SetFloat("Speed", 0f);
-                isAttacking = true;
+                Data.AttackData.SetIsAttack(true);
 
-                yield return new WaitForSeconds(attackInterval);
+                yield return new WaitForSeconds(Data.AttackData.attackInterval);
                 animator.SetBool("isAttacking", true);
 
-                yield return new WaitForSeconds(attackInterval -1f);
+                yield return new WaitForSeconds(Data.AttackData.attackInterval - 1f);
                 SpawnAttackParticle();
 
                 animator.SetBool("isAttacking", false);
 
-                yield return new WaitForSeconds(attackInterval);
-                isAttacking = false;
+                yield return new WaitForSeconds(Data.AttackData.attackInterval);
+                Data.AttackData.SetIsAttack(false);
+
             }
             else
             {
@@ -609,7 +431,10 @@ public class Enemy : MonoBehaviour, IDamageable
         particlePosition.y += 1.5f;
         Quaternion particleRotation = Quaternion.LookRotation(particleDirection);
 
-        GameObject particleInstance = Instantiate(attackParticlePrefab, particlePosition, particleRotation);
+        GameObject particleInstance = ObjectPooling.instance.GetPooledObject("MonsterSlash");
+        particleInstance.transform.position = particlePosition;
+        particleInstance.transform.rotation = particleRotation;
+
         ParticleSystem ps = particleInstance.GetComponent<ParticleSystem>();
 
         if (ps != null)
@@ -623,31 +448,18 @@ public class Enemy : MonoBehaviour, IDamageable
     #region 가드 메서드
     private IEnumerator GuardAnimationRoutine()
     {
-        isGuarding = true;
+        Data.GuardData.SetIsGuarding(true);
 
-        if (monster.IsLizard && monster.IsBoss)
-        {
-            animator.SetBool("isGuarding", true);
+        animator.SetBool("isGuarding", true);
 
-            yield return new WaitForSeconds(guardInterval);
+        yield return new WaitForSeconds(Data.GuardData.guardInterval);
 
-            animator.SetBool("isGuarding", false);
-            yield return new WaitForSeconds(guardInterval - 1f);
-            ChangeState(State.CHASE);
-        }
+        animator.SetBool("isGuarding", false);
+        yield return new WaitForSeconds(Data.GuardData.guardInterval - 1f);
+        ChangeState(State.CHASE);
 
-        if (monster.IsOrc)
-        {
-            animator.SetBool("isGuarding", true);
+        Data.GuardData.SetIsGuarding(false);
 
-            yield return new WaitForSeconds(guardInterval + 1.7f);
-
-            animator.SetBool("isGuarding", false);
-            yield return new WaitForSeconds(guardInterval - 1f);
-            ChangeState(State.CHASE);
-        }
-
-        isGuarding = false;
     }
 
     #endregion

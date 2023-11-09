@@ -11,7 +11,6 @@ public static class MonsterTypes
     {
         Man,
         Woman,
-        Boss
     }
 
     public enum OrcType

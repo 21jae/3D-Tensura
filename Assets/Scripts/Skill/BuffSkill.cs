@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BuffSkill : MonoBehaviour, ISkill
 {
-    public GameObject attackBuffPrefab;
     private PlayerController playerController;
     private SkillManager skillManager;
 
@@ -33,7 +32,7 @@ public class BuffSkill : MonoBehaviour, ISkill
 
     private void ActivateTime()
     {
-        GameObject buffInstance = Instantiate(attackBuffPrefab, playerController.transform.position, Quaternion.identity);
+        GameObject buffInstance = Instantiate(skillManager.skillData.BuffData.attackBuffPrefab, playerController.transform.position, Quaternion.identity);
         buffInstance.transform.SetParent(playerController.transform);
 
         StartCoroutine(ApplyAttackBuff());

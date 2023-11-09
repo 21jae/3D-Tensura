@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldEnemy : MonoBehaviour, IDamageable
@@ -150,7 +150,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
     #endregion
 
     #region Enter State
-    private void EnterIdle() 
+    private void EnterIdle()
     {
         animator.SetFloat("Speed", 0f);
     }
@@ -163,6 +163,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
         isBeingDestroy = true;
         animator.SetTrigger("Death");
         Instantiate(deathPrefab, transform.position + Vector3.up, Quaternion.identity);
+        Destroy(gameObject, 1.5f);
     }
     #endregion
 
@@ -292,7 +293,7 @@ public class FieldEnemy : MonoBehaviour, IDamageable
         Debug.Log(characterStatManager.currentData.currentHP);
 
         Vector3 monsterWorldPosition = transform.position; // 몬스터의 현재 위치
-        UIMonsterHP.Instance.CreateDamagePopup(damageToTake, monsterWorldPosition);
+        //UIMonsterHP.Instance.CreateDamagePopup(damageToTake, monsterWorldPosition);
 
 
         if (isPredation)    //isPredation(흡수스킬)이 true일땐 이 hit 프리팹을 생성한다.

@@ -3,12 +3,9 @@ using UnityEngine;
 
 public class DashSwordSkill : MonoBehaviour, ISkill
 {
-    [Header("스킬 데이터")]
-    [SerializeField] private SOSkill dashSwordSkillData;
-    [SerializeField] private GameObject dashSwordPrefab;
-
     private PlayerController playerController;
     private SkillManager skillManager;
+    public LayerMask layerMask;
 
     #region 초기화 및 업데이트
     private void Awake()
@@ -63,7 +60,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         }
         else
         {
-            Instantiate(dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
+            Instantiate(skillManager.skillData.DashData.dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
             DashDamageInRadius();
 
             skillManager.skillData.DashData.SetIsDashing(false);
@@ -73,14 +70,15 @@ public class DashSwordSkill : MonoBehaviour, ISkill
 
     private void DashDamageInRadius()
     {
-        Collider[] hitEnemies = Physics.OverlapSphere(playerController.transform.position, skillManager.skillData.DashData.damageRadius, playerController.Data.GroundData.LayerData.GroundLayer);
-        float damageToDeal = dashSwordSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
+        Collider[] hitEnemies = Physics.OverlapSphere(playerController.transform.position, skillManager.skillData.DashData.damageRadius, layerMask);
+        float damageToDeal = skillManager.skillData.DashData.dashSwordSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
 
         foreach (Collider enemy in hitEnemies)
         {
             IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
             if (damageableEnemy != null)
             {
+                Debug.Log("대쉬데미지??0");
                 damageableEnemy.TakeDamage(damageToDeal);
             }
         }

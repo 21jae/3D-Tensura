@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 418762223319895715}
   - component: {fileID: 3761075777468544693}
   m_Layer: 0
-  m_Name: megidoRayTest
+  m_Name: megidoRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

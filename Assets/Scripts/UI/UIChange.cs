@@ -13,9 +13,6 @@ public class UIChange : MonoBehaviour
     public Animator playerAnimator;
     public CinemachineVirtualCamera virtualCamera;
 
-    private const string EFFECT_TAG = "CharacterChangeEffect";
-
-
     private void Awake()
     {
     }
@@ -48,7 +45,7 @@ public class UIChange : MonoBehaviour
 
     private IEnumerator SwitchCharacter(GameObject fromPlayer, GameObject toPlayer)
     {
-        GameObject effect = ObjectPool.instance.GetPooledObject(EFFECT_TAG);
+        GameObject effect = ObjectPooling.instance.GetPooledObject("CharacterChangeEffect");
 
         if (effect != null)
         {
@@ -81,7 +78,7 @@ public class UIChange : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        ObjectPool.instance.ReturnObjectToPool(EFFECT_TAG, effect);
+        ObjectPooling.instance.ReturnObjectToPool("CharacterChangeEffect", effect);
     }
 
     private void UpdateCameraSetting(GameObject currentPlayer)
@@ -99,5 +96,4 @@ public class UIChange : MonoBehaviour
             framingTransposer.m_CameraDistance = 3f;
         }
     }
-
 }

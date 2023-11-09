@@ -4,7 +4,6 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //¸ó½ºÅÍÀÇ ÇÁ¸®Æ
 {
     public GameObject lizardMan;
     public GameObject lizardWoman;
-    public GameObject lizardBoss;
 
     public GameObject orcBasic;
     public GameObject orcBoss;
@@ -24,29 +23,9 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //¸ó½ºÅÍÀÇ ÇÁ¸®Æ
             case MonsterTypes.LizardType.Woman:
                 prefab = lizardWoman;
                 break;
-            case MonsterTypes.LizardType.Boss:
-                prefab = lizardBoss;
-                break;
         }
 
         Monster monster = CreateMonsterPrefab(prefab, position);
-
-        if (type == MonsterTypes.LizardType.Boss)
-        {
-            monster.SetAsBoss();
-            Debug.Log("¸®ÀÚµå º¸½º Àû¿ë ¹× »ý¼º");
-        }
-        else if (type == MonsterTypes.LizardType.Man)
-        {
-            Debug.Log("¸®ÀÚµå ÀÏ¹Ý Àû¿ë ¹× »ý¼º");
-            monster.SetAsLizard();
-        }
-        else if (type == MonsterTypes.LizardType.Woman)
-        {
-            Debug.Log("¸®ÀÚµå ÀÏ¹Ý Àû¿ë ¹× »ý¼º");
-            monster.SetAsLizard();
-        }
-
         return monster;
     }
 
@@ -65,18 +44,6 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //¸ó½ºÅÍÀÇ ÇÁ¸®Æ
         }
 
         Monster monster = CreateMonsterPrefab(prefab, position);
-
-        if (type == MonsterTypes.OrcType.Boss)
-        {
-            monster.SetAsBoss();
-            Debug.Log("¿ÀÅ© º¸½º Àû¿ë ¹× »ý¼º");
-        }
-        else
-        {
-            monster.SetAsOrc();
-            Debug.Log("¿ÀÅ© ÀÏ¹Ý Àû¿ë ¹× »ý¼º");
-        }
-
         return monster;
     }
 

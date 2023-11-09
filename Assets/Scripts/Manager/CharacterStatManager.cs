@@ -50,4 +50,10 @@ public class CharacterStatManager : MonoBehaviour
     {
         currentData.currentDefense += amount;
     }
+
+    //
+    public float GetCurrentAttackPower()
+    {
+        return currentData.currentAttackPower;
+    }
 }

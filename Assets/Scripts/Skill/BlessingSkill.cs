@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class BlessingSkill : MonoBehaviour, ISkill
 {
-    [Header("가호 프리팹")]
-    public GameObject blessingHuman;
-    public GameObject blessingEffect;
-    public GameObject buffEffect;
-
     private PlayerController playerController;
     private SkillManager skillManager;
 
@@ -41,7 +36,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
         Vector3 spawnPosition = playerController.transform.position - playerController.transform.forward * skillManager.skillData.BlessingData.offsetDistance;
         Quaternion rotationTowardsPlayer = Quaternion.LookRotation(playerController.transform.position - spawnPosition);
 
-        GameObject blessingIntance = Instantiate(blessingHuman, spawnPosition, rotationTowardsPlayer);
+        GameObject blessingIntance = Instantiate(skillManager.skillData.BlessingData.blessingHuman, spawnPosition, rotationTowardsPlayer);
         StartCoroutine(WaitAndBless(blessingIntance, skillManager.skillData.BlessingData.destoryPrefabDuration));
     }
 
@@ -66,7 +61,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private void ShowBlessingEffectAtPlayer()
     {
-        Instantiate(blessingEffect, playerController.transform.position, Quaternion.identity);
+        Instantiate(skillManager.skillData.BlessingData.blessingEffect, playerController.transform.position, Quaternion.identity);
         Debug.Log("체력 및 스테이터스 상승!");
     }
     #endregion
@@ -93,7 +88,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private void ShowBuffEffectOnPlayer()
     {
-        GameObject buffInstance = Instantiate(buffEffect, playerController.transform.position, Quaternion.identity);
+        GameObject buffInstance = Instantiate(skillManager.skillData.BlessingData.buffEffect, playerController.transform.position, Quaternion.identity);
         buffInstance.transform.SetParent(playerController.transform);
     }
 

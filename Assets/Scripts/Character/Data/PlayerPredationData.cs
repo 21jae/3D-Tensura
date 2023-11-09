@@ -3,14 +3,26 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerPredationData
 {
+    [field: Header("Èí¼ö µ¥ÀÌÅÍ")]
+    [field: SerializeField] public SOSkill predationSkillData { get; private set; }
+
+    [field: Header("Èí¼ö ÇÁ¸®ÆÕ")]
+    [field: SerializeField] public GameObject predationPrefab {get; private set;}
+    [field: SerializeField] public GameObject predationPosPrefab {get; private set;}
+    [field: SerializeField] public GameObject predationPosition { get; private set; }
+
+    [field: Header("Èí¼ö º¯¼ö")]
     [field: SerializeField] [field:Range(5f, 25f)] public float predationRaidus { get; private set; } = 20f;
     [field: SerializeField] [field:Range(5f, 25f)] public float predationForce { get; private set; } = 15f;
 
     [field: Header("Èí¼ö ¼³Á¤")]
-    [field: SerializeField] public GameObject predationPosition { get; private set; }
     [field: SerializeField] public float PREDATION_ANGLE { get; private set; } = 60f;      //Èí¼ö °¢µµ
     [field: SerializeField] public float PREDATION_DURATION { get; private set; } = 3f;    //Áö¼Ó ½Ã°£
     [field: SerializeField] public float THRESHOLD { get; private set; } = 3f;             //¹üÀ§
-    
-    [field: SerializeField] public bool isPredationActive { get; set; }
+    [field: SerializeField] public bool isPredationActive { get; private set; } = false;
+
+    public void SetActivePredation(bool predation)
+    {
+        isPredationActive = predation;
+    }
 }

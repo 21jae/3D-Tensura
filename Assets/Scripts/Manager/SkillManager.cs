@@ -5,6 +5,9 @@ public class SkillManager : MonoBehaviour
     private Animator animator;
 
     [Header("플레이어 스킬")]
+    private SlimePoisonSkill poisonSkill;
+
+    [Header("플레이어 스킬")]
     private BuffSkill buffSkill;
     private DashSwordSkill dashSwordSkill;
     private PredationSkill predationSkill;

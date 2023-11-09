@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,11 +5,8 @@ public class PredationSkill : MonoBehaviour, ISkill
 {
     private PlayerController playerController;
     private SkillManager skillManager;
+    public LayerMask layerMask;
 
-    [Header("스킬 데이터")]
-    [SerializeField] private SOSkill predationSkillData;
-    [SerializeField] private GameObject predationPrefab;
-    [SerializeField] private GameObject predationPosPrefab;
 
     #region 초기화 및 업데이트
     private void Awake()
@@ -33,14 +29,7 @@ public class PredationSkill : MonoBehaviour, ISkill
     {
         if (skillManager.skillData.PredationData.isPredationActive)
         {
-            if (playerController.isMoving())
-            {
-                CancelPredation();
-            }
-            else
-            {
-                AbsorbObjectInRadius();
-            }
+            AbsorbObjectInRadius();
         }
     }
     #endregion
@@ -50,13 +39,13 @@ public class PredationSkill : MonoBehaviour, ISkill
     {
         //사운드 재생
 
-        Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, skillManager.skillData.PredationData.predationRaidus, playerController.Data.GroundData.LayerData.GroundLayer);
+        Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, skillManager.skillData.PredationData.predationRaidus, layerMask);
 
         foreach (Collider obj in objectInRange)
         {
             if (ObjectInPredationAngle(obj))
             {
-                FieldEnemy enemy = obj.GetComponent<FieldEnemy>();
+                Enemy enemy = obj.GetComponent<Enemy>();
 
                 if (enemy != null)
                 {
@@ -66,19 +55,6 @@ public class PredationSkill : MonoBehaviour, ISkill
             }
         }
     }
-
-    private void CancelPredation()
-    {
-        skillManager.skillData.PredationData.isPredationActive = false;
-
-        if (predationPrefab != null)
-        {
-            playerController.StopPlayer();
-            Destroy(predationPrefab);
-        }
-    }
-
-
     private bool ObjectInPredationAngle(Collider obj)
     {
         Vector3 directionToObject = (obj.transform.position - playerController.transform.position).normalized;      //감지된 오브젝트 사이의 방향 각도 계산
@@ -87,9 +63,9 @@ public class PredationSkill : MonoBehaviour, ISkill
         return angle < skillManager.skillData.PredationData.PREDATION_ANGLE; //방향 사이의 각도보다 흡수 각도가 크다면 흡수 가능하다.
     }
 
-    private void ApplyDamageToEnemy(FieldEnemy enemy)
+    private void ApplyDamageToEnemy(Enemy enemy)
     {
-        float damaegeToDeal = predationSkillData.CalculateSkillDamage(playerController.playerStatManager.currentData.currentAttackPower);
+        float damaegeToDeal = skillManager.skillData.PredationData.predationSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
         IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
 
         if (damageableEnemy != null)
@@ -99,7 +75,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         }
     }
 
-    private void EnoughAbsorb(FieldEnemy enemy, Collider obj)
+    private void EnoughAbsorb(Enemy enemy, Collider obj)
     {
         if (enemy.characterStatManager.currentData.currentHP <= enemy.characterStatManager.currentData.currentMaxHP * 0.3f)
         {
@@ -131,16 +107,16 @@ public class PredationSkill : MonoBehaviour, ISkill
     #region 스킬 활성화
     public void ActivateSkill()
     {
-        skillManager.skillData.PredationData.isPredationActive = true;
-        Instantiate(predationPosPrefab, skillManager.skillData.PredationData.predationPosition.transform.position + new Vector3(0f, -1f, 0f), playerController.transform.rotation);
-        Instantiate(predationPrefab, skillManager.skillData.PredationData.predationPosition.transform.position, playerController.transform.rotation);
+        skillManager.skillData.PredationData.SetActivePredation(true);
+        Instantiate(skillManager.skillData.PredationData.predationPosPrefab, skillManager.skillData.PredationData.predationPosition.transform.position + new Vector3(0f, -1f, 0f), playerController.transform.rotation);
+        Instantiate(skillManager.skillData.PredationData.predationPrefab, skillManager.skillData.PredationData.predationPosition.transform.position, playerController.transform.rotation);
         StartCoroutine(ActivatePredation());
     }
 
     private IEnumerator ActivatePredation()
     {
         yield return new WaitForSeconds(skillManager.skillData.PredationData.PREDATION_DURATION);
-        skillManager.skillData.PredationData.isPredationActive = false;
+        skillManager.skillData.PredationData.SetActivePredation(false);
     }
     #endregion
 }

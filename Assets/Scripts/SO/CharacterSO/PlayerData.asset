@@ -13,9 +13,20 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   <GroundData>k__BackingField:
+    <AnimationData>k__BackingField:
+      moveParameterName: MoveSpeed
+      attack01ParameterName: Attack01
+      attack02ParameterName: Attack02
+      attack03ParameterName: Attack03
+      attack04ParameterName: Attack04
+      damageParameterName: Damage
+      bigDamageParameterName: BigDamage
+      standUpParameterName: StandUp
+      DeathParameterName: Death
+      changeParameterName: ChangeFrom
     <AttackData>k__BackingField:
       comboStack: 0
-      lastButtonPressTime: 0
+      lastButtonPressTime: 30.765804
       isButtonPressed: 0
     <HitData>k__BackingField:
       <invincibilityDuration>k__BackingField: 1
@@ -23,7 +34,7 @@ MonoBehaviour:
       <knockbackStrength>k__BackingField: 5
       <knockbackDuration>k__BackingField: 0.1
       <damageInterval>k__BackingField: 1.5
-      <isInvincible>k__BackingField: 0
+      <isInvincible>k__BackingField: 1
       <isRecoveringForBigDamage>k__BackingField: 0
     <LayerData>k__BackingField:
       <GroundLayer>k__BackingField:
@@ -37,4 +48,5 @@ MonoBehaviour:
   <AirData>k__BackingField:
     <GravityData>k__BackingField:
       <gravity>k__BackingField: -9.81
-      <VerticalVelocity>k__BackingField: -0.9194354
+      <VerticalVelocity>k__BackingField: 0
+      <isGravityEnabled>k__BackingField: 0
