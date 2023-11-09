@@ -78,8 +78,8 @@ public class NPCTrigger : MonoBehaviour
             var framingTransposer = vcam.GetCinemachineComponent<CinemachineFramingTransposer>();
             if (framingTransposer != null)
             {
-                framingTransposer.m_TrackedObjectOffset = new Vector3(0f, 1f, 0);
-                framingTransposer.m_CameraDistance = 3.0f;
+                framingTransposer.m_TrackedObjectOffset = new Vector3(0f, 1.1f, 0);
+                framingTransposer.m_CameraDistance = 2.8f;
             }
             else
             {
