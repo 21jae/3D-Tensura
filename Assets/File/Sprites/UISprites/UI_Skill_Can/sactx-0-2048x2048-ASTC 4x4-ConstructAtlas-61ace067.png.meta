@@ -134,40 +134,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: sactx-0-2048x2048-ASTC 4x4-ConstructAtlas-61ace067_0
-      rect:
-        serializedVersion: 2
-        x: 942
-        y: 669
-        width: 146
-        height: 144
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 127481887f2dd7c41bfcb04db36c98fb
-      internalID: 1613922300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 22647006700f5104791632df165a96c1
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      sactx-0-2048x2048-ASTC 4x4-ConstructAtlas-61ace067_0: 1613922300
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

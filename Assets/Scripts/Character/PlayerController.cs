@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     [field: Header("Animation")]
     [field: SerializeField] public AnimationData AnimationData { get; private set; }
 
+    [field: Header("Mesh Trail")]
+    [field: SerializeField] public PlayerMeshData meshData { get; private set; }
+
     public CharacterStatManager playerStatManager  { get; private set; }
     public CharacterController characterController { get; private set; }
     public SkillManager skillManager   { get; private set; }

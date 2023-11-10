@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour, IDamageable
     [field: Header("Enemy 데이터")]
     [field: SerializeField] public EnemyStateData Data { get; private set; }
 
+    [field: Header("Animation Data")]
+    [field: SerializeField] public EnemyAnimationData AnimationData { get; private set; }
+
     [HideInInspector] public Animator animator;
     private Transform playerTransform;
     private MonsterWeapon monsterWeapon;
@@ -183,12 +186,11 @@ public class Enemy : MonoBehaviour, IDamageable
     public void EnterDeath()
     {
         Data.HitData.SetIsBeingDestroy(true);
-        animator.SetTrigger("Death");
+        animator.SetTrigger(AnimationData.DeathParameterName);
         Destroy(gameObject, 2.5f);
         Data.HitData.deathPrefab = ObjectPooling.instance.GetPooledObject("Death");
         Data.HitData.deathPrefab.transform.position = transform.position + Vector3.up;
         Data.HitData.deathPrefab.SetActive(true);
-        ConversationManager.Instance.SetBool("WolfClear", true);
     }
     #endregion
 
@@ -199,7 +201,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcutePatrol()
     {
-        animator.SetFloat("Speed", 1f);
+        animator.SetFloat(AnimationData.MoveParameterName, 1f);
         DistanceToPlayer();
 
         float distanceToPatrolPoint = Vector3.Distance(transform.position, nextPatrolPoint);
@@ -233,7 +235,7 @@ public class Enemy : MonoBehaviour, IDamageable
             return;
         }
 
-        animator.SetFloat("Speed", 1.5f);
+        animator.SetFloat(AnimationData.MoveParameterName, 1.5f);
 
         DistanceToPlayer();
         LookTowardsPoint(playerTransform.position);
@@ -280,7 +282,7 @@ public class Enemy : MonoBehaviour, IDamageable
         //범위 밖으로 나가면 공격 종료
         else if (DistanceToPlayer() > Data.PatrolData.stopDistance)
         {
-            animator.SetBool("isAttacking", false);
+            animator.SetBool(AnimationData.AttackParameterName, false);
             ChangeState(State.CHASE);
         }
     }
@@ -315,7 +317,7 @@ public class Enemy : MonoBehaviour, IDamageable
             Data.AttackData.SetIsAttack(false);
         }
 
-        animator.SetBool("isAttacking", false);
+        animator.SetBool(AnimationData.AttackParameterName, false);
     }
 
     private void ExitGuard() { }
@@ -337,11 +339,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
         CharacterStatManager.instance.currentData.currentHP -= damageToTake;
         Debug.Log(CharacterStatManager.instance.currentData.currentHP);
-
-        //Vector3 effectPosition = transform.position + new Vector3(0f, 1f, 0f);
-        //Data.HitData.hitPrefab = ObjectPooling.instance.GetPooledObject("DamageHit");
-        //Data.HitData.hitPrefab.transform.position = effectPosition;
-        //Data.HitData.hitPrefab.transform.rotation = Quaternion.identity;
 
         if (CharacterStatManager.instance.currentData.currentHP <= 0f)
         {
@@ -373,7 +370,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (DistanceToPlayer() <= Data.PatrolData.stopDistance)
         {
-            animator.SetFloat("Speed", 0f);
+            animator.SetFloat(AnimationData.MoveParameterName, 0f);
         }
     }
     #endregion
@@ -404,16 +401,16 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             if (!Data.AttackData.isAttacking)
             {
-                animator.SetFloat("Speed", 0f);
+                animator.SetFloat(AnimationData.MoveParameterName, 0f);
                 Data.AttackData.SetIsAttack(true);
 
                 yield return new WaitForSeconds(Data.AttackData.attackInterval);
-                animator.SetBool("isAttacking", true);
+                animator.SetBool(AnimationData.AttackParameterName, true);
 
                 yield return new WaitForSeconds(Data.AttackData.attackInterval - 1f);
                 SpawnAttackParticle();
 
-                animator.SetBool("isAttacking", false);
+                animator.SetBool(AnimationData.AttackParameterName, false);
 
                 yield return new WaitForSeconds(Data.AttackData.attackInterval);
                 Data.AttackData.SetIsAttack(false);
@@ -452,11 +449,11 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         Data.GuardData.SetIsGuarding(true);
 
-        animator.SetBool("isGuarding", true);
+        animator.SetBool(AnimationData.GuardParameterName, true);
 
         yield return new WaitForSeconds(Data.GuardData.guardInterval);
 
-        animator.SetBool("isGuarding", false);
+        animator.SetBool(AnimationData.GuardParameterName, false);
         yield return new WaitForSeconds(Data.GuardData.guardInterval - 1f);
         ChangeState(State.CHASE);
 
