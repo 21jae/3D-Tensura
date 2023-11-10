@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ranga
   m_EditorClassIdentifier: 
   characterName: Ranga
-  maxHealth: 2000
-  currentHealth: 2000
+  maxHealth: 20
+  currentHealth: 20
   attackPower: 15
-  defense: 10
+  defense: 2
   speed: 5

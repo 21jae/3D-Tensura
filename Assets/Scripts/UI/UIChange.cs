@@ -9,6 +9,7 @@ public class UIChange : MonoBehaviour
     public GameObject player2;
     public GameObject player1ModeUI;
     public GameObject player2ModeUI;
+    public GameObject CharacterChangeUI;
 
     public Animator playerAnimator;
     public CinemachineVirtualCamera virtualCamera;
@@ -19,9 +20,9 @@ public class UIChange : MonoBehaviour
 
     private void Start()
     {
+        CharacterChangeUI.SetActive(false);
         player1.SetActive(true);
         player2.SetActive(false);
-        //gameObject.SetActive(false);
         UpdateUI(true);
     }
 
@@ -29,6 +30,11 @@ public class UIChange : MonoBehaviour
     {
         player1ModeUI.SetActive(isPlayerAction);
         player2ModeUI.SetActive(!isPlayerAction);
+    }
+
+    public void ChangePossible()
+    {
+        CharacterChangeUI.SetActive(true);
     }
 
     public void ChangeCharacter()

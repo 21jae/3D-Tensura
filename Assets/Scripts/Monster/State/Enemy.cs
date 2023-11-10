@@ -1,3 +1,4 @@
+using DialogueEditor;
 using System.Collections;
 using UnityEngine;
 
@@ -187,6 +188,7 @@ public class Enemy : MonoBehaviour, IDamageable
         Data.HitData.deathPrefab = ObjectPooling.instance.GetPooledObject("Death");
         Data.HitData.deathPrefab.transform.position = transform.position + Vector3.up;
         Data.HitData.deathPrefab.SetActive(true);
+        ConversationManager.Instance.SetBool("WolfClear", true);
     }
     #endregion
 

@@ -3,6 +3,7 @@ using UnityEngine;
 public class NPC1 : MonoBehaviour
 {
     private Animator animator;
+    [SerializeField] private GameObject Mask;
 
     private void Awake()
     {
@@ -17,5 +18,10 @@ public class NPC1 : MonoBehaviour
     public void TalkingEnd()
     {
         animator.SetBool("isTalking", false);
+    }
+
+    public void OffMask()
+    {
+        Mask.SetActive(false);
     }
 }
