@@ -1,5 +1,4 @@
 using Cinemachine;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +8,8 @@ public class UIChange : MonoBehaviour
     public GameObject player2;
     public GameObject player1ModeUI;
     public GameObject player2ModeUI;
+    public GameObject player1Skills;
+    public GameObject player2Skills;
     public GameObject CharacterChangeUI;
 
     public Animator playerAnimator;
@@ -23,6 +24,8 @@ public class UIChange : MonoBehaviour
         CharacterChangeUI.SetActive(false);
         player1.SetActive(true);
         player2.SetActive(false);
+        player1Skills.SetActive(true);
+        player2Skills.SetActive(false);
         UpdateUI(true);
     }
 
@@ -42,10 +45,14 @@ public class UIChange : MonoBehaviour
         if (player1.activeSelf)
         {
             StartCoroutine(SwitchCharacter(player1, player2));
+            player1Skills.SetActive(false);
+            player2Skills.SetActive(true);
         }
         else if (player2.activeSelf)
         {
             StartCoroutine(SwitchCharacter(player2, player1));
+            player1Skills.SetActive(true);
+            player2Skills.SetActive(false);
         }
     }
 

@@ -36,14 +36,8 @@ public class NPCTrigger : MonoBehaviour
 
     private void Update()
     {
-        //isPlayerInRange && 
-        //if (Input.GetKeyDown(KeyCode.F))
-        //{
-        //    Debug.Log("f누름");
-        //    ConversationManager.Instance.StartConversation(myConversation);
-        //    AdjustVirtualCamera(); // 버츄얼 카메라 조정 함수 호출
-        //}
     }
+
     private void OnDestroy()
     {
         // 이벤트 리스너를 제거합니다.
@@ -92,11 +86,8 @@ public class NPCTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("트리거중");
-            //isPlayerInRange = true;
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Debug.Log("f누름");
                 ConversationManager.Instance.StartConversation(myConversation);
                 AdjustVirtualCamera(); // 버츄얼 카메라 조정 함수 호출
             }
