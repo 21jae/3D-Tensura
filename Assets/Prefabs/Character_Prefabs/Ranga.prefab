@@ -126,7 +126,7 @@ MonoBehaviour:
       <detectionRadius>k__BackingField: 8
       <stopDistance>k__BackingField: 2.5
     <AttackData>k__BackingField:
-      <attackParticlePrefab>k__BackingField: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
+      <attackParticlePrefab>k__BackingField: {fileID: 2470815583294805853, guid: af7893b349c4b304a93c0670fce02694,
         type: 3}
       <attackInterval>k__BackingField: 1.5
       <isAttacking>k__BackingField: 0
@@ -319,7 +319,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 971a26d73f3913943952ec0736d18ef5, type: 2}
+      objectReference: {fileID: 2100000, guid: 2d7433a8c0c29a34ca65ddf627c7e61a, type: 2}
     - target: {fileID: -5665124310279495330, guid: 9fd3bd271e170264d9b0dc3294079a30,
         type: 3}
       propertyPath: m_Layer
@@ -534,7 +534,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 46a5a7da9a2806e4f934c52ccece2777, type: 2}
+      objectReference: {fileID: 2100000, guid: 971a26d73f3913943952ec0736d18ef5, type: 2}
     - target: {fileID: 2649709224249887633, guid: 9fd3bd271e170264d9b0dc3294079a30,
         type: 3}
       propertyPath: m_Layer

@@ -70,7 +70,7 @@ public class PredationSkill : MonoBehaviour, ISkill
 
         if (damageableEnemy != null)
         {
-            damageableEnemy.TakeDamage(damaegeToDeal, true);
+            damageableEnemy.TakeDamage(damaegeToDeal);
             Debug.Log($"Predation Deal : {damaegeToDeal}");
         }
     }

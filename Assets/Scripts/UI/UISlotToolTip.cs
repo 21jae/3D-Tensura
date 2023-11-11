@@ -12,7 +12,7 @@ public class UISlotToolTip : MonoBehaviour
     public void ShowToolTipe(Item _item, Vector3 _pos)
     {
         tooltipBase.SetActive(true);
-        _pos += new Vector3(-tooltipBase.GetComponent<RectTransform>().rect.width * 0.5f, -tooltipBase.GetComponent<RectTransform>().rect.height * 0.5f, 0f);
+        _pos += new Vector3(tooltipBase.GetComponent<RectTransform>().rect.width * 0.5f, -tooltipBase.GetComponent<RectTransform>().rect.height * 0.5f, 0f);
         tooltipBase.transform.position = _pos;
 
         text_ItemName.text = _item.itemName;

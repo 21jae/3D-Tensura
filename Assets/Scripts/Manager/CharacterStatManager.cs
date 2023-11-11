@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class CharacterStatManager : MonoBehaviour
     [field: SerializeField] public PlayerCurrentStatData currentData { get; private set; }
 
     public static CharacterStatManager instance;
+    public event Action OnStatsChanged;
 
     private void Awake()
     {
@@ -34,26 +36,37 @@ public class CharacterStatManager : MonoBehaviour
     {
         currentData.currentHP += amount;
         currentData.currentHP = Mathf.Clamp(currentData.currentHP, 0, baseStats.maxHealth);
+        OnStatsChanged?.Invoke();
     }
 
     public void ModifyMaxHealth(float amount)
     {
         currentData.currentMaxHP += amount;
+        OnStatsChanged?.Invoke();
     }
 
     public void ModifyAttackPower(float amount)
     {
         currentData.currentAttackPower += amount;
+        OnStatsChanged?.Invoke();
     }
 
     public void ModifyDefence(float amount)
     {
         currentData.currentDefense += amount;
+        OnStatsChanged?.Invoke();
     }
 
-    //
     public float GetCurrentAttackPower()
     {
         return currentData.currentAttackPower;
+    }
+    public float GetCurrentDefense()
+    {
+        return currentData.currentDefense;
+    }
+    public float GetCurrentHP()
+    {
+        return currentData.currentHP;
     }
 }

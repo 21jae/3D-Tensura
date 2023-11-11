@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyAttackData
 {
     [field: Header("공격 프리팹")]
-    [field: SerializeField] public GameObject attackParticlePrefab { get; private set; }
+    [field: SerializeField] public GameObject attackSlashPrefab { get; set; }
 
     [field: Header("공격 변수")]
     [field: SerializeField] public float attackInterval { get; private set; } = 1.5f;    //공격 간격
@@ -14,4 +14,5 @@ public class EnemyAttackData
     {
         isAttacking = attack;
     }
+
 }

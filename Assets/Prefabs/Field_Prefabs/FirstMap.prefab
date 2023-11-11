@@ -34,7 +34,7 @@ Transform:
   - {fileID: 1836825353052108813}
   - {fileID: 1252330159661948323}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!218 &5173399877397869883
 Terrain:
@@ -411,7 +411,7 @@ PrefabInstance:
     - target: {fileID: 2172812155086210362, guid: 7bb0e0f14645b8940ac3059036551cb2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.8
+      value: -28.4
       objectReference: {fileID: 0}
     - target: {fileID: 2172812155086210362, guid: 7bb0e0f14645b8940ac3059036551cb2,
         type: 3}
@@ -421,7 +421,7 @@ PrefabInstance:
     - target: {fileID: 2172812155086210362, guid: 7bb0e0f14645b8940ac3059036551cb2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50.48
+      value: 69.8
       objectReference: {fileID: 0}
     - target: {fileID: 2172812155086210362, guid: 7bb0e0f14645b8940ac3059036551cb2,
         type: 3}

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4827775625179305252}
-  - component: {fileID: 1596082803671980507}
-  - component: {fileID: 8132244446093324212}
+  - component: {fileID: 3288594259964193473}
+  - component: {fileID: 9156856935744864771}
   m_Layer: 6
   m_Name: SpearSword
   m_TagString: Untagged
@@ -34,23 +34,7 @@ Transform:
   m_Father: {fileID: 6147747866230930384}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1596082803671980507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2976847703651688393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3822bc86ef0138e4fa4418bffbeaae02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  damageRadius: 10
---- !u!65 &8132244446093324212
+--- !u!65 &3288594259964193473
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,8 +53,24 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0028320446, y: 0.023759827, z: 0.003055719}
-  m_Center: {x: 4.763486e-11, y: 0.0016769449, z: 5.884156e-11}
+  m_Size: {x: 0.003794822, y: 0.028112603, z: 0.0027696637}
+  m_Center: {x: -0.0013687919, y: 0.0007579255, z: -0.0000000044076693}
+--- !u!114 &9156856935744864771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976847703651688393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3822bc86ef0138e4fa4418bffbeaae02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  damageRadius: 12
 --- !u!1 &6918204784505859893
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
       <detectionRadius>k__BackingField: 8
       <stopDistance>k__BackingField: 2.5
     <AttackData>k__BackingField:
-      <attackParticlePrefab>k__BackingField: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
+      <attackSlashPrefab>k__BackingField: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
         type: 3}
       <attackInterval>k__BackingField: 1.5
       <isAttacking>k__BackingField: 0
@@ -162,12 +162,9 @@ MonoBehaviour:
     <HitData>k__BackingField:
       <hitPrefab>k__BackingField: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
         type: 3}
-      <predationHit>k__BackingField: {fileID: 7053385775836331393, guid: 354b6251e950209409c75ab984acf000,
-        type: 3}
       <deathPrefab>k__BackingField: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473,
         type: 3}
       <DamageInterval>k__BackingField: 1.5
-      <hasPredationHitSpawned>k__BackingField: 0
       <isRecoveringFormBigDamage>k__BackingField: 0
       <isBeingDestroy>k__BackingField: 0
   animator: {fileID: 0}

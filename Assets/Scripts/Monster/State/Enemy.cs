@@ -1,4 +1,5 @@
 using DialogueEditor;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +12,6 @@ public class Enemy : MonoBehaviour, IDamageable
         CHASE,
         ATTACK,
         GUARD,
-        SKILL,
         DEATH
     }
     public State currentState;
@@ -21,9 +21,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
     [field: Header("Enemy 데이터")]
     [field: SerializeField] public EnemyStateData Data { get; private set; }
-
-    [field: Header("Animation Data")]
-    [field: SerializeField] public EnemyAnimationData AnimationData { get; private set; }
 
     [HideInInspector] public Animator animator;
     private Transform playerTransform;
@@ -91,9 +88,6 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.GUARD:
                 EnterGuard();
                 break;
-            case State.SKILL:
-                EnterSkill();
-                break;
             case State.DEATH:
                 EnterDeath();
                 break;
@@ -121,9 +115,6 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.GUARD:
                 ExcuteGuard();
                 break;
-            case State.SKILL:
-                ExcuteSkill();
-                break;
             case State.DEATH:
                 ExcuteDeath();
                 break;
@@ -149,9 +140,6 @@ public class Enemy : MonoBehaviour, IDamageable
             case State.GUARD:
                 ExitGuard();
                 break;
-            case State.SKILL:
-                ExitSkill();
-                break;
             case State.DEATH:
                 ExitDeath();
                 break;
@@ -164,14 +152,13 @@ public class Enemy : MonoBehaviour, IDamageable
 
 
     #region Enter State
-    private void EnterIdle() { }
+    private void EnterIdle() 
+    {
+        animator.SetFloat("Speed", 0f);
+    }
     private void EnterPatrol() { }
     private void EnterChase() { }
     private void EnterAttack() { }
-    private void EnterSkill()
-    {
-
-    }
 
     private void EnterGuard()
     {
@@ -186,12 +173,14 @@ public class Enemy : MonoBehaviour, IDamageable
     public void EnterDeath()
     {
         Data.HitData.SetIsBeingDestroy(true);
-        animator.SetTrigger(AnimationData.DeathParameterName);
+        animator.SetTrigger("Death");
         Destroy(gameObject, 2.5f);
         Data.HitData.deathPrefab = ObjectPooling.instance.GetPooledObject("Death");
         Data.HitData.deathPrefab.transform.position = transform.position + Vector3.up;
         Data.HitData.deathPrefab.SetActive(true);
+        StartCoroutine(DeathDelect(Data.HitData.deathPrefab, 5f));
     }
+
     #endregion
 
     #region ExcuteState
@@ -201,7 +190,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void ExcutePatrol()
     {
-        animator.SetFloat(AnimationData.MoveParameterName, 1f);
+        animator.SetFloat("Speed", 1f);
         DistanceToPlayer();
 
         float distanceToPatrolPoint = Vector3.Distance(transform.position, nextPatrolPoint);
@@ -214,7 +203,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
 
         //목표지점에 거의 도달했다면
-        if (distanceToPatrolPoint <= 0.1f)
+        if (distanceToPatrolPoint <= 0.5f)
         {
             StartCoroutine(StayForAWhile());
             return;
@@ -235,7 +224,7 @@ public class Enemy : MonoBehaviour, IDamageable
             return;
         }
 
-        animator.SetFloat(AnimationData.MoveParameterName, 1.5f);
+        animator.SetFloat("Speed", 1.5f);
 
         DistanceToPlayer();
         LookTowardsPoint(playerTransform.position);
@@ -282,17 +271,13 @@ public class Enemy : MonoBehaviour, IDamageable
         //범위 밖으로 나가면 공격 종료
         else if (DistanceToPlayer() > Data.PatrolData.stopDistance)
         {
-            animator.SetBool(AnimationData.AttackParameterName, false);
+            animator.SetBool("isAttacking", false);
             ChangeState(State.CHASE);
         }
     }
 
     private void ExcuteGuard()
     {
-    }
-    private void ExcuteSkill()
-    {
-
     }
 
     private void ExcuteDeath()
@@ -317,17 +302,16 @@ public class Enemy : MonoBehaviour, IDamageable
             Data.AttackData.SetIsAttack(false);
         }
 
-        animator.SetBool(AnimationData.AttackParameterName, false);
+        animator.SetBool("isAttacking", false);
     }
 
     private void ExitGuard() { }
-    private void ExitSkill() { }
     private void ExitDeath() { }
 
     #endregion
 
     #region 데미지 받는 로직
-    public void TakeDamage(float amount, bool isPredation = false)
+    public void TakeDamage(float amount)
     {
         //데미지 받을때 수행될 로직.
         float damageToTake = amount - CharacterStatManager.instance.currentData.currentDefense;
@@ -339,6 +323,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
         CharacterStatManager.instance.currentData.currentHP -= damageToTake;
         Debug.Log(CharacterStatManager.instance.currentData.currentHP);
+
+        //피격 히트
+        Data.HitData.hitPrefab = ObjectPooling.instance.GetPooledObject("DamageHit");
+        Data.HitData.hitPrefab.transform.position = transform.position + Vector3.up;
+        Data.HitData.hitPrefab.SetActive(true);
+        StartCoroutine(HitDelect(Data.HitData.hitPrefab, 1f));
 
         if (CharacterStatManager.instance.currentData.currentHP <= 0f)
         {
@@ -370,7 +360,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (DistanceToPlayer() <= Data.PatrolData.stopDistance)
         {
-            animator.SetFloat(AnimationData.MoveParameterName, 0f);
+            animator.SetFloat("Speed", 0f);
         }
     }
     #endregion
@@ -401,16 +391,16 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             if (!Data.AttackData.isAttacking)
             {
-                animator.SetFloat(AnimationData.MoveParameterName, 0f);
+                animator.SetFloat("Speed", 0f);
                 Data.AttackData.SetIsAttack(true);
 
                 yield return new WaitForSeconds(Data.AttackData.attackInterval);
-                animator.SetBool(AnimationData.AttackParameterName, true);
+                animator.SetBool("isAttacking", true);
 
                 yield return new WaitForSeconds(Data.AttackData.attackInterval - 1f);
                 SpawnAttackParticle();
 
-                animator.SetBool(AnimationData.AttackParameterName, false);
+                animator.SetBool("isAttacking", false);
 
                 yield return new WaitForSeconds(Data.AttackData.attackInterval);
                 Data.AttackData.SetIsAttack(false);
@@ -425,41 +415,61 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void SpawnAttackParticle()
     {
-        Vector3 particleDirection = transform.forward;
-        Vector3 particlePosition = transform.position + particleDirection;
-        particlePosition.y += 1.5f;
-        Quaternion particleRotation = Quaternion.LookRotation(particleDirection);
+        Data.AttackData.attackSlashPrefab = ObjectPooling.instance.GetPooledObject("MonsterSlash");
 
-        GameObject particleInstance = ObjectPooling.instance.GetPooledObject("MonsterSlash");
-        particleInstance.transform.position = particlePosition;
-        particleInstance.transform.rotation = particleRotation;
-
-        ParticleSystem ps = particleInstance.GetComponent<ParticleSystem>();
-
-        if (ps != null)
+        if (Data.AttackData.attackSlashPrefab != null)
         {
+            Data.AttackData.attackSlashPrefab.transform.position = transform.position + transform.forward + Vector3.up * 1.5f;
+            Data.AttackData.attackSlashPrefab.transform.rotation = transform.rotation;
+            Data.AttackData.attackSlashPrefab.SetActive(true);
+
+            StartCoroutine(SlashDelect(Data.AttackData.attackSlashPrefab, 3f));
+        }
+        if (monsterWeapon != null)
+        {
+            Debug.Log("닿음");
             monsterWeapon.DealDamageToPlayersInRadius();
         }
     }
 
+
+    private IEnumerator SlashDelect(GameObject objReturn, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ObjectPooling.instance.ReturnObjectToPool("MonsterSlash", objReturn);
+    }
+
     #endregion
 
-    #region 가드 메서드
+    #region 방어 메서드
     private IEnumerator GuardAnimationRoutine()
     {
         Data.GuardData.SetIsGuarding(true);
 
-        animator.SetBool(AnimationData.GuardParameterName, true);
+        animator.SetBool("isGuarding", true);
 
         yield return new WaitForSeconds(Data.GuardData.guardInterval);
 
-        animator.SetBool(AnimationData.GuardParameterName, false);
+        animator.SetBool("isGuarding", false);
         yield return new WaitForSeconds(Data.GuardData.guardInterval - 1f);
         ChangeState(State.CHASE);
 
         Data.GuardData.SetIsGuarding(false);
 
     }
+    #endregion
 
+    #region 데미지 메서드
+    private IEnumerator HitDelect(GameObject objReturn, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ObjectPooling.instance.ReturnObjectToPool("DamageHit", objReturn);
+    }
+
+    private IEnumerator DeathDelect(GameObject deathPrefab, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ObjectPooling.instance.ReturnObjectToPool("Death", deathPrefab);
+    }
     #endregion
 }

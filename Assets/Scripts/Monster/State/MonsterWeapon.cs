@@ -10,6 +10,7 @@ public class MonsterWeapon : MonoBehaviour
         Collider[] hitPlayer = Physics.OverlapSphere(transform.position, damageRadius, playerLayer);
 
         float damageToDeal = CharacterStatManager.instance.currentData.currentAttackPower;
+        Debug.Log("데미지1");
 
         foreach (var player in hitPlayer)
         {
@@ -18,9 +19,9 @@ public class MonsterWeapon : MonoBehaviour
             if (damageablePlayer != null)
             {
                 damageablePlayer.TakeDamage(damageToDeal);
+                Debug.Log("데미지2");
             }
 
         }
     }
-
 }

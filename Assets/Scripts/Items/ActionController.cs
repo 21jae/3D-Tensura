@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,16 +16,13 @@ public class ActionController : MonoBehaviour
     private void Update()
     {
         CheckItem();
-        TryAction();
+        //TryAction();
     }
 
-    private void TryAction()
+    public void TryAction()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            PredationObject();
-            PickupItemsInExpandRange();
-        }
+        PredationObject();
+        PickupItemsInExpandRange();
     }
 
     private void PickupItemsInExpandRange()
@@ -35,7 +31,7 @@ public class ActionController : MonoBehaviour
 
         Collider[] hitColliders = Physics.OverlapSphere(slimeController.transform.position, expandRange, layerMask);
 
-        foreach (var hitColl in hitColliders) 
+        foreach (var hitColl in hitColliders)
         {
             if (hitColl.CompareTag("Item"))
             {
@@ -65,7 +61,7 @@ public class ActionController : MonoBehaviour
 
         Vector3 originalPosition = slimeController.transform.position;
         float elapsed = 0f;
-        
+
         while (elapsed < duration)
         {
             float x = originalPosition.x + UnityEngine.Random.Range(-0.8f, 0.8f) * magnitude;

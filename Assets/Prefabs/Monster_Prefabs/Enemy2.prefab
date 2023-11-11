@@ -81,7 +81,7 @@ MonoBehaviour:
       <detectionRadius>k__BackingField: 8
       <stopDistance>k__BackingField: 2.5
     <AttackData>k__BackingField:
-      <attackParticlePrefab>k__BackingField: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
+      <attackSlashPrefab>k__BackingField: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
         type: 3}
       <attackInterval>k__BackingField: 1.5
       <isAttacking>k__BackingField: 0
@@ -91,12 +91,9 @@ MonoBehaviour:
     <HitData>k__BackingField:
       <hitPrefab>k__BackingField: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
         type: 3}
-      <predationHit>k__BackingField: {fileID: 7053385775836331393, guid: 354b6251e950209409c75ab984acf000,
-        type: 3}
       <deathPrefab>k__BackingField: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473,
         type: 3}
       <DamageInterval>k__BackingField: 1.5
-      <hasPredationHitSpawned>k__BackingField: 0
       <isRecoveringFormBigDamage>k__BackingField: 0
       <isBeingDestroy>k__BackingField: 0
   animator: {fileID: 0}
@@ -167,8 +164,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2565704255489194636}
-  - component: {fileID: 120644780195575777}
-  - component: {fileID: 7916040581575704305}
+  - component: {fileID: 1475754451094086624}
+  - component: {fileID: 7150841609854269344}
   m_Layer: 6
   m_Name: SpearSword
   m_TagString: Untagged
@@ -192,7 +189,23 @@ Transform:
   m_Father: {fileID: 3493236668259506605}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &120644780195575777
+--- !u!114 &1475754451094086624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581787031633500716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3822bc86ef0138e4fa4418bffbeaae02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  damageRadius: 12
+--- !u!65 &7150841609854269344
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,24 +224,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.002921049, y: 0.026570931, z: 0.0034828756}
-  m_Center: {x: 3.4156106e-10, y: 0.002341317, z: -0.00086649944}
---- !u!114 &7916040581575704305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6581787031633500716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3822bc86ef0138e4fa4418bffbeaae02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  damageRadius: 10
+  m_Size: {x: 0.008590721, y: 0.030560605, z: 0.0054096226}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1758362548066154301
 PrefabInstance:
   m_ObjectHideFlags: 0
