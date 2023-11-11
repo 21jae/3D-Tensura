@@ -106,8 +106,8 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private void DebugPlayerStats()
     {
-        Debug.Log($" MaxHP : {CharacterStatManager.instance.currentData.currentMaxHP}, " +
-                     $" HP : {CharacterStatManager.instance.currentData.currentHP}, " +
+        Debug.Log($" MaxHP : {playerController.playerStatManager.currentData.currentMaxHP}, " +
+                     $" HP : {playerController.playerStatManager.currentData.currentHP}, " +
                     $" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
                     $" DEF : {CharacterStatManager.instance.currentData.currentDefense} ");
     }

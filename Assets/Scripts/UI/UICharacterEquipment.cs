@@ -38,24 +38,30 @@ public class UICharacterEquipment : MonoBehaviour
         }
         slot.SetItem(item);
 
-        //장착된 아이템의 스탯 및 ui업데이트 등
         UpdateCharacterState(item);
-        //UpdateEquipmentUI();
+        //장착 사운드재생
     }
 
     private void UpdateCharacterState(Item addStats)
     {
         float increaseAttackPower = addStats.equipmentStats.attackPower;
-        playerController.playerStatManager.ModifyAttackPower(increaseAttackPower);
+        //playerController.playerStatManager.ModifyAttackPower(increaseAttackPower);
+        CharacterStatManager.instance.ModifyAttackPower(increaseAttackPower);
 
         float modifiedMaxHP = addStats.equipmentStats.health;
-        playerController.playerStatManager.ModifyMaxHealth(modifiedMaxHP);
+        //playerController.playerStatManager.ModifyHealth(modifiedMaxHP);
+        CharacterStatManager.instance.ModifyHealth(modifiedMaxHP);
+
 
         float modifiedDefense = addStats.equipmentStats.defense;
-        playerController.playerStatManager.ModifyDefence(modifiedDefense);
+        //playerController.playerStatManager.ModifyDefence(modifiedDefense);
+        CharacterStatManager.instance.ModifyDefence(modifiedDefense);
+
 
         float increasePercentage = addStats.equipmentStats.percentageUp * playerController.playerStatManager.currentData.currentAttackPower;
-        playerController.playerStatManager.ModifyAttackPower(increasePercentage);
+        //playerController.playerStatManager.ModifyAttackPower(increasePercentage);
+        CharacterStatManager.instance.ModifyAttackPower(increasePercentage);
+
 
         DebugPlayerStats();
     }

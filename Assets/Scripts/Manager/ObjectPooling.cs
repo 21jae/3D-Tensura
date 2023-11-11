@@ -61,12 +61,6 @@ public class ObjectPooling : MonoBehaviour
             Debug.LogWarning("Pool does not contain tag: " + tag);
             return null;
         }
-
-        //GameObject objectToSpawn = poolDictionary[tag].Dequeue();
-        //objectToSpawn.SetActive(true);
-        //poolDictionary[tag].Enqueue(objectToSpawn);
-
-        //return objectToSpawn;
     }
 
     public void ReturnObjectToPool(string tag, GameObject obj)

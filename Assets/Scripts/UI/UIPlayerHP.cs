@@ -11,6 +11,8 @@ public class UIPlayerHP : MonoBehaviour
     [SerializeField] private float lerpSpeed = 3f;
     private float targetHpPercentage;
 
+    public SkillManager skillManager;
+
     void Start()
     {
         UpdateHpUIText();
@@ -25,7 +27,6 @@ public class UIPlayerHP : MonoBehaviour
         {
             playerController.playerStatManager.currentData.currentHP -= 150f;
         }
-
         HandleHp();
 
         slider.value = Mathf.Lerp(slider.value, targetHpPercentage, lerpSpeed * Time.deltaTime);

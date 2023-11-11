@@ -3,9 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerSkillData
 {
-    [field: Header("버프 데이터")]
-    [field: SerializeField] public PlayerBaseAndModifiedStats ChangeStats { get; private set; }
-
     [field: Header("스킬 데이터")]
     [field: SerializeField] public PlayerBuffData BuffData { get; private set; }
     [field: SerializeField] public PlayerBlessingData BlessingData { get; private set; }
