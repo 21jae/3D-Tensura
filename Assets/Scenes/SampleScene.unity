@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.105106935, g: 0.13445523, b: 0.13414557, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1841,7 +1841,7 @@ PrefabInstance:
     - target: {fileID: 5404828407809085925, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5404828407809085925, guid: b54979e2eeb79394e92f66b9c4c7ed9c,
         type: 3}
@@ -5995,7 +5995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407621269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.56, y: 4.0299997, z: -5.4}
+  m_LocalPosition: {x: -3.56, y: 4.0299997, z: -7.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6958,7 +6958,7 @@ MonoBehaviour:
     size: 3
   - tag: Death
     prefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
-    size: 5
+    size: 40
   - tag: PredationHit
     prefab: {fileID: 7053385775836331393, guid: 354b6251e950209409c75ab984acf000,
       type: 3}
@@ -6966,7 +6966,7 @@ MonoBehaviour:
   - tag: DamageHit
     prefab: {fileID: 5503886493357241679, guid: 275de545670f09c478a19f3d22c258df,
       type: 3}
-    size: 10
+    size: 400
   - tag: MonsterSlash
     prefab: {fileID: 3153472991145048103, guid: 3407e378c048bb5438424b28c7740b48,
       type: 3}
@@ -8288,7 +8288,7 @@ PrefabInstance:
     - target: {fileID: 6100640571367162949, guid: f308b82316000c040b54d322c3260d33,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 6100640571367162949, guid: f308b82316000c040b54d322c3260d33,
         type: 3}
@@ -12250,7 +12250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773190229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.63, y: 3.783494, z: 65.1}
+  m_LocalPosition: {x: -0.63, y: 3.783494, z: 59.29999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13597,6 +13597,8 @@ MonoBehaviour:
       <PREDATION_DURATION>k__BackingField: 3
       <THRESHOLD>k__BackingField: 3
       <isPredationActive>k__BackingField: 0
+      <damageCooldown>k__BackingField: 0.5
+      <lastDamageTIme>k__BackingField: 0
     <MegidoData>k__BackingField:
       <specialSkillData>k__BackingField: {fileID: 11400000, guid: 92928a6a455bed64cb4c2d7477fe3d2e,
         type: 2}
@@ -15028,7 +15030,7 @@ MonoBehaviour:
     type: 3}
   orcBasic: {fileID: 7834980177871857617, guid: eb3eddb9696667d419008edc5583b597,
     type: 3}
-  orcBoss: {fileID: 7834980177871857617, guid: eb3eddb9696667d419008edc5583b597, type: 3}
+  orcBoss: {fileID: 207549195615505219, guid: fe48db96608d29446b53c9c90aea2b5a, type: 3}
   wolfBasic: {fileID: 4636547977138894375, guid: f923a730478532047a56babb1e06f8a4,
     type: 3}
 --- !u!4 &1074610677
@@ -16586,7 +16588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215354363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.56, y: 4.0299997, z: -5.4}
+  m_LocalPosition: {x: -3.56, y: 4.0299997, z: -7.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18026,7 +18028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362658969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.63, y: 3.783494, z: 38.5}
+  m_LocalPosition: {x: -0.63, y: 3.783494, z: 32.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18443,7 +18445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379059923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.63, y: 3.783494, z: 53}
+  m_LocalPosition: {x: -0.63, y: 3.783494, z: 47.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19174,9 +19176,9 @@ MonoBehaviour:
   monsterFactory: {fileID: 1074610676}
   stages:
   - stageNumber: 1
-    lizardCount: 4
-    orcCount: 6
-    wolfCount: 2
+    lizardCount: 2
+    orcCount: 8
+    wolfCount: 1
   currentStage: 0
 --- !u!4 &1487074356
 Transform:
@@ -19861,7 +19863,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1535416158 stripped
 Transform:
@@ -20114,6 +20116,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1560309873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560309876}
+  - component: {fileID: 1560309875}
+  - component: {fileID: 1560309874}
+  m_Layer: 0
+  m_Name: OrcZone (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1560309874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560309873}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 36.75149, y: 6.119676, z: 2.1869087}
+  m_Center: {x: 0, y: -2.559838, z: -8.565084}
+--- !u!114 &1560309875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560309873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d804e3b4306557145acf8ca41957d406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneType: 1
+  spawnManager: {fileID: 1487074355}
+  player: {fileID: 72573403}
+  isBossZone: 0
+--- !u!4 &1560309876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560309873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.14, y: 3.783494, z: 106.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1565944278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1836825353052108813, guid: 3ee558d538f33e04a8fec6e2ddebf589,
@@ -22494,7 +22566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863755816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.63, y: 3.783494, z: 26.55}
+  m_LocalPosition: {x: -0.63, y: 3.783494, z: 85.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23189,7 +23261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964602097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.63, y: 3.783494, z: 74.4}
+  m_LocalPosition: {x: -0.63, y: 3.783494, z: 68.59999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24498,8 +24570,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14.503153, y: 6.119676, z: 10.158538}
-  m_Center: {x: 0, y: -2.559838, z: -4.579269}
+  m_Size: {x: 36.75149, y: 6.119676, z: 2.1869087}
+  m_Center: {x: 0, y: -2.559838, z: -8.565084}
 --- !u!114 &2059466895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24524,7 +24596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059466893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.12, y: 3.783494, z: 86.1}
+  m_LocalPosition: {x: -2.14, y: 3.783494, z: 100.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

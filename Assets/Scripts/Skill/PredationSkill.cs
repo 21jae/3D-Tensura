@@ -65,19 +65,24 @@ public class PredationSkill : MonoBehaviour, ISkill
 
     private void ApplyDamageToEnemy(Enemy enemy)
     {
-        float damaegeToDeal = skillManager.skillData.PredationData.predationSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
-        IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
-
-        if (damageableEnemy != null)
+        if (Time.time >= skillManager.skillData.PredationData.lastDamageTIme + skillManager.skillData.PredationData.damageCooldown)
         {
-            damageableEnemy.TakeDamage(damaegeToDeal);
-            Debug.Log($"Predation Deal : {damaegeToDeal}");
+            skillManager.skillData.PredationData.lastDamageTIme = Time.time;
+
+            float damaegeToDeal = skillManager.skillData.PredationData.predationSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
+            IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
+
+            if (damageableEnemy != null)
+            {
+                damageableEnemy.TakeDamage(damaegeToDeal);
+                Debug.Log($"Predation Deal : {damaegeToDeal}");
+            }
         }
     }
 
     private void EnoughAbsorb(Enemy enemy, Collider obj)
     {
-        if (enemy.characterStatManager.currentData.currentHP <= enemy.characterStatManager.currentData.currentMaxHP * 0.3f)
+        if (enemy.characterStatManager.currentData.currentHP <= enemy.characterStatManager.currentData.currentMaxHP * 0.5f)
         {
             Vector3 directionToAbsorb = (playerController.transform.position - obj.transform.position).normalized;
             float distancToPlayer = Vector3.Distance(playerController.transform.position, obj.transform.position);

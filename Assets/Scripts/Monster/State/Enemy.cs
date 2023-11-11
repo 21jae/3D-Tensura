@@ -1,5 +1,3 @@
-using DialogueEditor;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -30,7 +28,6 @@ public class Enemy : MonoBehaviour, IDamageable
     private Vector3 nextPatrolPoint;
     private Coroutine attackRoutine;
     public Coroutine guardRoutine;
-
 
     protected virtual void Awake()
     {
@@ -152,7 +149,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
 
     #region Enter State
-    private void EnterIdle() 
+    private void EnterIdle()
     {
         animator.SetFloat("Speed", 0f);
     }
@@ -423,13 +420,13 @@ public class Enemy : MonoBehaviour, IDamageable
             Data.AttackData.attackSlashPrefab.transform.rotation = transform.rotation;
             Data.AttackData.attackSlashPrefab.SetActive(true);
 
-            StartCoroutine(SlashDelect(Data.AttackData.attackSlashPrefab, 3f));
         }
         if (monsterWeapon != null)
         {
             Debug.Log("¥Í¿Ω");
             monsterWeapon.DealDamageToPlayersInRadius();
         }
+        StartCoroutine(SlashDelect(Data.AttackData.attackSlashPrefab, 3f));
     }
 
 

@@ -15,6 +15,6 @@ MonoBehaviour:
   characterName: Rimuru
   maxHealth: 2000
   currentHealth: 2000
-  attackPower: 100
+  attackPower: 40
   defense: 10
   speed: 1

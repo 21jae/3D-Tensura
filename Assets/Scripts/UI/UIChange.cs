@@ -21,7 +21,7 @@ public class UIChange : MonoBehaviour
 
     private void Start()
     {
-        CharacterChangeUI.SetActive(false);
+        //CharacterChangeUI.SetActive(false);
         player1.SetActive(true);
         player2.SetActive(false);
         player1Skills.SetActive(true);

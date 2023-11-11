@@ -45,22 +45,19 @@ public class UICharacterEquipment : MonoBehaviour
     private void UpdateCharacterState(Item addStats)
     {
         float increaseAttackPower = addStats.equipmentStats.attackPower;
-        //playerController.playerStatManager.ModifyAttackPower(increaseAttackPower);
         CharacterStatManager.instance.ModifyAttackPower(increaseAttackPower);
 
         float modifiedMaxHP = addStats.equipmentStats.health;
-        //playerController.playerStatManager.ModifyHealth(modifiedMaxHP);
-        CharacterStatManager.instance.ModifyHealth(modifiedMaxHP);
+        CharacterStatManager.instance.ModifyMaxHealth(modifiedMaxHP);
 
 
         float modifiedDefense = addStats.equipmentStats.defense;
-        //playerController.playerStatManager.ModifyDefence(modifiedDefense);
         CharacterStatManager.instance.ModifyDefence(modifiedDefense);
 
 
-        float increasePercentage = addStats.equipmentStats.percentageUp * playerController.playerStatManager.currentData.currentAttackPower;
-        //playerController.playerStatManager.ModifyAttackPower(increasePercentage);
+        float increasePercentage = addStats.equipmentStats.percentageUp * CharacterStatManager.instance.currentData.currentAttackPower;
         CharacterStatManager.instance.ModifyAttackPower(increasePercentage);
+        playerController.playerStatManager.ModifyAttackPower(increasePercentage);
 
 
         DebugPlayerStats();
@@ -68,9 +65,9 @@ public class UICharacterEquipment : MonoBehaviour
 
     private void DebugPlayerStats()
     {
-        Debug.Log($" MaxHP : {playerController.playerStatManager.currentData.currentMaxHP}, " +
-                     $" HP : {playerController.playerStatManager.currentData.currentHP}, " +
-                    $" ATK : {playerController.playerStatManager.currentData.currentAttackPower}, " +
-                    $" DEF : {playerController.playerStatManager.currentData.currentDefense} ");
+        Debug.Log($" MaxHP : {CharacterStatManager.instance.currentData.currentMaxHP}, " +
+                     $" HP : {CharacterStatManager.instance.currentData.currentHP}, " +
+                    $" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}, " +
+                    $" DEF : {CharacterStatManager.instance.currentData.currentDefense} ");
     }
 }

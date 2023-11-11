@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Armor_Bundle
   m_EditorClassIdentifier: 
   itemName: Armor
-  itemDesc: 'Rimuru Armor : DEF + 20
+  itemDesc: 'Rimuru Armor : MaxHP + 200
 
 '
   itemType: 0

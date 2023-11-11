@@ -21,6 +21,10 @@ public class PlayerPredationData
     [field: SerializeField] public float THRESHOLD { get; private set; } = 3f;             //범위
     [field: SerializeField] public bool isPredationActive { get; private set; } = false;
 
+    [field: Header("데미지 딜레이")]
+    [field: SerializeField] [field: Range(0f, 2f)] public float damageCooldown { get; private set; } = 0.5f;
+    [field: SerializeField] public float lastDamageTIme { get; set; }
+
     public void SetActivePredation(bool predation)
     {
         isPredationActive = predation;

@@ -156,6 +156,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1592
+        width: 176
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c320b0780aa224d8fd7443c5e3254f
+      internalID: 1706404354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1591
+        width: 177
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a3ed1a690c9aa4fbf7fe633be65f82
+      internalID: -1959710336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -168,6 +210,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_0: -530484000
+      sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_1: 1706404354
+      sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_2: -1959710336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

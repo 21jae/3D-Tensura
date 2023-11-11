@@ -34,19 +34,17 @@ public class TriggerZone : MonoBehaviour
                     break;
 
                 case ZoneType.OrcZone:
-
                     for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].orcCount; i++)
                     {
-                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(-6, 6));
+                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(15, 30));
                         spawnManager.SpawnOrc(MonsterTypes.OrcType.Basic, spawnPosition);
                     }
-
                     break;
 
                 case ZoneType.WolfType:
                     for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].wolfCount; i++)
                     {
-                        Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(-6, 6));
+                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(-6, 6));
                         spawnManager.SpawnWolf(MonsterTypes.WolfType.Basic, spawnPosition);
                     }
 
