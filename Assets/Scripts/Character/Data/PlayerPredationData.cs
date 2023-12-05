@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -5,6 +6,7 @@ public class PlayerPredationData
 {
     [field: Header("»Ìºˆ µ•¿Ã≈Õ")]
     [field: SerializeField] public SOSkill predationSkillData { get; private set; }
+    [field: SerializeField] public TMP_Text absorbedObjectText { get; private set; }
 
     [field: Header("»Ìºˆ «¡∏Æ∆’")]
     [field: SerializeField] public GameObject predationPrefab {get; private set;}

@@ -8,6 +8,7 @@ public class PlayerSlimeController : MonoBehaviour
     [HideInInspector] public Animator animator;
     [SerializeField] private GameObject waterAttack;
     [SerializeField] private GameObject playerCanvas;
+    [SerializeField] private Texture2D cursurIcon;
     private Joystick controller;
     private MoveObject moveObject;
     private Rigidbody rigidbody;
@@ -17,6 +18,11 @@ public class PlayerSlimeController : MonoBehaviour
         InitializeComponents();
     }
 
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGMBattleSound();
+    }
+
     private void InitializeComponents()
     {
         playerStatManager = GetComponent<CharacterStatManager>();
@@ -24,6 +30,7 @@ public class PlayerSlimeController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         controller = FindObjectOfType<Joystick>();
         moveObject = GetComponent<MoveObject>();
+        Cursor.SetCursor(cursurIcon, Vector2.zero, CursorMode.Auto);
     }
     private void Update()
     {
@@ -41,6 +48,7 @@ public class PlayerSlimeController : MonoBehaviour
         GameObject waterAttackInstance = ObjectPooling.instance.GetPooledObject("SlimePoision");
         if (waterAttackInstance != null)
         {
+            SoundManager.Instance.SlimeShootingSound();
             waterAttackInstance.transform.position = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
             waterAttackInstance.transform.rotation = transform.rotation;
             waterAttackInstance.SetActive(true);

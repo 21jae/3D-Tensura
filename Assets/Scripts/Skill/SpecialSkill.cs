@@ -28,11 +28,6 @@ public class SpecialSkill : MonoBehaviour, ISkill
         animator = playerController.GetComponentInChildren<Animator>();
         enemy = FindObjectOfType<Enemy>();
         skillManager = GetComponent<SkillManager>();
-
-        if (playerController == null)
-        {
-            Debug.Log("컨트롤러 없음");
-        }
     }
 
     private void ActivateMeshes()
@@ -56,13 +51,12 @@ public class SpecialSkill : MonoBehaviour, ISkill
     {
         playerController.Data.AirData.GravityData.SetIsGravity(false);
         StartCoroutine(ExeCuteJump());
-        //Debug.Log("대현자 : 메기도 준비가 완료되었습니다.");
     }
 
     private IEnumerator ExeCuteJump()
     {
         ActivateMeshes();
-
+        SoundManager.Instance.PlaySpecialSound01();
         originalPosition = playerController.transform.position;
 
         Vector3 megidoCirclePos = playerController.transform.position + playerController.transform.forward * 30f;
@@ -88,10 +82,11 @@ public class SpecialSkill : MonoBehaviour, ISkill
         StartCoroutine(CreateMagicPosWithInterval(15, 2f));
 
         yield return new WaitForSeconds(skillManager.skillData.MegidoData.skillDelay);
+        SoundManager.Instance.PlaySpecialSound02();
 
         for (int i = 0; i < 88; i++)
         {
-            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-18f, 20f), UnityEngine.Random.Range(0f, 12f), UnityEngine.Random.Range(-18f, 20f));
+            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 6f), UnityEngine.Random.Range(-15f, 15f));
             GameObject megidoTarget = ObjectPooling.instance.GetPooledObject("MegidoTarget");
 
             if (megidoTarget != null)
@@ -127,8 +122,9 @@ public class SpecialSkill : MonoBehaviour, ISkill
             int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
             Transform endPos = magicTargetPosition[randomTargetIndex];
 
-            StartCoroutine(ShootRayFromTo(startPos, endPos, 180f));
+            StartCoroutine(ShootRayFromTo(startPos, endPos, 250f));
         }
+        SoundManager.Instance.PlaySpecialSound03();
 
         //메기도 지속시간
         yield return new WaitForSeconds(5f);
@@ -164,6 +160,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         }
 
         GameObject explosion = Instantiate(skillManager.skillData.MegidoData.megidoExplosion, megidoCirclePos, Quaternion.identity);
+        SoundManager.Instance.PlayMegidoSound();
 
         Collider[] hitEnemies = Physics.OverlapSphere(explosion.transform.position, 50f, layerMask);
         float damageToDeal = skillManager.skillData.MegidoData.specialSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
@@ -183,6 +180,8 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         animator.SetFloat("MoveSpeed", 0f);
         playerController.Data.AirData.GravityData.SetIsGravity(true);
+
+        yield return null;
     }
 
 
@@ -225,23 +224,21 @@ public class SpecialSkill : MonoBehaviour, ISkill
         lineRenderer.startWidth = 0.08f;
         lineRenderer.endWidth = 0.08f;
 
-
         while (megidoRayInstance != null && Vector3.Distance(megidoRayInstance.transform.position, endPosition) > 0.01f)
         {
             MegidoRay megidoScript = megidoRayInstance.GetComponent<MegidoRay>();
             if (megidoScript != null)
-            {
                 megidoScript.MoveToWards(endPosition, raySpeed);
-            }
 
             Ray ray = new Ray(megidoRayInstance.transform.position, endPosition - megidoRayInstance.transform.position);
             RaycastHit hitInfo;
 
             if (Physics.Raycast(ray, out hitInfo, raySpeed * Time.deltaTime))
             {
-                if (hitInfo.transform)
+                if (hitInfo.transform == to)
                 {
-                    //새로운 랜덤 타겟 생성
+                    Debug.Log("Random Target");
+
                     lineRenderer.SetPosition(1, megidoRayInstance.transform.position);
 
                     int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
@@ -249,17 +246,16 @@ public class SpecialSkill : MonoBehaviour, ISkill
                     endPosition = to.position;
                 }
             }
+
             if (Vector3.Distance(megidoRayInstance.transform.position, endPosition) <= 0.01f)
             {
-                //새로운 랜덤 타겟 생성
                 megidoHit = ObjectPooling.instance.GetPooledObject("MegidoHit");
 
                 if (megidoHit != null)
                 {
-                    megidoHit.transform.position = megidoRayInstance.transform.position;
                     megidoHit.SetActive(true);
+                    megidoHit.transform.position = megidoRayInstance.transform.position;
                 }
-
                 int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
                 to = magicTargetPosition[randomTargetIndex];
                 endPosition = to.position;
@@ -268,7 +264,6 @@ public class SpecialSkill : MonoBehaviour, ISkill
             }
             yield return null;
         }
-
 
     }
 

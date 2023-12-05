@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2a78f5cdd16fe48b7f22854b90ec77, type: 3}
   m_Name: WeaponStat
   m_EditorClassIdentifier: 
-  attackPower: 20
+  attackPower: 200
   defense: 0
   health: 0
   percentageUp: 0

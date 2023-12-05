@@ -26,7 +26,7 @@ public class TriggerZone : MonoBehaviour
 
                     for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].lizardCount; i++)
                     {
-                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-8, 8), 0, Random.Range(-8, 8));
+                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-5, 5), 0, Random.Range(6, 12));
                         int randomLizard = Random.Range(0, 2);  // Lizard Man or Woman ¼ÒÈ¯
                         MonsterTypes.LizardType type = randomLizard == 0 ? MonsterTypes.LizardType.Man : MonsterTypes.LizardType.Woman;
                         spawnManager.SpawnLizard(type, spawnPosition);
@@ -36,7 +36,7 @@ public class TriggerZone : MonoBehaviour
                 case ZoneType.OrcZone:
                     for (int i = 0; i < spawnManager.stages[spawnManager.currentStage].orcCount; i++)
                     {
-                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(15, 30));
+                        Vector3 spawnPosition = player.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(25, 40));
                         spawnManager.SpawnOrc(MonsterTypes.OrcType.Basic, spawnPosition);
                     }
                     break;

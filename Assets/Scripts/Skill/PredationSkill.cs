@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class PredationSkill : MonoBehaviour, ISkill
@@ -101,11 +103,31 @@ public class PredationSkill : MonoBehaviour, ISkill
 
         if (obj.transform.localScale.x <= 0.2f && distanceToPredationPos <= skillManager.skillData.PredationData.THRESHOLD)
         {
-            //사운드 재생
-
             Destroy(obj.gameObject);
-            Debug.Log("포식");
+            string absorbedText = skillManager.skillData.PredationData.absorbedObjectText.text = "흡수한 대상은 " + obj.gameObject.name + "입니다.";
+            StartCoroutine(ShowAndFadeOutText(absorbedText, 4f));
+            SoundManager.Instance.PlayHumanPredationSound();
+            
         }
+    }
+    private IEnumerator ShowAndFadeOutText(string text, float duration)
+    {
+        TMP_Text absorbedText = skillManager.skillData.PredationData.absorbedObjectText;
+        absorbedText.text = text;
+
+        // 텍스트의 투명도를 천천히 감소시키기
+        float elapsedTime = 0;
+        Color originalColor = absorbedText.color;
+        while (elapsedTime < duration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / duration);
+            absorbedText.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        absorbedText.text = ""; // 텍스트 내용을 비움
     }
     #endregion
 

@@ -59,7 +59,7 @@ public class UIChange : MonoBehaviour
     private IEnumerator SwitchCharacter(GameObject fromPlayer, GameObject toPlayer)
     {
         GameObject effect = ObjectPooling.instance.GetPooledObject("CharacterChangeEffect");
-
+        SoundManager.Instance.PlayChangeSound();
         if (effect != null)
         {
             effect.transform.position = fromPlayer.transform.position;

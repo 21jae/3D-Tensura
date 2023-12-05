@@ -112,6 +112,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             if (item != null && item.itemType == Item.ItemType.Equipment)
             {
                 UIInventory.instance.TryEquipment(this);
+                SoundManager.Instance.EquipmentSound();
             }
             else if (item.itemType == Item.ItemType.Used)
             {

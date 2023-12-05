@@ -97,27 +97,25 @@ public class PlayerController : MonoBehaviour, IDamageable
 
             if (Data.GroundData.AttackData.comboStack == 0)
             {
-                //사운드 재생
                 animator.SetBool(AnimationData.Attack01ParmeterName, true);
             }
 
             else if (Data.GroundData.AttackData.comboStack >= 1 && IsAnimatorStateNameAndNormalized("Attack01"))
             {
-                //사운드 재생
-
                 animator.SetBool(AnimationData.Attack01ParmeterName, false);
+                SoundManager.Instance.PlayAttackSound01();
                 animator.SetBool(AnimationData.Attack02ParmeterName, true);
             }
             else if (Data.GroundData.AttackData.comboStack >= 2 && IsAnimatorStateNameAndNormalized("Attack02"))
             {
-                //사운드 재생
+                SoundManager.Instance.PlayAttackSound03();
 
                 animator.SetBool(AnimationData.Attack02ParmeterName, false);
                 animator.SetBool(AnimationData.Attack03ParmeterName, true);
             }
             else if (Data.GroundData.AttackData.comboStack >= 3 && IsAnimatorStateNameAndNormalized("Attack03"))
             {
-                //사운드 재생
+                SoundManager.Instance.PlayAttackSound04();
 
                 animator.SetBool(AnimationData.Attack03ParmeterName, false);
                 animator.SetBool(AnimationData.Attack04ParmeterName, true);
@@ -194,6 +192,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
 
         playerStatManager.currentData.currentHP -= damageToTake;
+        SoundManager.Instance.PlayDamageSound();
 
         //큰 데미지를 입을시 쓰러지는 enemy 애니메이션
         float damagePercentage = damageToTake / playerStatManager.currentData.currentHP;

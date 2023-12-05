@@ -69,19 +69,19 @@ public class BlessingSkill : MonoBehaviour, ISkill
     #region 가호 버프 로직 
     private void CalculateAndApplyStatsBuff()
     {
-        //HP 버프
-        skillManager.skillData.ChangeStats.modifiedHP = CharacterStatManager.instance.currentData.currentHP * skillManager.skillData.BlessingData.healthBuffPercentage;
-        CharacterStatManager.instance.ModifyHealth(skillManager.skillData.ChangeStats.modifiedHP);
+        ////HP 버프
+        //skillManager.skillData.ChangeStats.modifiedHP = CharacterStatManager.instance.currentData.currentHP * skillManager.skillData.BlessingData.healthBuffPercentage;
+        //CharacterStatManager.instance.ModifyHealth(skillManager.skillData.ChangeStats.modifiedHP);
 
-        //공격력 버프
-        skillManager.skillData.ChangeStats.originalAttack = CharacterStatManager.instance.currentData.currentAttackPower;
-        skillManager.skillData.ChangeStats.modifiedAttack = skillManager.skillData.ChangeStats.originalAttack * skillManager.skillData.BlessingData.attackPowerBuffPercentage;
-        CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.ChangeStats.modifiedAttack);
+        ////공격력 버프
+        //skillManager.skillData.ChangeStats.originalAttack = CharacterStatManager.instance.currentData.currentAttackPower;
+        //skillManager.skillData.ChangeStats.modifiedAttack = skillManager.skillData.ChangeStats.originalAttack * skillManager.skillData.BlessingData.attackPowerBuffPercentage;
+        //CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.ChangeStats.modifiedAttack);
 
-        //방어력 버프
-        skillManager.skillData.ChangeStats.originalDefense = CharacterStatManager.instance.currentData.currentDefense;
-        skillManager.skillData.ChangeStats.modifiedDefense = skillManager.skillData.ChangeStats.originalDefense * skillManager.skillData.BlessingData.defenseBuffPercentage;
-        CharacterStatManager.instance.ModifyDefence(skillManager.skillData.ChangeStats.modifiedDefense);
+        ////방어력 버프
+        //skillManager.skillData.ChangeStats.originalDefense = CharacterStatManager.instance.currentData.currentDefense;
+        //skillManager.skillData.ChangeStats.modifiedDefense = skillManager.skillData.ChangeStats.originalDefense * skillManager.skillData.BlessingData.defenseBuffPercentage;
+        //CharacterStatManager.instance.ModifyDefence(skillManager.skillData.ChangeStats.modifiedDefense);
 
         DebugPlayerStats();
     }

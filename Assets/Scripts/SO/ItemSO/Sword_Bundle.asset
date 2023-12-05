@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword_Bundle
   m_EditorClassIdentifier: 
   itemName: Sword
-  itemDesc: 'Rimuru sword : ATK + 20'
+  itemDesc: 'Rimuru sword : ATK + 200'
   itemType: 0
   eqipmentType: 4
   itemImage: {fileID: -188283652, guid: f67de1f37e5ba9e418ff563b3d53e24d, type: 3}

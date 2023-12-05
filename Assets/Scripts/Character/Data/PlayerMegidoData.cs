@@ -8,6 +8,7 @@ public class PlayerMegidoData
 
     [field: Header("오의 프리팹")]
     [field: SerializeField] public GameObject megidoCircle { get; private set; }
+    [field: SerializeField] public GameObject megidoHit { get; private set; }
     [field: SerializeField] public GameObject megidoExplosion { get; private set; }
 
     [field: Header("도약 설정")]

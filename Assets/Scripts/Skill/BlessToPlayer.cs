@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BlessToPlayer : MonoBehaviour
@@ -12,6 +13,13 @@ public class BlessToPlayer : MonoBehaviour
     public void BlessTrigger()
     {
         blessAnim.SetTrigger("Bless");
+        StartCoroutine(WaitBlessSound());
+    }
+
+    private IEnumerator WaitBlessSound()
+    {
+        yield return new WaitForSeconds(1f);
+        SoundManager.Instance.PlayBlessingSound();
     }
 
 }

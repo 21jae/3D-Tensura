@@ -62,7 +62,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         {
             Instantiate(skillManager.skillData.DashData.dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
             DashDamageInRadius();
-
+            SoundManager.Instance.PlayDashSound();
             skillManager.skillData.DashData.SetIsDashing(false);
         }
 

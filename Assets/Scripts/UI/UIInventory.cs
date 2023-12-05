@@ -38,6 +38,7 @@ public class UIInventory : MonoBehaviour
             if (INVENTORY_ACTIVATED)
             {
                 OpenInventory();
+                SoundManager.Instance.OpenSound();
             }
             else
             {

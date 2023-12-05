@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fc321b556e88e4283390ebde706f6b, type: 3}
   m_Name: Hat_Bundle
   m_EditorClassIdentifier: 
-  itemName: IzawaShizue
+  itemName: MaskItem
   itemDesc: "\uC2DC\uC988\uC5D0\uAC00 \uB0A8\uAE34 \uC2DC\uAC04\uC744 \uCD08\uC6D4\uD55C
     \uAC00\uBA74\uC774\uB2E4. \uBAA8\uB4E0 \uC2A4\uD0EF\uC774 \uD06C\uAC8C \uC0C1\uC2B9\uD55C\uB2E4."
   itemType: 0

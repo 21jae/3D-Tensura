@@ -39,6 +39,7 @@ public class UICharacterEquipment : MonoBehaviour
         slot.SetItem(item);
 
         UpdateCharacterState(item);
+        SoundManager.Instance.EquipmentGrowSound();
         //장착 사운드재생
     }
 

@@ -10,7 +10,6 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //몬스터의 프리�
 
     public GameObject wolfBasic;
 
-    #region 몬스터 생성
     public Monster CreateLizard(MonsterTypes.LizardType type, Vector3 position)
     {
         GameObject prefab = null;
@@ -55,8 +54,6 @@ public class MonsterFactory : MonoBehaviour, IMonsterFactory    //몬스터의 프리�
 
         return monster;
     }
-
-    #endregion
 
     private Monster CreateMonsterPrefab(GameObject prefab, Vector3 position)
     {
