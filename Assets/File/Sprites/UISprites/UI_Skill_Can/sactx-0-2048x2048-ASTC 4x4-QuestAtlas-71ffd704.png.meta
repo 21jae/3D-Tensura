@@ -132,6 +132,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -186,7 +199,7 @@ TextureImporter:
         width: 177
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,6 +207,27 @@ TextureImporter:
       bones: []
       spriteID: e6a3ed1a690c9aa4fbf7fe633be65f82
       internalID: -1959710336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 208
+        width: 853
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4dbe02a1ef36764c9035e6417df3fbd
+      internalID: 202721518
       vertices: []
       indices: 
       edges: []
@@ -212,6 +246,7 @@ TextureImporter:
       sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_0: -530484000
       sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_1: 1706404354
       sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_2: -1959710336
+      sactx-0-2048x2048-ASTC 4x4-QuestAtlas-71ffd704_3: 202721518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

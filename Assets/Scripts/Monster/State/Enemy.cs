@@ -175,6 +175,7 @@ public class Enemy : MonoBehaviour, IDamageable
         Data.HitData.deathPrefab = ObjectPooling.instance.GetPooledObject("Death");
         Data.HitData.deathPrefab.transform.position = transform.position + Vector3.up;
         Data.HitData.deathPrefab.SetActive(true);
+        GameManager.Instance.IncreaseDestroyedEnemyCount();
         StartCoroutine(DeathDelect(Data.HitData.deathPrefab, 5f));
     }
 
@@ -314,10 +315,9 @@ public class Enemy : MonoBehaviour, IDamageable
         float damageToTake = amount - CharacterStatManager.instance.currentData.currentDefense;
 
         if (damageToTake < 0f)
-        {
             damageToTake = 0f;  //공격력이 방어력보다 낮다면 데미지 0
-        }
 
+        GameManager.Instance.RecordDamageToEnemy((int)amount);
         CharacterStatManager.instance.currentData.currentHP -= damageToTake;
         Debug.Log(CharacterStatManager.instance.currentData.currentHP);
 

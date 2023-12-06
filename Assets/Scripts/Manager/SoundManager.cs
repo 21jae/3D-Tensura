@@ -146,7 +146,11 @@ public class SoundManager : MonoBehaviour
     public void PlayBGMBattleSound()
     {
         if (audioClips.Length > 17)
-            audioSource.PlayOneShot(audioClips[17]);
+        {
+            audioSource.clip = audioClips[17];
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 
     public void PlayDialogSound01()
@@ -200,7 +204,20 @@ public class SoundManager : MonoBehaviour
         if (audioClips.Length > 26)
             audioSource.PlayOneShot(audioClips[26]);
     }
-
-
+    public void PlayBleesingStartSound()
+    {
+        if (audioClips.Length > 27)
+            audioSource.PlayOneShot(audioClips[27]);
+    }
+    public void PlaySpecialSound04()
+    {
+        if (audioClips.Length > 28)
+            audioSource.PlayOneShot(audioClips[28]);
+    }
+    public void PlaySpecialSound05()
+    {
+        if (audioClips.Length > 29)
+            audioSource.PlayOneShot(audioClips[29]);
+    }
     public void StopMusic() => audioSource.Stop();
 }

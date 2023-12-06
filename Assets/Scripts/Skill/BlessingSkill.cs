@@ -28,6 +28,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
     #region 버프 처리 메서드
     public void ActivateSkill()
     {
+        SoundManager.Instance.PlayBleesingStartSound();
         ActivateBlessing();
     }
 

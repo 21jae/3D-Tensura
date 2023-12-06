@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         animator = playerController.GetComponentInChildren<Animator>();
         enemy = FindObjectOfType<Enemy>();
         skillManager = GetComponent<SkillManager>();
+        skillManager.skillData.MegidoData.skillCutScenes.SetActive(false);
     }
 
     private void ActivateMeshes()
@@ -50,11 +52,23 @@ public class SpecialSkill : MonoBehaviour, ISkill
     public void ActivateSkill()
     {
         playerController.Data.AirData.GravityData.SetIsGravity(false);
+        SoundManager.Instance.PlaySpecialSound05();
+        StartCoroutine(SpecialCutScenes());
         StartCoroutine(ExeCuteJump());
+    }
+
+    private IEnumerator SpecialCutScenes()
+    {
+        skillManager.skillData.MegidoData.skillCutScenes.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        skillManager.skillData.MegidoData.skillCutScenes.SetActive(false);
+
     }
 
     private IEnumerator ExeCuteJump()
     {
+        yield return new WaitForSeconds(2f);
+
         ActivateMeshes();
         SoundManager.Instance.PlaySpecialSound01();
         originalPosition = playerController.transform.position;
@@ -86,7 +100,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         for (int i = 0; i < 88; i++)
         {
-            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 6f), UnityEngine.Random.Range(-15f, 15f));
+            Vector3 randomTargetOffset = new Vector3(UnityEngine.Random.Range(-15f, 15f), UnityEngine.Random.Range(0f, 12f), UnityEngine.Random.Range(-15f, 15f));
             GameObject megidoTarget = ObjectPooling.instance.GetPooledObject("MegidoTarget");
 
             if (megidoTarget != null)
@@ -96,13 +110,14 @@ public class SpecialSkill : MonoBehaviour, ISkill
                 magicTargetPosition.Add(megidoTarget.transform);
             }
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.025f);
         }
 
         animator.Play("Player_Skill05_4");
 
         //발사하기 전 잠깐 대기
         yield return new WaitForSeconds(1f);
+        SoundManager.Instance.PlaySpecialSound04();
 
         Vector3 targetPosition = new Vector3(playerController.transform.position.x, playerController.transform.position.y - 6f, playerController.transform.position.z + 6f);
         float moveSpeed = 4f;

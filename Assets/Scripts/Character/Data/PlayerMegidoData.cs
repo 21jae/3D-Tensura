@@ -10,6 +10,7 @@ public class PlayerMegidoData
     [field: SerializeField] public GameObject megidoCircle { get; private set; }
     [field: SerializeField] public GameObject megidoHit { get; private set; }
     [field: SerializeField] public GameObject megidoExplosion { get; private set; }
+    [field: SerializeField] public GameObject skillCutScenes { get; private set; }
 
     [field: Header("도약 설정")]
     [field: SerializeField] public GameObject wingMesh { get; private set; }
