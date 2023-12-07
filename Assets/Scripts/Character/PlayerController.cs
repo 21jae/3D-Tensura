@@ -5,17 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IDamageable
 {
     [field: Header("Data")]
-    [field: SerializeField] public PlayerSO Data { get; private set; }
+    [field: SerializeField] public PlayerSO Data                { get; private set; }
 
     [field: Header("Animation")]
-    [field: SerializeField] public AnimationData AnimationData { get; private set; }
+    [field: SerializeField] public AnimationData AnimationData  { get; private set; }
 
-    public CharacterStatManager playerStatManager  { get; private set; }
-    public CharacterController characterController { get; private set; }
-    public SkillManager skillManager   { get; private set; }
-    public Animator animator { get; private set; }
-    public Joystick controller  { get; private set; }
-    public MoveObject moveObject { get; private set; }
+    public CharacterStatManager playerStatManager               { get; private set; }
+    public CharacterController characterController              { get; private set; }
+    public SkillManager skillManager                            { get; private set; }
+    public Animator animator                                    { get; private set; }
+    public Joystick controller                                  { get; private set; }
+    public MoveObject moveObject                                { get; private set; }
 
 
     private List<Renderer> characterRenderers = new List<Renderer>();
@@ -96,9 +96,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             Data.GroundData.AttackData.lastButtonPressTime = Time.time;
 
             if (Data.GroundData.AttackData.comboStack == 0)
-            {
                 animator.SetBool(AnimationData.Attack01ParmeterName, true);
-            }
 
             else if (Data.GroundData.AttackData.comboStack >= 1 && IsAnimatorStateNameAndNormalized("Attack01"))
             {
@@ -109,29 +107,24 @@ public class PlayerController : MonoBehaviour, IDamageable
             else if (Data.GroundData.AttackData.comboStack >= 2 && IsAnimatorStateNameAndNormalized("Attack02"))
             {
                 SoundManager.Instance.PlayAttackSound03();
-
                 animator.SetBool(AnimationData.Attack02ParmeterName, false);
                 animator.SetBool(AnimationData.Attack03ParmeterName, true);
             }
             else if (Data.GroundData.AttackData.comboStack >= 3 && IsAnimatorStateNameAndNormalized("Attack03"))
             {
                 SoundManager.Instance.PlayAttackSound04();
-
                 animator.SetBool(AnimationData.Attack03ParmeterName, false);
                 animator.SetBool(AnimationData.Attack04ParmeterName, true);
             }
 
             else if (IsAnimatorStateNameAndNormalized("Attack04"))
-            {
                 ResetAttackAnimation();
-            }
 
             Data.GroundData.AttackData.isButtonPressed = false;
         }
+
         else if (Time.time - Data.GroundData.AttackData.lastButtonPressTime > 1f)
-        {
             ResetAttackAnimation();
-        }
     }
 
     private void ResetAttackAnimation()
@@ -141,7 +134,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         animator.SetBool(AnimationData.Attack03ParmeterName, false);
         animator.SetBool(AnimationData.Attack04ParmeterName, false);
         Data.GroundData.AttackData.comboStack = 0;
-
     }
 
     public void StartButtonPress()
@@ -211,14 +203,10 @@ public class PlayerController : MonoBehaviour, IDamageable
             StartCoroutine(Knockback());
         }
 
-        Debug.Log(playerStatManager.currentData.currentHP);
-
         if (playerStatManager.currentData.currentHP <= 0f)
         {
             animator.SetTrigger(AnimationData.DeathParmeterName);
             Destroy(gameObject, 2.5f);
-
-            //UI창 출력 및 죽음사운드
         }
     }
 
@@ -269,9 +257,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
 
         foreach (var renderer in characterRenderers)
-        {
             renderer.enabled = true;
-        }
 
         Data.GroundData.HitData.SetIsInvincible(false);
     }

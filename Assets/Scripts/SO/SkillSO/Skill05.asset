@@ -16,5 +16,5 @@ MonoBehaviour:
   animationName: Player_Skill05_1
   skillIcon: {fileID: 21300000, guid: daf875b72757fe94aa385ce2ae1c326a, type: 3}
   skillDamageMultiplier: 60
-  skillCoolTime: 10
+  skillCoolTime: 120
   skillDescription: "\uC624\uC758 : \uBA54\uAE30\uB3C4"

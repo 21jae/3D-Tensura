@@ -15,7 +15,7 @@ public class PlayerBlessingData
 
 
     [field: Header("가호 버프 변수")]
-    [field: SerializeField][field: Range(0f, 1f)] public float healthBuffPercentage { get; private set; } = 0.05f;
+    [field: SerializeField][field: Range(1f, 2f)] public float healthBuffPercentage { get; private set; } = 1.25f;
     [field: SerializeField][field: Range(0f, 1f)] public float attackPowerBuffPercentage { get; private set; } = 0.2f;
     [field: SerializeField][field: Range(0f, 1f)] public float defenseBuffPercentage { get; private set; } = 0.2f;
 }

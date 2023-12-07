@@ -235,4 +235,9 @@ public class SoundManager : MonoBehaviour
     }
 
     public void StopMusic() => audioSource.Stop();
+    public void StopBackgroundMusic()
+    {
+        if (audioSource.isPlaying && audioSource.clip == audioClips[0])
+            audioSource.Stop();
+    }
 }

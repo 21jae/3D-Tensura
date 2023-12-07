@@ -57,7 +57,7 @@ public class BuffSkill : MonoBehaviour, ISkill
 
     private void ResetAttackPowerToOriginal()
     {
-        //CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.ChangeStats.modifiedAttack);
+        CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.ChangeStats.modifiedAttack);
         Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}");
     }
     #endregion
