@@ -18,6 +18,7 @@ public class AnimationData
     [SerializeField] private string standUpParameterName = "StandUp";
     [SerializeField] private string DeathParameterName = "Death";
     [SerializeField] private string changeParameterName = "ChangeFrom";
+    [SerializeField] private string winParameterName = "Win";
 
 
     public int MoveParmeterName { get; private set; }
@@ -30,6 +31,7 @@ public class AnimationData
     public int StandUpParmeterName { get; private set; }
     public int DeathParmeterName { get; private set; }
     public int ChangeParmeterName { get; private set; }
+    public int WinParameterName { get; private set; }
 
     public void Initialize()
     {
@@ -46,6 +48,7 @@ public class AnimationData
         DeathParmeterName = Animator.StringToHash(DeathParameterName);
         ChangeParmeterName = Animator.StringToHash(changeParameterName);
 
+        WinParameterName = Animator.StringToHash(winParameterName);
     }
 
 }

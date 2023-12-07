@@ -114,6 +114,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         }
 
         animator.Play("Player_Skill05_4");
+        GameManager.Instance.SpecialVcam01();
 
         //발사하기 전 잠깐 대기
         yield return new WaitForSeconds(1f);
@@ -143,6 +144,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         //메기도 지속시간
         yield return new WaitForSeconds(5f);
+        GameManager.Instance.SpecialVcamOff();
 
         foreach (GameObject ray in createdMegidoRays)
         {
@@ -285,7 +287,6 @@ public class SpecialSkill : MonoBehaviour, ISkill
     private IEnumerator CreateMagicPosWithInterval(int count, float interval)
     {
         Vector3 centerPos = playerController.transform.position + new Vector3(0f, 3.5f, -1f);
-
         List<Vector3> possiblePosition = new List<Vector3>();
 
         for (int i = 0; i < 6; i++)
@@ -301,6 +302,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             possiblePosition.Add(centerPos + new Vector3((i - 1.5f) * interval, 0, interval));
         }
         int createdCount = 0;   //생성된 magicPos의 수 추적
+        GameManager.Instance.SpecialVcam02();
 
         while (createdCount < 15)
         {

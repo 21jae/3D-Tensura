@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,12 +25,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public TMP_Text resultText01;
-    public TMP_Text resultText02;
-    public GameObject resultPanel;
-
-    private int destoryEnemeyCount;
-    private int damageToEnemy;
+    [SerializeField] private TMP_Text resultText01;
+    [SerializeField] private TMP_Text resultText02;
+    [SerializeField] private GameObject resultPanel;
+    [SerializeField] private GameObject resultvCam;
+    [SerializeField] private GameObject specialCam01;
+    [SerializeField] private GameObject specialCam02;
+    [SerializeField] private GameObject sword;
+    [SerializeField] private GameObject wing;
+    [SerializeField] private PlayerController player;
+    
+    private int destoryEnemeyCount      { get; set; }
+    private int damageToEnemy           { get; set; }
 
     private void Awake()
     {
@@ -42,9 +46,17 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        resultPanel.SetActive(false);
+        InitGameObject();
         _instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void InitGameObject()
+    {
+        resultPanel.SetActive(false);
+        resultvCam.SetActive(false);
+        specialCam01.SetActive(false);
+        specialCam02.SetActive(false);
     }
 
     private void Update()
@@ -52,6 +64,9 @@ public class GameManager : MonoBehaviour
         UpdateResultText();
         UpdateDealResultText();
         ResultPanelCondition();
+
+        if (Input.GetKeyDown(KeyCode.G))
+            StartCoroutine(PanelAndTimelineDelay());
     }
 
     public void IncreaseDestroyedEnemyCount()
@@ -84,8 +99,29 @@ public class GameManager : MonoBehaviour
         // TriggerZone과 Enemy가 모두 사라졌을 경우에만 결과창 활성화
         if (!triggerZoneExists && !enemyExists)
         {
-            Debug.Log("On");
-            resultPanel.SetActive(true);
+            StartCoroutine(PanelAndTimelineDelay());
         }
     }
+
+    private IEnumerator PanelAndTimelineDelay()
+    {
+        SoundManager.Instance.StopMusic();
+        yield return new WaitForSeconds(0.25f);
+        SoundManager.Instance.PlayVictoryBGM();
+        wing.SetActive(false);
+        sword.SetActive(false);
+        resultvCam.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        player.ResultAnimation();
+        resultPanel.SetActive(true);
+    }
+
+    public void SpecialVcam01() => specialCam01.SetActive(true);
+    public void SpecialVcam02() => specialCam02.SetActive(true);
+    public void SpecialVcamOff()
+    {
+        specialCam01.SetActive(false);
+        specialCam02.SetActive(false);
+    }
+
 }

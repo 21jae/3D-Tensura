@@ -145,7 +145,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayBGMBattleSound()
     {
-        if (audioClips.Length > 17)
+        if (audioClips.Length >30)
         {
             audioSource.clip = audioClips[17];
             audioSource.loop = true;
@@ -219,5 +219,20 @@ public class SoundManager : MonoBehaviour
         if (audioClips.Length > 29)
             audioSource.PlayOneShot(audioClips[29]);
     }
+    public void PlayVictoryBGM()
+    {
+        if (audioClips.Length > 30)
+        {
+            audioSource.clip = audioClips[30];
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+    }
+    public void PlayResultPlayerSound()
+    {
+        if (audioClips.Length > 31)
+            audioSource.PlayOneShot(audioClips[31]);
+    }
+
     public void StopMusic() => audioSource.Stop();
 }

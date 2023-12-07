@@ -286,7 +286,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "X",
     "m_StageCapability": 3,
-    "m_Value": 5.0,
+    "m_Value": 3.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }
@@ -605,10 +605,10 @@
     "m_Guid": {
         "m_GuidSerialized": "64d30b4e-d3f8-4997-94cd-8cc5247c29a3"
     },
-    "m_Name": "t_fire_uv_rainbow_00",
+    "m_Name": "MainTex",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "t_fire_uv_rainbow_00",
-    "m_DefaultReferenceName": "_t_fire_uv_rainbow_00",
+    "m_RefNameGeneratedByDisplayName": "MainTex",
+    "m_DefaultReferenceName": "_MainTex",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -619,7 +619,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"e76158878ce1582468c55fbeebafa700\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"049912f09b0f7104da12fd9310b846a5\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -745,7 +745,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "501d1e41e1184d57a69fd0b26270eb71",
     "m_Id": 0,
-    "m_DisplayName": "t_fire_uv_rainbow_00",
+    "m_DisplayName": "MainTex",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1604,10 +1604,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -110.0,
-            "y": -60.0,
-            "width": 145.0,
-            "height": 106.0
+            "x": -117.99999237060547,
+            "y": -52.99998474121094,
+            "width": 128.99993896484376,
+            "height": 34.000003814697269
         }
     },
     "m_Slots": [

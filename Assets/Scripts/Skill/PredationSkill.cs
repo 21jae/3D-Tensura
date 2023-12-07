@@ -104,7 +104,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         if (obj.transform.localScale.x <= 0.2f && distanceToPredationPos <= skillManager.skillData.PredationData.THRESHOLD)
         {
             Destroy(obj.gameObject);
-            string absorbedText = skillManager.skillData.PredationData.absorbedObjectText.text = "흡수한 대상은 " + obj.gameObject.name + "입니다.";
+            string absorbedText = skillManager.skillData.PredationData.absorbedObjectText.text = "포식 결과: " + obj.gameObject.name + "입니다.";
             StartCoroutine(ShowAndFadeOutText(absorbedText, 4f));
             SoundManager.Instance.PlayHumanPredationSound();
             

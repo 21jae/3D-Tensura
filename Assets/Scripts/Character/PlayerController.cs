@@ -288,4 +288,5 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
 
     public bool isGrounded() => characterController.isGrounded;
+    public void ResultAnimation() => animator.SetTrigger(AnimationData.WinParameterName);
 }
