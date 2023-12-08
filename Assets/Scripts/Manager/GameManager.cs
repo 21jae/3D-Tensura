@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         // TriggerZone과 Enemy가 모두 사라졌을 경우에만 결과창 활성화
         if (!triggerZoneExists && !enemyExists)
         {
-            StartCoroutine(PanelAndTimelineDelay());
+            //StartCoroutine(PanelAndTimelineDelay());
         }
     }
 
