@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
 
@@ -33,10 +32,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject specialCam02;
     [SerializeField] private GameObject sword;
     [SerializeField] private GameObject wing;
+    [SerializeField] private GameObject playerUI;
     [SerializeField] private PlayerController player;
-    
-    private int destoryEnemeyCount      { get; set; }
-    private int damageToEnemy           { get; set; }
+
+    private int destoryEnemeyCount { get; set; }
+    private int damageToEnemy { get; set; }
 
     private void Awake()
     {
@@ -64,9 +64,6 @@ public class GameManager : MonoBehaviour
         UpdateResultText();
         UpdateDealResultText();
         ResultPanelCondition();
-
-        if (Input.GetKeyDown(KeyCode.G))
-            StartCoroutine(PanelAndTimelineDelay());
     }
 
     public void IncreaseDestroyedEnemyCount()
@@ -78,44 +75,36 @@ public class GameManager : MonoBehaviour
     {
         damageToEnemy += damage;
     }
-
-    private void UpdateResultText()
-    {
-        resultText01.text = $"제거된 적의 수: {destoryEnemeyCount} ";
-    }
-    public void UpdateDealResultText()
-    {
-        resultText02.text = $"적에게 가한 피해량 : {damageToEnemy} ";
-    }
-    public void ResultDestoryEnemyCount() => UpdateResultText();
-    public void ResultDealToDamageCount() => UpdateDealResultText();
-
     public void ResultPanelCondition()
     {
-        //현재 필드에 TriggerZone01~05까지 존재
         bool triggerZoneExists = GameObject.FindGameObjectsWithTag("TriggerZone").Length > 0;
         bool enemyExists = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
 
-        // TriggerZone과 Enemy가 모두 사라졌을 경우에만 결과창 활성화
         if (!triggerZoneExists && !enemyExists)
         {
             //StartCoroutine(PanelAndTimelineDelay());
+            SoundManager.Instance.StopBackgroundMusic();
+            StartCoroutine(PanelAndTimelineDelay());
         }
     }
 
     private IEnumerator PanelAndTimelineDelay()
     {
-        SoundManager.Instance.StopMusic();
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
         SoundManager.Instance.PlayVictoryBGM();
-        wing.SetActive(false);
+        playerUI.SetActive(false);
+        wing.SetActive(true);
         sword.SetActive(false);
         resultvCam.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
-        player.ResultAnimation();
-        resultPanel.SetActive(true);
-    }
 
+        yield return new WaitForSeconds(3f);
+        resultPanel.SetActive(true);
+        player.ResultAnimation();
+    }
+    private void UpdateResultText() => resultText01.text = $"제거된 적의 수: {destoryEnemeyCount} ";
+    public void UpdateDealResultText() => resultText02.text = $"적에게 가한 피해량 : {damageToEnemy} ";
+    public void ResultDestoryEnemyCount() => UpdateResultText();
+    public void ResultDealToDamageCount() => UpdateDealResultText();
     public void SpecialVcam01() => specialCam01.SetActive(true);
     public void SpecialVcam02() => specialCam02.SetActive(true);
     public void SpecialVcamOff()
