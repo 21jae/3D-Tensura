@@ -175,9 +175,9 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
             yield return null;
         }
+        SoundManager.Instance.PlayMegidoSound();
 
         GameObject explosion = Instantiate(skillManager.skillData.MegidoData.megidoExplosion, megidoCirclePos, Quaternion.identity);
-        SoundManager.Instance.PlayMegidoSound();
 
         Collider[] hitEnemies = Physics.OverlapSphere(explosion.transform.position, 50f, layerMask);
         float damageToDeal = skillManager.skillData.MegidoData.specialSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
