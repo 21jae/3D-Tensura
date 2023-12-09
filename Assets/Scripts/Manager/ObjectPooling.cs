@@ -4,7 +4,6 @@ using UnityEngine;
 public class ObjectPooling : MonoBehaviour
 {
     public static ObjectPooling instance { get; private set; }
-
     public List<ObjectPoolData> poolData;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
 
@@ -51,16 +50,10 @@ public class ObjectPooling : MonoBehaviour
                 return objSpawn;
             }
             else
-            {
-                Debug.LogWarning("Pool with tag " + tag + " doesn`t exist.");
                 return null;
-            }
         }
         else
-        {
-            Debug.LogWarning("Pool does not contain tag: " + tag);
             return null;
-        }
     }
 
     public void ReturnObjectToPool(string tag, GameObject obj)
@@ -71,8 +64,6 @@ public class ObjectPooling : MonoBehaviour
             poolDictionary[tag].Enqueue(obj);
         }
         else
-        {
             Debug.LogWarning("Pool with tag " + tag + " doesn`t exist.");
-        }
     }
 }

@@ -44,9 +44,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             skillManager.skillData.MegidoData.swordMesh.gameObject.SetActive(false);
         }
         else
-        {
             Debug.LogWarning("Meshes not Found!");
-        }
     }
 
     public void ActivateSkill()
@@ -60,14 +58,13 @@ public class SpecialSkill : MonoBehaviour, ISkill
     private IEnumerator SpecialCutScenes()
     {
         skillManager.skillData.MegidoData.skillCutScenes.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        yield return CoroutineHelper.WaitForSeconds(1.5f);
         skillManager.skillData.MegidoData.skillCutScenes.SetActive(false);
-
     }
 
     private IEnumerator ExeCuteJump()
     {
-        yield return new WaitForSeconds(2f);
+        yield return CoroutineHelper.WaitForSeconds(2f);
 
         ActivateMeshes();
         SoundManager.Instance.PlaySpecialSound01();
@@ -76,9 +73,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         Vector3 megidoCirclePos = playerController.transform.position + playerController.transform.forward * 30f;
         GameObject createdMegidoCircle = Instantiate(skillManager.skillData.MegidoData.megidoCircle, megidoCirclePos, Quaternion.identity);
 
-        //애니메이션 스테이트 체크 타이밍 겹쳐서 0.1초간 텀을 줬다.
-        yield return new WaitForSeconds(0.1f);
-
+        yield return CoroutineHelper.WaitForSeconds(0.1f);
         yield return new WaitUntil(() => { AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0); return !state.IsName("Player_Skill05_1") || state.normalizedTime >= 1f; });
 
         //도약중
@@ -95,7 +90,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         StartCoroutine(CreateMagicPosWithInterval(15, 2f));
 
-        yield return new WaitForSeconds(skillManager.skillData.MegidoData.skillDelay);
+        yield return CoroutineHelper.WaitForSeconds(skillManager.skillData.MegidoData.skillDelay);
         SoundManager.Instance.PlaySpecialSound02();
 
         for (int i = 0; i < 88; i++)
@@ -110,14 +105,12 @@ public class SpecialSkill : MonoBehaviour, ISkill
                 magicTargetPosition.Add(megidoTarget.transform);
             }
 
-            yield return new WaitForSeconds(0.025f);
+            yield return CoroutineHelper.WaitForSeconds(0.025f);
         }
 
         animator.Play("Player_Skill05_4");
         GameManager.Instance.SpecialVcam01();
-
-        //발사하기 전 잠깐 대기
-        yield return new WaitForSeconds(1f);
+        yield return CoroutineHelper.WaitForSeconds(1f);
         SoundManager.Instance.PlaySpecialSound04();
 
         Vector3 targetPosition = new Vector3(playerController.transform.position.x, playerController.transform.position.y - 6f, playerController.transform.position.z + 6f);
@@ -128,7 +121,6 @@ public class SpecialSkill : MonoBehaviour, ISkill
             playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, targetPosition, moveSpeed * Time.deltaTime);
             yield return null;
         }
-
 
         //StartPosition을 안전히 저장할 tempList
         var tempList = new List<Transform>(magicStartPosition);
@@ -143,27 +135,23 @@ public class SpecialSkill : MonoBehaviour, ISkill
         SoundManager.Instance.PlaySpecialSound03();
 
         //메기도 지속시간
-        yield return new WaitForSeconds(5f);
+        yield return CoroutineHelper.WaitForSeconds(5f);
+
         GameManager.Instance.SpecialVcamOff();
 
         foreach (GameObject ray in createdMegidoRays)
-        {
             ObjectPooling.instance.ReturnObjectToPool("MegidoRay", ray);
-        }
+        
         createdMegidoRays.Clear();
 
         //지속시간 종료됐으므로 프리펩 및 List에 저장된 것들 제거
         foreach (Transform startPos in tempList)
-        {
             ObjectPooling.instance.ReturnObjectToPool("MegidoPos", startPos.gameObject);
-        }
 
         magicStartPosition.Clear();
 
         foreach (Transform targetPos in magicTargetPosition)
-        {
             ObjectPooling.instance.ReturnObjectToPool("MegidoTarget", targetPos.gameObject);
-        }
 
         Destroy(createdMegidoCircle);
         ObjectPooling.instance.ReturnObjectToPool("MegidoHit", megidoHit);
@@ -172,13 +160,11 @@ public class SpecialSkill : MonoBehaviour, ISkill
         while (Vector3.Distance(playerController.transform.position, originalPosition) > 0.1f)
         {
             playerController.transform.position = Vector3.MoveTowards(playerController.transform.position, originalPosition, skillManager.skillData.MegidoData.jumpSpeed * Time.deltaTime);
-
             yield return null;
         }
+
         SoundManager.Instance.PlayMegidoSound();
-
         GameObject explosion = Instantiate(skillManager.skillData.MegidoData.megidoExplosion, megidoCirclePos, Quaternion.identity);
-
         Collider[] hitEnemies = Physics.OverlapSphere(explosion.transform.position, 50f, layerMask);
         float damageToDeal = skillManager.skillData.MegidoData.specialSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
 
@@ -186,9 +172,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
         {
             IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
             if (damageableEnemy != null)
-            {
                 damageableEnemy.TakeDamage(damageToDeal);
-            }
         }
 
         skillManager.skillData.MegidoData.wingMesh.gameObject.SetActive(false);
@@ -212,19 +196,14 @@ public class SpecialSkill : MonoBehaviour, ISkill
 
         //광선을 1회 발사했다면 megidoPos 해당 위치가 List에 저장된 magicPosition를 제거시켜, 다시 pos로 돌아가지않게합니다.
         if (magicStartPosition.Contains(from))
-        {
             magicStartPosition.Remove(from);
-        }
 
         GameObject megidoRayInstance = ObjectPooling.instance.GetPooledObject("MegidoRay");
 
         if (megidoRayInstance != null)
-        {
             createdMegidoRays.Add(megidoRayInstance);
-        }
 
         LineRenderer lineRenderer = megidoRayInstance.GetComponent<LineRenderer>();
-
         int segments = 20;
         lineRenderer.positionCount = segments;
 
@@ -254,10 +233,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
             {
                 if (hitInfo.transform == to)
                 {
-                    Debug.Log("Random Target");
-
                     lineRenderer.SetPosition(1, megidoRayInstance.transform.position);
-
                     int randomTargetIndex = UnityEngine.Random.Range(0, magicTargetPosition.Count);
                     to = magicTargetPosition[randomTargetIndex];
                     endPosition = to.position;
@@ -290,17 +266,14 @@ public class SpecialSkill : MonoBehaviour, ISkill
         List<Vector3> possiblePosition = new List<Vector3>();
 
         for (int i = 0; i < 6; i++)
-        {
             possiblePosition.Add(centerPos + new Vector3((i - 2.5f) * interval, 0, -interval));
-        }
+
         for (int i = 0; i < 5; i++)
-        {
             possiblePosition.Add(centerPos + new Vector3((i - 2f) * interval, 0, 0));
-        }
+
         for (int i = 0; i < 4; i++)
-        {
             possiblePosition.Add(centerPos + new Vector3((i - 1.5f) * interval, 0, interval));
-        }
+
         int createdCount = 0;   //생성된 magicPos의 수 추적
         GameManager.Instance.SpecialVcam02();
 
@@ -309,7 +282,6 @@ public class SpecialSkill : MonoBehaviour, ISkill
             int randomIndex = UnityEngine.Random.Range(0, possiblePosition.Count);  //랜덤한 위치의 인덱스를 생성
             Vector3 randomPos = possiblePosition[randomIndex];
             possiblePosition.RemoveAt(randomIndex); //이미 선택한 위치는 다시 선택하지않음
-
             GameObject megidoPos = ObjectPooling.instance.GetPooledObject("MegidoPos");
 
             if (megidoPos != null)
@@ -319,7 +291,7 @@ public class SpecialSkill : MonoBehaviour, ISkill
                 createdCount++;
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return CoroutineHelper.WaitForSeconds(0.1f);
         }
     }
 

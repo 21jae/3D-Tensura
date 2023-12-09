@@ -4,13 +4,12 @@ using UnityEngine.UI;
 
 public class SkillButton : MonoBehaviour
 {
-    public SOSkill skill;
+    [SerializeField] private SOSkill skill;
     [SerializeField] private SkillManager skillManager;
+    [SerializeField] private Image imageIcon;
+    [SerializeField] private Image imageCooltime;
+    [SerializeField] private Text coolTimeText;
     private Button skillButton;
-
-    public Image imageIcon;
-    public Image imageCooltime;
-    public Text coolTimeText;
 
     private void Start()
     {
@@ -18,27 +17,16 @@ public class SkillButton : MonoBehaviour
         imageIcon.sprite = skill.skillIcon;
         imageCooltime.fillAmount = 0;
         coolTimeText.text = "";
-
-        //SetSkillActive(false);
     }
 
     public void OnClicked()
     {
         if (imageCooltime.fillAmount > 0)
-        {
             return;
-        }
 
         skillManager.ReadSkill(skill);
         StartCoroutine(SkillCooltime());
     }
-
-    //public void SetSkillActive(bool isActive)
-    //{
-    //    imageIcon.gameObject.SetActive(isActive);
-    //    imageCooltime.gameObject.SetActive(isActive);
-    //    coolTimeText.gameObject.SetActive(isActive);
-    //}
 
     private IEnumerator SkillCooltime()
     {

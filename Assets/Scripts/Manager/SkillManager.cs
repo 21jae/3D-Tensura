@@ -2,6 +2,22 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    private static SkillManager _instance;
+    public static SkillManager Instance
+    {
+        get
+        {
+            if ( _instance == null )
+                _instance = FindObjectOfType<SkillManager>();
+
+            if (_instance == null)
+            {
+                GameObject skillManager = new GameObject("SkillManager");
+                _instance = skillManager.AddComponent<SkillManager>();
+            }
+            return _instance;
+        }
+    }
     private Animator animator;
 
     [Header("플레이어 스킬")]
@@ -16,8 +32,16 @@ public class SkillManager : MonoBehaviour
 
     private void Awake()
     {
-        animator = FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>();
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        animator = FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>();
         buffSkill = GetComponent<BuffSkill>();
         dashSwordSkill = GetComponent<DashSwordSkill>();
         predationSkill = GetComponent<PredationSkill>();

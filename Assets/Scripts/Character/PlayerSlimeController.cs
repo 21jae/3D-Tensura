@@ -10,8 +10,6 @@ public class PlayerSlimeController : MonoBehaviour
     [SerializeField] private GameObject playerCanvas;
     [SerializeField] private Texture2D cursurIcon;
     private Joystick controller;
-    private MoveObject moveObject;
-    private Rigidbody rigidbody;
 
     private void Awake()
     {
@@ -20,16 +18,14 @@ public class PlayerSlimeController : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayBGMBattleSound();
+        SoundManager.Instance.PlayBackgroundMusic();
     }
 
     private void InitializeComponents()
     {
         playerStatManager = GetComponent<CharacterStatManager>();
-        rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         controller = FindObjectOfType<Joystick>();
-        moveObject = GetComponent<MoveObject>();
         Cursor.SetCursor(cursurIcon, Vector2.zero, CursorMode.Auto);
     }
     private void Update()
@@ -59,7 +55,7 @@ public class PlayerSlimeController : MonoBehaviour
 
     private IEnumerator ReturnToPoolAfterDelay(GameObject objectToReturn, float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return CoroutineHelper.WaitForSeconds(delay);
         ObjectPooling.instance.ReturnObjectToPool("SlimePoision", objectToReturn);
     }
 }

@@ -45,9 +45,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (!UIInventory.INVENTORY_ACTIVATED)
         {
             MovementUpdate();
-
             AttackUpdate();
-
             CheckHitWall();
         }
     }
@@ -71,13 +69,10 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (Data.AirData.GravityData.isGravityEnabled == true)
         {
             if (isGrounded() && Data.AirData.GravityData.VerticalVelocity < 0f)
-            {
                 Data.AirData.GravityData.VerticalVelocity = 0f;
-            }
+
             else
-            {
                 Data.AirData.GravityData.VerticalVelocity += Data.AirData.GravityData.gravity * Time.deltaTime;
-            }
 
             characterController.Move(new Vector3(0f, Data.AirData.GravityData.VerticalVelocity * Time.deltaTime, 0f));
         }
@@ -162,10 +157,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         Vector3 rayDirection = transform.forward;
 
         if (Physics.Raycast(transform.position, rayDirection, out hitInfo, Data.GroundData.WallData.rayDistance, Data.GroundData.WallData.wallLayerMask))
-        {
             characterController.Move(Vector3.zero);
-            Debug.Log("Ãæµ¹Áß");
-        }
     }
 
     private void OnDrawGizmos()
@@ -193,7 +185,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             StartCoroutine(PlayBigDamageAnimation());
             StartCoroutine(BecomeInvincible());
-
         }
 
         else if (damagePercentage > 0.01f)
@@ -229,14 +220,14 @@ public class PlayerController : MonoBehaviour, IDamageable
         Data.GroundData.HitData.SetIsRecoveringForBigDamage(true);
 
         animator.SetBool(AnimationData.BigDamageParmeterName, true);
-        yield return new WaitForSeconds(Data.GroundData.HitData.damageInterval);
+        yield return CoroutineHelper.WaitForSeconds(Data.GroundData.HitData.damageInterval);
 
         animator.SetBool(AnimationData.BigDamageParmeterName, false);
         animator.SetBool(AnimationData.StandUpParmeterName, true);
-        yield return new WaitForSeconds(Data.GroundData.HitData.damageInterval);
+        yield return CoroutineHelper.WaitForSeconds(Data.GroundData.HitData.damageInterval);
 
         animator.SetBool(AnimationData.StandUpParmeterName, false);
-        yield return new WaitForSeconds(Data.GroundData.HitData.damageInterval);
+        yield return CoroutineHelper.WaitForSeconds(Data.GroundData.HitData.damageInterval);
 
         Data.GroundData.HitData.SetIsRecoveringForBigDamage(false);
     }
@@ -244,16 +235,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     private IEnumerator BecomeInvincible()
     {
         Data.GroundData.HitData.SetIsInvincible(true);
-
         float invincibilityEndTime = Time.time + Data.GroundData.HitData.invincibilityDuration;
 
         while (Time.time < invincibilityEndTime)
         {
             foreach (var renderer in characterRenderers)
-            {
                 renderer.enabled = !renderer.enabled;
-            }
-            yield return new WaitForSeconds(Data.GroundData.HitData.blinkDuration);
+
+            yield return CoroutineHelper.WaitForSeconds(Data.GroundData.HitData.blinkDuration);
         }
 
         foreach (var renderer in characterRenderers)

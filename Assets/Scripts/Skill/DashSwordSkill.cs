@@ -24,9 +24,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         skillManager = GetComponent<SkillManager>();
 
         if (playerController == null)
-        {
             Debug.LogError("Not found playerController");
-        }
     }
     #endregion
 
@@ -43,9 +41,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
     private void HandleDashing()
     {
         if (skillManager.skillData.DashData.isDashing)
-        {
             MoveAndDashAttack();
-        }
     }
 
     private void MoveAndDashAttack()
@@ -55,9 +51,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         float distance = Vector3.Distance(playerController.transform.position, skillManager.skillData.DashData.dashTarget);
 
         if (distance > 0.5f)
-        {
             playerController.characterController.Move(direction * skillManager.skillData.DashData.dashSpeed * Time.deltaTime);
-        }
         else
         {
             Instantiate(skillManager.skillData.DashData.dashSwordPrefab, playerController.transform.position, playerController.transform.rotation);
@@ -77,10 +71,7 @@ public class DashSwordSkill : MonoBehaviour, ISkill
         {
             IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
             if (damageableEnemy != null)
-            {
-                Debug.Log("대쉬데미지??0");
                 damageableEnemy.TakeDamage(damageToDeal);
-            }
         }
     }
     #endregion

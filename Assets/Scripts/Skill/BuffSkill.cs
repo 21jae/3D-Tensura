@@ -34,7 +34,6 @@ public class BuffSkill : MonoBehaviour, ISkill
     {
         GameObject buffInstance = Instantiate(skillManager.skillData.BuffData.attackBuffPrefab, playerController.transform.position, Quaternion.identity);
         buffInstance.transform.SetParent(playerController.transform);
-
         StartCoroutine(ApplyAttackBuff());
     }
 
@@ -42,7 +41,7 @@ public class BuffSkill : MonoBehaviour, ISkill
     {
         CalculateAndApplyAttackPower();
         SoundManager.Instance.PlayFightSound();
-        yield return new WaitForSeconds(skillManager.skillData.BuffData.buffDuration);
+        yield return CoroutineHelper.WaitForSeconds(skillManager.skillData.BuffData.buffDuration);
 
         ResetAttackPowerToOriginal();
     }
@@ -52,13 +51,11 @@ public class BuffSkill : MonoBehaviour, ISkill
         skillManager.skillData.ChangeStats.originalAttack = CharacterStatManager.instance.currentData.currentAttackPower;
         skillManager.skillData.ChangeStats.modifiedAttack = skillManager.skillData.ChangeStats.originalAttack * skillManager.skillData.BuffData.attackPowerBuffPercentage;
         CharacterStatManager.instance.ModifyAttackPower(skillManager.skillData.ChangeStats.modifiedAttack);
-        Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}");
     }
 
     private void ResetAttackPowerToOriginal()
     {
         CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.ChangeStats.modifiedAttack);
-        Debug.Log($" ATK : {CharacterStatManager.instance.currentData.currentAttackPower}");
     }
     #endregion
 }

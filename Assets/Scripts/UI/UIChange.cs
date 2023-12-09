@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class UIChange : MonoBehaviour
 {
-    public GameObject player1;
-    public GameObject player2;
-    public GameObject player1ModeUI;
-    public GameObject player2ModeUI;
-    public GameObject player1Skills;
-    public GameObject player2Skills;
-    public GameObject CharacterChangeUI;
+    [SerializeField] private GameObject player1;
+    [SerializeField] private GameObject player2;
+    [SerializeField] private GameObject player1ModeUI;
+    [SerializeField] private GameObject player2ModeUI;
+    [SerializeField] private GameObject player1Skills;
+    [SerializeField] private GameObject player2Skills;
+    [SerializeField] private GameObject CharacterChangeUI;
 
     public Animator playerAnimator;
     public CinemachineVirtualCamera virtualCamera;
 
-    private void Awake()
-    {
-    }
-
     private void Start()
     {
-        //CharacterChangeUI.SetActive(false);
         player1.SetActive(true);
         player2.SetActive(false);
         player1Skills.SetActive(true);
@@ -69,7 +64,7 @@ public class UIChange : MonoBehaviour
             StartCoroutine(ReturnObjectToPool(effect, 1f));
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return CoroutineHelper.WaitForSeconds(0.5f);
 
         toPlayer.transform.position = fromPlayer.transform.position;
         toPlayer.transform.rotation = fromPlayer.transform.rotation;
@@ -78,19 +73,14 @@ public class UIChange : MonoBehaviour
         toPlayer.SetActive(true);
 
         virtualCamera.Follow = toPlayer.transform;
-
         UpdateCameraSetting(toPlayer);
-
         UpdateUI(toPlayer == player1);
-
         playerAnimator.SetTrigger("ChangeFrom");
-
     }
 
     private IEnumerator ReturnObjectToPool(GameObject effect, float delay)
     {
-        yield return new WaitForSeconds(delay);
-
+        yield return CoroutineHelper.WaitForSeconds(delay);
         ObjectPooling.instance.ReturnObjectToPool("CharacterChangeEffect", effect);
     }
 

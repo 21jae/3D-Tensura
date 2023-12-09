@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterStatManager : MonoBehaviour
@@ -7,14 +6,12 @@ public class CharacterStatManager : MonoBehaviour
     [Header("플레이어 스탯")]
     [SerializeField] private CharacterStats baseStats;
     [field: SerializeField] public PlayerCurrentStatData currentData { get; private set; }
-
     public static CharacterStatManager instance;
     public event Action OnStatsChanged;
 
     private void Awake()
     {
         instance = this;
-
         InitilizeStats();
     }
 

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class UISlotToolTip : MonoBehaviour
 {
     [SerializeField] private GameObject tooltipBase;
-
     [SerializeField] private Text text_ItemName;
     [SerializeField] private Text text_ItemDesc;
     [SerializeField] private Text text_ItemUsed;
@@ -19,17 +18,13 @@ public class UISlotToolTip : MonoBehaviour
         text_ItemDesc.text = _item.itemDesc;
 
         if (_item.itemType == Item.ItemType.Equipment)
-        {
             text_ItemUsed.text = "우클릭 - 장착";
-        }
+
         else if (_item.itemType == Item.ItemType.Used)
-        {
             text_ItemUsed.text = "우클릭 - 소비";
-        }
+
         else
-        {
             text_ItemUsed.text = "";
-        }
     }
 
     public void HideToolTip()

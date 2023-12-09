@@ -9,8 +9,6 @@ public class SlimePoisonSkill : MonoBehaviour
         float damageToDeal = CharacterStatManager.instance.currentData.currentAttackPower;
         ;
         if (damageable != null)
-        {
             damageable.TakeDamage(damageToDeal);
-        }
     }
 }

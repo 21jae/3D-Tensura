@@ -19,9 +19,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
         skillManager = GetComponent<SkillManager>();
 
         if (playerController == null)
-        {
             Debug.LogError("Not found playerController");
-        }
     }
     #endregion
 
@@ -43,7 +41,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private IEnumerator WaitAndBless(GameObject blessingIntance, float destoryPrefabDuration)
     {
-        yield return new WaitForSeconds(destoryPrefabDuration);
+        yield return CoroutineHelper.WaitForSeconds(destoryPrefabDuration);
         Destroy(blessingIntance);
 
         BuffToPlayer();
@@ -52,18 +50,14 @@ public class BlessingSkill : MonoBehaviour, ISkill
     private void BuffToPlayer()
     {
         ShowBlessingEffectAtPlayer();
-
         CalculateAndApplyStatsBuff();
-
         ShowBuffEffectOnPlayer();
-
         StartCoroutine(ApplyStatusBuff());
     }
 
     private void ShowBlessingEffectAtPlayer()
     {
         Instantiate(skillManager.skillData.BlessingData.blessingEffect, playerController.transform.position, Quaternion.identity);
-        Debug.Log("체력 및 스테이터스 상승!");
     }
     #endregion
 
@@ -95,8 +89,7 @@ public class BlessingSkill : MonoBehaviour, ISkill
 
     private IEnumerator ApplyStatusBuff()
     {
-        yield return new WaitForSeconds(skillManager.skillData.BlessingData.buffDuration);
-        Debug.Log("가호의 지속시간 종료");
+        yield return CoroutineHelper.WaitForSeconds(skillManager.skillData.BlessingData.buffDuration);
 
         //공격력 및 방어력 원상 복구
         CharacterStatManager.instance.ModifyAttackPower(-skillManager.skillData.ChangeStats.modifiedAttack);

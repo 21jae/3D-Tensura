@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController player;
 
     private int destoryEnemeyCount { get; set; }
-    private int damageToEnemy { get; set; }
+    private int damageToEnemy { get; set; } 
 
     private void Awake()
     {
@@ -83,21 +83,21 @@ public class GameManager : MonoBehaviour
         if (!triggerZoneExists && !enemyExists)
         {
             //StartCoroutine(PanelAndTimelineDelay());
-            SoundManager.Instance.StopBackgroundMusic();
-            StartCoroutine(PanelAndTimelineDelay());
+            //SoundManager.Instance.StopBackgroundMusic();
+            //StartCoroutine(PanelAndTimelineDelay());
         }
     }
 
     private IEnumerator PanelAndTimelineDelay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return CoroutineHelper.WaitForSeconds(0.5f);
         SoundManager.Instance.PlayVictoryBGM();
         playerUI.SetActive(false);
         wing.SetActive(true);
         sword.SetActive(false);
         resultvCam.SetActive(true);
 
-        yield return new WaitForSeconds(3f);
+        yield return CoroutineHelper.WaitForSeconds(3f);
         resultPanel.SetActive(true);
         player.ResultAnimation();
     }

@@ -34,13 +34,8 @@ public class NPCTrigger : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
     private void OnDestroy()
     {
-        // 이벤트 리스너를 제거합니다.
         ConversationManager.OnConversationEnded -= RestoreCameraState;
     }
     private void RestoreCameraState()
@@ -62,13 +57,9 @@ public class NPCTrigger : MonoBehaviour
     {
         if (vcam != null)
         {
-            // 버츄얼 카메라의 'Follow'를 PlayerLook으로 설정
             vcam.Follow = playerLook;
-
-            // 버츄얼 카메라의 'LookAt'을 NPC로 설정하여 NPC를 바라보게 함
             vcam.LookAt = npcTransform;
 
-            // 카메라가 아래에서 위로 올려다보는 각도를 설정
             var framingTransposer = vcam.GetCinemachineComponent<CinemachineFramingTransposer>();
             if (framingTransposer != null)
             {
@@ -76,9 +67,7 @@ public class NPCTrigger : MonoBehaviour
                 framingTransposer.m_CameraDistance = 2.8f;
             }
             else
-            {
                 Debug.LogError("CinemachineFramingTransposer component not found on the virtual camera.");
-            }
         }
     }
 
@@ -89,15 +78,13 @@ public class NPCTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 ConversationManager.Instance.StartConversation(myConversation);
-                AdjustVirtualCamera(); // 버츄얼 카메라 조정 함수 호출
+                AdjustVirtualCamera();
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             isPlayerInRange = false;
-        }
     }
 }

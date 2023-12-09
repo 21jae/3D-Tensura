@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class UISkill : MonoBehaviour
 {
-    public GameObject PlayerCanvas;     //스킬창 열면 꺼질 플레이어 캔버스
-    public GameObject SkillOnButton;
-    public GameObject SkillOffButton;
+    [SerializeField] private GameObject PlayerCanvas;     //스킬창 열면 꺼질 플레이어 캔버스
+    [SerializeField] private GameObject SkillOnButton;
+    [SerializeField] private GameObject SkillOffButton;
 
     private void Start()
     {

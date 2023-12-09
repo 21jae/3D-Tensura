@@ -18,7 +18,7 @@ public class BlessToPlayer : MonoBehaviour
 
     private IEnumerator WaitBlessSound()
     {
-        yield return new WaitForSeconds(1f);
+        yield return CoroutineHelper.WaitForSeconds(1f);
         SoundManager.Instance.PlayBlessingSound();
     }
 

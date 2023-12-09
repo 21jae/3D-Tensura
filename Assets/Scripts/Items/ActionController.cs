@@ -12,11 +12,9 @@ public class ActionController : MonoBehaviour
     private bool pickupActivated;
     private RaycastHit hitInfo;
 
-
     private void Update()
     {
         CheckItem();
-        //TryAction();
     }
 
     public void TryAction()
@@ -76,7 +74,7 @@ public class ActionController : MonoBehaviour
 
         slimeController.transform.position = originalPosition;
 
-        yield return new WaitForSeconds(0.8f);
+        yield return CoroutineHelper.WaitForSeconds(0.8f);
         slimeController.transform.localScale /= 2;
     }
     private void CheckItem()

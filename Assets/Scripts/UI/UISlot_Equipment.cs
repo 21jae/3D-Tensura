@@ -6,11 +6,9 @@ public class UISlot_Equipment : MonoBehaviour, IPointerClickHandler, IDropHandle
 {
     public Item item;
     [SerializeField] private Image itemImage;
-
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Sprite emptySlotSprite;
     [SerializeField] private Sprite filledSlotSprite;
-
 
     public void SetItem(Item newItem)
     {

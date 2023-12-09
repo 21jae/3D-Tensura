@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
         {
             IDamageable damageable = other.GetComponent<IDamageable>();
 
-            if (damageable != null) //IDamageable 인터페이스를 구현하고있는지 확인
+            if (damageable != null)
             {
                 float damageToDeal = CharacterStatManager.instance.currentData.currentAttackPower;
                 damageable.TakeDamage(damageToDeal);

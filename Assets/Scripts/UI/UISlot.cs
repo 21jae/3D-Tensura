@@ -20,7 +20,6 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     [SerializeField] private GameObject CountImage;
     [SerializeField] private Text text_Count;
 
-
     //이미지 투명도 조절
     private void SetColor(float _alpha)
     {
@@ -48,7 +47,6 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         }
 
         UpdateBackgroundImage();
-
         SetColor(1);    //아이템 보여주기
     }
 
@@ -60,9 +58,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         text_Count.text = itemCount.ToString();
 
         if (itemCount <= 0)
-        {
             ClearSlot();
-        }
     }
 
     private void UpdateBackgroundImage()
@@ -116,7 +112,6 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
             }
             else if (item.itemType == Item.ItemType.Used)
             {
-                //소모
                 Debug.Log(item.itemName + " 를 사용했습니다.");
                 SetSlotCount(-1);
             }
@@ -130,21 +125,16 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         AddItem(UIDragSlot.instance.dragSlot.item, UIDragSlot.instance.dragSlot.itemCount);
 
         if (_tempItem != null )
-        {
             UIDragSlot.instance.dragSlot.AddItem(_tempItem, _tempItemCount);
-        }
+
         else
-        {
             UIDragSlot.instance.dragSlot.ClearSlot();
-        }
     }
 
     public void OnDrop(PointerEventData eventData)
     {
         if (UIDragSlot.instance.dragSlot != null)
-        {
             ChangeSlot();
-        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -157,9 +147,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         //아이템을 눌렀을 경우에
         if (item != null)
-        {
             UIDragSlot.instance.transform.position = eventData.position;
-        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -176,9 +164,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (item != null)
-        {
             slotTooltip.ShowToolTipe(item, transform.position);
-        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {

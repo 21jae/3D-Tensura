@@ -39,10 +39,7 @@ public class PredationSkill : MonoBehaviour, ISkill
     #region 흡수 로직
     private void AbsorbObjectInRadius()
     {
-        //사운드 재생
-
         Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, skillManager.skillData.PredationData.predationRaidus, layerMask);
-
         foreach (Collider obj in objectInRange)
         {
             if (ObjectInPredationAngle(obj))
@@ -75,10 +72,7 @@ public class PredationSkill : MonoBehaviour, ISkill
             IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
 
             if (damageableEnemy != null)
-            {
                 damageableEnemy.TakeDamage(damaegeToDeal);
-                Debug.Log($"Predation Deal : {damaegeToDeal}");
-            }
         }
     }
 
@@ -142,7 +136,7 @@ public class PredationSkill : MonoBehaviour, ISkill
 
     private IEnumerator ActivatePredation()
     {
-        yield return new WaitForSeconds(skillManager.skillData.PredationData.PREDATION_DURATION);
+        yield return CoroutineHelper.WaitForSeconds(skillManager.skillData.PredationData.PREDATION_DURATION);
         skillManager.skillData.PredationData.SetActivePredation(false);
     }
     #endregion
