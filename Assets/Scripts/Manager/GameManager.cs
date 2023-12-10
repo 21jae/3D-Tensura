@@ -80,8 +80,8 @@ public class GameManager : MonoBehaviour
         bool triggerZoneExists = GameObject.FindGameObjectsWithTag("TriggerZone").Length > 0;
         bool enemyExists = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
 
-        if (!triggerZoneExists && !enemyExists)
-            StartCoroutine(PanelAndTimelineDelay());
+        //if (!triggerZoneExists && !enemyExists)
+            //StartCoroutine(PanelAndTimelineDelay());
     }
 
     private IEnumerator PanelAndTimelineDelay()

@@ -23,7 +23,6 @@ public class CharacterStatManager : MonoBehaviour
         currentData.currentDefense = baseStats.defense;
         currentData.currentSpeed = baseStats.speed;
     }
-
     private void Start()
     {
         Debug.Log($" MaxHP : {baseStats.maxHealth}, HP : {baseStats.currentHealth}, ATK : {baseStats.attackPower}, DEF : {baseStats.defense}");
