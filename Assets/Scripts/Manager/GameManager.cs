@@ -81,16 +81,13 @@ public class GameManager : MonoBehaviour
         bool enemyExists = GameObject.FindGameObjectsWithTag("Enemy").Length > 0;
 
         if (!triggerZoneExists && !enemyExists)
-        {
-            //StartCoroutine(PanelAndTimelineDelay());
-            //SoundManager.Instance.StopBackgroundMusic();
-            //StartCoroutine(PanelAndTimelineDelay());
-        }
+            StartCoroutine(PanelAndTimelineDelay());
     }
 
     private IEnumerator PanelAndTimelineDelay()
     {
-        yield return CoroutineHelper.WaitForSeconds(0.5f);
+        SoundManager.Instance.StopBackgroundMusic();
+        yield return CoroutineHelper.WaitForSeconds(0.75f);
         SoundManager.Instance.PlayVictoryBGM();
         playerUI.SetActive(false);
         wing.SetActive(true);

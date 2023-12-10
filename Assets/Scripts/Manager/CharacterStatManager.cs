@@ -15,12 +15,6 @@ public class CharacterStatManager : MonoBehaviour
         InitilizeStats();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            currentData.currentHP *= 1.25f;
-    }
-
     private void InitilizeStats()
     {
         currentData.currentAttackPower = baseStats.attackPower;

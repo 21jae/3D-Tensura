@@ -22,9 +22,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         skillManager = GetComponent<SkillManager>();
 
         if (playerController == null)
-        {
             Debug.LogError("Not found playerController");
-        }
     }
 
     private void Update()
@@ -39,7 +37,8 @@ public class PredationSkill : MonoBehaviour, ISkill
     #region 흡수 로직
     private void AbsorbObjectInRadius()
     {
-        Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, skillManager.skillData.PredationData.predationRaidus, layerMask);
+        Collider[] objectInRange = Physics.OverlapSphere(playerController.transform.position, 
+            skillManager.skillData.PredationData.predationRaidus, layerMask);
         foreach (Collider obj in objectInRange)
         {
             if (ObjectInPredationAngle(obj))
@@ -59,7 +58,7 @@ public class PredationSkill : MonoBehaviour, ISkill
         Vector3 directionToObject = (obj.transform.position - playerController.transform.position).normalized;      //감지된 오브젝트 사이의 방향 각도 계산
         float angle = Vector3.Angle(playerController.transform.forward, directionToObject);                         //플레이어가 바라보는 방향과 오브젝트 방향 사이의 각도
 
-        return angle < skillManager.skillData.PredationData.PREDATION_ANGLE; //방향 사이의 각도보다 흡수 각도가 크다면 흡수 가능하다.
+        return angle < skillManager.skillData.PredationData.PREDATION_ANGLE;                                        //방향 사이의 각도보다 흡수 각도가 크다면 흡수 가능하다.
     }
 
     private void ApplyDamageToEnemy(Enemy enemy)
@@ -68,7 +67,8 @@ public class PredationSkill : MonoBehaviour, ISkill
         {
             skillManager.skillData.PredationData.lastDamageTIme = Time.time;
 
-            float damaegeToDeal = skillManager.skillData.PredationData.predationSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
+            float damaegeToDeal = skillManager.skillData.PredationData.
+                predationSkillData.CalculateSkillDamage(CharacterStatManager.instance.currentData.currentAttackPower);
             IDamageable damageableEnemy = enemy.GetComponent<IDamageable>();
 
             if (damageableEnemy != null)
@@ -82,7 +82,8 @@ public class PredationSkill : MonoBehaviour, ISkill
         {
             Vector3 directionToAbsorb = (playerController.transform.position - obj.transform.position).normalized;
             float distancToPlayer = Vector3.Distance(playerController.transform.position, obj.transform.position);
-            float absorptionSpeed = (1 - (distancToPlayer / skillManager.skillData.PredationData.predationRaidus)) * skillManager.skillData.PredationData.predationForce;
+            float absorptionSpeed = (1 - (distancToPlayer / skillManager.skillData.PredationData.predationRaidus))
+                * skillManager.skillData.PredationData.predationForce;
 
             obj.transform.position += directionToAbsorb * absorptionSpeed * Time.deltaTime;
             UpdateObjectScale(obj);
@@ -101,7 +102,6 @@ public class PredationSkill : MonoBehaviour, ISkill
             string absorbedText = skillManager.skillData.PredationData.absorbedObjectText.text = "포식 결과: " + obj.gameObject.name + "입니다.";
             StartCoroutine(ShowAndFadeOutText(absorbedText, 4f));
             SoundManager.Instance.PlayHumanPredationSound();
-            
         }
     }
     private IEnumerator ShowAndFadeOutText(string text, float duration)

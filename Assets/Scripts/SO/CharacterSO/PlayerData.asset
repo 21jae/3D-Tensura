@@ -24,6 +24,8 @@ MonoBehaviour:
       standUpParameterName: StandUp
       DeathParameterName: Death
       changeParameterName: ChangeFrom
+      winParameterName: Win
+      talkParameterName: isTalking
     <AttackData>k__BackingField:
       comboStack: 0
       lastButtonPressTime: 30.765804
@@ -48,5 +50,5 @@ MonoBehaviour:
   <AirData>k__BackingField:
     <GravityData>k__BackingField:
       <gravity>k__BackingField: -9.81
-      <VerticalVelocity>k__BackingField: 0
-      <isGravityEnabled>k__BackingField: 0
+      <VerticalVelocity>k__BackingField: -0.1962
+      <isGravityEnabled>k__BackingField: 1
