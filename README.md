@@ -42,16 +42,20 @@
 
 ### 유틸 
   * [CoroutineHelper](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/ETC/CoroutineHelper.cs) : 코루틴 최적화를 진행합니다.
-  * [Object Pool](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Manager/ObjectPooling.cs) : 
-</br>
-
-
-## 기술서
-
+  * [Object Pool](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Manager/ObjectPooling.cs) : 오브젝트 풀
 </br>
 
 
 ## 배운점
+* 모바일게임 성능 최적화 하는법에 대해 알게되었습니다. 이 포트폴리오를 끝내기 전까지는 "빌드만 되자" 라는 마인드였는데, 성능에 대한 부분도 신경쓰게 되었습니다. 이러한 부분도 포트폴리오 진행중에 깨닫게 되어서, 다음 프로젝트에서는 프로파일링을 하며 직접 성능을 비교하며 체크해야겠다 느꼈습니다.
+* 무언가 구현을 할 때에, 수학적인 지식이 중요하다는 것을 느꼈습니다. 스킬을 애니메이션과 똑같이 구현하는데에 수학적 지식이 부족해 어려움이 많았고, 이 부분에서 부족함을 많이 느껴 게임수학을 더욱 배우고자 합니다.
+
+
+
+## 기술서
+[PDF자료](https://file.notion.so/f/f/60d85208-d2f5-4b65-bcee-71940fa52b65/46bfdf9c-3806-40e9-8acf-da2fdd0640b9/%EB%AA%A8%EB%B0%94%EC%9D%BC_%EA%B2%8C%EC%9E%84.pdf?id=3120e8fd-d837-4304-b1ae-7b13b0470646&table=block&spaceId=60d85208-d2f5-4b65-bcee-71940fa52b65&expirationTimestamp=1702598400000&signature=NVtfTyzeOxgpXR0Qfuq1N_h_cw5nTa7F5n_FmSoTk6o&downloadName=%EB%AA%A8%EB%B0%94%EC%9D%BC+%EA%B2%8C%EC%9E%84.pdf)
+</br>
+
 
 
 </br>
