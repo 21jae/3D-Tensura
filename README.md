@@ -23,7 +23,7 @@
     </br>
  
     ### 주인공의 필살기 구현
-       <img src="https://github.com/21jae/3D-Tensura/assets/90013449/5823f482-965e-4188-96ba-e3c8aab75717" width="40%" height="auto"> <img src="https://github.com/21jae/3D-Tensura/assets/90013449/983c68e1-f3f5-405e-913c-aaf7664453d4" width="58%" height="auto">
+       <img src="https://github.com/21jae/3D-Tensura/assets/90013449/5823f482-965e-4188-96ba-e3c8aab75717" width="40%" height="auto"> <img src="https://github.com/21jae/3D-Tensura/assets/90013449/e0a41cf2-7306-4a43-9e20-7eb04f73d68" width="58%" height="auto">
 
        ### 주인공의 변신 기능 구현 </br>
        <img src="https://https://github.com/21jae/3D-Tensura/assets/90013449/77fd3848-f93d-4eb6-be33-eeb3c8c9c7a9" width="70%" height="auto">
