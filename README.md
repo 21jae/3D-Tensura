@@ -29,10 +29,29 @@
 
        
 ## 주요 기능
- * Managers
-   * [SkillManager](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Manager/SkillManager.cs) 
-   
+### * Managers
+   * [SkillManager](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Manager/SkillManager.cs) : 모든 스킬들을 관리합니다.
+   * [SpawnManager](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Manager/SpawnManager.cs) : 생성된 몬스터를 적절한 위치에 배치 및 초기화를 작업 합니다.
+### * Data
+  * [PlayerSO](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Character/Data/PlayerSO.cs) : 손쉽게 커스터마이징 가능한 Player 데이터
+    * [GroundData](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Character/Data/GroundData.cs)
+  * [AnimationData](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Character/Data/AnimationData.cs) : String문자열 Hash 변환
+  * [SkillData](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Character/Data/PlayerSkillData.cs): 스킬관련 데이터 관리
+    *  [PredationData ](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Character/Data/PlayerPredationData.cs) : 흡수 데이터
+    *  [MegidoData](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Character/Data/PlayerMegidoData.cs) : 필살기 데이터
+
+### 유틸 
+  * [CoroutineHelper](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/ETC/CoroutineHelper.cs) : 코루틴 최적화를 진행합니다.
+  * [Object Pool](https://github.com/21jae/3D-Tensura/blob/main/Assets/Scripts/Manager/ObjectPooling.cs) : 
+</br>
 
 
+## 기술서
+
+</br>
 
 
+## 배운점
+
+
+</br>
